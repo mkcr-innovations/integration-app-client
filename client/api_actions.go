@@ -307,9 +307,15 @@ type ActionsAPIService service
 type ApiActionInstanceSetupRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
+	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+}
+
+func (r ApiActionInstanceSetupRequest) Id(id string) ApiActionInstanceSetupRequest {
+	r.id = &id
+	return r
 }
 
 func (r ApiActionInstanceSetupRequest) IntegrationKey(integrationKey string) ApiActionInstanceSetupRequest {
@@ -365,6 +371,9 @@ func (a *ActionsAPIService) ActionInstanceSetupExecute(r ApiActionInstanceSetupR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.id != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+	}
 	if r.integrationKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "integrationKey", r.integrationKey, "")
 	}
@@ -2623,9 +2632,15 @@ func (a *ActionsAPIService) ResetActionExecute(r ApiResetActionRequest) (*Action
 type ApiResetActionInstanceRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
+	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+}
+
+func (r ApiResetActionInstanceRequest) Id(id string) ApiResetActionInstanceRequest {
+	r.id = &id
+	return r
 }
 
 func (r ApiResetActionInstanceRequest) IntegrationKey(integrationKey string) ApiResetActionInstanceRequest {
@@ -2681,6 +2696,9 @@ func (a *ActionsAPIService) ResetActionInstanceExecute(r ApiResetActionInstanceR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.id != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+	}
 	if r.integrationKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "integrationKey", r.integrationKey, "")
 	}
@@ -2853,9 +2871,15 @@ func (a *ActionsAPIService) ResetActionsExecute(r ApiResetActionsRequest) (*Acti
 type ApiRunActionInstanceRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
+	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+}
+
+func (r ApiRunActionInstanceRequest) Id(id string) ApiRunActionInstanceRequest {
+	r.id = &id
+	return r
 }
 
 func (r ApiRunActionInstanceRequest) IntegrationKey(integrationKey string) ApiRunActionInstanceRequest {
@@ -2909,6 +2933,9 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.id != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+	}
 	if r.integrationKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "integrationKey", r.integrationKey, "")
 	}

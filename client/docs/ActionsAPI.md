@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 ## ActionInstanceSetup
 
-> ActionInstanceDto ActionInstanceSetup(ctx).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> ActionInstanceDto ActionInstanceSetup(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
 
 
@@ -49,13 +49,14 @@ import (
 )
 
 func main() {
+	id := "id_example" // string |  (optional)
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ActionInstanceSetup(context.Background()).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	resp, r, err := apiClient.ActionsAPI.ActionInstanceSetup(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionInstanceSetup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -76,6 +77,7 @@ Other parameters are passed through a pointer to a apiActionInstanceSetupRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **string** |  | 
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
@@ -1381,7 +1383,7 @@ No authorization required
 
 ## ResetActionInstance
 
-> ActionInstanceDto ResetActionInstance(ctx).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> ActionInstanceDto ResetActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
 
 
@@ -1398,13 +1400,14 @@ import (
 )
 
 func main() {
+	id := "id_example" // string |  (optional)
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ResetActionInstance(context.Background()).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	resp, r, err := apiClient.ActionsAPI.ResetActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ResetActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1425,6 +1428,7 @@ Other parameters are passed through a pointer to a apiResetActionInstanceRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **string** |  | 
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
@@ -1513,7 +1517,7 @@ No authorization required
 
 ## RunActionInstance
 
-> RunActionInstance(ctx).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> RunActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
 
 
@@ -1530,13 +1534,14 @@ import (
 )
 
 func main() {
+	id := "id_example" // string |  (optional)
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1555,6 +1560,7 @@ Other parameters are passed through a pointer to a apiRunActionInstanceRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **string** |  | 
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
