@@ -1172,9 +1172,15 @@ func (a *ActionsAPIService) GetActionExecute(r ApiGetActionRequest) (*ActionDto,
 type ApiGetActionInstanceRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
+	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+}
+
+func (r ApiGetActionInstanceRequest) Id(id string) ApiGetActionInstanceRequest {
+	r.id = &id
+	return r
 }
 
 func (r ApiGetActionInstanceRequest) IntegrationKey(integrationKey string) ApiGetActionInstanceRequest {
@@ -1230,6 +1236,9 @@ func (a *ActionsAPIService) GetActionInstanceExecute(r ApiGetActionInstanceReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.id != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+	}
 	if r.integrationKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "integrationKey", r.integrationKey, "")
 	}

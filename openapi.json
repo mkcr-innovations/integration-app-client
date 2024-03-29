@@ -11694,6 +11694,14 @@
               "operationId": "Get Action Instance",
               "parameters": [
                   {
+                    "name": "id",
+                    "required": false,
+                    "in": "query",
+                    "schema": {
+                        "type": "string"
+                    }
+                  },
+                  {
                       "name": "integrationKey",
                       "required": false,
                       "in": "query",
