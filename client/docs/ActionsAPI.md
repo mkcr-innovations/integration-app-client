@@ -1517,7 +1517,7 @@ No authorization required
 
 ## RunActionInstance
 
-> RunActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
 
 
@@ -1534,6 +1534,7 @@ import (
 )
 
 func main() {
+	requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} | 
 	id := "id_example" // string |  (optional)
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
@@ -1541,7 +1542,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1560,6 +1561,7 @@ Other parameters are passed through a pointer to a apiRunActionInstanceRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **requestBody** | **map[string]interface{}** |  | 
  **id** | **string** |  | 
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
@@ -1575,7 +1577,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

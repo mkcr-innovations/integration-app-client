@@ -2871,10 +2871,16 @@ func (a *ActionsAPIService) ResetActionsExecute(r ApiResetActionsRequest) (*Acti
 type ApiRunActionInstanceRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
+	requestBody *map[string]interface{}
 	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+}
+
+func (r ApiRunActionInstanceRequest) RequestBody(requestBody map[string]interface{}) ApiRunActionInstanceRequest {
+	r.requestBody = &requestBody
+	return r
 }
 
 func (r ApiRunActionInstanceRequest) Id(id string) ApiRunActionInstanceRequest {
@@ -2932,6 +2938,9 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.requestBody == nil {
+		return nil, reportError("requestBody is required and must be specified")
+	}
 
 	if r.id != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
@@ -2946,7 +2955,7 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 		parameterAddToHeaderOrQuery(localVarQueryParams, "connectionId", r.connectionId, "")
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -2962,6 +2971,8 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
