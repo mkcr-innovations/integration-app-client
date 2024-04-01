@@ -2890,18 +2890,13 @@ func (a *ActionsAPIService) ResetActionsExecute(r ApiResetActionsRequest) (*Acti
 type ApiRunActionInstanceRequest struct {
 	ctx context.Context
 	ApiService ActionsAPI
-	requestBody *map[string]interface{}
 	id *string
 	integrationKey *string
 	integrationId *string
 	connectionId *string
 	autoCreate *bool
 	parentId *string
-}
-
-func (r ApiRunActionInstanceRequest) RequestBody(requestBody map[string]interface{}) ApiRunActionInstanceRequest {
-	r.requestBody = &requestBody
-	return r
+	requestBody *map[string]interface{}
 }
 
 func (r ApiRunActionInstanceRequest) Id(id string) ApiRunActionInstanceRequest {
@@ -2931,6 +2926,11 @@ func (r ApiRunActionInstanceRequest) AutoCreate(autoCreate bool) ApiRunActionIns
 
 func (r ApiRunActionInstanceRequest) ParentId(parentId string) ApiRunActionInstanceRequest {
 	r.parentId = &parentId
+	return r
+}
+
+func (r ApiRunActionInstanceRequest) RequestBody(requestBody map[string]interface{}) ApiRunActionInstanceRequest {
+	r.requestBody = &requestBody
 	return r
 }
 
@@ -2971,9 +2971,6 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.requestBody == nil {
-		return localVarReturnValue, nil, reportError("requestBody is required and must be specified")
-	}
 
 	if r.id != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")

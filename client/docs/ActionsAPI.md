@@ -1521,7 +1521,7 @@ No authorization required
 
 ## RunActionInstance
 
-> RunActionInstance201Response RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+> RunActionInstance201Response RunActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).RequestBody(requestBody).Execute()
 
 
 
@@ -1538,17 +1538,17 @@ import (
 )
 
 func main() {
-	requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} | 
 	id := "id_example" // string |  (optional)
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
 	autoCreate := true // bool |  (optional)
 	parentId := "parentId_example" // string |  (optional)
+	requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+	resp, r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).RequestBody(requestBody).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1569,13 +1569,13 @@ Other parameters are passed through a pointer to a apiRunActionInstanceRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]interface{}** |  | 
  **id** | **string** |  | 
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
  **autoCreate** | **bool** |  | 
  **parentId** | **string** |  | 
+ **requestBody** | **map[string]interface{}** |  | 
 
 ### Return type
 
