@@ -13497,7 +13497,7 @@
             "type": "string"
           },
           "authType": {
-            "type": "object"
+            "type": "string"
           },
           "oAuthCallbackUri": {
             "type": "string"

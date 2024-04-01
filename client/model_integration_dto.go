@@ -28,7 +28,7 @@ type IntegrationDto struct {
 	Name string `json:"name"`
 	ConnectorStoreKey *string `json:"connectorStoreKey,omitempty"`
 	ConnectorId *string `json:"connectorId,omitempty"`
-	AuthType map[string]interface{} `json:"authType,omitempty"`
+	AuthType *string `json:"authType,omitempty"`
 	OAuthCallbackUri *string `json:"oAuthCallbackUri,omitempty"`
 	ParametersSchema map[string]interface{} `json:"parametersSchema,omitempty"`
 	HasDefaultParameters *bool `json:"hasDefaultParameters,omitempty"`
@@ -240,19 +240,19 @@ func (o *IntegrationDto) SetConnectorId(v string) {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *IntegrationDto) GetAuthType() map[string]interface{} {
+func (o *IntegrationDto) GetAuthType() string {
 	if o == nil || IsNil(o.AuthType) {
-		var ret map[string]interface{}
+		var ret string
 		return ret
 	}
-	return o.AuthType
+	return *o.AuthType
 }
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntegrationDto) GetAuthTypeOk() (map[string]interface{}, bool) {
+func (o *IntegrationDto) GetAuthTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.AuthType) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.AuthType, true
 }
@@ -266,9 +266,9 @@ func (o *IntegrationDto) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given map[string]interface{} and assigns it to the AuthType field.
-func (o *IntegrationDto) SetAuthType(v map[string]interface{}) {
-	o.AuthType = v
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *IntegrationDto) SetAuthType(v string) {
+	o.AuthType = &v
 }
 
 // GetOAuthCallbackUri returns the OAuthCallbackUri field value if set, zero value otherwise.

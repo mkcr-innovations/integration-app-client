@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **ConnectorStoreKey** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
-**AuthType** | Pointer to **map[string]interface{}** |  | [optional] 
+**AuthType** | Pointer to **string** |  | [optional] 
 **OAuthCallbackUri** | Pointer to **string** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
@@ -183,20 +183,20 @@ HasConnectorId returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *IntegrationDto) GetAuthType() map[string]interface{}`
+`func (o *IntegrationDto) GetAuthType() string`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *IntegrationDto) GetAuthTypeOk() (*map[string]interface{}, bool)`
+`func (o *IntegrationDto) GetAuthTypeOk() (*string, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *IntegrationDto) SetAuthType(v map[string]interface{})`
+`func (o *IntegrationDto) SetAuthType(v string)`
 
 SetAuthType sets AuthType field to given value.
 
