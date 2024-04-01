@@ -1521,7 +1521,7 @@ No authorization required
 
 ## RunActionInstance
 
-> RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 
 
 
@@ -1543,10 +1543,12 @@ func main() {
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+	parentId := "parentId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1570,6 +1572,8 @@ Name | Type | Description  | Notes
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+ **parentId** | **string** |  | 
 
 ### Return type
 

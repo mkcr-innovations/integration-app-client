@@ -2894,6 +2894,8 @@ type ApiRunActionInstanceRequest struct {
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+	autoCreate *bool
+	parentId *string
 }
 
 func (r ApiRunActionInstanceRequest) RequestBody(requestBody map[string]interface{}) ApiRunActionInstanceRequest {
@@ -2918,6 +2920,16 @@ func (r ApiRunActionInstanceRequest) IntegrationId(integrationId string) ApiRunA
 
 func (r ApiRunActionInstanceRequest) ConnectionId(connectionId string) ApiRunActionInstanceRequest {
 	r.connectionId = &connectionId
+	return r
+}
+
+func (r ApiRunActionInstanceRequest) AutoCreate(autoCreate bool) ApiRunActionInstanceRequest {
+	r.autoCreate = &autoCreate
+	return r
+}
+
+func (r ApiRunActionInstanceRequest) ParentId(parentId string) ApiRunActionInstanceRequest {
+	r.parentId = &parentId
 	return r
 }
 
@@ -2971,6 +2983,12 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	}
 	if r.connectionId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "connectionId", r.connectionId, "")
+	}
+	if r.autoCreate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "autoCreate", r.autoCreate, "")
+	}
+	if r.parentId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parentId", r.parentId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
