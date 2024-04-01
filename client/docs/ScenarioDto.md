@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Key** | **string** |  | 
 **ShortDescription** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Elements** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Elements** | Pointer to [**[]ScenarioDtoElementsInner**](ScenarioDtoElementsInner.md) |  | [optional] 
 **Todos** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 
@@ -191,20 +191,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetElements
 
-`func (o *ScenarioDto) GetElements() []map[string]interface{}`
+`func (o *ScenarioDto) GetElements() []ScenarioDtoElementsInner`
 
 GetElements returns the Elements field if non-nil, zero value otherwise.
 
 ### GetElementsOk
 
-`func (o *ScenarioDto) GetElementsOk() (*[]map[string]interface{}, bool)`
+`func (o *ScenarioDto) GetElementsOk() (*[]ScenarioDtoElementsInner, bool)`
 
 GetElementsOk returns a tuple with the Elements field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElements
 
-`func (o *ScenarioDto) SetElements(v []map[string]interface{})`
+`func (o *ScenarioDto) SetElements(v []ScenarioDtoElementsInner)`
 
 SetElements sets Elements field to given value.
 

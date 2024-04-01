@@ -15834,7 +15834,61 @@
           "elements": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "action",
+                    "flow"
+                  ]
+                },
+                "element": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "appliedToIntegrations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "element": {
+                            "type": "object",
+                            "properties": {
+                              "id": {"type": "string"},
+                              "integrationId": {"type": "string"},
+                              "customized": {"type": "string"}
+                            }
+                          },
+                          "integration": {
+                            "type": "object",
+                            "additionalProperties": true,
+                            "properties": {
+                              "id": {"type": "string"},
+                              "key": {"type": "string"},
+                              "name": {"type": "string"},
+                              "connectorId": {"type": "string"},
+                              "authType": {"type": "string"}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "todos": {

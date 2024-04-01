@@ -28,7 +28,7 @@ type ScenarioDto struct {
 	Key string `json:"key"`
 	ShortDescription *string `json:"shortDescription,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Elements []map[string]interface{} `json:"elements,omitempty"`
+	Elements []ScenarioDtoElementsInner `json:"elements,omitempty"`
 	Todos []map[string]interface{} `json:"todos,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 }
@@ -249,9 +249,9 @@ func (o *ScenarioDto) SetDescription(v string) {
 }
 
 // GetElements returns the Elements field value if set, zero value otherwise.
-func (o *ScenarioDto) GetElements() []map[string]interface{} {
+func (o *ScenarioDto) GetElements() []ScenarioDtoElementsInner {
 	if o == nil || IsNil(o.Elements) {
-		var ret []map[string]interface{}
+		var ret []ScenarioDtoElementsInner
 		return ret
 	}
 	return o.Elements
@@ -259,7 +259,7 @@ func (o *ScenarioDto) GetElements() []map[string]interface{} {
 
 // GetElementsOk returns a tuple with the Elements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetElementsOk() ([]map[string]interface{}, bool) {
+func (o *ScenarioDto) GetElementsOk() ([]ScenarioDtoElementsInner, bool) {
 	if o == nil || IsNil(o.Elements) {
 		return nil, false
 	}
@@ -275,8 +275,8 @@ func (o *ScenarioDto) HasElements() bool {
 	return false
 }
 
-// SetElements gets a reference to the given []map[string]interface{} and assigns it to the Elements field.
-func (o *ScenarioDto) SetElements(v []map[string]interface{}) {
+// SetElements gets a reference to the given []ScenarioDtoElementsInner and assigns it to the Elements field.
+func (o *ScenarioDto) SetElements(v []ScenarioDtoElementsInner) {
 	o.Elements = v
 }
 
