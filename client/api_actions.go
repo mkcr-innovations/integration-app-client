@@ -1185,6 +1185,8 @@ type ApiGetActionInstanceRequest struct {
 	integrationKey *string
 	integrationId *string
 	connectionId *string
+	autoCreate *bool
+	parentId *string
 }
 
 func (r ApiGetActionInstanceRequest) Id(id string) ApiGetActionInstanceRequest {
@@ -1204,6 +1206,16 @@ func (r ApiGetActionInstanceRequest) IntegrationId(integrationId string) ApiGetA
 
 func (r ApiGetActionInstanceRequest) ConnectionId(connectionId string) ApiGetActionInstanceRequest {
 	r.connectionId = &connectionId
+	return r
+}
+
+func (r ApiGetActionInstanceRequest) AutoCreate(autoCreate bool) ApiGetActionInstanceRequest {
+	r.autoCreate = &autoCreate
+	return r
+}
+
+func (r ApiGetActionInstanceRequest) ParentId(parentId string) ApiGetActionInstanceRequest {
+	r.parentId = &parentId
 	return r
 }
 
@@ -1256,6 +1268,12 @@ func (a *ActionsAPIService) GetActionInstanceExecute(r ApiGetActionInstanceReque
 	}
 	if r.connectionId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "connectionId", r.connectionId, "")
+	}
+	if r.autoCreate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "autoCreate", r.autoCreate, "")
+	}
+	if r.parentId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parentId", r.parentId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

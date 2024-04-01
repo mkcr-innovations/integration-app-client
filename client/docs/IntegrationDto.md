@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
 **Key** | **string** |  | 
-**Uuid** | **string** |  | 
+**Uuid** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 **ConnectorStoreKey** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
 **AuthType** | Pointer to **map[string]interface{}** |  | [optional] 
-**OAuthCallbackUri** | **string** |  | 
+**OAuthCallbackUri** | Pointer to **string** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
 **HasMissingParameters** | Pointer to **bool** |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewIntegrationDto
 
-`func NewIntegrationDto(id string, key string, uuid string, name string, oAuthCallbackUri string, baseUri string, logoUri string, ) *IntegrationDto`
+`func NewIntegrationDto(id string, key string, name string, baseUri string, logoUri string, ) *IntegrationDto`
 
 NewIntegrationDto instantiates a new IntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetUuid sets Uuid field to given value.
 
+### HasUuid
+
+`func (o *IntegrationDto) HasUuid() bool`
+
+HasUuid returns a boolean if a field has been set.
 
 ### GetName
 
@@ -220,6 +225,11 @@ and a boolean to check if the value has been set.
 
 SetOAuthCallbackUri sets OAuthCallbackUri field to given value.
 
+### HasOAuthCallbackUri
+
+`func (o *IntegrationDto) HasOAuthCallbackUri() bool`
+
+HasOAuthCallbackUri returns a boolean if a field has been set.
 
 ### GetParametersSchema
 

@@ -566,7 +566,7 @@ No authorization required
 
 ## GetActionInstance
 
-> ActionInstanceDto GetActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> ActionInstanceDto GetActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 
 
 
@@ -587,10 +587,12 @@ func main() {
 	integrationKey := "integrationKey_example" // string |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
 	connectionId := "connectionId_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+	parentId := "parentId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.GetActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	resp, r, err := apiClient.ActionsAPI.GetActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.GetActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -615,6 +617,8 @@ Name | Type | Description  | Notes
  **integrationKey** | **string** |  | 
  **integrationId** | **string** |  | 
  **connectionId** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+ **parentId** | **string** |  | 
 
 ### Return type
 

@@ -11724,6 +11724,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "autoCreate",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "parentId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -13534,9 +13550,7 @@
         "required": [
           "id",
           "key",
-          "uuid",
           "name",
-          "oAuthCallbackUri",
           "baseUri",
           "logoUri"
         ]
