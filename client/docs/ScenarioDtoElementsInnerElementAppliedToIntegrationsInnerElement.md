@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
-**Customized** | Pointer to **string** |  | [optional] 
+**Customized** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasIntegrationId returns a boolean if a field has been set.
 
 ### GetCustomized
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomized() string`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomized() bool`
 
 GetCustomized returns the Customized field if non-nil, zero value otherwise.
 
 ### GetCustomizedOk
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomizedOk() (*string, bool)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomizedOk() (*bool, bool)`
 
 GetCustomizedOk returns a tuple with the Customized field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomized
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetCustomized(v string)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetCustomized(v bool)`
 
 SetCustomized sets Customized field to given value.
 

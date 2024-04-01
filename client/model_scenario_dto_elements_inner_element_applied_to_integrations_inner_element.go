@@ -21,7 +21,7 @@ var _ MappedNullable = &ScenarioDtoElementsInnerElementAppliedToIntegrationsInne
 type ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement struct {
 	Id *string `json:"id,omitempty"`
 	IntegrationId *string `json:"integrationId,omitempty"`
-	Customized *string `json:"customized,omitempty"`
+	Customized *bool `json:"customized,omitempty"`
 }
 
 // NewScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement instantiates a new ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement object
@@ -106,9 +106,9 @@ func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetIn
 }
 
 // GetCustomized returns the Customized field value if set, zero value otherwise.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomized() string {
+func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomized() bool {
 	if o == nil || IsNil(o.Customized) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.Customized
@@ -116,7 +116,7 @@ func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCu
 
 // GetCustomizedOk returns a tuple with the Customized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomizedOk() (*string, bool) {
+func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomizedOk() (*bool, bool) {
 	if o == nil || IsNil(o.Customized) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasCu
 	return false
 }
 
-// SetCustomized gets a reference to the given string and assigns it to the Customized field.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetCustomized(v string) {
+// SetCustomized gets a reference to the given bool and assigns it to the Customized field.
+func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetCustomized(v bool) {
 	o.Customized = &v
 }
 
