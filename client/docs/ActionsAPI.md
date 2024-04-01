@@ -1521,7 +1521,7 @@ No authorization required
 
 ## RunActionInstance
 
-> RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+> RunActionInstance201Response RunActionInstance(ctx).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 
 
 
@@ -1548,11 +1548,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+	resp, r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).RequestBody(requestBody).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `RunActionInstance`: RunActionInstance201Response
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.RunActionInstance`: %v\n", resp)
 }
 ```
 
@@ -1577,7 +1579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**RunActionInstance201Response**](RunActionInstance201Response.md)
 
 ### Authorization
 
@@ -1586,7 +1588,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

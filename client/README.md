@@ -400,6 +400,8 @@ Class | Method | HTTP request | Description
  - [ListIntegrations200Response](docs/ListIntegrations200Response.md)
  - [OperationRunResponseDto](docs/OperationRunResponseDto.md)
  - [PublishConnectorToIntegrationDto](docs/PublishConnectorToIntegrationDto.md)
+ - [RunActionInstance201Response](docs/RunActionInstance201Response.md)
+ - [RunActionInstance201ResponseLogsInner](docs/RunActionInstance201ResponseLogsInner.md)
  - [RunFlowPayload](docs/RunFlowPayload.md)
  - [ScenarioDto](docs/ScenarioDto.md)
  - [ScenarioDtoElementsInner](docs/ScenarioDtoElementsInner.md)

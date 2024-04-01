@@ -98,6 +98,8 @@ docs/ListFlows200Response.md
 docs/ListIntegrations200Response.md
 docs/OperationRunResponseDto.md
 docs/PublishConnectorToIntegrationDto.md
+docs/RunActionInstance201Response.md
+docs/RunActionInstance201ResponseLogsInner.md
 docs/RunFlowPayload.md
 docs/ScenarioDto.md
 docs/ScenarioDtoElementsInner.md
@@ -193,6 +195,8 @@ model_list_flows_200_response.go
 model_list_integrations_200_response.go
 model_operation_run_response_dto.go
 model_publish_connector_to_integration_dto.go
+model_run_action_instance_201_response.go
+model_run_action_instance_201_response_logs_inner.go
 model_run_flow_payload.go
 model_scenario_dto.go
 model_scenario_dto_elements_inner.go

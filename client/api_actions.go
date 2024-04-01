@@ -298,7 +298,8 @@ type ActionsAPI interface {
 	RunActionInstance(ctx context.Context) ApiRunActionInstanceRequest
 
 	// RunActionInstanceExecute executes the request
-	RunActionInstanceExecute(r ApiRunActionInstanceRequest) (*http.Response, error)
+	//  @return RunActionInstance201Response
+	RunActionInstanceExecute(r ApiRunActionInstanceRequest) (*RunActionInstance201Response, *http.Response, error)
 }
 
 // ActionsAPIService ActionsAPI service
@@ -2933,7 +2934,7 @@ func (r ApiRunActionInstanceRequest) ParentId(parentId string) ApiRunActionInsta
 	return r
 }
 
-func (r ApiRunActionInstanceRequest) Execute() (*http.Response, error) {
+func (r ApiRunActionInstanceRequest) Execute() (*RunActionInstance201Response, *http.Response, error) {
 	return r.ApiService.RunActionInstanceExecute(r)
 }
 
@@ -2951,16 +2952,18 @@ func (a *ActionsAPIService) RunActionInstance(ctx context.Context) ApiRunActionI
 }
 
 // Execute executes the request
-func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceRequest) (*http.Response, error) {
+//  @return RunActionInstance201Response
+func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceRequest) (*RunActionInstance201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *RunActionInstance201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionsAPIService.RunActionInstance")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/action-instance/run"
@@ -2969,7 +2972,7 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.requestBody == nil {
-		return nil, reportError("requestBody is required and must be specified")
+		return localVarReturnValue, nil, reportError("requestBody is required and must be specified")
 	}
 
 	if r.id != nil {
@@ -3000,7 +3003,7 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -3011,19 +3014,19 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -3031,8 +3034,17 @@ func (a *ActionsAPIService) RunActionInstanceExecute(r ApiRunActionInstanceReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
