@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **HasData** | Pointer to **bool** |  | [optional] 
 **HasUdm** | Pointer to **bool** |  | [optional] 
 **HasAuth** | Pointer to **bool** |  | [optional] 
+**HasGlobalWebhooks** | Pointer to **bool** |  | [optional] 
+**HasEvents** | Pointer to **bool** |  | [optional] 
 **AreParametersCustomized** | Pointer to **bool** |  | [optional] 
 **BaseUri** | **string** |  | 
 **IsTest** | Pointer to **bool** |  | [optional] 
@@ -430,6 +432,56 @@ SetHasAuth sets HasAuth field to given value.
 `func (o *IntegrationDto) HasHasAuth() bool`
 
 HasHasAuth returns a boolean if a field has been set.
+
+### GetHasGlobalWebhooks
+
+`func (o *IntegrationDto) GetHasGlobalWebhooks() bool`
+
+GetHasGlobalWebhooks returns the HasGlobalWebhooks field if non-nil, zero value otherwise.
+
+### GetHasGlobalWebhooksOk
+
+`func (o *IntegrationDto) GetHasGlobalWebhooksOk() (*bool, bool)`
+
+GetHasGlobalWebhooksOk returns a tuple with the HasGlobalWebhooks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasGlobalWebhooks
+
+`func (o *IntegrationDto) SetHasGlobalWebhooks(v bool)`
+
+SetHasGlobalWebhooks sets HasGlobalWebhooks field to given value.
+
+### HasHasGlobalWebhooks
+
+`func (o *IntegrationDto) HasHasGlobalWebhooks() bool`
+
+HasHasGlobalWebhooks returns a boolean if a field has been set.
+
+### GetHasEvents
+
+`func (o *IntegrationDto) GetHasEvents() bool`
+
+GetHasEvents returns the HasEvents field if non-nil, zero value otherwise.
+
+### GetHasEventsOk
+
+`func (o *IntegrationDto) GetHasEventsOk() (*bool, bool)`
+
+GetHasEventsOk returns a tuple with the HasEvents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasEvents
+
+`func (o *IntegrationDto) SetHasEvents(v bool)`
+
+SetHasEvents sets HasEvents field to given value.
+
+### HasHasEvents
+
+`func (o *IntegrationDto) HasHasEvents() bool`
+
+HasHasEvents returns a boolean if a field has been set.
 
 ### GetAreParametersCustomized
 

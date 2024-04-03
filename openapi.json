@@ -13568,6 +13568,12 @@
           "hasAuth": {
             "type": "boolean"
           },
+          "hasGlobalWebhooks": {
+            "type": "boolean"
+          },
+          "hasEvents": {
+            "type": "boolean"
+          },
           "areParametersCustomized": {
             "type": "boolean"
           },

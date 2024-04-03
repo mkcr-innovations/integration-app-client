@@ -38,6 +38,8 @@ type IntegrationDto struct {
 	HasData *bool `json:"hasData,omitempty"`
 	HasUdm *bool `json:"hasUdm,omitempty"`
 	HasAuth *bool `json:"hasAuth,omitempty"`
+	HasGlobalWebhooks *bool `json:"hasGlobalWebhooks,omitempty"`
+	HasEvents *bool `json:"hasEvents,omitempty"`
 	AreParametersCustomized *bool `json:"areParametersCustomized,omitempty"`
 	BaseUri string `json:"baseUri"`
 	IsTest *bool `json:"isTest,omitempty"`
@@ -559,6 +561,70 @@ func (o *IntegrationDto) SetHasAuth(v bool) {
 	o.HasAuth = &v
 }
 
+// GetHasGlobalWebhooks returns the HasGlobalWebhooks field value if set, zero value otherwise.
+func (o *IntegrationDto) GetHasGlobalWebhooks() bool {
+	if o == nil || IsNil(o.HasGlobalWebhooks) {
+		var ret bool
+		return ret
+	}
+	return *o.HasGlobalWebhooks
+}
+
+// GetHasGlobalWebhooksOk returns a tuple with the HasGlobalWebhooks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IntegrationDto) GetHasGlobalWebhooksOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasGlobalWebhooks) {
+		return nil, false
+	}
+	return o.HasGlobalWebhooks, true
+}
+
+// HasHasGlobalWebhooks returns a boolean if a field has been set.
+func (o *IntegrationDto) HasHasGlobalWebhooks() bool {
+	if o != nil && !IsNil(o.HasGlobalWebhooks) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasGlobalWebhooks gets a reference to the given bool and assigns it to the HasGlobalWebhooks field.
+func (o *IntegrationDto) SetHasGlobalWebhooks(v bool) {
+	o.HasGlobalWebhooks = &v
+}
+
+// GetHasEvents returns the HasEvents field value if set, zero value otherwise.
+func (o *IntegrationDto) GetHasEvents() bool {
+	if o == nil || IsNil(o.HasEvents) {
+		var ret bool
+		return ret
+	}
+	return *o.HasEvents
+}
+
+// GetHasEventsOk returns a tuple with the HasEvents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IntegrationDto) GetHasEventsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasEvents) {
+		return nil, false
+	}
+	return o.HasEvents, true
+}
+
+// HasHasEvents returns a boolean if a field has been set.
+func (o *IntegrationDto) HasHasEvents() bool {
+	if o != nil && !IsNil(o.HasEvents) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasEvents gets a reference to the given bool and assigns it to the HasEvents field.
+func (o *IntegrationDto) SetHasEvents(v bool) {
+	o.HasEvents = &v
+}
+
 // GetAreParametersCustomized returns the AreParametersCustomized field value if set, zero value otherwise.
 func (o *IntegrationDto) GetAreParametersCustomized() bool {
 	if o == nil || IsNil(o.AreParametersCustomized) {
@@ -789,6 +855,12 @@ func (o IntegrationDto) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HasAuth) {
 		toSerialize["hasAuth"] = o.HasAuth
+	}
+	if !IsNil(o.HasGlobalWebhooks) {
+		toSerialize["hasGlobalWebhooks"] = o.HasGlobalWebhooks
+	}
+	if !IsNil(o.HasEvents) {
+		toSerialize["hasEvents"] = o.HasEvents
 	}
 	if !IsNil(o.AreParametersCustomized) {
 		toSerialize["areParametersCustomized"] = o.AreParametersCustomized
