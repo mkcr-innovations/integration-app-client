@@ -15907,6 +15907,9 @@
                     "name": {
                       "type": "string"
                     },
+                    "integrationId": {
+                      "type": "string"
+                    },
                     "appliedToIntegrations": {
                       "type": "array",
                       "items": {

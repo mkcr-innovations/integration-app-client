@@ -22,6 +22,7 @@ type ScenarioDtoElementsInnerElement struct {
 	Id *string `json:"id,omitempty"`
 	Key *string `json:"key,omitempty"`
 	Name *string `json:"name,omitempty"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	AppliedToIntegrations []ScenarioDtoElementsInnerElementAppliedToIntegrationsInner `json:"appliedToIntegrations,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -141,6 +142,38 @@ func (o *ScenarioDtoElementsInnerElement) SetName(v string) {
 	o.Name = &v
 }
 
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
+func (o *ScenarioDtoElementsInnerElement) GetIntegrationId() string {
+	if o == nil || IsNil(o.IntegrationId) {
+		var ret string
+		return ret
+	}
+	return *o.IntegrationId
+}
+
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDtoElementsInnerElement) GetIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.IntegrationId) {
+		return nil, false
+	}
+	return o.IntegrationId, true
+}
+
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ScenarioDtoElementsInnerElement) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
+func (o *ScenarioDtoElementsInnerElement) SetIntegrationId(v string) {
+	o.IntegrationId = &v
+}
+
 // GetAppliedToIntegrations returns the AppliedToIntegrations field value if set, zero value otherwise.
 func (o *ScenarioDtoElementsInnerElement) GetAppliedToIntegrations() []ScenarioDtoElementsInnerElementAppliedToIntegrationsInner {
 	if o == nil || IsNil(o.AppliedToIntegrations) {
@@ -192,6 +225,9 @@ func (o ScenarioDtoElementsInnerElement) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.AppliedToIntegrations) {
 		toSerialize["appliedToIntegrations"] = o.AppliedToIntegrations
 	}
@@ -220,6 +256,7 @@ func (o *ScenarioDtoElementsInnerElement) UnmarshalJSON(data []byte) (err error)
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "key")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "integrationId")
 		delete(additionalProperties, "appliedToIntegrations")
 		o.AdditionalProperties = additionalProperties
 	}

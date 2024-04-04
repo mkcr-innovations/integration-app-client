@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **AppliedToIntegrations** | Pointer to [**[]ScenarioDtoElementsInnerElementAppliedToIntegrationsInner**](ScenarioDtoElementsInnerElementAppliedToIntegrationsInner.md) |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetName sets Name field to given value.
 `func (o *ScenarioDtoElementsInnerElement) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+### HasIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetAppliedToIntegrations
 
