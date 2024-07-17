@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **AutoCreateInstances** | Pointer to **bool** |  | [optional] 
@@ -26,6 +29,81 @@ will change when the set of required properties is changed
 NewUpdateFlowDtoWithDefaults instantiates a new UpdateFlowDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKey
+
+`func (o *UpdateFlowDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *UpdateFlowDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *UpdateFlowDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *UpdateFlowDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UpdateFlowDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdateFlowDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdateFlowDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdateFlowDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetArchivedAt
+
+`func (o *UpdateFlowDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *UpdateFlowDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *UpdateFlowDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *UpdateFlowDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetNodes
 

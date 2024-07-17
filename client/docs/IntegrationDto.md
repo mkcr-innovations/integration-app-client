@@ -6,24 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
 **Key** | **string** |  | 
-**Uuid** | Pointer to **string** |  | [optional] 
+**Uuid** | **string** |  | 
 **Name** | **string** |  | 
 **ConnectorStoreKey** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
-**AuthType** | Pointer to **string** |  | [optional] 
-**OAuthCallbackUri** | Pointer to **string** |  | [optional] 
+**AuthType** | Pointer to **map[string]interface{}** |  | [optional] 
+**AuthOptions** | Pointer to **[]string** |  | [optional] 
+**OAuthCallbackUri** | **string** |  | 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
 **HasMissingParameters** | Pointer to **bool** |  | [optional] 
 **HasDocumentation** | Pointer to **bool** |  | [optional] 
 **HasOperations** | Pointer to **bool** |  | [optional] 
 **HasData** | Pointer to **bool** |  | [optional] 
-**HasUdm** | Pointer to **bool** |  | [optional] 
-**HasAuth** | Pointer to **bool** |  | [optional] 
-**HasGlobalWebhooks** | Pointer to **bool** |  | [optional] 
 **HasEvents** | Pointer to **bool** |  | [optional] 
+**HasGlobalWebhooks** | Pointer to **bool** |  | [optional] 
+**HasUdm** | Pointer to **bool** |  | [optional] 
 **AreParametersCustomized** | Pointer to **bool** |  | [optional] 
 **BaseUri** | **string** |  | 
+**ConnectorVersion** | Pointer to **string** |  | [optional] 
 **IsTest** | Pointer to **bool** |  | [optional] 
 **LogoUri** | **string** |  | 
 **ArchivedAt** | Pointer to **time.Time** |  | [optional] 
@@ -33,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewIntegrationDto
 
-`func NewIntegrationDto(id string, key string, name string, baseUri string, logoUri string, ) *IntegrationDto`
+`func NewIntegrationDto(id string, key string, uuid string, name string, oAuthCallbackUri string, baseUri string, logoUri string, ) *IntegrationDto`
 
 NewIntegrationDto instantiates a new IntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -107,11 +108,6 @@ and a boolean to check if the value has been set.
 
 SetUuid sets Uuid field to given value.
 
-### HasUuid
-
-`func (o *IntegrationDto) HasUuid() bool`
-
-HasUuid returns a boolean if a field has been set.
 
 ### GetName
 
@@ -185,20 +181,20 @@ HasConnectorId returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *IntegrationDto) GetAuthType() string`
+`func (o *IntegrationDto) GetAuthType() map[string]interface{}`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *IntegrationDto) GetAuthTypeOk() (*string, bool)`
+`func (o *IntegrationDto) GetAuthTypeOk() (*map[string]interface{}, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *IntegrationDto) SetAuthType(v string)`
+`func (o *IntegrationDto) SetAuthType(v map[string]interface{})`
 
 SetAuthType sets AuthType field to given value.
 
@@ -207,6 +203,31 @@ SetAuthType sets AuthType field to given value.
 `func (o *IntegrationDto) HasAuthType() bool`
 
 HasAuthType returns a boolean if a field has been set.
+
+### GetAuthOptions
+
+`func (o *IntegrationDto) GetAuthOptions() []string`
+
+GetAuthOptions returns the AuthOptions field if non-nil, zero value otherwise.
+
+### GetAuthOptionsOk
+
+`func (o *IntegrationDto) GetAuthOptionsOk() (*[]string, bool)`
+
+GetAuthOptionsOk returns a tuple with the AuthOptions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthOptions
+
+`func (o *IntegrationDto) SetAuthOptions(v []string)`
+
+SetAuthOptions sets AuthOptions field to given value.
+
+### HasAuthOptions
+
+`func (o *IntegrationDto) HasAuthOptions() bool`
+
+HasAuthOptions returns a boolean if a field has been set.
 
 ### GetOAuthCallbackUri
 
@@ -227,11 +248,6 @@ and a boolean to check if the value has been set.
 
 SetOAuthCallbackUri sets OAuthCallbackUri field to given value.
 
-### HasOAuthCallbackUri
-
-`func (o *IntegrationDto) HasOAuthCallbackUri() bool`
-
-HasOAuthCallbackUri returns a boolean if a field has been set.
 
 ### GetParametersSchema
 
@@ -383,55 +399,30 @@ SetHasData sets HasData field to given value.
 
 HasHasData returns a boolean if a field has been set.
 
-### GetHasUdm
+### GetHasEvents
 
-`func (o *IntegrationDto) GetHasUdm() bool`
+`func (o *IntegrationDto) GetHasEvents() bool`
 
-GetHasUdm returns the HasUdm field if non-nil, zero value otherwise.
+GetHasEvents returns the HasEvents field if non-nil, zero value otherwise.
 
-### GetHasUdmOk
+### GetHasEventsOk
 
-`func (o *IntegrationDto) GetHasUdmOk() (*bool, bool)`
+`func (o *IntegrationDto) GetHasEventsOk() (*bool, bool)`
 
-GetHasUdmOk returns a tuple with the HasUdm field if it's non-nil, zero value otherwise
+GetHasEventsOk returns a tuple with the HasEvents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHasUdm
+### SetHasEvents
 
-`func (o *IntegrationDto) SetHasUdm(v bool)`
+`func (o *IntegrationDto) SetHasEvents(v bool)`
 
-SetHasUdm sets HasUdm field to given value.
+SetHasEvents sets HasEvents field to given value.
 
-### HasHasUdm
+### HasHasEvents
 
-`func (o *IntegrationDto) HasHasUdm() bool`
+`func (o *IntegrationDto) HasHasEvents() bool`
 
-HasHasUdm returns a boolean if a field has been set.
-
-### GetHasAuth
-
-`func (o *IntegrationDto) GetHasAuth() bool`
-
-GetHasAuth returns the HasAuth field if non-nil, zero value otherwise.
-
-### GetHasAuthOk
-
-`func (o *IntegrationDto) GetHasAuthOk() (*bool, bool)`
-
-GetHasAuthOk returns a tuple with the HasAuth field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasAuth
-
-`func (o *IntegrationDto) SetHasAuth(v bool)`
-
-SetHasAuth sets HasAuth field to given value.
-
-### HasHasAuth
-
-`func (o *IntegrationDto) HasHasAuth() bool`
-
-HasHasAuth returns a boolean if a field has been set.
+HasHasEvents returns a boolean if a field has been set.
 
 ### GetHasGlobalWebhooks
 
@@ -458,30 +449,30 @@ SetHasGlobalWebhooks sets HasGlobalWebhooks field to given value.
 
 HasHasGlobalWebhooks returns a boolean if a field has been set.
 
-### GetHasEvents
+### GetHasUdm
 
-`func (o *IntegrationDto) GetHasEvents() bool`
+`func (o *IntegrationDto) GetHasUdm() bool`
 
-GetHasEvents returns the HasEvents field if non-nil, zero value otherwise.
+GetHasUdm returns the HasUdm field if non-nil, zero value otherwise.
 
-### GetHasEventsOk
+### GetHasUdmOk
 
-`func (o *IntegrationDto) GetHasEventsOk() (*bool, bool)`
+`func (o *IntegrationDto) GetHasUdmOk() (*bool, bool)`
 
-GetHasEventsOk returns a tuple with the HasEvents field if it's non-nil, zero value otherwise
+GetHasUdmOk returns a tuple with the HasUdm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHasEvents
+### SetHasUdm
 
-`func (o *IntegrationDto) SetHasEvents(v bool)`
+`func (o *IntegrationDto) SetHasUdm(v bool)`
 
-SetHasEvents sets HasEvents field to given value.
+SetHasUdm sets HasUdm field to given value.
 
-### HasHasEvents
+### HasHasUdm
 
-`func (o *IntegrationDto) HasHasEvents() bool`
+`func (o *IntegrationDto) HasHasUdm() bool`
 
-HasHasEvents returns a boolean if a field has been set.
+HasHasUdm returns a boolean if a field has been set.
 
 ### GetAreParametersCustomized
 
@@ -527,6 +518,31 @@ and a boolean to check if the value has been set.
 
 SetBaseUri sets BaseUri field to given value.
 
+
+### GetConnectorVersion
+
+`func (o *IntegrationDto) GetConnectorVersion() string`
+
+GetConnectorVersion returns the ConnectorVersion field if non-nil, zero value otherwise.
+
+### GetConnectorVersionOk
+
+`func (o *IntegrationDto) GetConnectorVersionOk() (*string, bool)`
+
+GetConnectorVersionOk returns a tuple with the ConnectorVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectorVersion
+
+`func (o *IntegrationDto) SetConnectorVersion(v string)`
+
+SetConnectorVersion sets ConnectorVersion field to given value.
+
+### HasConnectorVersion
+
+`func (o *IntegrationDto) HasConnectorVersion() bool`
+
+HasConnectorVersion returns a boolean if a field has been set.
 
 ### GetIsTest
 

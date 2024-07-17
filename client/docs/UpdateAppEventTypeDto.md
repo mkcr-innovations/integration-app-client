@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Schema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Example** | Pointer to **map[string]interface{}** |  | [optional] 
 **UserIdFormula** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -27,6 +30,81 @@ will change when the set of required properties is changed
 NewUpdateAppEventTypeDtoWithDefaults instantiates a new UpdateAppEventTypeDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKey
+
+`func (o *UpdateAppEventTypeDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *UpdateAppEventTypeDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *UpdateAppEventTypeDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *UpdateAppEventTypeDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UpdateAppEventTypeDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdateAppEventTypeDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdateAppEventTypeDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdateAppEventTypeDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetArchivedAt
+
+`func (o *UpdateAppEventTypeDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *UpdateAppEventTypeDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *UpdateAppEventTypeDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *UpdateAppEventTypeDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetSchema
 

@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Revision** | **string** |  | 
 **UserId** | **string** |  | 
-**User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **ConnectionId** | **string** |  | 
-**Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 **IntegrationId** | **string** |  | 
+**User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
+**Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
 **DataSourceId** | Pointer to **string** |  | [optional] 
@@ -22,24 +22,23 @@ Name | Type | Description | Notes
 **CollectionParameters** | Pointer to **map[string]interface{}** |  | [optional] 
 **DefaultCollectionKey** | Pointer to **string** |  | [optional] 
 **DefaultCollectionParameters** | Pointer to **map[string]interface{}** |  | [optional] 
-**Path** | **string** |  | 
-**DefaultPath** | **string** |  | 
 **CollectionSpec** | Pointer to **map[string]interface{}** |  | [optional] 
-**IsCustomized** | **bool** |  | 
+**IsCustomized** | Pointer to **bool** |  | [optional] 
 **Udm** | Pointer to **string** |  | [optional] 
-**Uuid** | **string** |  | 
+**Uuid** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
-**Subscriptions** | [**DataSourceInstanceDtoSubscriptions**](DataSourceInstanceDtoSubscriptions.md) |  | 
 **PullUpdatesIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **NextPullUpdatesTimestamp** | Pointer to **float32** |  | [optional] 
 **FullSyncIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **NextFullSyncTimestamp** | Pointer to **float32** |  | [optional] 
+**Path** | **string** |  | 
+**DefaultPath** | **string** |  | 
 
 ## Methods
 
 ### NewDataSourceInstanceDto
 
-`func NewDataSourceInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, path string, defaultPath string, isCustomized bool, uuid string, subscriptions DataSourceInstanceDtoSubscriptions, ) *DataSourceInstanceDto`
+`func NewDataSourceInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, path string, defaultPath string, ) *DataSourceInstanceDto`
 
 NewDataSourceInstanceDto instantiates a new DataSourceInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -134,6 +133,46 @@ and a boolean to check if the value has been set.
 SetUserId sets UserId field to given value.
 
 
+### GetConnectionId
+
+`func (o *DataSourceInstanceDto) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *DataSourceInstanceDto) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *DataSourceInstanceDto) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+
+### GetIntegrationId
+
+`func (o *DataSourceInstanceDto) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *DataSourceInstanceDto) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *DataSourceInstanceDto) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+
 ### GetUser
 
 `func (o *DataSourceInstanceDto) GetUser() CustomerDto`
@@ -159,26 +198,6 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### GetConnectionId
-
-`func (o *DataSourceInstanceDto) GetConnectionId() string`
-
-GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
-
-### GetConnectionIdOk
-
-`func (o *DataSourceInstanceDto) GetConnectionIdOk() (*string, bool)`
-
-GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConnectionId
-
-`func (o *DataSourceInstanceDto) SetConnectionId(v string)`
-
-SetConnectionId sets ConnectionId field to given value.
-
-
 ### GetConnection
 
 `func (o *DataSourceInstanceDto) GetConnection() ConnectionDto`
@@ -203,26 +222,6 @@ SetConnection sets Connection field to given value.
 `func (o *DataSourceInstanceDto) HasConnection() bool`
 
 HasConnection returns a boolean if a field has been set.
-
-### GetIntegrationId
-
-`func (o *DataSourceInstanceDto) GetIntegrationId() string`
-
-GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
-
-### GetIntegrationIdOk
-
-`func (o *DataSourceInstanceDto) GetIntegrationIdOk() (*string, bool)`
-
-GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegrationId
-
-`func (o *DataSourceInstanceDto) SetIntegrationId(v string)`
-
-SetIntegrationId sets IntegrationId field to given value.
-
 
 ### GetIntegration
 
@@ -474,46 +473,6 @@ SetDefaultCollectionParameters sets DefaultCollectionParameters field to given v
 
 HasDefaultCollectionParameters returns a boolean if a field has been set.
 
-### GetPath
-
-`func (o *DataSourceInstanceDto) GetPath() string`
-
-GetPath returns the Path field if non-nil, zero value otherwise.
-
-### GetPathOk
-
-`func (o *DataSourceInstanceDto) GetPathOk() (*string, bool)`
-
-GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPath
-
-`func (o *DataSourceInstanceDto) SetPath(v string)`
-
-SetPath sets Path field to given value.
-
-
-### GetDefaultPath
-
-`func (o *DataSourceInstanceDto) GetDefaultPath() string`
-
-GetDefaultPath returns the DefaultPath field if non-nil, zero value otherwise.
-
-### GetDefaultPathOk
-
-`func (o *DataSourceInstanceDto) GetDefaultPathOk() (*string, bool)`
-
-GetDefaultPathOk returns a tuple with the DefaultPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultPath
-
-`func (o *DataSourceInstanceDto) SetDefaultPath(v string)`
-
-SetDefaultPath sets DefaultPath field to given value.
-
-
 ### GetCollectionSpec
 
 `func (o *DataSourceInstanceDto) GetCollectionSpec() map[string]interface{}`
@@ -558,6 +517,11 @@ and a boolean to check if the value has been set.
 
 SetIsCustomized sets IsCustomized field to given value.
 
+### HasIsCustomized
+
+`func (o *DataSourceInstanceDto) HasIsCustomized() bool`
+
+HasIsCustomized returns a boolean if a field has been set.
 
 ### GetUdm
 
@@ -603,6 +567,11 @@ and a boolean to check if the value has been set.
 
 SetUuid sets Uuid field to given value.
 
+### HasUuid
+
+`func (o *DataSourceInstanceDto) HasUuid() bool`
+
+HasUuid returns a boolean if a field has been set.
 
 ### GetError
 
@@ -628,26 +597,6 @@ SetError sets Error field to given value.
 `func (o *DataSourceInstanceDto) HasError() bool`
 
 HasError returns a boolean if a field has been set.
-
-### GetSubscriptions
-
-`func (o *DataSourceInstanceDto) GetSubscriptions() DataSourceInstanceDtoSubscriptions`
-
-GetSubscriptions returns the Subscriptions field if non-nil, zero value otherwise.
-
-### GetSubscriptionsOk
-
-`func (o *DataSourceInstanceDto) GetSubscriptionsOk() (*DataSourceInstanceDtoSubscriptions, bool)`
-
-GetSubscriptionsOk returns a tuple with the Subscriptions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscriptions
-
-`func (o *DataSourceInstanceDto) SetSubscriptions(v DataSourceInstanceDtoSubscriptions)`
-
-SetSubscriptions sets Subscriptions field to given value.
-
 
 ### GetPullUpdatesIntervalSeconds
 
@@ -748,6 +697,46 @@ SetNextFullSyncTimestamp sets NextFullSyncTimestamp field to given value.
 `func (o *DataSourceInstanceDto) HasNextFullSyncTimestamp() bool`
 
 HasNextFullSyncTimestamp returns a boolean if a field has been set.
+
+### GetPath
+
+`func (o *DataSourceInstanceDto) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *DataSourceInstanceDto) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *DataSourceInstanceDto) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+
+### GetDefaultPath
+
+`func (o *DataSourceInstanceDto) GetDefaultPath() string`
+
+GetDefaultPath returns the DefaultPath field if non-nil, zero value otherwise.
+
+### GetDefaultPathOk
+
+`func (o *DataSourceInstanceDto) GetDefaultPathOk() (*string, bool)`
+
+GetDefaultPathOk returns a tuple with the DefaultPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultPath
+
+`func (o *DataSourceInstanceDto) SetDefaultPath(v string)`
+
+SetDefaultPath sets DefaultPath field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

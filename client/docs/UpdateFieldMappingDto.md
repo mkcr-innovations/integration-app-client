@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **DataSourceKey** | Pointer to **string** |  | [optional] 
 **DataSourceId** | Pointer to **string** |  | [optional] 
 **AppSchema** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -34,6 +37,81 @@ will change when the set of required properties is changed
 NewUpdateFieldMappingDtoWithDefaults instantiates a new UpdateFieldMappingDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKey
+
+`func (o *UpdateFieldMappingDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *UpdateFieldMappingDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *UpdateFieldMappingDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *UpdateFieldMappingDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UpdateFieldMappingDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdateFieldMappingDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdateFieldMappingDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdateFieldMappingDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetArchivedAt
+
+`func (o *UpdateFieldMappingDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *UpdateFieldMappingDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *UpdateFieldMappingDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *UpdateFieldMappingDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetDataSourceKey
 

@@ -4,29 +4,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | 
+**Key** | **string** |  | 
+**Name** | **string** |  | 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Customized** | Pointer to **bool** |  | [optional] 
 **Revision** | **string** |  | 
 **UniversalFieldMappingId** | Pointer to **string** |  | [optional] 
 **UniversalFieldMappingRevision** | Pointer to **string** |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
-**DataSourceKey** | **string** |  | 
-**DataSourceId** | **string** |  | 
-**AppSchema** | **map[string]interface{}** |  | 
-**Direction** | **string** |  | 
-**DefaultImportValue** | **map[string]interface{}** |  | 
+**DataSourceKey** | Pointer to **string** |  | [optional] 
+**DataSourceId** | Pointer to **string** |  | [optional] 
+**AppSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**Direction** | Pointer to **string** |  | [optional] 
+**DefaultImportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **DefaultExportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **ExportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **ImportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **FrozenImportFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **FrozenExportFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **FrozenUnifiedExportFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**AppliedToIntegrations** | Pointer to **[]string** |  | [optional] 
+**AppliedToIntegrations** | Pointer to [**[]FiledMappingWithIntegrationDto**](FiledMappingWithIntegrationDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewFieldMappingDto
 
-`func NewFieldMappingDto(revision string, dataSourceKey string, dataSourceId string, appSchema map[string]interface{}, direction string, defaultImportValue map[string]interface{}, ) *FieldMappingDto`
+`func NewFieldMappingDto(id string, key string, name string, revision string, ) *FieldMappingDto`
 
 NewFieldMappingDto instantiates a new FieldMappingDto object
 This constructor will assign default values to properties that have it defined,
@@ -40,6 +44,91 @@ will change when the set of required properties is changed
 NewFieldMappingDtoWithDefaults instantiates a new FieldMappingDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *FieldMappingDto) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FieldMappingDto) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FieldMappingDto) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetKey
+
+`func (o *FieldMappingDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *FieldMappingDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *FieldMappingDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetName
+
+`func (o *FieldMappingDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *FieldMappingDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *FieldMappingDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetArchivedAt
+
+`func (o *FieldMappingDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *FieldMappingDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *FieldMappingDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *FieldMappingDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetCustomized
 
@@ -180,6 +269,11 @@ and a boolean to check if the value has been set.
 
 SetDataSourceKey sets DataSourceKey field to given value.
 
+### HasDataSourceKey
+
+`func (o *FieldMappingDto) HasDataSourceKey() bool`
+
+HasDataSourceKey returns a boolean if a field has been set.
 
 ### GetDataSourceId
 
@@ -200,6 +294,11 @@ and a boolean to check if the value has been set.
 
 SetDataSourceId sets DataSourceId field to given value.
 
+### HasDataSourceId
+
+`func (o *FieldMappingDto) HasDataSourceId() bool`
+
+HasDataSourceId returns a boolean if a field has been set.
 
 ### GetAppSchema
 
@@ -220,6 +319,11 @@ and a boolean to check if the value has been set.
 
 SetAppSchema sets AppSchema field to given value.
 
+### HasAppSchema
+
+`func (o *FieldMappingDto) HasAppSchema() bool`
+
+HasAppSchema returns a boolean if a field has been set.
 
 ### GetDirection
 
@@ -240,6 +344,11 @@ and a boolean to check if the value has been set.
 
 SetDirection sets Direction field to given value.
 
+### HasDirection
+
+`func (o *FieldMappingDto) HasDirection() bool`
+
+HasDirection returns a boolean if a field has been set.
 
 ### GetDefaultImportValue
 
@@ -260,6 +369,11 @@ and a boolean to check if the value has been set.
 
 SetDefaultImportValue sets DefaultImportValue field to given value.
 
+### HasDefaultImportValue
+
+`func (o *FieldMappingDto) HasDefaultImportValue() bool`
+
+HasDefaultImportValue returns a boolean if a field has been set.
 
 ### GetDefaultExportValue
 
@@ -413,20 +527,20 @@ HasFrozenUnifiedExportFields returns a boolean if a field has been set.
 
 ### GetAppliedToIntegrations
 
-`func (o *FieldMappingDto) GetAppliedToIntegrations() []string`
+`func (o *FieldMappingDto) GetAppliedToIntegrations() []FiledMappingWithIntegrationDto`
 
 GetAppliedToIntegrations returns the AppliedToIntegrations field if non-nil, zero value otherwise.
 
 ### GetAppliedToIntegrationsOk
 
-`func (o *FieldMappingDto) GetAppliedToIntegrationsOk() (*[]string, bool)`
+`func (o *FieldMappingDto) GetAppliedToIntegrationsOk() (*[]FiledMappingWithIntegrationDto, bool)`
 
 GetAppliedToIntegrationsOk returns a tuple with the AppliedToIntegrations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppliedToIntegrations
 
-`func (o *FieldMappingDto) SetAppliedToIntegrations(v []string)`
+`func (o *FieldMappingDto) SetAppliedToIntegrations(v []FiledMappingWithIntegrationDto)`
 
 SetAppliedToIntegrations sets AppliedToIntegrations field to given value.
 

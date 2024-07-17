@@ -1,25 +1,88 @@
 # \ScenariosAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ArchiveScenario**](ScenariosAPI.md#ArchiveScenario) | **Delete** /scenarios/{id} | 
-[**ArchiveScenarios**](ScenariosAPI.md#ArchiveScenarios) | **Delete** /scenario | 
-[**CreateScenario**](ScenariosAPI.md#CreateScenario) | **Post** /scenarios | 
-[**GetScenario**](ScenariosAPI.md#GetScenario) | **Get** /scenarios/{id} | 
-[**GetScenarios**](ScenariosAPI.md#GetScenarios) | **Get** /scenario | 
-[**ListScenarios**](ScenariosAPI.md#ListScenarios) | **Get** /scenarios | 
-[**PatchScenario**](ScenariosAPI.md#PatchScenario) | **Patch** /scenarios/{id} | 
-[**PatchScenarios**](ScenariosAPI.md#PatchScenarios) | **Patch** /scenario | 
-[**PutScenario**](ScenariosAPI.md#PutScenario) | **Put** /scenarios/{id} | 
-[**PutScenarios**](ScenariosAPI.md#PutScenarios) | **Put** /scenario | 
+[**ScenarioByIdControllerArchive**](ScenariosAPI.md#ScenarioByIdControllerArchive) | **Delete** /scenarios/{id} | Archive scenario
+[**ScenarioByIdControllerExport**](ScenariosAPI.md#ScenarioByIdControllerExport) | **Get** /scenarios/{id}/export | 
+[**ScenarioByIdControllerGet**](ScenariosAPI.md#ScenarioByIdControllerGet) | **Get** /scenarios/{id} | Get scenario
+[**ScenarioByIdControllerPatch**](ScenariosAPI.md#ScenarioByIdControllerPatch) | **Patch** /scenarios/{id} | Patch scenario
+[**ScenarioByIdControllerPut**](ScenariosAPI.md#ScenarioByIdControllerPut) | **Put** /scenarios/{id} | Put scenario
+[**ScenariosControllerCreate**](ScenariosAPI.md#ScenariosControllerCreate) | **Post** /scenarios | Create scenario
+[**ScenariosControllerList**](ScenariosAPI.md#ScenariosControllerList) | **Get** /scenarios | List scenarios
 
 
 
-## ArchiveScenario
+## ScenarioByIdControllerArchive
 
-> ArchiveScenario(ctx, id).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+> ScenarioByIdControllerArchive(ctx, id).Execute()
+
+Archive scenario
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ScenariosAPI.ScenarioByIdControllerArchive(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenarioByIdControllerArchive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiScenarioByIdControllerArchiveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ScenarioByIdControllerExport
+
+> ScenarioExportDto ScenarioByIdControllerExport(ctx, id).Execute()
 
 
 
@@ -37,17 +100,16 @@ import (
 
 func main() {
 	id := "id_example" // string | 
-	id2 := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ScenariosAPI.ArchiveScenario(context.Background(), id).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+	resp, r, err := apiClient.ScenariosAPI.ScenarioByIdControllerExport(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ArchiveScenario``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenarioByIdControllerExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ScenarioByIdControllerExport`: ScenarioExportDto
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenarioByIdControllerExport`: %v\n", resp)
 }
 ```
 
@@ -61,19 +123,16 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveScenarioRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScenarioByIdControllerExportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **id2** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
 
 ### Return type
 
- (empty response body)
+[**ScenarioExportDto**](ScenarioExportDto.md)
 
 ### Authorization
 
@@ -82,18 +141,18 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ArchiveScenarios
+## ScenarioByIdControllerGet
 
-> ArchiveScenarios(ctx).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+> ScenarioDto ScenarioByIdControllerGet(ctx, id).Execute()
 
-
+Get scenario
 
 ### Example
 
@@ -108,38 +167,40 @@ import (
 )
 
 func main() {
-	id := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
+	id := "id_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ScenariosAPI.ArchiveScenarios(context.Background()).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+	resp, r, err := apiClient.ScenariosAPI.ScenarioByIdControllerGet(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ArchiveScenarios``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenarioByIdControllerGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ScenarioByIdControllerGet`: ScenarioDto
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenarioByIdControllerGet`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveScenariosRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScenarioByIdControllerGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
+
 
 ### Return type
 
- (empty response body)
+[**ScenarioDto**](ScenarioDto.md)
 
 ### Authorization
 
@@ -148,18 +209,158 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CreateScenario
+## ScenarioByIdControllerPatch
 
-> ScenarioDto CreateScenario(ctx).CreateScenarioDto(createScenarioDto).Execute()
+> ScenarioDto ScenarioByIdControllerPatch(ctx, id).UpdateScenarioDto(updateScenarioDto).Execute()
+
+Patch scenario
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | 
+	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ScenariosAPI.ScenarioByIdControllerPatch(context.Background(), id).UpdateScenarioDto(updateScenarioDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenarioByIdControllerPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ScenarioByIdControllerPatch`: ScenarioDto
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenarioByIdControllerPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiScenarioByIdControllerPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
+
+### Return type
+
+[**ScenarioDto**](ScenarioDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ScenarioByIdControllerPut
+
+> ScenarioDto ScenarioByIdControllerPut(ctx, id).UpdateScenarioDto(updateScenarioDto).Execute()
+
+Put scenario
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | 
+	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ScenariosAPI.ScenarioByIdControllerPut(context.Background(), id).UpdateScenarioDto(updateScenarioDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenarioByIdControllerPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ScenarioByIdControllerPut`: ScenarioDto
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenarioByIdControllerPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiScenarioByIdControllerPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
+
+### Return type
+
+[**ScenarioDto**](ScenarioDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ScenariosControllerCreate
+
+> ScenarioDto ScenariosControllerCreate(ctx).CreateScenarioDto(createScenarioDto).Execute()
+
+Create scenario
 
 ### Example
 
@@ -178,13 +379,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.CreateScenario(context.Background()).CreateScenarioDto(createScenarioDto).Execute()
+	resp, r, err := apiClient.ScenariosAPI.ScenariosControllerCreate(context.Background()).CreateScenarioDto(createScenarioDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.CreateScenario``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenariosControllerCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateScenario`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.CreateScenario`: %v\n", resp)
+	// response from `ScenariosControllerCreate`: ScenarioDto
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenariosControllerCreate`: %v\n", resp)
 }
 ```
 
@@ -194,7 +395,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateScenarioRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScenariosControllerCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -219,11 +420,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetScenario
+## ScenariosControllerList
 
-> ScenarioDto GetScenario(ctx, id).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+> ScenariosControllerList200Response ScenariosControllerList(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
 
-
+List scenarios
 
 ### Example
 
@@ -238,46 +439,42 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
-	id2 := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.GetScenario(context.Background(), id).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
+	resp, r, err := apiClient.ScenariosAPI.ScenariosControllerList(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.GetScenario``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ScenariosControllerList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetScenario`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.GetScenario`: %v\n", resp)
+	// response from `ScenariosControllerList`: ScenariosControllerList200Response
+	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.ScenariosControllerList`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetScenarioRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScenariosControllerListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **id2** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
 
 ### Return type
 
-[**ScenarioDto**](ScenarioDto.md)
+[**ScenariosControllerList200Response**](ScenariosControllerList200Response.md)
 
 ### Authorization
 
@@ -286,423 +483,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetScenarios
-
-> ScenarioDto GetScenarios(ctx).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.GetScenarios(context.Background()).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.GetScenarios``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetScenarios`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.GetScenarios`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetScenariosRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
-
-### Return type
-
-[**ScenarioDto**](ScenarioDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListScenarios
-
-> ListScenarios(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ScenariosAPI.ListScenarios(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.ListScenarios``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListScenariosRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchScenario
-
-> ScenarioDto PatchScenario(ctx, id).UpdateScenarioDto(updateScenarioDto).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | 
-	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
-	id2 := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.PatchScenario(context.Background(), id).UpdateScenarioDto(updateScenarioDto).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.PatchScenario``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchScenario`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.PatchScenario`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchScenarioRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
- **id2** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
-
-### Return type
-
-[**ScenarioDto**](ScenarioDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchScenarios
-
-> ScenarioDto PatchScenarios(ctx).UpdateScenarioDto(updateScenarioDto).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
-	id := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.PatchScenarios(context.Background()).UpdateScenarioDto(updateScenarioDto).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.PatchScenarios``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchScenarios`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.PatchScenarios`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchScenariosRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
- **id** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
-
-### Return type
-
-[**ScenarioDto**](ScenarioDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutScenario
-
-> ScenarioDto PutScenario(ctx, id).UpdateScenarioDto(updateScenarioDto).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | 
-	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
-	id2 := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.PutScenario(context.Background(), id).UpdateScenarioDto(updateScenarioDto).Id2(id2).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.PutScenario``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutScenario`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.PutScenario`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutScenarioRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
- **id2** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
-
-### Return type
-
-[**ScenarioDto**](ScenarioDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutScenarios
-
-> ScenarioDto PutScenarios(ctx).UpdateScenarioDto(updateScenarioDto).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateScenarioDto := *openapiclient.NewUpdateScenarioDto() // UpdateScenarioDto | 
-	id := "id_example" // string |  (optional)
-	key := "key_example" // string |  (optional)
-	scenarioTemplateId := "scenarioTemplateId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScenariosAPI.PutScenarios(context.Background()).UpdateScenarioDto(updateScenarioDto).Id(id).Key(key).ScenarioTemplateId(scenarioTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScenariosAPI.PutScenarios``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutScenarios`: ScenarioDto
-	fmt.Fprintf(os.Stdout, "Response from `ScenariosAPI.PutScenarios`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutScenariosRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateScenarioDto** | [**UpdateScenarioDto**](UpdateScenarioDto.md) |  | 
- **id** | **string** |  | 
- **key** | **string** |  | 
- **scenarioTemplateId** | **string** |  | 
-
-### Return type
-
-[**ScenarioDto**](ScenarioDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

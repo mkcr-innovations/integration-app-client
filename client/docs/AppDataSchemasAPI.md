@@ -1,34 +1,31 @@
 # \AppDataSchemasAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ArchiveAppDataSchema**](AppDataSchemasAPI.md#ArchiveAppDataSchema) | **Delete** /app-data-schemas/{id} | 
-[**ArchiveAppDataSchemaInstance**](AppDataSchemasAPI.md#ArchiveAppDataSchemaInstance) | **Delete** /app-data-schema-instance | 
-[**ArchiveAppDataSchemas**](AppDataSchemasAPI.md#ArchiveAppDataSchemas) | **Delete** /app-data-schema | 
-[**CreateAppDataSchema**](AppDataSchemasAPI.md#CreateAppDataSchema) | **Post** /app-data-schemas | 
-[**CreateAppDataSchemaInstance**](AppDataSchemasAPI.md#CreateAppDataSchemaInstance) | **Post** /app-data-schema-instance | 
-[**GetAppDataSchema**](AppDataSchemasAPI.md#GetAppDataSchema) | **Get** /app-data-schemas/{id} | 
-[**GetAppDataSchemaInstance**](AppDataSchemasAPI.md#GetAppDataSchemaInstance) | **Get** /app-data-schema-instance | 
-[**GetAppDataSchemas**](AppDataSchemasAPI.md#GetAppDataSchemas) | **Get** /app-data-schema | 
-[**ListAppDataSchemaInstances**](AppDataSchemasAPI.md#ListAppDataSchemaInstances) | **Get** /app-data-schema-instances | 
-[**ListAppDataSchemas**](AppDataSchemasAPI.md#ListAppDataSchemas) | **Get** /app-data-schemas | 
-[**PatchAppDataSchema**](AppDataSchemasAPI.md#PatchAppDataSchema) | **Patch** /app-data-schemas/{id} | 
-[**PatchAppDataSchemaInstance**](AppDataSchemasAPI.md#PatchAppDataSchemaInstance) | **Patch** /app-data-schema-instance | 
-[**PatchAppDataSchemas**](AppDataSchemasAPI.md#PatchAppDataSchemas) | **Patch** /app-data-schema | 
-[**PutAppDataSchema**](AppDataSchemasAPI.md#PutAppDataSchema) | **Put** /app-data-schemas/{id} | 
-[**PutAppDataSchemaInstance**](AppDataSchemasAPI.md#PutAppDataSchemaInstance) | **Put** /app-data-schema-instance | 
-[**PutAppDataSchemas**](AppDataSchemasAPI.md#PutAppDataSchemas) | **Put** /app-data-schema | 
-[**SetupAppDataSchemaInstance**](AppDataSchemasAPI.md#SetupAppDataSchemaInstance) | **Post** /app-data-schema-instance/setup | 
+[**AppDataSchemaByIdControllerArchiveAppDataSchema**](AppDataSchemasAPI.md#AppDataSchemaByIdControllerArchiveAppDataSchema) | **Delete** /app-data-schemas/{id} | Archive app data schema
+[**AppDataSchemaByIdControllerExport**](AppDataSchemasAPI.md#AppDataSchemaByIdControllerExport) | **Get** /app-data-schemas/{id}/export | 
+[**AppDataSchemaByIdControllerGetAppDataSchema**](AppDataSchemasAPI.md#AppDataSchemaByIdControllerGetAppDataSchema) | **Get** /app-data-schemas/{id} | Get app data schema
+[**AppDataSchemaByIdControllerPatchAppDataSchema**](AppDataSchemasAPI.md#AppDataSchemaByIdControllerPatchAppDataSchema) | **Patch** /app-data-schemas/{id} | Patch app data schema
+[**AppDataSchemaByIdControllerPutAppDataSchema**](AppDataSchemasAPI.md#AppDataSchemaByIdControllerPutAppDataSchema) | **Put** /app-data-schemas/{id} | Update app data schema
+[**AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance) | **Delete** /app-data-schema-instance | Archive app data schema instance
+[**AppDataSchemaInstanceControllerCreateAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerCreateAppDataSchemaInstance) | **Post** /app-data-schema-instance | Create app data schema instance
+[**AppDataSchemaInstanceControllerGetAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerGetAppDataSchemaInstance) | **Get** /app-data-schema-instance | Get app data schema instance
+[**AppDataSchemaInstanceControllerPatchAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerPatchAppDataSchemaInstance) | **Patch** /app-data-schema-instance | Patch app data schema instance
+[**AppDataSchemaInstanceControllerPutAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerPutAppDataSchemaInstance) | **Put** /app-data-schema-instance | Update app data schema instance
+[**AppDataSchemaInstanceControllerSetupAppDataSchemaInstance**](AppDataSchemasAPI.md#AppDataSchemaInstanceControllerSetupAppDataSchemaInstance) | **Post** /app-data-schema-instance/setup | Setup app data schema instance
+[**AppDataSchemaInstancesControllerListAppDataSchemaInstances**](AppDataSchemasAPI.md#AppDataSchemaInstancesControllerListAppDataSchemaInstances) | **Get** /app-data-schema-instances | List app data schema instances
+[**AppDataSchemasControllerCreateAppDataSchema**](AppDataSchemasAPI.md#AppDataSchemasControllerCreateAppDataSchema) | **Post** /app-data-schemas | Create app data schema
+[**AppDataSchemasControllerListAppDataSchemas**](AppDataSchemasAPI.md#AppDataSchemasControllerListAppDataSchemas) | **Get** /app-data-schemas | List app data schemas
 
 
 
-## ArchiveAppDataSchema
+## AppDataSchemaByIdControllerArchiveAppDataSchema
 
-> ArchiveAppDataSchema(ctx, id).AutoCreate(autoCreate).Execute()
+> AppDataSchemaByIdControllerArchiveAppDataSchema(ctx, id).Execute()
 
-
+Archive app data schema
 
 ### Example
 
@@ -43,14 +40,13 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | The ID of the app-data-schema to retrive
-	autoCreate := true // bool |  (optional)
+	id := "id_example" // string | ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppDataSchemasAPI.ArchiveAppDataSchema(context.Background(), id).AutoCreate(autoCreate).Execute()
+	r, err := apiClient.AppDataSchemasAPI.AppDataSchemaByIdControllerArchiveAppDataSchema(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.ArchiveAppDataSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaByIdControllerArchiveAppDataSchema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -62,17 +58,16 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the app-data-schema to retrive | 
+**id** | **string** | ID | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveAppDataSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaByIdControllerArchiveAppDataSchemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **autoCreate** | **bool** |  | 
 
 ### Return type
 
@@ -92,11 +87,289 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ArchiveAppDataSchemaInstance
+## AppDataSchemaByIdControllerExport
 
-> ArchiveAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+> AppDataSchemaExportDto AppDataSchemaByIdControllerExport(ctx, id).Key(key).Execute()
 
 
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+	key := "key_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaByIdControllerExport(context.Background(), id).Key(key).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaByIdControllerExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaByIdControllerExport`: AppDataSchemaExportDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaByIdControllerExport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaByIdControllerExportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **key** | **string** |  | 
+
+### Return type
+
+[**AppDataSchemaExportDto**](AppDataSchemaExportDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaByIdControllerGetAppDataSchema
+
+> AppDataSchemaDto AppDataSchemaByIdControllerGetAppDataSchema(ctx, id).Execute()
+
+Get app data schema
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaByIdControllerGetAppDataSchema(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaByIdControllerGetAppDataSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaByIdControllerGetAppDataSchema`: AppDataSchemaDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaByIdControllerGetAppDataSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaByIdControllerGetAppDataSchemaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AppDataSchemaDto**](AppDataSchemaDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaByIdControllerPatchAppDataSchema
+
+> AppDataSchemaDto AppDataSchemaByIdControllerPatchAppDataSchema(ctx, id).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
+
+Patch app data schema
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaByIdControllerPatchAppDataSchema(context.Background(), id).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaByIdControllerPatchAppDataSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaByIdControllerPatchAppDataSchema`: AppDataSchemaDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaByIdControllerPatchAppDataSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaByIdControllerPatchAppDataSchemaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
+
+### Return type
+
+[**AppDataSchemaDto**](AppDataSchemaDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaByIdControllerPutAppDataSchema
+
+> AppDataSchemaDto AppDataSchemaByIdControllerPutAppDataSchema(ctx, id).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
+
+Update app data schema
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaByIdControllerPutAppDataSchema(context.Background(), id).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaByIdControllerPutAppDataSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaByIdControllerPutAppDataSchema`: AppDataSchemaDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaByIdControllerPutAppDataSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaByIdControllerPutAppDataSchemaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
+
+### Return type
+
+[**AppDataSchemaDto**](AppDataSchemaDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance
+
+> AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+
+Archive app data schema instance
 
 ### Example
 
@@ -119,9 +392,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppDataSchemasAPI.ArchiveAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+	r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.ArchiveAppDataSchemaInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerArchiveAppDataSchemaInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -133,7 +406,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveAppDataSchemaInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerArchiveAppDataSchemaInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -162,137 +435,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ArchiveAppDataSchemas
+## AppDataSchemaInstanceControllerCreateAppDataSchemaInstance
 
-> ArchiveAppDataSchemas(ctx).AutoCreate(autoCreate).Execute()
+> AppDataSchemaInstanceDto AppDataSchemaInstanceControllerCreateAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppDataSchemasAPI.ArchiveAppDataSchemas(context.Background()).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.ArchiveAppDataSchemas``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiArchiveAppDataSchemasRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **autoCreate** | **bool** |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateAppDataSchema
-
-> AppDataSchemaDto CreateAppDataSchema(ctx).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.CreateAppDataSchema(context.Background()).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.CreateAppDataSchema``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CreateAppDataSchema`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.CreateAppDataSchema`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateAppDataSchemaRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
-
-### Return type
-
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateAppDataSchemaInstance
-
-> AppDataSchemaInstanceDto CreateAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-
-
+Create app data schema instance
 
 ### Example
 
@@ -316,13 +463,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.CreateAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerCreateAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.CreateAppDataSchemaInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerCreateAppDataSchemaInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateAppDataSchemaInstance`: AppDataSchemaInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.CreateAppDataSchemaInstance`: %v\n", resp)
+	// response from `AppDataSchemaInstanceControllerCreateAppDataSchemaInstance`: AppDataSchemaInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstanceControllerCreateAppDataSchemaInstance`: %v\n", resp)
 }
 ```
 
@@ -332,7 +479,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateAppDataSchemaInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerCreateAppDataSchemaInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -362,81 +509,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAppDataSchema
+## AppDataSchemaInstanceControllerGetAppDataSchemaInstance
 
-> AppDataSchemaDto GetAppDataSchema(ctx, id).AutoCreate(autoCreate).Execute()
+> AppDataSchemaInstanceDto AppDataSchemaInstanceControllerGetAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | The ID of the app-data-schema to retrive
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.GetAppDataSchema(context.Background(), id).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.GetAppDataSchema``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetAppDataSchema`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.GetAppDataSchema`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the app-data-schema to retrive | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAppDataSchemaRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAppDataSchemaInstance
-
-> AppDataSchemaInstanceDto GetAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-
-
+Get app data schema instance
 
 ### Example
 
@@ -459,13 +536,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.GetAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerGetAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.GetAppDataSchemaInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerGetAppDataSchemaInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAppDataSchemaInstance`: AppDataSchemaInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.GetAppDataSchemaInstance`: %v\n", resp)
+	// response from `AppDataSchemaInstanceControllerGetAppDataSchemaInstance`: AppDataSchemaInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstanceControllerGetAppDataSchemaInstance`: %v\n", resp)
 }
 ```
 
@@ -475,7 +552,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAppDataSchemaInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerGetAppDataSchemaInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -504,11 +581,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAppDataSchemas
+## AppDataSchemaInstanceControllerPatchAppDataSchemaInstance
 
-> AppDataSchemaDto GetAppDataSchemas(ctx).AutoCreate(autoCreate).Execute()
+> AppDataSchemaInstanceDto AppDataSchemaInstanceControllerPatchAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 
-
+Patch app data schema instance
 
 ### Example
 
@@ -523,17 +600,22 @@ import (
 )
 
 func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
+	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
 	autoCreate := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.GetAppDataSchemas(context.Background()).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerPatchAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.GetAppDataSchemas``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerPatchAppDataSchemaInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAppDataSchemas`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.GetAppDataSchemas`: %v\n", resp)
+	// response from `AppDataSchemaInstanceControllerPatchAppDataSchemaInstance`: AppDataSchemaInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstanceControllerPatchAppDataSchemaInstance`: %v\n", resp)
 }
 ```
 
@@ -543,16 +625,167 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAppDataSchemasRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerPatchAppDataSchemaInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **appDataSchemaId** | **string** |  | 
+ **appDataSchemaKey** | **string** |  | 
  **autoCreate** | **bool** |  | 
 
 ### Return type
 
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
+[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaInstanceControllerPutAppDataSchemaInstance
+
+> AppDataSchemaInstanceDto AppDataSchemaInstanceControllerPutAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+
+Update app data schema instance
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
+	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerPutAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerPutAppDataSchemaInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaInstanceControllerPutAppDataSchemaInstance`: AppDataSchemaInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstanceControllerPutAppDataSchemaInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerPutAppDataSchemaInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **appDataSchemaId** | **string** |  | 
+ **appDataSchemaKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AppDataSchemaInstanceControllerSetupAppDataSchemaInstance
+
+> AppDataSchemaInstanceDto AppDataSchemaInstanceControllerSetupAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+
+Setup app data schema instance
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
+	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstanceControllerSetupAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstanceControllerSetupAppDataSchemaInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppDataSchemaInstanceControllerSetupAppDataSchemaInstance`: AppDataSchemaInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstanceControllerSetupAppDataSchemaInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAppDataSchemaInstanceControllerSetupAppDataSchemaInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **appDataSchemaId** | **string** |  | 
+ **appDataSchemaKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
 
 ### Authorization
 
@@ -568,11 +801,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListAppDataSchemaInstances
+## AppDataSchemaInstancesControllerListAppDataSchemaInstances
 
-> ListAppDataSchemaInstances200Response ListAppDataSchemaInstances(ctx).Id(id).UserId(userId).AppDataSchemaId(appDataSchemaId).InstanceKey(instanceKey).Execute()
+> AppDataSchemaInstancesControllerListAppDataSchemaInstances200Response AppDataSchemaInstancesControllerListAppDataSchemaInstances(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Id(id).UserId(userId).AppDataSchemaId(appDataSchemaId).InstanceKey(instanceKey).Execute()
 
-
+List app data schema instances
 
 ### Example
 
@@ -587,6 +820,10 @@ import (
 )
 
 func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
 	id := "id_example" // string |  (optional)
 	userId := "userId_example" // string |  (optional)
 	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
@@ -594,13 +831,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.ListAppDataSchemaInstances(context.Background()).Id(id).UserId(userId).AppDataSchemaId(appDataSchemaId).InstanceKey(instanceKey).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemaInstancesControllerListAppDataSchemaInstances(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Id(id).UserId(userId).AppDataSchemaId(appDataSchemaId).InstanceKey(instanceKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.ListAppDataSchemaInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemaInstancesControllerListAppDataSchemaInstances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAppDataSchemaInstances`: ListAppDataSchemaInstances200Response
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.ListAppDataSchemaInstances`: %v\n", resp)
+	// response from `AppDataSchemaInstancesControllerListAppDataSchemaInstances`: AppDataSchemaInstancesControllerListAppDataSchemaInstances200Response
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemaInstancesControllerListAppDataSchemaInstances`: %v\n", resp)
 }
 ```
 
@@ -610,11 +847,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListAppDataSchemaInstancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemaInstancesControllerListAppDataSchemaInstancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
  **id** | **string** |  | 
  **userId** | **string** |  | 
  **appDataSchemaId** | **string** |  | 
@@ -622,7 +863,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAppDataSchemaInstances200Response**](ListAppDataSchemaInstances200Response.md)
+[**AppDataSchemaInstancesControllerListAppDataSchemaInstances200Response**](AppDataSchemaInstancesControllerListAppDataSchemaInstances200Response.md)
 
 ### Authorization
 
@@ -638,70 +879,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListAppDataSchemas
+## AppDataSchemasControllerCreateAppDataSchema
 
-> ListAppDataSchemas200Response ListAppDataSchemas(ctx).Execute()
+> AppDataSchemaDto AppDataSchemasControllerCreateAppDataSchema(ctx).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.ListAppDataSchemas(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.ListAppDataSchemas``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListAppDataSchemas`: ListAppDataSchemas200Response
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.ListAppDataSchemas`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListAppDataSchemasRequest struct via the builder pattern
-
-
-### Return type
-
-[**ListAppDataSchemas200Response**](ListAppDataSchemas200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchAppDataSchema
-
-> AppDataSchemaDto PatchAppDataSchema(ctx, id).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-
-
+Create app data schema
 
 ### Example
 
@@ -716,40 +898,32 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | The ID of the app-data-schema to retrive
 	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
-	autoCreate := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PatchAppDataSchema(context.Background(), id).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemasControllerCreateAppDataSchema(context.Background()).AppDataSchemaCreateDto(appDataSchemaCreateDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PatchAppDataSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemasControllerCreateAppDataSchema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchAppDataSchema`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PatchAppDataSchema`: %v\n", resp)
+	// response from `AppDataSchemasControllerCreateAppDataSchema`: AppDataSchemaDto
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemasControllerCreateAppDataSchema`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the app-data-schema to retrive | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchAppDataSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemasControllerCreateAppDataSchemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
- **autoCreate** | **bool** |  | 
 
 ### Return type
 
@@ -769,85 +943,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PatchAppDataSchemaInstance
+## AppDataSchemasControllerListAppDataSchemas
 
-> AppDataSchemaInstanceDto PatchAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
+> AppDataSchemasControllerListAppDataSchemas200Response AppDataSchemasControllerListAppDataSchemas(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} | 
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
-	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PatchAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PatchAppDataSchemaInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchAppDataSchemaInstance`: AppDataSchemaInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PatchAppDataSchemaInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchAppDataSchemaInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **appDataSchemaId** | **string** |  | 
- **appDataSchemaKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchAppDataSchemas
-
-> AppDataSchemaDto PatchAppDataSchemas(ctx).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-
-
+List app data schemas
 
 ### Example
 
@@ -862,18 +962,20 @@ import (
 )
 
 func main() {
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
-	autoCreate := true // bool |  (optional)
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PatchAppDataSchemas(context.Background()).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.AppDataSchemasAPI.AppDataSchemasControllerListAppDataSchemas(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PatchAppDataSchemas``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.AppDataSchemasControllerListAppDataSchemas``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchAppDataSchemas`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PatchAppDataSchemas`: %v\n", resp)
+	// response from `AppDataSchemasControllerListAppDataSchemas`: AppDataSchemasControllerListAppDataSchemas200Response
+	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.AppDataSchemasControllerListAppDataSchemas`: %v\n", resp)
 }
 ```
 
@@ -883,301 +985,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchAppDataSchemasRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAppDataSchemasControllerListAppDataSchemasRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
- **autoCreate** | **bool** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
 
 ### Return type
 
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutAppDataSchema
-
-> AppDataSchemaDto PutAppDataSchema(ctx, id).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | The ID of the app-data-schema to retrive
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PutAppDataSchema(context.Background(), id).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PutAppDataSchema``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutAppDataSchema`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PutAppDataSchema`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the app-data-schema to retrive | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutAppDataSchemaRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutAppDataSchemaInstance
-
-> AppDataSchemaInstanceDto PutAppDataSchemaInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} | 
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
-	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PutAppDataSchemaInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PutAppDataSchemaInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutAppDataSchemaInstance`: AppDataSchemaInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PutAppDataSchemaInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutAppDataSchemaInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **appDataSchemaId** | **string** |  | 
- **appDataSchemaKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutAppDataSchemas
-
-> AppDataSchemaDto PutAppDataSchemas(ctx).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.PutAppDataSchemas(context.Background()).AppDataSchemaCreateDto(appDataSchemaCreateDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.PutAppDataSchemas``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutAppDataSchemas`: AppDataSchemaDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.PutAppDataSchemas`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutAppDataSchemasRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appDataSchemaCreateDto** | [**AppDataSchemaCreateDto**](AppDataSchemaCreateDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaDto**](AppDataSchemaDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SetupAppDataSchemaInstance
-
-> AppDataSchemaInstanceDto SetupAppDataSchemaInstance(ctx).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	appDataSchemaId := "appDataSchemaId_example" // string |  (optional)
-	appDataSchemaKey := "appDataSchemaKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppDataSchemasAPI.SetupAppDataSchemaInstance(context.Background()).Id(id).InstanceKey(instanceKey).AppDataSchemaId(appDataSchemaId).AppDataSchemaKey(appDataSchemaKey).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppDataSchemasAPI.SetupAppDataSchemaInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `SetupAppDataSchemaInstance`: AppDataSchemaInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `AppDataSchemasAPI.SetupAppDataSchemaInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSetupAppDataSchemaInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **appDataSchemaId** | **string** |  | 
- **appDataSchemaKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**AppDataSchemaInstanceDto**](AppDataSchemaInstanceDto.md)
+[**AppDataSchemasControllerListAppDataSchemas200Response**](AppDataSchemasControllerListAppDataSchemas200Response.md)
 
 ### Authorization
 

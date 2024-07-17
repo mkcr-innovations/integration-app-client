@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
 **Name** | **string** |  | 
-**IntegrationId** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **DataSourceKey** | Pointer to **string** |  | [optional] 
 **DataSourceId** | Pointer to **string** |  | [optional] 
 **AppSchema** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **FrozenImportFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **FrozenExportFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **FrozenUnifiedExportFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -78,30 +79,30 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetIntegrationId
+### GetArchivedAt
 
-`func (o *CreateFieldMappingDto) GetIntegrationId() string`
+`func (o *CreateFieldMappingDto) GetArchivedAt() string`
 
-GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
 
-### GetIntegrationIdOk
+### GetArchivedAtOk
 
-`func (o *CreateFieldMappingDto) GetIntegrationIdOk() (*string, bool)`
+`func (o *CreateFieldMappingDto) GetArchivedAtOk() (*string, bool)`
 
-GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIntegrationId
+### SetArchivedAt
 
-`func (o *CreateFieldMappingDto) SetIntegrationId(v string)`
+`func (o *CreateFieldMappingDto) SetArchivedAt(v string)`
 
-SetIntegrationId sets IntegrationId field to given value.
+SetArchivedAt sets ArchivedAt field to given value.
 
-### HasIntegrationId
+### HasArchivedAt
 
-`func (o *CreateFieldMappingDto) HasIntegrationId() bool`
+`func (o *CreateFieldMappingDto) HasArchivedAt() bool`
 
-HasIntegrationId returns a boolean if a field has been set.
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetDataSourceKey
 
@@ -377,6 +378,31 @@ SetFrozenUnifiedExportFields sets FrozenUnifiedExportFields field to given value
 `func (o *CreateFieldMappingDto) HasFrozenUnifiedExportFields() bool`
 
 HasFrozenUnifiedExportFields returns a boolean if a field has been set.
+
+### GetIntegrationId
+
+`func (o *CreateFieldMappingDto) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *CreateFieldMappingDto) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *CreateFieldMappingDto) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+### HasIntegrationId
+
+`func (o *CreateFieldMappingDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

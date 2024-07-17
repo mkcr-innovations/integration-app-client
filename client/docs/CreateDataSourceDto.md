@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
 **Name** | **string** |  | 
-**IntegrationId** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Udm** | Pointer to **string** |  | [optional] 
 **PullUpdatesIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **FullSyncIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **DefaultPath** | Pointer to **string** |  | [optional] 
-**CollectionKey** | Pointer to **map[string]interface{}** |  | [optional] 
+**CollectionKey** | Pointer to **string** |  | [optional] 
 **CollectionParameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -73,30 +74,30 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetIntegrationId
+### GetArchivedAt
 
-`func (o *CreateDataSourceDto) GetIntegrationId() string`
+`func (o *CreateDataSourceDto) GetArchivedAt() string`
 
-GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
 
-### GetIntegrationIdOk
+### GetArchivedAtOk
 
-`func (o *CreateDataSourceDto) GetIntegrationIdOk() (*string, bool)`
+`func (o *CreateDataSourceDto) GetArchivedAtOk() (*string, bool)`
 
-GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIntegrationId
+### SetArchivedAt
 
-`func (o *CreateDataSourceDto) SetIntegrationId(v string)`
+`func (o *CreateDataSourceDto) SetArchivedAt(v string)`
 
-SetIntegrationId sets IntegrationId field to given value.
+SetArchivedAt sets ArchivedAt field to given value.
 
-### HasIntegrationId
+### HasArchivedAt
 
-`func (o *CreateDataSourceDto) HasIntegrationId() bool`
+`func (o *CreateDataSourceDto) HasArchivedAt() bool`
 
-HasIntegrationId returns a boolean if a field has been set.
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetUdm
 
@@ -200,20 +201,20 @@ HasDefaultPath returns a boolean if a field has been set.
 
 ### GetCollectionKey
 
-`func (o *CreateDataSourceDto) GetCollectionKey() map[string]interface{}`
+`func (o *CreateDataSourceDto) GetCollectionKey() string`
 
 GetCollectionKey returns the CollectionKey field if non-nil, zero value otherwise.
 
 ### GetCollectionKeyOk
 
-`func (o *CreateDataSourceDto) GetCollectionKeyOk() (*map[string]interface{}, bool)`
+`func (o *CreateDataSourceDto) GetCollectionKeyOk() (*string, bool)`
 
 GetCollectionKeyOk returns a tuple with the CollectionKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionKey
 
-`func (o *CreateDataSourceDto) SetCollectionKey(v map[string]interface{})`
+`func (o *CreateDataSourceDto) SetCollectionKey(v string)`
 
 SetCollectionKey sets CollectionKey field to given value.
 
@@ -247,6 +248,31 @@ SetCollectionParameters sets CollectionParameters field to given value.
 `func (o *CreateDataSourceDto) HasCollectionParameters() bool`
 
 HasCollectionParameters returns a boolean if a field has been set.
+
+### GetIntegrationId
+
+`func (o *CreateDataSourceDto) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *CreateDataSourceDto) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *CreateDataSourceDto) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+### HasIntegrationId
+
+`func (o *CreateDataSourceDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

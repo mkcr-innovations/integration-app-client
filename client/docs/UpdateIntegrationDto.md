@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **LogoBase64** | Pointer to **string** |  | [optional] 
 **LogoUri** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **time.Time** |  | [optional] 
+**ConnectorVersion** | Pointer to **string** |  | [optional] 
+**ConnectorId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -309,6 +311,56 @@ SetArchivedAt sets ArchivedAt field to given value.
 `func (o *UpdateIntegrationDto) HasArchivedAt() bool`
 
 HasArchivedAt returns a boolean if a field has been set.
+
+### GetConnectorVersion
+
+`func (o *UpdateIntegrationDto) GetConnectorVersion() string`
+
+GetConnectorVersion returns the ConnectorVersion field if non-nil, zero value otherwise.
+
+### GetConnectorVersionOk
+
+`func (o *UpdateIntegrationDto) GetConnectorVersionOk() (*string, bool)`
+
+GetConnectorVersionOk returns a tuple with the ConnectorVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectorVersion
+
+`func (o *UpdateIntegrationDto) SetConnectorVersion(v string)`
+
+SetConnectorVersion sets ConnectorVersion field to given value.
+
+### HasConnectorVersion
+
+`func (o *UpdateIntegrationDto) HasConnectorVersion() bool`
+
+HasConnectorVersion returns a boolean if a field has been set.
+
+### GetConnectorId
+
+`func (o *UpdateIntegrationDto) GetConnectorId() string`
+
+GetConnectorId returns the ConnectorId field if non-nil, zero value otherwise.
+
+### GetConnectorIdOk
+
+`func (o *UpdateIntegrationDto) GetConnectorIdOk() (*string, bool)`
+
+GetConnectorIdOk returns a tuple with the ConnectorId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectorId
+
+`func (o *UpdateIntegrationDto) SetConnectorId(v string)`
+
+SetConnectorId sets ConnectorId field to given value.
+
+### HasConnectorId
+
+`func (o *UpdateIntegrationDto) HasConnectorId() bool`
+
+HasConnectorId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

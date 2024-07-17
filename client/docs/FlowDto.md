@@ -4,24 +4,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | 
+**Key** | **string** |  | 
+**Name** | **string** |  | 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Revision** | **string** |  | 
 **UniversalFlowId** | Pointer to **string** |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **UniversalFlowRevision** | Pointer to **string** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
-**Nodes** | **map[string]interface{}** |  | 
+**Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
 **AutoCreateInstances** | Pointer to **bool** |  | [optional] 
 **Customized** | Pointer to **bool** |  | [optional] 
 **AppliedToIntegrations** | Pointer to **[]string** |  | [optional] 
 **Dependencies** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **IsDeployed** | Pointer to **bool** |  | [optional] 
+**ConfigurationState** | Pointer to **string** |  | [optional] 
+**ConfigurationStateMessage** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewFlowDto
 
-`func NewFlowDto(revision string, nodes map[string]interface{}, ) *FlowDto`
+`func NewFlowDto(id string, key string, name string, revision string, ) *FlowDto`
 
 NewFlowDto instantiates a new FlowDto object
 This constructor will assign default values to properties that have it defined,
@@ -35,6 +41,91 @@ will change when the set of required properties is changed
 NewFlowDtoWithDefaults instantiates a new FlowDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *FlowDto) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FlowDto) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FlowDto) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetKey
+
+`func (o *FlowDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *FlowDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *FlowDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetName
+
+`func (o *FlowDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *FlowDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *FlowDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetArchivedAt
+
+`func (o *FlowDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *FlowDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *FlowDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *FlowDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetRevision
 
@@ -200,6 +291,11 @@ and a boolean to check if the value has been set.
 
 SetNodes sets Nodes field to given value.
 
+### HasNodes
+
+`func (o *FlowDto) HasNodes() bool`
+
+HasNodes returns a boolean if a field has been set.
 
 ### GetAutoCreateInstances
 
@@ -325,6 +421,56 @@ SetIsDeployed sets IsDeployed field to given value.
 `func (o *FlowDto) HasIsDeployed() bool`
 
 HasIsDeployed returns a boolean if a field has been set.
+
+### GetConfigurationState
+
+`func (o *FlowDto) GetConfigurationState() string`
+
+GetConfigurationState returns the ConfigurationState field if non-nil, zero value otherwise.
+
+### GetConfigurationStateOk
+
+`func (o *FlowDto) GetConfigurationStateOk() (*string, bool)`
+
+GetConfigurationStateOk returns a tuple with the ConfigurationState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationState
+
+`func (o *FlowDto) SetConfigurationState(v string)`
+
+SetConfigurationState sets ConfigurationState field to given value.
+
+### HasConfigurationState
+
+`func (o *FlowDto) HasConfigurationState() bool`
+
+HasConfigurationState returns a boolean if a field has been set.
+
+### GetConfigurationStateMessage
+
+`func (o *FlowDto) GetConfigurationStateMessage() string`
+
+GetConfigurationStateMessage returns the ConfigurationStateMessage field if non-nil, zero value otherwise.
+
+### GetConfigurationStateMessageOk
+
+`func (o *FlowDto) GetConfigurationStateMessageOk() (*string, bool)`
+
+GetConfigurationStateMessageOk returns a tuple with the ConfigurationStateMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationStateMessage
+
+`func (o *FlowDto) SetConfigurationStateMessage(v string)`
+
+SetConfigurationStateMessage sets ConfigurationStateMessage field to given value.
+
+### HasConfigurationStateMessage
+
+`func (o *FlowDto) HasConfigurationStateMessage() bool`
+
+HasConfigurationStateMessage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

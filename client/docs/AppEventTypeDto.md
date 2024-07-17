@@ -4,6 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | 
+**Key** | **string** |  | 
+**Name** | **string** |  | 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Revision** | **string** |  | 
 **PublishedRevision** | Pointer to **string** |  | [optional] 
 **GlobalWebhookUri** | **string** |  | 
@@ -16,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAppEventTypeDto
 
-`func NewAppEventTypeDto(revision string, globalWebhookUri string, ) *AppEventTypeDto`
+`func NewAppEventTypeDto(id string, key string, name string, revision string, globalWebhookUri string, ) *AppEventTypeDto`
 
 NewAppEventTypeDto instantiates a new AppEventTypeDto object
 This constructor will assign default values to properties that have it defined,
@@ -30,6 +34,91 @@ will change when the set of required properties is changed
 NewAppEventTypeDtoWithDefaults instantiates a new AppEventTypeDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *AppEventTypeDto) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AppEventTypeDto) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AppEventTypeDto) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetKey
+
+`func (o *AppEventTypeDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *AppEventTypeDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *AppEventTypeDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetName
+
+`func (o *AppEventTypeDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AppEventTypeDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AppEventTypeDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetArchivedAt
+
+`func (o *AppEventTypeDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *AppEventTypeDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *AppEventTypeDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *AppEventTypeDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetRevision
 

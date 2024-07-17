@@ -1,34 +1,34 @@
 # \DataLinksAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ArchiveDataLinkTableInstance**](DataLinksAPI.md#ArchiveDataLinkTableInstance) | **Delete** /data-link-table-instance | 
-[**CreateDataLinkTable**](DataLinksAPI.md#CreateDataLinkTable) | **Post** /data-link-tables | 
-[**CreateDataLinkTableInstanceLinks**](DataLinksAPI.md#CreateDataLinkTableInstanceLinks) | **Post** /data-link-table-instance/links | 
-[**DeleteDataLinkDto**](DataLinksAPI.md#DeleteDataLinkDto) | **Delete** /data-links/{dataLinkId} | 
-[**DeleteDataLinkTable**](DataLinksAPI.md#DeleteDataLinkTable) | **Delete** /data-link-tables/{idOrKey} | 
-[**DeleteDataLinkTableInstanceLinks**](DataLinksAPI.md#DeleteDataLinkTableInstanceLinks) | **Delete** /data-link-table-instance/links | 
-[**GetDataLinkTable**](DataLinksAPI.md#GetDataLinkTable) | **Get** /data-link-tables/{idOrKey} | 
-[**GetDataLinkTableInstance**](DataLinksAPI.md#GetDataLinkTableInstance) | **Get** /data-link-table-instance | 
-[**GetDataLinkTableInstanceLinks**](DataLinksAPI.md#GetDataLinkTableInstanceLinks) | **Get** /data-link-table-instance/links | 
-[**ListDataLinkTableInstances**](DataLinksAPI.md#ListDataLinkTableInstances) | **Get** /data-link-table-instances | 
-[**ListDataLinkTables**](DataLinksAPI.md#ListDataLinkTables) | **Get** /data-link-tables | 
-[**ListDataLinks**](DataLinksAPI.md#ListDataLinks) | **Get** /data-links | 
-[**PatchDataLinkTable**](DataLinksAPI.md#PatchDataLinkTable) | **Patch** /data-link-tables/{idOrKey} | 
-[**PatchDataLinkTableInstance**](DataLinksAPI.md#PatchDataLinkTableInstance) | **Patch** /data-link-table-instance | 
-[**PostDataLinkTableInstance**](DataLinksAPI.md#PostDataLinkTableInstance) | **Post** /data-link-table-instance | 
-[**PutDataLinkTable**](DataLinksAPI.md#PutDataLinkTable) | **Put** /data-link-tables/{idOrKey} | 
-[**PutDataLinkTableInstance**](DataLinksAPI.md#PutDataLinkTableInstance) | **Put** /data-link-table-instance | 
+[**DataLinkTableInstanceControllerArchiveDataLinkTableInstance**](DataLinksAPI.md#DataLinkTableInstanceControllerArchiveDataLinkTableInstance) | **Delete** /data-link-table-instance | Archive data link table instance
+[**DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks**](DataLinksAPI.md#DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks) | **Post** /data-link-table-instance/links | Create data link table instance link
+[**DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks**](DataLinksAPI.md#DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks) | **Delete** /data-link-table-instance/links | Delete data link table instance link
+[**DataLinkTableInstanceControllerGetDataLinkTableInstance**](DataLinksAPI.md#DataLinkTableInstanceControllerGetDataLinkTableInstance) | **Get** /data-link-table-instance | Get data link table instance
+[**DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks**](DataLinksAPI.md#DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks) | **Get** /data-link-table-instance/links | Get data link table instance links
+[**DataLinkTableInstanceControllerPatchDataLinkTableInstance**](DataLinksAPI.md#DataLinkTableInstanceControllerPatchDataLinkTableInstance) | **Patch** /data-link-table-instance | Path data link table instance
+[**DataLinkTableInstanceControllerPostDataLinkTableInstance**](DataLinksAPI.md#DataLinkTableInstanceControllerPostDataLinkTableInstance) | **Post** /data-link-table-instance | Create data link table instance
+[**DataLinkTableInstanceControllerPutDataLinkTableInstance**](DataLinksAPI.md#DataLinkTableInstanceControllerPutDataLinkTableInstance) | **Put** /data-link-table-instance | Update data link table instance
+[**DataLinkTableInstancesControllerListDataLinkTableInstances**](DataLinksAPI.md#DataLinkTableInstancesControllerListDataLinkTableInstances) | **Get** /data-link-table-instances | List data link table instances
+[**DataLinkTablesControllerCreateDataLinkTable**](DataLinksAPI.md#DataLinkTablesControllerCreateDataLinkTable) | **Post** /data-link-tables | Create data link table
+[**DataLinkTablesControllerDeleteDataLinkTable**](DataLinksAPI.md#DataLinkTablesControllerDeleteDataLinkTable) | **Delete** /data-link-tables/{idOrKey} | Archive data link table
+[**DataLinkTablesControllerGetDataLinkTable**](DataLinksAPI.md#DataLinkTablesControllerGetDataLinkTable) | **Get** /data-link-tables/{idOrKey} | Get data link table
+[**DataLinkTablesControllerListDataLinkTables**](DataLinksAPI.md#DataLinkTablesControllerListDataLinkTables) | **Get** /data-link-tables | List data link tables
+[**DataLinkTablesControllerPatchDataLinkTable**](DataLinksAPI.md#DataLinkTablesControllerPatchDataLinkTable) | **Patch** /data-link-tables/{idOrKey} | Patch data link table
+[**DataLinkTablesControllerPutDataLinkTable**](DataLinksAPI.md#DataLinkTablesControllerPutDataLinkTable) | **Put** /data-link-tables/{idOrKey} | Update data link table
+[**DataLinksControllerDeleteDataLinkDto**](DataLinksAPI.md#DataLinksControllerDeleteDataLinkDto) | **Delete** /data-links/{dataLinkId} | Delete data link
+[**DataLinksControllerListDataLinks**](DataLinksAPI.md#DataLinksControllerListDataLinks) | **Get** /data-links | List data links
 
 
 
-## ArchiveDataLinkTableInstance
+## DataLinkTableInstanceControllerArchiveDataLinkTableInstance
 
-> ArchiveDataLinkTableInstance(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> DataLinkTableInstanceControllerArchiveDataLinkTableInstance(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
-
+Archive data link table instance
 
 ### Example
 
@@ -54,9 +54,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.ArchiveDataLinkTableInstance(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerArchiveDataLinkTableInstance(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.ArchiveDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerArchiveDataLinkTableInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -68,7 +68,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveDataLinkTableInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerArchiveDataLinkTableInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -100,75 +100,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateDataLinkTable
+## DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks
 
-> DataLinkTableDto CreateDataLinkTable(ctx).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
+> DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks(ctx).CreateDataLinkDto(createDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example", "Name_example") // CreateDataLinkTableDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.CreateDataLinkTable(context.Background()).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.CreateDataLinkTable``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CreateDataLinkTable`: DataLinkTableDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.CreateDataLinkTable`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateDataLinkTableRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createDataLinkTableDto** | [**CreateDataLinkTableDto**](CreateDataLinkTableDto.md) |  | 
-
-### Return type
-
-[**DataLinkTableDto**](DataLinkTableDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateDataLinkTableInstanceLinks
-
-> CreateDataLinkTableInstanceLinks(ctx).CreateDataLinkDto(createDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
+Create data link table instance link
 
 ### Example
 
@@ -195,9 +131,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.CreateDataLinkTableInstanceLinks(context.Background()).CreateDataLinkDto(createDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks(context.Background()).CreateDataLinkDto(createDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.CreateDataLinkTableInstanceLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerCreateDataLinkTableInstanceLinks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -209,7 +145,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateDataLinkTableInstanceLinksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerCreateDataLinkTableInstanceLinksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -242,143 +178,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteDataLinkDto
+## DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks
 
-> DeleteDataLinkDto(ctx, dataLinkId).Execute()
+> DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks(ctx).DeleteDataLinkDto(deleteDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	dataLinkId := "dataLinkId_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.DeleteDataLinkDto(context.Background(), dataLinkId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DeleteDataLinkDto``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dataLinkId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteDataLinkDtoRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteDataLinkTable
-
-> DeleteDataLinkTable(ctx, idOrKey).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.DeleteDataLinkTable(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DeleteDataLinkTable``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteDataLinkTableRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteDataLinkTableInstanceLinks
-
-> DeleteDataLinkTableInstanceLinks(ctx).DeleteDataLinkDto(deleteDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
+Delete data link table instance link
 
 ### Example
 
@@ -405,9 +209,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.DeleteDataLinkTableInstanceLinks(context.Background()).DeleteDataLinkDto(deleteDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks(context.Background()).DeleteDataLinkDto(deleteDataLinkDto).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DeleteDataLinkTableInstanceLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -419,7 +223,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteDataLinkTableInstanceLinksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerDeleteDataLinkTableInstanceLinksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -452,79 +256,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetDataLinkTable
+## DataLinkTableInstanceControllerGetDataLinkTableInstance
 
-> DataLinkTableDto GetDataLinkTable(ctx, idOrKey).Execute()
+> DataLinkTableInstanceDto DataLinkTableInstanceControllerGetDataLinkTableInstance(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.GetDataLinkTable(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.GetDataLinkTable``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetDataLinkTable`: DataLinkTableDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.GetDataLinkTable`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetDataLinkTableRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**DataLinkTableDto**](DataLinkTableDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetDataLinkTableInstance
-
-> DataLinkTableInstanceDto GetDataLinkTableInstance(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
+Get data link table instance
 
 ### Example
 
@@ -550,13 +286,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.GetDataLinkTableInstance(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerGetDataLinkTableInstance(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.GetDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerGetDataLinkTableInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDataLinkTableInstance`: DataLinkTableInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.GetDataLinkTableInstance`: %v\n", resp)
+	// response from `DataLinkTableInstanceControllerGetDataLinkTableInstance`: DataLinkTableInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTableInstanceControllerGetDataLinkTableInstance`: %v\n", resp)
 }
 ```
 
@@ -566,7 +302,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDataLinkTableInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerGetDataLinkTableInstanceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -598,11 +334,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetDataLinkTableInstanceLinks
+## DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks
 
-> GetDataLinkTableInstanceLinks(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Direction(direction).AppRecordId(appRecordId).ExternalRecordId(externalRecordId).Limit(limit).Cursor(cursor).Execute()
+> DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks(ctx).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Direction(direction).AppRecordId(appRecordId).ExternalRecordId(externalRecordId).Limit(limit).Cursor(cursor).Execute()
 
-
+Get data link table instance links
 
 ### Example
 
@@ -633,9 +369,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DataLinksAPI.GetDataLinkTableInstanceLinks(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Direction(direction).AppRecordId(appRecordId).ExternalRecordId(externalRecordId).Limit(limit).Cursor(cursor).Execute()
+	r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks(context.Background()).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Direction(direction).AppRecordId(appRecordId).ExternalRecordId(externalRecordId).Limit(limit).Cursor(cursor).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.GetDataLinkTableInstanceLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerGetDataLinkTableInstanceLinks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -647,7 +383,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDataLinkTableInstanceLinksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerGetDataLinkTableInstanceLinksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -684,11 +420,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListDataLinkTableInstances
+## DataLinkTableInstanceControllerPatchDataLinkTableInstance
 
-> ListDataLinkTableInstances200Response ListDataLinkTableInstances(ctx).Id(id).UserId(userId).DataLinkTableId(dataLinkTableId).ConnectionId(connectionId).IntegrationId(integrationId).Execute()
+> DataLinkTableInstanceDto DataLinkTableInstanceControllerPatchDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
 
-
+Path data link table instance
 
 ### Example
 
@@ -703,6 +439,248 @@ import (
 )
 
 func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
+	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+	integrationKey := "integrationKey_example" // string |  (optional)
+	integrationId := "integrationId_example" // string |  (optional)
+	connectionId := "connectionId_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerPatchDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerPatchDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinkTableInstanceControllerPatchDataLinkTableInstance`: DataLinkTableInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTableInstanceControllerPatchDataLinkTableInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerPatchDataLinkTableInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **dataLinkTableId** | **string** |  | 
+ **dataLinkTableKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+ **integrationKey** | **string** |  | 
+ **integrationId** | **string** |  | 
+ **connectionId** | **string** |  | 
+
+### Return type
+
+[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTableInstanceControllerPostDataLinkTableInstance
+
+> DataLinkTableInstanceDto DataLinkTableInstanceControllerPostDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+
+Create data link table instance
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
+	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+	integrationKey := "integrationKey_example" // string |  (optional)
+	integrationId := "integrationId_example" // string |  (optional)
+	connectionId := "connectionId_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerPostDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerPostDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinkTableInstanceControllerPostDataLinkTableInstance`: DataLinkTableInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTableInstanceControllerPostDataLinkTableInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerPostDataLinkTableInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **dataLinkTableId** | **string** |  | 
+ **dataLinkTableKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+ **integrationKey** | **string** |  | 
+ **integrationId** | **string** |  | 
+ **connectionId** | **string** |  | 
+
+### Return type
+
+[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTableInstanceControllerPutDataLinkTableInstance
+
+> DataLinkTableInstanceDto DataLinkTableInstanceControllerPutDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+
+Update data link table instance
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+	id := "id_example" // string |  (optional)
+	instanceKey := "instanceKey_example" // string |  (optional)
+	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
+	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+	integrationKey := "integrationKey_example" // string |  (optional)
+	integrationId := "integrationId_example" // string |  (optional)
+	connectionId := "connectionId_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTableInstanceControllerPutDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstanceControllerPutDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinkTableInstanceControllerPutDataLinkTableInstance`: DataLinkTableInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTableInstanceControllerPutDataLinkTableInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTableInstanceControllerPutDataLinkTableInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+ **id** | **string** |  | 
+ **instanceKey** | **string** |  | 
+ **dataLinkTableId** | **string** |  | 
+ **dataLinkTableKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+ **integrationKey** | **string** |  | 
+ **integrationId** | **string** |  | 
+ **connectionId** | **string** |  | 
+
+### Return type
+
+[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTableInstancesControllerListDataLinkTableInstances
+
+> DataLinkTableInstancesControllerListDataLinkTableInstances200Response DataLinkTableInstancesControllerListDataLinkTableInstances(ctx).Limit(limit).Cursor(cursor).Id(id).UserId(userId).DataLinkTableId(dataLinkTableId).ConnectionId(connectionId).IntegrationId(integrationId).Execute()
+
+List data link table instances
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
 	id := "id_example" // string |  (optional)
 	userId := "userId_example" // string |  (optional)
 	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
@@ -711,13 +689,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.ListDataLinkTableInstances(context.Background()).Id(id).UserId(userId).DataLinkTableId(dataLinkTableId).ConnectionId(connectionId).IntegrationId(integrationId).Execute()
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTableInstancesControllerListDataLinkTableInstances(context.Background()).Limit(limit).Cursor(cursor).Id(id).UserId(userId).DataLinkTableId(dataLinkTableId).ConnectionId(connectionId).IntegrationId(integrationId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.ListDataLinkTableInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTableInstancesControllerListDataLinkTableInstances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDataLinkTableInstances`: ListDataLinkTableInstances200Response
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.ListDataLinkTableInstances`: %v\n", resp)
+	// response from `DataLinkTableInstancesControllerListDataLinkTableInstances`: DataLinkTableInstancesControllerListDataLinkTableInstances200Response
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTableInstancesControllerListDataLinkTableInstances`: %v\n", resp)
 }
 ```
 
@@ -727,11 +705,13 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDataLinkTableInstancesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTableInstancesControllerListDataLinkTableInstancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
  **id** | **string** |  | 
  **userId** | **string** |  | 
  **dataLinkTableId** | **string** |  | 
@@ -740,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDataLinkTableInstances200Response**](ListDataLinkTableInstances200Response.md)
+[**DataLinkTableInstancesControllerListDataLinkTableInstances200Response**](DataLinkTableInstancesControllerListDataLinkTableInstances200Response.md)
 
 ### Authorization
 
@@ -756,70 +736,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListDataLinkTables
+## DataLinkTablesControllerCreateDataLinkTable
 
-> ListDataLinkTables200Response ListDataLinkTables(ctx).Execute()
+> DataLinkTableDto DataLinkTablesControllerCreateDataLinkTable(ctx).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.ListDataLinkTables(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.ListDataLinkTables``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListDataLinkTables`: ListDataLinkTables200Response
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.ListDataLinkTables`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListDataLinkTablesRequest struct via the builder pattern
-
-
-### Return type
-
-[**ListDataLinkTables200Response**](ListDataLinkTables200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListDataLinks
-
-> ListDataLinks200Response ListDataLinks(ctx).DataLinkTableInstanceId(dataLinkTableInstanceId).ExternalRecordId(externalRecordId).AppRecordId(appRecordId).Direction(direction).Execute()
-
-
+Create data link table
 
 ### Example
 
@@ -834,20 +755,17 @@ import (
 )
 
 func main() {
-	dataLinkTableInstanceId := "dataLinkTableInstanceId_example" // string | 
-	externalRecordId := "externalRecordId_example" // string |  (optional)
-	appRecordId := "appRecordId_example" // string |  (optional)
-	direction := "direction_example" // string |  (optional)
+	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example", "Name_example") // CreateDataLinkTableDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.ListDataLinks(context.Background()).DataLinkTableInstanceId(dataLinkTableInstanceId).ExternalRecordId(externalRecordId).AppRecordId(appRecordId).Direction(direction).Execute()
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTablesControllerCreateDataLinkTable(context.Background()).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.ListDataLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerCreateDataLinkTable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDataLinks`: ListDataLinks200Response
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.ListDataLinks`: %v\n", resp)
+	// response from `DataLinkTablesControllerCreateDataLinkTable`: DataLinkTableDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTablesControllerCreateDataLinkTable`: %v\n", resp)
 }
 ```
 
@@ -857,19 +775,150 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDataLinksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerCreateDataLinkTableRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dataLinkTableInstanceId** | **string** |  | 
- **externalRecordId** | **string** |  | 
- **appRecordId** | **string** |  | 
- **direction** | **string** |  | 
+ **createDataLinkTableDto** | [**CreateDataLinkTableDto**](CreateDataLinkTableDto.md) |  | 
 
 ### Return type
 
-[**ListDataLinks200Response**](ListDataLinks200Response.md)
+[**DataLinkTableDto**](DataLinkTableDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTablesControllerDeleteDataLinkTable
+
+> DataLinkTablesControllerDeleteDataLinkTable(ctx, idOrKey).Execute()
+
+Archive data link table
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	idOrKey := "idOrKey_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.DataLinksAPI.DataLinkTablesControllerDeleteDataLinkTable(context.Background(), idOrKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerDeleteDataLinkTable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**idOrKey** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerDeleteDataLinkTableRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTablesControllerGetDataLinkTable
+
+> DataLinkTableDto DataLinkTablesControllerGetDataLinkTable(ctx, idOrKey).Execute()
+
+Get data link table
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	idOrKey := "idOrKey_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTablesControllerGetDataLinkTable(context.Background(), idOrKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerGetDataLinkTable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinkTablesControllerGetDataLinkTable`: DataLinkTableDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTablesControllerGetDataLinkTable`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**idOrKey** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerGetDataLinkTableRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DataLinkTableDto**](DataLinkTableDto.md)
 
 ### Authorization
 
@@ -885,11 +934,81 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PatchDataLinkTable
+## DataLinkTablesControllerListDataLinkTables
 
-> DataLinkTableDto PatchDataLinkTable(ctx, idOrKey).UpdateDataLinkTableDto(updateDataLinkTableDto).Execute()
+> DataLinkTablesControllerListDataLinkTables200Response DataLinkTablesControllerListDataLinkTables(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
+
+List data link tables
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTablesControllerListDataLinkTables(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerListDataLinkTables``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinkTablesControllerListDataLinkTables`: DataLinkTablesControllerListDataLinkTables200Response
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTablesControllerListDataLinkTables`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerListDataLinkTablesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+
+### Return type
+
+[**DataLinkTablesControllerListDataLinkTables200Response**](DataLinkTablesControllerListDataLinkTables200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinkTablesControllerPatchDataLinkTable
+
+> DataLinkTableDto DataLinkTablesControllerPatchDataLinkTable(ctx, idOrKey).UpdateDataLinkTableDto(updateDataLinkTableDto).Execute()
+
+Patch data link table
 
 ### Example
 
@@ -909,13 +1028,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.PatchDataLinkTable(context.Background(), idOrKey).UpdateDataLinkTableDto(updateDataLinkTableDto).Execute()
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTablesControllerPatchDataLinkTable(context.Background(), idOrKey).UpdateDataLinkTableDto(updateDataLinkTableDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.PatchDataLinkTable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerPatchDataLinkTable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchDataLinkTable`: DataLinkTableDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.PatchDataLinkTable`: %v\n", resp)
+	// response from `DataLinkTablesControllerPatchDataLinkTable`: DataLinkTableDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTablesControllerPatchDataLinkTable`: %v\n", resp)
 }
 ```
 
@@ -929,7 +1048,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchDataLinkTableRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerPatchDataLinkTableRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -955,171 +1074,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PatchDataLinkTableInstance
+## DataLinkTablesControllerPutDataLinkTable
 
-> DataLinkTableInstanceDto PatchDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> DataLinkTableDto DataLinkTablesControllerPutDataLinkTable(ctx, idOrKey).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} | 
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
-	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.PatchDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.PatchDataLinkTableInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchDataLinkTableInstance`: DataLinkTableInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.PatchDataLinkTableInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchDataLinkTableInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **dataLinkTableId** | **string** |  | 
- **dataLinkTableKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostDataLinkTableInstance
-
-> DataLinkTableInstanceDto PostDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} | 
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
-	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.PostDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.PostDataLinkTableInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PostDataLinkTableInstance`: DataLinkTableInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.PostDataLinkTableInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostDataLinkTableInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **dataLinkTableId** | **string** |  | 
- **dataLinkTableKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutDataLinkTable
-
-> DataLinkTableDto PutDataLinkTable(ctx, idOrKey).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
-
-
+Update data link table
 
 ### Example
 
@@ -1139,13 +1098,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.PutDataLinkTable(context.Background(), idOrKey).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
+	resp, r, err := apiClient.DataLinksAPI.DataLinkTablesControllerPutDataLinkTable(context.Background(), idOrKey).CreateDataLinkTableDto(createDataLinkTableDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.PutDataLinkTable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinkTablesControllerPutDataLinkTable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutDataLinkTable`: DataLinkTableDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.PutDataLinkTable`: %v\n", resp)
+	// response from `DataLinkTablesControllerPutDataLinkTable`: DataLinkTableDto
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinkTablesControllerPutDataLinkTable`: %v\n", resp)
 }
 ```
 
@@ -1159,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutDataLinkTableRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinkTablesControllerPutDataLinkTableRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1185,11 +1144,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutDataLinkTableInstance
+## DataLinksControllerDeleteDataLinkDto
 
-> DataLinkTableInstanceDto PutDataLinkTableInstance(ctx).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> DataLinksControllerDeleteDataLinkDto(ctx, dataLinkId).Execute()
 
-
+Delete data link
 
 ### Example
 
@@ -1204,25 +1163,88 @@ import (
 )
 
 func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} | 
-	id := "id_example" // string |  (optional)
-	instanceKey := "instanceKey_example" // string |  (optional)
-	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
-	dataLinkTableKey := "dataLinkTableKey_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
+	dataLinkId := "dataLinkId_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DataLinksAPI.PutDataLinkTableInstance(context.Background()).Body(body).Id(id).InstanceKey(instanceKey).DataLinkTableId(dataLinkTableId).DataLinkTableKey(dataLinkTableKey).AutoCreate(autoCreate).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	r, err := apiClient.DataLinksAPI.DataLinksControllerDeleteDataLinkDto(context.Background(), dataLinkId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.PutDataLinkTableInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinksControllerDeleteDataLinkDto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutDataLinkTableInstance`: DataLinkTableInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.PutDataLinkTableInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**dataLinkId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDataLinksControllerDeleteDataLinkDtoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DataLinksControllerListDataLinks
+
+> DataLinksControllerListDataLinks200Response DataLinksControllerListDataLinks(ctx).DataLinkTableInstanceId(dataLinkTableInstanceId).Limit(limit).Cursor(cursor).ExternalRecordId(externalRecordId).AppRecordId(appRecordId).Direction(direction).Execute()
+
+List data links
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	dataLinkTableInstanceId := "dataLinkTableInstanceId_example" // string | 
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	externalRecordId := "externalRecordId_example" // string |  (optional)
+	appRecordId := "appRecordId_example" // string |  (optional)
+	direction := "direction_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DataLinksAPI.DataLinksControllerListDataLinks(context.Background()).DataLinkTableInstanceId(dataLinkTableInstanceId).Limit(limit).Cursor(cursor).ExternalRecordId(externalRecordId).AppRecordId(appRecordId).Direction(direction).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DataLinksAPI.DataLinksControllerListDataLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DataLinksControllerListDataLinks`: DataLinksControllerListDataLinks200Response
+	fmt.Fprintf(os.Stdout, "Response from `DataLinksAPI.DataLinksControllerListDataLinks`: %v\n", resp)
 }
 ```
 
@@ -1232,24 +1254,21 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutDataLinkTableInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDataLinksControllerListDataLinksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
- **id** | **string** |  | 
- **instanceKey** | **string** |  | 
- **dataLinkTableId** | **string** |  | 
- **dataLinkTableKey** | **string** |  | 
- **autoCreate** | **bool** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
+ **dataLinkTableInstanceId** | **string** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **externalRecordId** | **string** |  | 
+ **appRecordId** | **string** |  | 
+ **direction** | **string** |  | 
 
 ### Return type
 
-[**DataLinkTableInstanceDto**](DataLinkTableInstanceDto.md)
+[**DataLinksControllerListDataLinks200Response**](DataLinksControllerListDataLinks200Response.md)
 
 ### Authorization
 
@@ -1257,7 +1276,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

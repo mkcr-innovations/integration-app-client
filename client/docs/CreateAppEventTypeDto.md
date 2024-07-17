@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | **string** |  | 
-**Name** | **string** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Schema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Example** | Pointer to **map[string]interface{}** |  | [optional] 
 **UserIdFormula** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewCreateAppEventTypeDto
 
-`func NewCreateAppEventTypeDto(key string, name string, ) *CreateAppEventTypeDto`
+`func NewCreateAppEventTypeDto() *CreateAppEventTypeDto`
 
 NewCreateAppEventTypeDto instantiates a new CreateAppEventTypeDto object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *CreateAppEventTypeDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetName
 
@@ -69,6 +75,36 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CreateAppEventTypeDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetArchivedAt
+
+`func (o *CreateAppEventTypeDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *CreateAppEventTypeDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *CreateAppEventTypeDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *CreateAppEventTypeDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetSchema
 

@@ -1,23 +1,23 @@
 # \CustomersAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomer**](CustomersAPI.md#CreateCustomer) | **Post** /customers | 
-[**DeleteCustomer**](CustomersAPI.md#DeleteCustomer) | **Delete** /customers/{id} | 
-[**GetCustomer**](CustomersAPI.md#GetCustomer) | **Get** /customers/{id} | 
-[**ListCustomers**](CustomersAPI.md#ListCustomers) | **Get** /customers | 
-[**PatchCustomer**](CustomersAPI.md#PatchCustomer) | **Patch** /customers/{id} | 
-[**PutCustomer**](CustomersAPI.md#PutCustomer) | **Put** /customers/{id} | 
+[**CustomersControllerCreateCustomer**](CustomersAPI.md#CustomersControllerCreateCustomer) | **Post** /customers | Create customer
+[**CustomersControllerDeleteCustomer**](CustomersAPI.md#CustomersControllerDeleteCustomer) | **Delete** /customers/{id} | Delete customer
+[**CustomersControllerGetCustomer**](CustomersAPI.md#CustomersControllerGetCustomer) | **Get** /customers/{id} | Get customer
+[**CustomersControllerListCustomers**](CustomersAPI.md#CustomersControllerListCustomers) | **Get** /customers | List customers
+[**CustomersControllerPatchCustomer**](CustomersAPI.md#CustomersControllerPatchCustomer) | **Patch** /customers/{id} | Patch customer
+[**CustomersControllerPutCustomer**](CustomersAPI.md#CustomersControllerPutCustomer) | **Put** /customers/{id} | Update customer
 
 
 
-## CreateCustomer
+## CustomersControllerCreateCustomer
 
-> CustomerDto CreateCustomer(ctx).CreateCustomerDto(createCustomerDto).Execute()
+> CustomerDto CustomersControllerCreateCustomer(ctx).CreateCustomerDto(createCustomerDto).Execute()
 
-
+Create customer
 
 ### Example
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.CreateCustomer(context.Background()).CreateCustomerDto(createCustomerDto).Execute()
+	resp, r, err := apiClient.CustomersAPI.CustomersControllerCreateCustomer(context.Background()).CreateCustomerDto(createCustomerDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerCreateCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateCustomer`: CustomerDto
-	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomer`: %v\n", resp)
+	// response from `CustomersControllerCreateCustomer`: CustomerDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CustomersControllerCreateCustomer`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCustomerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerCreateCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,11 +77,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteCustomer
+## CustomersControllerDeleteCustomer
 
-> DeleteCustomer(ctx, id).Execute()
+> CustomersControllerDeleteCustomer(ctx, id).Execute()
 
-
+Delete customer
 
 ### Example
 
@@ -100,9 +100,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomersAPI.DeleteCustomer(context.Background(), id).Execute()
+	r, err := apiClient.CustomersAPI.CustomersControllerDeleteCustomer(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.DeleteCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerDeleteCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCustomerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerDeleteCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,11 +143,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetCustomer
+## CustomersControllerGetCustomer
 
-> CustomerDto GetCustomer(ctx, id).Execute()
+> CustomerDto CustomersControllerGetCustomer(ctx, id).Execute()
 
-
+Get customer
 
 ### Example
 
@@ -166,13 +166,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.GetCustomer(context.Background(), id).Execute()
+	resp, r, err := apiClient.CustomersAPI.CustomersControllerGetCustomer(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerGetCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCustomer`: CustomerDto
-	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomer`: %v\n", resp)
+	// response from `CustomersControllerGetCustomer`: CustomerDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CustomersControllerGetCustomer`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerGetCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,11 +211,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListCustomers
+## CustomersControllerListCustomers
 
-> ListCustomers200Response ListCustomers(ctx).Execute()
+> CustomersControllerListCustomers200Response CustomersControllerListCustomers(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IsTest(isTest).Execute()
 
-
+List customers
 
 ### Example
 
@@ -230,31 +230,44 @@ import (
 )
 
 func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	isTest := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.ListCustomers(context.Background()).Execute()
+	resp, r, err := apiClient.CustomersAPI.CustomersControllerListCustomers(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IsTest(isTest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListCustomers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerListCustomers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListCustomers`: ListCustomers200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListCustomers`: %v\n", resp)
+	// response from `CustomersControllerListCustomers`: CustomersControllerListCustomers200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CustomersControllerListCustomers`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCustomersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerListCustomersRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **isTest** | **bool** |  | 
 
 ### Return type
 
-[**ListCustomers200Response**](ListCustomers200Response.md)
+[**CustomersControllerListCustomers200Response**](CustomersControllerListCustomers200Response.md)
 
 ### Authorization
 
@@ -270,11 +283,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PatchCustomer
+## CustomersControllerPatchCustomer
 
-> CustomerDto PatchCustomer(ctx, id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
+> CustomerDto CustomersControllerPatchCustomer(ctx, id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
 
-
+Patch customer
 
 ### Example
 
@@ -294,13 +307,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.PatchCustomer(context.Background(), id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
+	resp, r, err := apiClient.CustomersAPI.CustomersControllerPatchCustomer(context.Background(), id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.PatchCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerPatchCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchCustomer`: CustomerDto
-	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.PatchCustomer`: %v\n", resp)
+	// response from `CustomersControllerPatchCustomer`: CustomerDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CustomersControllerPatchCustomer`: %v\n", resp)
 }
 ```
 
@@ -314,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchCustomerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerPatchCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -340,11 +353,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutCustomer
+## CustomersControllerPutCustomer
 
-> CustomerDto PutCustomer(ctx, id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
+> CustomerDto CustomersControllerPutCustomer(ctx, id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
 
-
+Update customer
 
 ### Example
 
@@ -364,13 +377,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.PutCustomer(context.Background(), id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
+	resp, r, err := apiClient.CustomersAPI.CustomersControllerPutCustomer(context.Background(), id).UpdateCustomerAsAdminDto(updateCustomerAsAdminDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.PutCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CustomersControllerPutCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutCustomer`: CustomerDto
-	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.PutCustomer`: %v\n", resp)
+	// response from `CustomersControllerPutCustomer`: CustomerDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CustomersControllerPutCustomer`: %v\n", resp)
 }
 ```
 
@@ -384,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutCustomerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomersControllerPutCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

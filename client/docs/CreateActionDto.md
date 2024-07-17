@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
 **Name** | **string** |  | 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**IntegrationId** | Pointer to **string** |  | [optional] 
 **InputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **OutputMapping** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomOutputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -72,6 +73,31 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
+### GetArchivedAt
+
+`func (o *CreateActionDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *CreateActionDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *CreateActionDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *CreateActionDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
+
 ### GetType
 
 `func (o *CreateActionDto) GetType() string`
@@ -96,31 +122,6 @@ SetType sets Type field to given value.
 `func (o *CreateActionDto) HasType() bool`
 
 HasType returns a boolean if a field has been set.
-
-### GetIntegrationId
-
-`func (o *CreateActionDto) GetIntegrationId() string`
-
-GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
-
-### GetIntegrationIdOk
-
-`func (o *CreateActionDto) GetIntegrationIdOk() (*string, bool)`
-
-GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegrationId
-
-`func (o *CreateActionDto) SetIntegrationId(v string)`
-
-SetIntegrationId sets IntegrationId field to given value.
-
-### HasIntegrationId
-
-`func (o *CreateActionDto) HasIntegrationId() bool`
-
-HasIntegrationId returns a boolean if a field has been set.
 
 ### GetInputSchema
 
@@ -221,6 +222,31 @@ SetCustomOutputSchema sets CustomOutputSchema field to given value.
 `func (o *CreateActionDto) HasCustomOutputSchema() bool`
 
 HasCustomOutputSchema returns a boolean if a field has been set.
+
+### GetIntegrationId
+
+`func (o *CreateActionDto) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *CreateActionDto) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *CreateActionDto) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+### HasIntegrationId
+
+`func (o *CreateActionDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,110 +1,44 @@
 # \ActionsAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionInstanceSetup**](ActionsAPI.md#ActionInstanceSetup) | **Post** /action-instance/setup | 
-[**ApplyAction**](ActionsAPI.md#ApplyAction) | **Post** /actions/{id}/apply | 
-[**ApplyActions**](ActionsAPI.md#ApplyActions) | **Post** /action/apply | 
-[**ArchiveAction**](ActionsAPI.md#ArchiveAction) | **Delete** /actions/{id} | 
-[**ArchiveActions**](ActionsAPI.md#ArchiveActions) | **Delete** /action | 
-[**CreateAction**](ActionsAPI.md#CreateAction) | **Post** /actions | 
-[**DeleteActionInstance**](ActionsAPI.md#DeleteActionInstance) | **Delete** /action-instance | 
-[**GetAction**](ActionsAPI.md#GetAction) | **Get** /actions/{id} | 
-[**GetActionInstance**](ActionsAPI.md#GetActionInstance) | **Get** /action-instance | 
-[**GetActions**](ActionsAPI.md#GetActions) | **Get** /action | 
-[**ListActionInstances**](ActionsAPI.md#ListActionInstances) | **Get** /action-instances | 
-[**ListActions**](ActionsAPI.md#ListActions) | **Get** /actions | 
-[**PatchAction**](ActionsAPI.md#PatchAction) | **Patch** /actions/{id} | 
-[**PatchActionInstance**](ActionsAPI.md#PatchActionInstance) | **Patch** /action-instance | 
-[**PatchActions**](ActionsAPI.md#PatchActions) | **Patch** /action | 
-[**PostActionInstance**](ActionsAPI.md#PostActionInstance) | **Post** /action-instance | 
-[**PutAction**](ActionsAPI.md#PutAction) | **Put** /actions/{id} | 
-[**PutActionInstance**](ActionsAPI.md#PutActionInstance) | **Put** /action-instance | 
-[**PutActions**](ActionsAPI.md#PutActions) | **Put** /action | 
-[**ResetAction**](ActionsAPI.md#ResetAction) | **Post** /actions/{id}/reset | 
-[**ResetActionInstance**](ActionsAPI.md#ResetActionInstance) | **Post** /action-instance/reset | 
-[**ResetActions**](ActionsAPI.md#ResetActions) | **Post** /action/reset | 
-[**RunActionInstance**](ActionsAPI.md#RunActionInstance) | **Post** /action-instance/run | 
+[**ActionByIdControllerApply**](ActionsAPI.md#ActionByIdControllerApply) | **Post** /actions/{id}/apply | Apply action to integrations
+[**ActionByIdControllerArchive**](ActionsAPI.md#ActionByIdControllerArchive) | **Delete** /actions/{id} | Delete action by id
+[**ActionByIdControllerClone**](ActionsAPI.md#ActionByIdControllerClone) | **Post** /actions/{id}/clone | 
+[**ActionByIdControllerExport**](ActionsAPI.md#ActionByIdControllerExport) | **Get** /actions/{id}/export | 
+[**ActionByIdControllerGet**](ActionsAPI.md#ActionByIdControllerGet) | **Get** /actions/{id} | Get action by id
+[**ActionByIdControllerPatch**](ActionsAPI.md#ActionByIdControllerPatch) | **Patch** /actions/{id} | Patch action by id
+[**ActionByIdControllerPut**](ActionsAPI.md#ActionByIdControllerPut) | **Put** /actions/{id} | Update action by id
+[**ActionByIdControllerReset**](ActionsAPI.md#ActionByIdControllerReset) | **Post** /actions/{id}/reset | Reset action by id
+[**ActionInstancesControllerListActionInstances**](ActionsAPI.md#ActionInstancesControllerListActionInstances) | **Get** /action-instances | List action instances
+[**ActionsControllerCreateAction**](ActionsAPI.md#ActionsControllerCreateAction) | **Post** /actions | Create action
+[**ActionsControllerListActions**](ActionsAPI.md#ActionsControllerListActions) | **Get** /actions | List actions
+[**ConnectionLevelActionControllerArchive**](ActionsAPI.md#ConnectionLevelActionControllerArchive) | **Delete** /connections/{connectionSelector}/actions/{actionSelector} | Archive action instance for connection
+[**ConnectionLevelActionControllerGet**](ActionsAPI.md#ConnectionLevelActionControllerGet) | **Get** /connections/{connectionSelector}/actions/{actionSelector} | Get action instance for connection
+[**ConnectionLevelActionControllerPatch**](ActionsAPI.md#ConnectionLevelActionControllerPatch) | **Patch** /connections/{connectionSelector}/actions/{actionSelector} | Patch update action instance for connection
+[**ConnectionLevelActionControllerPut**](ActionsAPI.md#ConnectionLevelActionControllerPut) | **Put** /connections/{connectionSelector}/actions/{actionSelector} | Create or Replace action instance
+[**ConnectionLevelActionControllerReset**](ActionsAPI.md#ConnectionLevelActionControllerReset) | **Post** /connections/{connectionSelector}/actions/{actionSelector}/reset | Reset action instance for connection
+[**ConnectionLevelActionControllerRun**](ActionsAPI.md#ConnectionLevelActionControllerRun) | **Post** /connections/{connectionSelector}/actions/{actionSelector}/run | Run action instance for connection
+[**ConnectionLevelActionControllerSetup**](ActionsAPI.md#ConnectionLevelActionControllerSetup) | **Post** /connections/{connectionSelector}/actions/{actionSelector}/setup | Setup action instance for connection
+[**ConnectionLevelActionsControllerList**](ActionsAPI.md#ConnectionLevelActionsControllerList) | **Get** /connections/{connectionSelector}/actions | List action instances for connection
+[**IntegrationLevelActionControllerArchive**](ActionsAPI.md#IntegrationLevelActionControllerArchive) | **Delete** /integrations/{integrationSelector}/actions/{actionSelector} | Archive action for integration
+[**IntegrationLevelActionControllerExport**](ActionsAPI.md#IntegrationLevelActionControllerExport) | **Get** /integrations/{integrationSelector}/actions/{actionSelector}/export | 
+[**IntegrationLevelActionControllerGet**](ActionsAPI.md#IntegrationLevelActionControllerGet) | **Get** /integrations/{integrationSelector}/actions/{actionSelector} | Get action for integration
+[**IntegrationLevelActionControllerPatch**](ActionsAPI.md#IntegrationLevelActionControllerPatch) | **Patch** /integrations/{integrationSelector}/actions/{actionSelector} | Patch update action for integration
+[**IntegrationLevelActionControllerPut**](ActionsAPI.md#IntegrationLevelActionControllerPut) | **Put** /integrations/{integrationSelector}/actions/{actionSelector} | Update action for integration
+[**IntegrationLevelActionControllerReset**](ActionsAPI.md#IntegrationLevelActionControllerReset) | **Post** /integrations/{integrationSelector}/actions/{actionSelector}/reset | Reset action for integration
+[**IntegrationLevelActionsControllerCreate**](ActionsAPI.md#IntegrationLevelActionsControllerCreate) | **Post** /integrations/{integrationSelector}/actions | Create action for integration
+[**IntegrationLevelActionsControllerList**](ActionsAPI.md#IntegrationLevelActionsControllerList) | **Get** /integrations/{integrationSelector}/actions | List actions for integration
 
 
 
-## ActionInstanceSetup
+## ActionByIdControllerApply
 
-> ActionInstanceDto ActionInstanceSetup(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> []ActionDto ActionByIdControllerApply(ctx, id).ApplyToIntegrationsDto(applyToIntegrationsDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ActionInstanceSetup(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionInstanceSetup``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ActionInstanceSetup`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionInstanceSetup`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiActionInstanceSetupRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ApplyAction
-
-> []ActionDto ApplyAction(ctx, id).AutoCreate(autoCreate).Execute()
-
-
+Apply action to integrations
 
 ### Example
 
@@ -119,18 +53,18 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
-	autoCreate := true // bool |  (optional)
+	id := "id_example" // string | ID
+	applyToIntegrationsDto := *openapiclient.NewApplyToIntegrationsDto([]string{"IntegrationKeys_example"}) // ApplyToIntegrationsDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ApplyAction(context.Background(), id).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerApply(context.Background(), id).ApplyToIntegrationsDto(applyToIntegrationsDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ApplyAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerApply``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApplyAction`: []ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ApplyAction`: %v\n", resp)
+	// response from `ActionByIdControllerApply`: []ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerApply`: %v\n", resp)
 }
 ```
 
@@ -140,17 +74,17 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | ID | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApplyActionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActionByIdControllerApplyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **autoCreate** | **bool** |  | 
+ **applyToIntegrationsDto** | [**ApplyToIntegrationsDto**](ApplyToIntegrationsDto.md) |  | 
 
 ### Return type
 
@@ -162,7 +96,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -170,11 +104,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ApplyActions
+## ActionByIdControllerArchive
 
-> []ActionDto ApplyActions(ctx).AutoCreate(autoCreate).Execute()
+> ActionByIdControllerArchive(ctx, id).Execute()
 
-
+Delete action by id
 
 ### Example
 
@@ -189,78 +123,13 @@ import (
 )
 
 func main() {
-	autoCreate := true // bool |  (optional)
+	id := "id_example" // string | ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ApplyActions(context.Background()).AutoCreate(autoCreate).Execute()
+	r, err := apiClient.ActionsAPI.ActionByIdControllerArchive(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ApplyActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ApplyActions`: []ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ApplyActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiApplyActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**[]ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ArchiveAction
-
-> ArchiveAction(ctx, id).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | The ID of the action to retrive
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.ArchiveAction(context.Background(), id).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ArchiveAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerArchive``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -272,17 +141,16 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the action to retrive | 
+**id** | **string** | ID | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveActionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActionByIdControllerArchiveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **autoCreate** | **bool** |  | 
 
 ### Return type
 
@@ -302,9 +170,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ArchiveActions
+## ActionByIdControllerClone
 
-> ArchiveActions(ctx).AutoCreate(autoCreate).Execute()
+> ActionDto ActionByIdControllerClone(ctx, id).Execute()
 
 
 
@@ -321,15 +189,433 @@ import (
 )
 
 func main() {
-	autoCreate := true // bool |  (optional)
+	id := "id_example" // string | ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.ArchiveActions(context.Background()).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerClone(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ArchiveActions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerClone``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ActionByIdControllerClone`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerClone`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerCloneRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionByIdControllerExport
+
+> ActionExportDto ActionByIdControllerExport(ctx, id).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerExport(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionByIdControllerExport`: ActionExportDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerExport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerExportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ActionExportDto**](ActionExportDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionByIdControllerGet
+
+> ActionDto ActionByIdControllerGet(ctx, id).Execute()
+
+Get action by id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerGet(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionByIdControllerGet`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionByIdControllerPatch
+
+> ActionDto ActionByIdControllerPatch(ctx, id).UpdateActionDto(updateActionDto).Execute()
+
+Patch action by id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerPatch(context.Background(), id).UpdateActionDto(updateActionDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionByIdControllerPatch`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionByIdControllerPut
+
+> ActionDto ActionByIdControllerPut(ctx, id).UpdateActionDto(updateActionDto).Execute()
+
+Update action by id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerPut(context.Background(), id).UpdateActionDto(updateActionDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionByIdControllerPut`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionByIdControllerReset
+
+> ActionDto ActionByIdControllerReset(ctx, id).Execute()
+
+Reset action by id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	id := "id_example" // string | ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionByIdControllerReset(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionByIdControllerReset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionByIdControllerReset`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionByIdControllerReset`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActionByIdControllerResetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ActionInstancesControllerListActionInstances
+
+> ActionInstancesControllerListActionInstances200Response ActionInstancesControllerListActionInstances(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Execute()
+
+List action instances
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ActionInstancesControllerListActionInstances(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionInstancesControllerListActionInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActionInstancesControllerListActionInstances`: ActionInstancesControllerListActionInstances200Response
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionInstancesControllerListActionInstances`: %v\n", resp)
 }
 ```
 
@@ -339,16 +625,20 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveActionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActionInstancesControllerListActionInstancesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **autoCreate** | **bool** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
 
 ### Return type
 
- (empty response body)
+[**ActionInstancesControllerListActionInstances200Response**](ActionInstancesControllerListActionInstances200Response.md)
 
 ### Authorization
 
@@ -357,18 +647,18 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CreateAction
+## ActionsControllerCreateAction
 
-> ActionDto CreateAction(ctx).CreateActionDto(createActionDto).Execute()
+> ActionDto ActionsControllerCreateAction(ctx).CreateActionDto(createActionDto).Execute()
 
-
+Create action
 
 ### Example
 
@@ -387,13 +677,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.CreateAction(context.Background()).CreateActionDto(createActionDto).Execute()
+	resp, r, err := apiClient.ActionsAPI.ActionsControllerCreateAction(context.Background()).CreateActionDto(createActionDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.CreateAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionsControllerCreateAction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateAction`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.CreateAction`: %v\n", resp)
+	// response from `ActionsControllerCreateAction`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionsControllerCreateAction`: %v\n", resp)
 }
 ```
 
@@ -403,7 +693,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateActionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActionsControllerCreateActionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -428,11 +718,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteActionInstance
+## ActionsControllerListActions
 
-> DeleteActionInstance(ctx).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+> ActionsControllerListActions200Response ActionsControllerListActions(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).IntegrationId(integrationId).IntegrationKey(integrationKey).ParentId(parentId).Execute()
 
-
+List actions
 
 ### Example
 
@@ -447,17 +737,24 @@ import (
 )
 
 func main() {
-	integrationKey := "integrationKey_example" // string |  (optional)
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
 	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
+	integrationKey := "integrationKey_example" // string |  (optional)
+	parentId := "parentId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.DeleteActionInstance(context.Background()).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
+	resp, r, err := apiClient.ActionsAPI.ActionsControllerListActions(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).IntegrationId(integrationId).IntegrationKey(integrationKey).ParentId(parentId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.DeleteActionInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ActionsControllerListActions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ActionsControllerListActions`: ActionsControllerListActions200Response
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ActionsControllerListActions`: %v\n", resp)
 }
 ```
 
@@ -467,14 +764,92 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteActionInstanceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActionsControllerListActionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationKey** | **string** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
  **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
+ **integrationKey** | **string** |  | 
+ **parentId** | **string** |  | 
+
+### Return type
+
+[**ActionsControllerListActions200Response**](ActionsControllerListActions200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerArchive
+
+> ConnectionLevelActionControllerArchive(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Archive action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerArchive(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerArchive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerArchiveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
 
 ### Return type
 
@@ -494,9 +869,610 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAction
+## ConnectionLevelActionControllerGet
 
-> ActionDto GetAction(ctx, id).AutoCreate(autoCreate).Execute()
+> ActionInstanceDto ConnectionLevelActionControllerGet(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Get action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerGet(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConnectionLevelActionControllerGet`: ActionInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ConnectionLevelActionControllerGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**ActionInstanceDto**](ActionInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerPatch
+
+> ActionInstanceDto ConnectionLevelActionControllerPatch(ctx, actionSelector, connectionSelector).UpdateActionInstanceDto(updateActionInstanceDto).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Patch update action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	updateActionInstanceDto := *openapiclient.NewUpdateActionInstanceDto() // UpdateActionInstanceDto | 
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerPatch(context.Background(), actionSelector, connectionSelector).UpdateActionInstanceDto(updateActionInstanceDto).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConnectionLevelActionControllerPatch`: ActionInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ConnectionLevelActionControllerPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateActionInstanceDto** | [**UpdateActionInstanceDto**](UpdateActionInstanceDto.md) |  | 
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**ActionInstanceDto**](ActionInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerPut
+
+> ActionInstanceDto ConnectionLevelActionControllerPut(ctx, actionSelector, connectionSelector).UpdateActionInstanceDto(updateActionInstanceDto).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Create or Replace action instance
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	updateActionInstanceDto := *openapiclient.NewUpdateActionInstanceDto() // UpdateActionInstanceDto | 
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerPut(context.Background(), actionSelector, connectionSelector).UpdateActionInstanceDto(updateActionInstanceDto).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConnectionLevelActionControllerPut`: ActionInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ConnectionLevelActionControllerPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateActionInstanceDto** | [**UpdateActionInstanceDto**](UpdateActionInstanceDto.md) |  | 
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**ActionInstanceDto**](ActionInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerReset
+
+> ActionInstanceDto ConnectionLevelActionControllerReset(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Reset action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerReset(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerReset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConnectionLevelActionControllerReset`: ActionInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ConnectionLevelActionControllerReset`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerResetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**ActionInstanceDto**](ActionInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerRun
+
+> ConnectionLevelActionControllerRun(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Run action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerRun(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerRun``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerRunRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionControllerSetup
+
+> ActionInstanceDto ConnectionLevelActionControllerSetup(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+
+Setup action instance for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	instanceKey := "instanceKey_example" // string |  (optional)
+	autoCreate := true // bool |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerSetup(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerSetup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConnectionLevelActionControllerSetup`: ActionInstanceDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ConnectionLevelActionControllerSetup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionControllerSetupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **instanceKey** | **string** |  | 
+ **autoCreate** | **bool** |  | 
+
+### Return type
+
+[**ActionInstanceDto**](ActionInstanceDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionLevelActionsControllerList
+
+> ConnectionLevelActionsControllerList(ctx, connectionSelector).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).ParentId(parentId).UniversalParentId(universalParentId).Execute()
+
+List action instances for connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
+	parentId := "parentId_example" // string |  (optional)
+	universalParentId := "universalParentId_example" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ActionsAPI.ConnectionLevelActionsControllerList(context.Background(), connectionSelector).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).ParentId(parentId).UniversalParentId(universalParentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionsControllerList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**connectionSelector** | **string** | Integration Key, Connection ID, or Integration ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionLevelActionsControllerListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
+ **parentId** | **string** |  | 
+ **universalParentId** | **string** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionControllerArchive
+
+> IntegrationLevelActionControllerArchive(ctx, actionSelector, integrationSelector).Execute()
+
+Archive action for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerArchive(context.Background(), actionSelector, integrationSelector).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerArchive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerArchiveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionControllerExport
+
+> ActionExportDto IntegrationLevelActionControllerExport(ctx, actionSelector, integrationSelector).Execute()
 
 
 
@@ -513,18 +1489,18 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | The ID of the action to retrive
-	autoCreate := true // bool |  (optional)
+	actionSelector := "actionSelector_example" // string | 
+	integrationSelector := "integrationSelector_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.GetAction(context.Background(), id).AutoCreate(autoCreate).Execute()
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerExport(context.Background(), actionSelector, integrationSelector).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.GetAction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAction`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.GetAction`: %v\n", resp)
+	// response from `IntegrationLevelActionControllerExport`: ActionExportDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionControllerExport`: %v\n", resp)
 }
 ```
 
@@ -534,17 +1510,89 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the action to retrive | 
+**actionSelector** | **string** |  | 
+**integrationSelector** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetActionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerExportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **autoCreate** | **bool** |  | 
+
+
+### Return type
+
+[**ActionExportDto**](ActionExportDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionControllerGet
+
+> ActionDto IntegrationLevelActionControllerGet(ctx, actionSelector, integrationSelector).Execute()
+
+Get action for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerGet(context.Background(), actionSelector, integrationSelector).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IntegrationLevelActionControllerGet`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionControllerGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -564,11 +1612,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetActionInstance
+## IntegrationLevelActionControllerPatch
 
-> ActionInstanceDto GetActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+> ActionDto IntegrationLevelActionControllerPatch(ctx, actionSelector, integrationSelector).UpdateActionDto(updateActionDto).Execute()
 
-
+Patch update action for integration
 
 ### Example
 
@@ -583,284 +1631,310 @@ import (
 )
 
 func main() {
-	id := "id_example" // string |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerPatch(context.Background(), actionSelector, integrationSelector).UpdateActionDto(updateActionDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IntegrationLevelActionControllerPatch`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionControllerPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionControllerPut
+
+> ActionDto IntegrationLevelActionControllerPut(ctx, actionSelector, integrationSelector).UpdateActionDto(updateActionDto).Execute()
+
+Update action for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerPut(context.Background(), actionSelector, integrationSelector).UpdateActionDto(updateActionDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IntegrationLevelActionControllerPut`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionControllerPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionControllerReset
+
+> ActionDto IntegrationLevelActionControllerReset(ctx, actionSelector, integrationSelector).Execute()
+
+Reset action for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	actionSelector := "actionSelector_example" // string | Action Key or Id
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionControllerReset(context.Background(), actionSelector, integrationSelector).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionControllerReset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IntegrationLevelActionControllerReset`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionControllerReset`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**actionSelector** | **string** | Action Key or Id | 
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionControllerResetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionsControllerCreate
+
+> ActionDto IntegrationLevelActionsControllerCreate(ctx, integrationSelector).CreateIntegrationLevelActionDto(createIntegrationLevelActionDto).Execute()
+
+Create action for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+	createIntegrationLevelActionDto := *openapiclient.NewCreateIntegrationLevelActionDto("Key_example", "Name_example") // CreateIntegrationLevelActionDto | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionsControllerCreate(context.Background(), integrationSelector).CreateIntegrationLevelActionDto(createIntegrationLevelActionDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionsControllerCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IntegrationLevelActionsControllerCreate`: ActionDto
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionsControllerCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**integrationSelector** | **string** | Integration ID or Key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIntegrationLevelActionsControllerCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createIntegrationLevelActionDto** | [**CreateIntegrationLevelActionDto**](CreateIntegrationLevelActionDto.md) |  | 
+
+### Return type
+
+[**ActionDto**](ActionDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IntegrationLevelActionsControllerList
+
+> ActionsControllerListActions200Response IntegrationLevelActionsControllerList(ctx, integrationSelector).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).ParentId(parentId).Execute()
+
+List actions for integration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
 	parentId := "parentId_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.GetActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).Execute()
+	resp, r, err := apiClient.ActionsAPI.IntegrationLevelActionsControllerList(context.Background(), integrationSelector).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).ParentId(parentId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.GetActionInstance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.IntegrationLevelActionsControllerList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetActionInstance`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.GetActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
- **autoCreate** | **bool** |  | 
- **parentId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetActions
-
-> ActionDto GetActions(ctx).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.GetActions(context.Background()).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.GetActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetActions`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.GetActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListActionInstances
-
-> ListActionInstances200Response ListActionInstances(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ListActionInstances(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ListActionInstances``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListActionInstances`: ListActionInstances200Response
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ListActionInstances`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListActionInstancesRequest struct via the builder pattern
-
-
-### Return type
-
-[**ListActionInstances200Response**](ListActionInstances200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListActions
-
-> ListActions200Response ListActions(ctx).IntegrationId(integrationId).IntegrationKey(integrationKey).ParentId(parentId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	integrationId := "integrationId_example" // string |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	parentId := "parentId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ListActions(context.Background()).IntegrationId(integrationId).IntegrationKey(integrationKey).ParentId(parentId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ListActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListActions`: ListActions200Response
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ListActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationId** | **string** |  | 
- **integrationKey** | **string** |  | 
- **parentId** | **string** |  | 
-
-### Return type
-
-[**ListActions200Response**](ListActions200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchAction
-
-> ActionDto PatchAction(ctx, id).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | The ID of the action to retrive
-	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PatchAction(context.Background(), id).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PatchAction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchAction`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PatchAction`: %v\n", resp)
+	// response from `IntegrationLevelActionsControllerList`: ActionsControllerListActions200Response
+	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.IntegrationLevelActionsControllerList`: %v\n", resp)
 }
 ```
 
@@ -870,716 +1944,26 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the action to retrive | 
+**integrationSelector** | **string** | Integration ID or Key | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchActionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationLevelActionsControllerListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchActionInstance
-
-> ActionInstanceDto PatchActionInstance(ctx).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateActionInstanceDto := *openapiclient.NewUpdateActionInstanceDto() // UpdateActionInstanceDto | 
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PatchActionInstance(context.Background()).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PatchActionInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchActionInstance`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PatchActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateActionInstanceDto** | [**UpdateActionInstanceDto**](UpdateActionInstanceDto.md) |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchActions
-
-> ActionDto PatchActions(ctx).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PatchActions(context.Background()).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PatchActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PatchActions`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PatchActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPatchActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostActionInstance
-
-> ActionInstanceDto PostActionInstance(ctx).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateActionInstanceDto := *openapiclient.NewUpdateActionInstanceDto() // UpdateActionInstanceDto | 
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PostActionInstance(context.Background()).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PostActionInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PostActionInstance`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PostActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateActionInstanceDto** | [**UpdateActionInstanceDto**](UpdateActionInstanceDto.md) |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutAction
-
-> ActionDto PutAction(ctx, id).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | The ID of the action to retrive
-	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PutAction(context.Background(), id).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PutAction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutAction`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PutAction`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | The ID of the action to retrive | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutActionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutActionInstance
-
-> ActionInstanceDto PutActionInstance(ctx).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateActionInstanceDto := *openapiclient.NewUpdateActionInstanceDto() // UpdateActionInstanceDto | 
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PutActionInstance(context.Background()).UpdateActionInstanceDto(updateActionInstanceDto).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PutActionInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutActionInstance`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PutActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateActionInstanceDto** | [**UpdateActionInstanceDto**](UpdateActionInstanceDto.md) |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutActions
-
-> ActionDto PutActions(ctx).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	updateActionDto := *openapiclient.NewUpdateActionDto() // UpdateActionDto | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.PutActions(context.Background()).UpdateActionDto(updateActionDto).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.PutActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PutActions`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.PutActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateActionDto** | [**UpdateActionDto**](UpdateActionDto.md) |  | 
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ResetAction
-
-> ActionDto ResetAction(ctx, id).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string | 
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ResetAction(context.Background(), id).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ResetAction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ResetAction`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ResetAction`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiResetActionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ResetActionInstance
-
-> ActionInstanceDto ResetActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ResetActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ResetActionInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ResetActionInstance`: ActionInstanceDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ResetActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiResetActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
-
-### Return type
-
-[**ActionInstanceDto**](ActionInstanceDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ResetActions
-
-> ActionDto ResetActions(ctx).AutoCreate(autoCreate).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	autoCreate := true // bool |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.ResetActions(context.Background()).AutoCreate(autoCreate).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ResetActions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ResetActions`: ActionDto
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.ResetActions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiResetActionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **autoCreate** | **bool** |  | 
-
-### Return type
-
-[**ActionDto**](ActionDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## RunActionInstance
-
-> RunActionInstance201Response RunActionInstance(ctx).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).RequestBody(requestBody).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	id := "id_example" // string |  (optional)
-	integrationKey := "integrationKey_example" // string |  (optional)
-	integrationId := "integrationId_example" // string |  (optional)
-	connectionId := "connectionId_example" // string |  (optional)
-	autoCreate := true // bool |  (optional)
-	parentId := "parentId_example" // string |  (optional)
-	requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ActionsAPI.RunActionInstance(context.Background()).Id(id).IntegrationKey(integrationKey).IntegrationId(integrationId).ConnectionId(connectionId).AutoCreate(autoCreate).ParentId(parentId).RequestBody(requestBody).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.RunActionInstance``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `RunActionInstance`: RunActionInstance201Response
-	fmt.Fprintf(os.Stdout, "Response from `ActionsAPI.RunActionInstance`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRunActionInstanceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string** |  | 
- **integrationKey** | **string** |  | 
- **integrationId** | **string** |  | 
- **connectionId** | **string** |  | 
- **autoCreate** | **bool** |  | 
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
  **parentId** | **string** |  | 
- **requestBody** | **map[string]interface{}** |  | 
 
 ### Return type
 
-[**RunActionInstance201Response**](RunActionInstance201Response.md)
+[**ActionsControllerListActions200Response**](ActionsControllerListActions200Response.md)
 
 ### Authorization
 
@@ -1587,7 +1971,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

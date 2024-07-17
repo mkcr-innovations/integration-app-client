@@ -7,9 +7,8 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **UserId** | **string** |  | 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**InstanceKey** | **string** |  | 
+**InstanceKey** | Pointer to **string** |  | [optional] 
 **ConnectionId** | **string** |  | 
-**Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 **IntegrationId** | **string** |  | 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **FlowId** | **string** |  | 
@@ -18,21 +17,22 @@ Name | Type | Description | Notes
 **FlowRevision** | **string** |  | 
 **Outdated** | Pointer to **bool** |  | [optional] 
 **Name** | **string** |  | 
-**ParametersSchema** | **map[string]interface{}** |  | 
+**ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
 **Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
 **Enabled** | **bool** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
 **ArchivedAt** | Pointer to **time.Time** |  | [optional] 
-**Dependencies** | [**[]IntegrationElementInstanceDependencyDto**](IntegrationElementInstanceDependencyDto.md) |  | 
+**Dependencies** | Pointer to [**[]IntegrationElementInstanceDependencyDto**](IntegrationElementInstanceDependencyDto.md) |  | [optional] 
 **State** | **string** |  | 
+**Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewFlowInstanceDto
 
-`func NewFlowInstanceDto(id string, userId string, instanceKey string, connectionId string, integrationId string, flowId string, flowRevision string, name string, parametersSchema map[string]interface{}, enabled bool, createdAt string, updatedAt string, dependencies []IntegrationElementInstanceDependencyDto, state string, ) *FlowInstanceDto`
+`func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string, flowId string, flowRevision string, name string, enabled bool, createdAt string, updatedAt string, state string, ) *FlowInstanceDto`
 
 NewFlowInstanceDto instantiates a new FlowInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -131,6 +131,11 @@ and a boolean to check if the value has been set.
 
 SetInstanceKey sets InstanceKey field to given value.
 
+### HasInstanceKey
+
+`func (o *FlowInstanceDto) HasInstanceKey() bool`
+
+HasInstanceKey returns a boolean if a field has been set.
 
 ### GetConnectionId
 
@@ -151,31 +156,6 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
-
-### GetConnection
-
-`func (o *FlowInstanceDto) GetConnection() ConnectionDto`
-
-GetConnection returns the Connection field if non-nil, zero value otherwise.
-
-### GetConnectionOk
-
-`func (o *FlowInstanceDto) GetConnectionOk() (*ConnectionDto, bool)`
-
-GetConnectionOk returns a tuple with the Connection field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConnection
-
-`func (o *FlowInstanceDto) SetConnection(v ConnectionDto)`
-
-SetConnection sets Connection field to given value.
-
-### HasConnection
-
-`func (o *FlowInstanceDto) HasConnection() bool`
-
-HasConnection returns a boolean if a field has been set.
 
 ### GetIntegrationId
 
@@ -376,6 +356,11 @@ and a boolean to check if the value has been set.
 
 SetParametersSchema sets ParametersSchema field to given value.
 
+### HasParametersSchema
+
+`func (o *FlowInstanceDto) HasParametersSchema() bool`
+
+HasParametersSchema returns a boolean if a field has been set.
 
 ### GetParameters
 
@@ -531,6 +516,11 @@ and a boolean to check if the value has been set.
 
 SetDependencies sets Dependencies field to given value.
 
+### HasDependencies
+
+`func (o *FlowInstanceDto) HasDependencies() bool`
+
+HasDependencies returns a boolean if a field has been set.
 
 ### GetState
 
@@ -551,6 +541,31 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+
+### GetConnection
+
+`func (o *FlowInstanceDto) GetConnection() ConnectionDto`
+
+GetConnection returns the Connection field if non-nil, zero value otherwise.
+
+### GetConnectionOk
+
+`func (o *FlowInstanceDto) GetConnectionOk() (*ConnectionDto, bool)`
+
+GetConnectionOk returns a tuple with the Connection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnection
+
+`func (o *FlowInstanceDto) SetConnection(v ConnectionDto)`
+
+SetConnection sets Connection field to given value.
+
+### HasConnection
+
+`func (o *FlowInstanceDto) HasConnection() bool`
+
+HasConnection returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

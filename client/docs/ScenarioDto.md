@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **Key** | **string** |  | 
 **ShortDescription** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Elements** | Pointer to [**[]ScenarioDtoElementsInner**](ScenarioDtoElementsInner.md) |  | [optional] 
+**Elements** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Connectors** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Todos** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 
@@ -191,20 +192,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetElements
 
-`func (o *ScenarioDto) GetElements() []ScenarioDtoElementsInner`
+`func (o *ScenarioDto) GetElements() []map[string]interface{}`
 
 GetElements returns the Elements field if non-nil, zero value otherwise.
 
 ### GetElementsOk
 
-`func (o *ScenarioDto) GetElementsOk() (*[]ScenarioDtoElementsInner, bool)`
+`func (o *ScenarioDto) GetElementsOk() (*[]map[string]interface{}, bool)`
 
 GetElementsOk returns a tuple with the Elements field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElements
 
-`func (o *ScenarioDto) SetElements(v []ScenarioDtoElementsInner)`
+`func (o *ScenarioDto) SetElements(v []map[string]interface{})`
 
 SetElements sets Elements field to given value.
 
@@ -213,6 +214,31 @@ SetElements sets Elements field to given value.
 `func (o *ScenarioDto) HasElements() bool`
 
 HasElements returns a boolean if a field has been set.
+
+### GetConnectors
+
+`func (o *ScenarioDto) GetConnectors() []map[string]interface{}`
+
+GetConnectors returns the Connectors field if non-nil, zero value otherwise.
+
+### GetConnectorsOk
+
+`func (o *ScenarioDto) GetConnectorsOk() (*[]map[string]interface{}, bool)`
+
+GetConnectorsOk returns a tuple with the Connectors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectors
+
+`func (o *ScenarioDto) SetConnectors(v []map[string]interface{})`
+
+SetConnectors sets Connectors field to given value.
+
+### HasConnectors
+
+`func (o *ScenarioDto) HasConnectors() bool`
+
+HasConnectors returns a boolean if a field has been set.
 
 ### GetTodos
 

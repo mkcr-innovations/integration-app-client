@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**ArchivedAt** | Pointer to **string** |  | [optional] 
 **Udm** | Pointer to **string** |  | [optional] 
 **PullUpdatesIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **FullSyncIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **DefaultPath** | Pointer to **string** |  | [optional] 
-**CollectionKey** | Pointer to **map[string]interface{}** |  | [optional] 
+**CollectionKey** | Pointer to **string** |  | [optional] 
 **CollectionParameters** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -29,6 +32,81 @@ will change when the set of required properties is changed
 NewUpdateDataSourceDtoWithDefaults instantiates a new UpdateDataSourceDto object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKey
+
+`func (o *UpdateDataSourceDto) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *UpdateDataSourceDto) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *UpdateDataSourceDto) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *UpdateDataSourceDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UpdateDataSourceDto) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdateDataSourceDto) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdateDataSourceDto) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdateDataSourceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetArchivedAt
+
+`func (o *UpdateDataSourceDto) GetArchivedAt() string`
+
+GetArchivedAt returns the ArchivedAt field if non-nil, zero value otherwise.
+
+### GetArchivedAtOk
+
+`func (o *UpdateDataSourceDto) GetArchivedAtOk() (*string, bool)`
+
+GetArchivedAtOk returns a tuple with the ArchivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedAt
+
+`func (o *UpdateDataSourceDto) SetArchivedAt(v string)`
+
+SetArchivedAt sets ArchivedAt field to given value.
+
+### HasArchivedAt
+
+`func (o *UpdateDataSourceDto) HasArchivedAt() bool`
+
+HasArchivedAt returns a boolean if a field has been set.
 
 ### GetUdm
 
@@ -132,20 +210,20 @@ HasDefaultPath returns a boolean if a field has been set.
 
 ### GetCollectionKey
 
-`func (o *UpdateDataSourceDto) GetCollectionKey() map[string]interface{}`
+`func (o *UpdateDataSourceDto) GetCollectionKey() string`
 
 GetCollectionKey returns the CollectionKey field if non-nil, zero value otherwise.
 
 ### GetCollectionKeyOk
 
-`func (o *UpdateDataSourceDto) GetCollectionKeyOk() (*map[string]interface{}, bool)`
+`func (o *UpdateDataSourceDto) GetCollectionKeyOk() (*string, bool)`
 
 GetCollectionKeyOk returns a tuple with the CollectionKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionKey
 
-`func (o *UpdateDataSourceDto) SetCollectionKey(v map[string]interface{})`
+`func (o *UpdateDataSourceDto) SetCollectionKey(v string)`
 
 SetCollectionKey sets CollectionKey field to given value.
 

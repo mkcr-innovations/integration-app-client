@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **DataSourceInstanceId** | Pointer to **string** |  | [optional] 
 **DataSourceInstance** | Pointer to **map[string]interface{}** |  | [optional] 
 **DataSourceSchema** | Pointer to **map[string]interface{}** |  | [optional] 
-**AppSchema** | **map[string]interface{}** |  | 
+**AppSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **ImportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **ExportValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **UnifiedImportValue** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewFieldMappingInstanceDto
 
-`func NewFieldMappingInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, appSchema map[string]interface{}, ) *FieldMappingInstanceDto`
+`func NewFieldMappingInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, ) *FieldMappingInstanceDto`
 
 NewFieldMappingInstanceDto instantiates a new FieldMappingInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -465,6 +465,11 @@ and a boolean to check if the value has been set.
 
 SetAppSchema sets AppSchema field to given value.
 
+### HasAppSchema
+
+`func (o *FieldMappingInstanceDto) HasAppSchema() bool`
+
+HasAppSchema returns a boolean if a field has been set.
 
 ### GetImportValue
 

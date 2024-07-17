@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **RequiresPull** | Pointer to **bool** |  | [optional] 
 **RequiresFullSync** | Pointer to **bool** |  | [optional] 
 **StateData** | Pointer to **map[string]interface{}** |  | [optional] 
+**GlobalWebhookKey** | Pointer to **string** |  | [optional] 
+**GlobalWebhookEventSelector** | Pointer to **string** |  | [optional] 
 **PullUpdatesIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **FullSyncIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **NextPullEventsTimestamp** | Pointer to **float32** |  | [optional] 
@@ -348,6 +350,56 @@ SetStateData sets StateData field to given value.
 `func (o *ExternalEventSubscriptionDto) HasStateData() bool`
 
 HasStateData returns a boolean if a field has been set.
+
+### GetGlobalWebhookKey
+
+`func (o *ExternalEventSubscriptionDto) GetGlobalWebhookKey() string`
+
+GetGlobalWebhookKey returns the GlobalWebhookKey field if non-nil, zero value otherwise.
+
+### GetGlobalWebhookKeyOk
+
+`func (o *ExternalEventSubscriptionDto) GetGlobalWebhookKeyOk() (*string, bool)`
+
+GetGlobalWebhookKeyOk returns a tuple with the GlobalWebhookKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalWebhookKey
+
+`func (o *ExternalEventSubscriptionDto) SetGlobalWebhookKey(v string)`
+
+SetGlobalWebhookKey sets GlobalWebhookKey field to given value.
+
+### HasGlobalWebhookKey
+
+`func (o *ExternalEventSubscriptionDto) HasGlobalWebhookKey() bool`
+
+HasGlobalWebhookKey returns a boolean if a field has been set.
+
+### GetGlobalWebhookEventSelector
+
+`func (o *ExternalEventSubscriptionDto) GetGlobalWebhookEventSelector() string`
+
+GetGlobalWebhookEventSelector returns the GlobalWebhookEventSelector field if non-nil, zero value otherwise.
+
+### GetGlobalWebhookEventSelectorOk
+
+`func (o *ExternalEventSubscriptionDto) GetGlobalWebhookEventSelectorOk() (*string, bool)`
+
+GetGlobalWebhookEventSelectorOk returns a tuple with the GlobalWebhookEventSelector field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalWebhookEventSelector
+
+`func (o *ExternalEventSubscriptionDto) SetGlobalWebhookEventSelector(v string)`
+
+SetGlobalWebhookEventSelector sets GlobalWebhookEventSelector field to given value.
+
+### HasGlobalWebhookEventSelector
+
+`func (o *ExternalEventSubscriptionDto) HasGlobalWebhookEventSelector() bool`
+
+HasGlobalWebhookEventSelector returns a boolean if a field has been set.
 
 ### GetPullUpdatesIntervalSeconds
 

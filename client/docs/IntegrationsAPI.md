@@ -1,46 +1,37 @@
 # \IntegrationsAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ArchiveIntegration**](IntegrationsAPI.md#ArchiveIntegration) | **Delete** /integrations/{isOrKey} | 
-[**CreateIntegration**](IntegrationsAPI.md#CreateIntegration) | **Post** /integrations | 
-[**DisconnectIntegration**](IntegrationsAPI.md#DisconnectIntegration) | **Post** /integrations/{idOrKey}/disconnect | 
-[**GetConnectorSpec**](IntegrationsAPI.md#GetConnectorSpec) | **Get** /integrations/{idOrKey}/connector-spec | 
-[**GetIntegration**](IntegrationsAPI.md#GetIntegration) | **Get** /integrations/{idOrKey} | 
-[**GetIntegrationDataCollectionSpecs**](IntegrationsAPI.md#GetIntegrationDataCollectionSpecs) | **Get** /integrations/{idOrKey}/data-collection-specs | 
-[**GetIntegrationDataLocationByKey**](IntegrationsAPI.md#GetIntegrationDataLocationByKey) | **Get** /integrations/{idOrKey}/data/{dataLocationKey} | 
-[**GetIntegrationDataLocations**](IntegrationsAPI.md#GetIntegrationDataLocations) | **Get** /integrations/{idOrKey}/data | 
-[**GetIntegrationDocumentation**](IntegrationsAPI.md#GetIntegrationDocumentation) | **Get** /integrations/{idOrKey}/documentation | 
-[**GetIntegrationEventByKey**](IntegrationsAPI.md#GetIntegrationEventByKey) | **Get** /integrations/{idOrKey}/events/{eventKey} | 
-[**GetIntegrationEvents**](IntegrationsAPI.md#GetIntegrationEvents) | **Get** /integrations/{idOrKey}/events | 
-[**GetIntegrationFlowNodes**](IntegrationsAPI.md#GetIntegrationFlowNodes) | **Get** /integrations/{idOrKey}/flow-nodes | 
-[**GetIntegrationOpenapiOperation**](IntegrationsAPI.md#GetIntegrationOpenapiOperation) | **Get** /integrations/{idOrKey}/openapi/request-schema | 
-[**GetIntegrationOpenapiPathMethods**](IntegrationsAPI.md#GetIntegrationOpenapiPathMethods) | **Get** /integrations/{idOrKey}/openapi/path-methods | 
-[**GetIntegrationOpenapiPaths**](IntegrationsAPI.md#GetIntegrationOpenapiPaths) | **Get** /integrations/{idOrKey}/openapi/paths | 
-[**GetIntegrationOpenapiRequests**](IntegrationsAPI.md#GetIntegrationOpenapiRequests) | **Get** /integrations/{idOrKey}/openapi/request-specs | 
-[**GetIntegrationOpenapiResponseSchema**](IntegrationsAPI.md#GetIntegrationOpenapiResponseSchema) | **Get** /integrations/{idOrKey}/openapi/response-schema | 
-[**GetIntegrationOperationByKey**](IntegrationsAPI.md#GetIntegrationOperationByKey) | **Get** /integrations/{idOrKey}/operations/{operationKey} | 
-[**GetIntegrationOperations**](IntegrationsAPI.md#GetIntegrationOperations) | **Get** /integrations/{idOrKey}/operations | 
-[**GetIntegrationUdmByKey**](IntegrationsAPI.md#GetIntegrationUdmByKey) | **Get** /integrations/{idOrKey}/udm/{udmKey} | 
-[**GetIntegrationUdms**](IntegrationsAPI.md#GetIntegrationUdms) | **Get** /integrations/{idOrKey}/udm | 
-[**ListIntegrations**](IntegrationsAPI.md#ListIntegrations) | **Get** /integrations | 
-[**PatchIntegration**](IntegrationsAPI.md#PatchIntegration) | **Patch** /integrations/{idOrKey} | 
-[**PublishConnectorToIntegration**](IntegrationsAPI.md#PublishConnectorToIntegration) | **Post** /integrations/{idOrKey}/publish-connector | 
-[**PutIntegration**](IntegrationsAPI.md#PutIntegration) | **Put** /integrations/{idOrKey} | 
-[**ReUploadIntegration**](IntegrationsAPI.md#ReUploadIntegration) | **Post** /integrations/{id} | 
-[**ResetParameters**](IntegrationsAPI.md#ResetParameters) | **Post** /integrations/{idOrKey}/reset-parameters | 
-[**SetupIntegration**](IntegrationsAPI.md#SetupIntegration) | **Post** /integrations/{idOrKey}/setup | 
-[**UpdateIntegrationConnector**](IntegrationsAPI.md#UpdateIntegrationConnector) | **Post** /integrations/{idOrKey}/update-connector | 
+[**IntegrationsControllerArchiveIntegration**](IntegrationsAPI.md#IntegrationsControllerArchiveIntegration) | **Delete** /integrations/{idOrKey} | Archive integration
+[**IntegrationsControllerCreateIntegration**](IntegrationsAPI.md#IntegrationsControllerCreateIntegration) | **Post** /integrations | Create integration
+[**IntegrationsControllerGetConnectorSpec**](IntegrationsAPI.md#IntegrationsControllerGetConnectorSpec) | **Get** /integrations/{idOrKey}/connector-spec | Get integration connector spec
+[**IntegrationsControllerGetIntegration**](IntegrationsAPI.md#IntegrationsControllerGetIntegration) | **Get** /integrations/{idOrKey} | Get integration
+[**IntegrationsControllerGetIntegrationDataCollectionSpecs**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationDataCollectionSpecs) | **Get** /integrations/{idOrKey}/data-collection-specs | List integration data collection specs
+[**IntegrationsControllerGetIntegrationDataLocationByKey**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationDataLocationByKey) | **Get** /integrations/{idOrKey}/data/{dataLocationKey} | Get integration data location
+[**IntegrationsControllerGetIntegrationDataLocations**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationDataLocations) | **Get** /integrations/{idOrKey}/data | List integration data locations
+[**IntegrationsControllerGetIntegrationDocumentation**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationDocumentation) | **Get** /integrations/{idOrKey}/documentation | Get integration connector documentation
+[**IntegrationsControllerGetIntegrationEventByKey**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationEventByKey) | **Get** /integrations/{idOrKey}/events/{eventKey} | Get integration event
+[**IntegrationsControllerGetIntegrationEvents**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationEvents) | **Get** /integrations/{idOrKey}/events | List integration events
+[**IntegrationsControllerGetIntegrationGlobalWebhooks**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationGlobalWebhooks) | **Get** /integrations/{idOrKey}/global-webhooks | List integration global webhooks
+[**IntegrationsControllerGetIntegrationOperationByKey**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationOperationByKey) | **Get** /integrations/{idOrKey}/operations/{operationKey} | Get integration operation
+[**IntegrationsControllerGetIntegrationOperations**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationOperations) | **Get** /integrations/{idOrKey}/operations | List integration operations
+[**IntegrationsControllerGetIntegrationUdmByKey**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationUdmByKey) | **Get** /integrations/{idOrKey}/udm/{udmKey} | Get integration UDM
+[**IntegrationsControllerGetIntegrationUdms**](IntegrationsAPI.md#IntegrationsControllerGetIntegrationUdms) | **Get** /integrations/{idOrKey}/udm | List integration UDMs
+[**IntegrationsControllerListIntegrations**](IntegrationsAPI.md#IntegrationsControllerListIntegrations) | **Get** /integrations | List integrations
+[**IntegrationsControllerPatchIntegration**](IntegrationsAPI.md#IntegrationsControllerPatchIntegration) | **Patch** /integrations/{idOrKey} | Patch integration
+[**IntegrationsControllerPutIntegration**](IntegrationsAPI.md#IntegrationsControllerPutIntegration) | **Put** /integrations/{idOrKey} | Update integration
+[**IntegrationsControllerSetupIntegration**](IntegrationsAPI.md#IntegrationsControllerSetupIntegration) | **Post** /integrations/{idOrKey}/setup | Setup integration
+[**IntegrationsControllerUploadConnector**](IntegrationsAPI.md#IntegrationsControllerUploadConnector) | **Post** /integrations/{idOrKey}/upload-connector | Upload integration connector
 
 
 
-## ArchiveIntegration
+## IntegrationsControllerArchiveIntegration
 
-> ArchiveIntegration(ctx, isOrKey).Execute()
+> IntegrationsControllerArchiveIntegration(ctx, idOrKey).Execute()
 
-
+Archive integration
 
 ### Example
 
@@ -55,13 +46,13 @@ import (
 )
 
 func main() {
-	isOrKey := "isOrKey_example" // string | 
+	idOrKey := "idOrKey_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.IntegrationsAPI.ArchiveIntegration(context.Background(), isOrKey).Execute()
+	r, err := apiClient.IntegrationsAPI.IntegrationsControllerArchiveIntegration(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.ArchiveIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerArchiveIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -73,11 +64,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**isOrKey** | **string** |  | 
+**idOrKey** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerArchiveIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -102,11 +93,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateIntegration
+## IntegrationsControllerCreateIntegration
 
-> IntegrationDto CreateIntegration(ctx).CreateIntegrationDto(createIntegrationDto).Execute()
+> IntegrationDto IntegrationsControllerCreateIntegration(ctx).CreateIntegrationDto(createIntegrationDto).Execute()
 
-
+Create integration
 
 ### Example
 
@@ -125,13 +116,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.CreateIntegration(context.Background()).CreateIntegrationDto(createIntegrationDto).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerCreateIntegration(context.Background()).CreateIntegrationDto(createIntegrationDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.CreateIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerCreateIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.CreateIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerCreateIntegration`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerCreateIntegration`: %v\n", resp)
 }
 ```
 
@@ -141,7 +132,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerCreateIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -166,77 +157,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DisconnectIntegration
+## IntegrationsControllerGetConnectorSpec
 
-> DisconnectIntegration(ctx, idOrKey).Execute()
+> map[string]interface{} IntegrationsControllerGetConnectorSpec(ctx, idOrKey).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.IntegrationsAPI.DisconnectIntegration(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.DisconnectIntegration``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDisconnectIntegrationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetConnectorSpec
-
-> map[string]interface{} GetConnectorSpec(ctx, idOrKey).Execute()
-
-
+Get integration connector spec
 
 ### Example
 
@@ -255,13 +180,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetConnectorSpec(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetConnectorSpec(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetConnectorSpec``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetConnectorSpec``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConnectorSpec`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetConnectorSpec`: %v\n", resp)
+	// response from `IntegrationsControllerGetConnectorSpec`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetConnectorSpec`: %v\n", resp)
 }
 ```
 
@@ -275,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConnectorSpecRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetConnectorSpecRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -300,11 +225,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegration
+## IntegrationsControllerGetIntegration
 
-> IntegrationDto GetIntegration(ctx, idOrKey).Execute()
+> IntegrationDto IntegrationsControllerGetIntegration(ctx, idOrKey).Execute()
 
-
+Get integration
 
 ### Example
 
@@ -323,13 +248,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegration(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegration(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegration`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegration`: %v\n", resp)
 }
 ```
 
@@ -343,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -368,11 +293,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationDataCollectionSpecs
+## IntegrationsControllerGetIntegrationDataCollectionSpecs
 
-> []map[string]interface{} GetIntegrationDataCollectionSpecs(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationDataCollectionSpecs(ctx, idOrKey).Execute()
 
-
+List integration data collection specs
 
 ### Example
 
@@ -391,13 +316,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationDataCollectionSpecs(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationDataCollectionSpecs(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationDataCollectionSpecs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationDataCollectionSpecs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationDataCollectionSpecs`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationDataCollectionSpecs`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationDataCollectionSpecs`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationDataCollectionSpecs`: %v\n", resp)
 }
 ```
 
@@ -411,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationDataCollectionSpecsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationDataCollectionSpecsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -436,11 +361,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationDataLocationByKey
+## IntegrationsControllerGetIntegrationDataLocationByKey
 
-> map[string]interface{} GetIntegrationDataLocationByKey(ctx, idOrKey, dataLocationKey).Execute()
+> map[string]interface{} IntegrationsControllerGetIntegrationDataLocationByKey(ctx, idOrKey, dataLocationKey).Execute()
 
-
+Get integration data location
 
 ### Example
 
@@ -460,13 +385,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationDataLocationByKey(context.Background(), idOrKey, dataLocationKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocationByKey(context.Background(), idOrKey, dataLocationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationDataLocationByKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocationByKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationDataLocationByKey`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationDataLocationByKey`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationDataLocationByKey`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocationByKey`: %v\n", resp)
 }
 ```
 
@@ -481,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationDataLocationByKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationDataLocationByKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -507,11 +432,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationDataLocations
+## IntegrationsControllerGetIntegrationDataLocations
 
-> []map[string]interface{} GetIntegrationDataLocations(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationDataLocations(ctx, idOrKey).Execute()
 
-
+List integration data locations
 
 ### Example
 
@@ -530,13 +455,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationDataLocations(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocations(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationDataLocations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationDataLocations`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationDataLocations`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationDataLocations`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationDataLocations`: %v\n", resp)
 }
 ```
 
@@ -550,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationDataLocationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationDataLocationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -575,11 +500,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationDocumentation
+## IntegrationsControllerGetIntegrationDocumentation
 
-> map[string]interface{} GetIntegrationDocumentation(ctx, idOrKey).Execute()
+> map[string]interface{} IntegrationsControllerGetIntegrationDocumentation(ctx, idOrKey).Execute()
 
-
+Get integration connector documentation
 
 ### Example
 
@@ -598,13 +523,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationDocumentation(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationDocumentation(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationDocumentation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationDocumentation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationDocumentation`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationDocumentation`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationDocumentation`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationDocumentation`: %v\n", resp)
 }
 ```
 
@@ -618,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationDocumentationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationDocumentationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -643,11 +568,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationEventByKey
+## IntegrationsControllerGetIntegrationEventByKey
 
-> map[string]interface{} GetIntegrationEventByKey(ctx, idOrKey, eventKey).Execute()
+> map[string]interface{} IntegrationsControllerGetIntegrationEventByKey(ctx, idOrKey, eventKey).Execute()
 
-
+Get integration event
 
 ### Example
 
@@ -667,13 +592,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationEventByKey(context.Background(), idOrKey, eventKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationEventByKey(context.Background(), idOrKey, eventKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationEventByKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationEventByKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationEventByKey`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationEventByKey`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationEventByKey`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationEventByKey`: %v\n", resp)
 }
 ```
 
@@ -688,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationEventByKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationEventByKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -714,11 +639,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationEvents
+## IntegrationsControllerGetIntegrationEvents
 
-> []map[string]interface{} GetIntegrationEvents(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationEvents(ctx, idOrKey).Execute()
 
-
+List integration events
 
 ### Example
 
@@ -737,13 +662,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationEvents(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationEvents(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationEvents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationEvents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationEvents`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationEvents`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationEvents`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationEvents`: %v\n", resp)
 }
 ```
 
@@ -757,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationEventsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -782,11 +707,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationFlowNodes
+## IntegrationsControllerGetIntegrationGlobalWebhooks
 
-> []map[string]interface{} GetIntegrationFlowNodes(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationGlobalWebhooks(ctx, idOrKey).Execute()
 
-
+List integration global webhooks
 
 ### Example
 
@@ -805,13 +730,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationFlowNodes(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationGlobalWebhooks(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationFlowNodes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationGlobalWebhooks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationFlowNodes`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationFlowNodes`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationGlobalWebhooks`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationGlobalWebhooks`: %v\n", resp)
 }
 ```
 
@@ -825,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationFlowNodesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationGlobalWebhooksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -850,361 +775,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationOpenapiOperation
+## IntegrationsControllerGetIntegrationOperationByKey
 
-> map[string]interface{} GetIntegrationOpenapiOperation(ctx, idOrKey).Path(path).Method(method).Execute()
+> map[string]interface{} IntegrationsControllerGetIntegrationOperationByKey(ctx, idOrKey, operationKey).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-	path := "path_example" // string | 
-	method := "method_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOpenapiOperation(context.Background(), idOrKey).Path(path).Method(method).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOpenapiOperation``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetIntegrationOpenapiOperation`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOpenapiOperation`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIntegrationOpenapiOperationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **path** | **string** |  | 
- **method** | **string** |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetIntegrationOpenapiPathMethods
-
-> []string GetIntegrationOpenapiPathMethods(ctx, idOrKey).Path(path).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-	path := "path_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOpenapiPathMethods(context.Background(), idOrKey).Path(path).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOpenapiPathMethods``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetIntegrationOpenapiPathMethods`: []string
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOpenapiPathMethods`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIntegrationOpenapiPathMethodsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **path** | **string** |  | 
-
-### Return type
-
-**[]string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetIntegrationOpenapiPaths
-
-> []string GetIntegrationOpenapiPaths(ctx, idOrKey).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOpenapiPaths(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOpenapiPaths``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetIntegrationOpenapiPaths`: []string
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOpenapiPaths`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIntegrationOpenapiPathsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-**[]string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetIntegrationOpenapiRequests
-
-> []map[string]interface{} GetIntegrationOpenapiRequests(ctx, idOrKey).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOpenapiRequests(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOpenapiRequests``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetIntegrationOpenapiRequests`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOpenapiRequests`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIntegrationOpenapiRequestsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-**[]map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetIntegrationOpenapiResponseSchema
-
-> map[string]interface{} GetIntegrationOpenapiResponseSchema(ctx, idOrKey).Path(path).Method(method).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-	path := "path_example" // string | 
-	method := "method_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOpenapiResponseSchema(context.Background(), idOrKey).Path(path).Method(method).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOpenapiResponseSchema``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetIntegrationOpenapiResponseSchema`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOpenapiResponseSchema`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetIntegrationOpenapiResponseSchemaRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **path** | **string** |  | 
- **method** | **string** |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetIntegrationOperationByKey
-
-> map[string]interface{} GetIntegrationOperationByKey(ctx, idOrKey, operationKey).Execute()
-
-
+Get integration operation
 
 ### Example
 
@@ -1224,13 +799,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOperationByKey(context.Background(), idOrKey, operationKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationOperationByKey(context.Background(), idOrKey, operationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOperationByKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationOperationByKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationOperationByKey`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOperationByKey`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationOperationByKey`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationOperationByKey`: %v\n", resp)
 }
 ```
 
@@ -1245,7 +820,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationOperationByKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationOperationByKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1271,11 +846,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationOperations
+## IntegrationsControllerGetIntegrationOperations
 
-> []map[string]interface{} GetIntegrationOperations(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationOperations(ctx, idOrKey).Execute()
 
-
+List integration operations
 
 ### Example
 
@@ -1294,13 +869,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationOperations(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationOperations(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationOperations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationOperations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationOperations`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationOperations`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationOperations`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationOperations`: %v\n", resp)
 }
 ```
 
@@ -1314,7 +889,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationOperationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationOperationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1339,11 +914,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationUdmByKey
+## IntegrationsControllerGetIntegrationUdmByKey
 
-> map[string]interface{} GetIntegrationUdmByKey(ctx, idOrKey, udmKey).Execute()
+> map[string]interface{} IntegrationsControllerGetIntegrationUdmByKey(ctx, idOrKey, udmKey).Execute()
 
-
+Get integration UDM
 
 ### Example
 
@@ -1363,13 +938,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationUdmByKey(context.Background(), idOrKey, udmKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationUdmByKey(context.Background(), idOrKey, udmKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationUdmByKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationUdmByKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationUdmByKey`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationUdmByKey`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationUdmByKey`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationUdmByKey`: %v\n", resp)
 }
 ```
 
@@ -1384,7 +959,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationUdmByKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationUdmByKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1410,11 +985,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetIntegrationUdms
+## IntegrationsControllerGetIntegrationUdms
 
-> []map[string]interface{} GetIntegrationUdms(ctx, idOrKey).Execute()
+> []map[string]interface{} IntegrationsControllerGetIntegrationUdms(ctx, idOrKey).Execute()
 
-
+List integration UDMs
 
 ### Example
 
@@ -1433,13 +1008,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.GetIntegrationUdms(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerGetIntegrationUdms(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.GetIntegrationUdms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerGetIntegrationUdms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntegrationUdms`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.GetIntegrationUdms`: %v\n", resp)
+	// response from `IntegrationsControllerGetIntegrationUdms`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerGetIntegrationUdms`: %v\n", resp)
 }
 ```
 
@@ -1453,7 +1028,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetIntegrationUdmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerGetIntegrationUdmsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1478,11 +1053,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListIntegrations
+## IntegrationsControllerListIntegrations
 
-> ListIntegrations200Response ListIntegrations(ctx).Execute()
+> IntegrationsControllerListIntegrations200Response IntegrationsControllerListIntegrations(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Execute()
 
-
+List integrations
 
 ### Example
 
@@ -1497,31 +1072,44 @@ import (
 )
 
 func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.ListIntegrations(context.Background()).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerListIntegrations(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.ListIntegrations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerListIntegrations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListIntegrations`: ListIntegrations200Response
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.ListIntegrations`: %v\n", resp)
+	// response from `IntegrationsControllerListIntegrations`: IntegrationsControllerListIntegrations200Response
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerListIntegrations`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListIntegrationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerListIntegrationsRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
 
 ### Return type
 
-[**ListIntegrations200Response**](ListIntegrations200Response.md)
+[**IntegrationsControllerListIntegrations200Response**](IntegrationsControllerListIntegrations200Response.md)
 
 ### Authorization
 
@@ -1537,11 +1125,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PatchIntegration
+## IntegrationsControllerPatchIntegration
 
-> IntegrationDto PatchIntegration(ctx, idOrKey).UpdateIntegrationDto(updateIntegrationDto).Execute()
+> IntegrationDto IntegrationsControllerPatchIntegration(ctx, idOrKey).UpdateIntegrationDto(updateIntegrationDto).Execute()
 
-
+Patch integration
 
 ### Example
 
@@ -1561,13 +1149,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.PatchIntegration(context.Background(), idOrKey).UpdateIntegrationDto(updateIntegrationDto).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerPatchIntegration(context.Background(), idOrKey).UpdateIntegrationDto(updateIntegrationDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.PatchIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerPatchIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.PatchIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerPatchIntegration`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerPatchIntegration`: %v\n", resp)
 }
 ```
 
@@ -1581,7 +1169,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerPatchIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1607,81 +1195,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PublishConnectorToIntegration
+## IntegrationsControllerPutIntegration
 
-> IntegrationDto PublishConnectorToIntegration(ctx, idOrKey).PublishConnectorToIntegrationDto(publishConnectorToIntegrationDto).Execute()
+> IntegrationDto IntegrationsControllerPutIntegration(ctx, idOrKey).CreateIntegrationDto(createIntegrationDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-	publishConnectorToIntegrationDto := *openapiclient.NewPublishConnectorToIntegrationDto("ConnectorId_example") // PublishConnectorToIntegrationDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.PublishConnectorToIntegration(context.Background(), idOrKey).PublishConnectorToIntegrationDto(publishConnectorToIntegrationDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.PublishConnectorToIntegration``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PublishConnectorToIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.PublishConnectorToIntegration`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPublishConnectorToIntegrationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **publishConnectorToIntegrationDto** | [**PublishConnectorToIntegrationDto**](PublishConnectorToIntegrationDto.md) |  | 
-
-### Return type
-
-[**IntegrationDto**](IntegrationDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutIntegration
-
-> IntegrationDto PutIntegration(ctx, idOrKey).CreateIntegrationDto(createIntegrationDto).Execute()
-
-
+Update integration
 
 ### Example
 
@@ -1701,13 +1219,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.PutIntegration(context.Background(), idOrKey).CreateIntegrationDto(createIntegrationDto).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerPutIntegration(context.Background(), idOrKey).CreateIntegrationDto(createIntegrationDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.PutIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerPutIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.PutIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerPutIntegration`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerPutIntegration`: %v\n", resp)
 }
 ```
 
@@ -1721,7 +1239,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerPutIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1747,11 +1265,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ReUploadIntegration
+## IntegrationsControllerSetupIntegration
 
-> IntegrationDto ReUploadIntegration(ctx, id).Execute()
+> IntegrationDto IntegrationsControllerSetupIntegration(ctx, idOrKey).Execute()
 
-
+Setup integration
 
 ### Example
 
@@ -1766,17 +1284,17 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	idOrKey := "idOrKey_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.ReUploadIntegration(context.Background(), id).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerSetupIntegration(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.ReUploadIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerSetupIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReUploadIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.ReUploadIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerSetupIntegration`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerSetupIntegration`: %v\n", resp)
 }
 ```
 
@@ -1786,11 +1304,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**idOrKey** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReUploadIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerSetupIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1815,79 +1333,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ResetParameters
+## IntegrationsControllerUploadConnector
 
-> IntegrationDto ResetParameters(ctx, idOrKey).Execute()
+> IntegrationDto IntegrationsControllerUploadConnector(ctx, idOrKey).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.ResetParameters(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.ResetParameters``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ResetParameters`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.ResetParameters`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiResetParametersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**IntegrationDto**](IntegrationDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SetupIntegration
-
-> IntegrationDto SetupIntegration(ctx, idOrKey).Execute()
-
-
+Upload integration connector
 
 ### Example
 
@@ -1906,13 +1356,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.SetupIntegration(context.Background(), idOrKey).Execute()
+	resp, r, err := apiClient.IntegrationsAPI.IntegrationsControllerUploadConnector(context.Background(), idOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.SetupIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.IntegrationsControllerUploadConnector``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SetupIntegration`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.SetupIntegration`: %v\n", resp)
+	// response from `IntegrationsControllerUploadConnector`: IntegrationDto
+	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.IntegrationsControllerUploadConnector`: %v\n", resp)
 }
 ```
 
@@ -1926,75 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSetupIntegrationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**IntegrationDto**](IntegrationDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UpdateIntegrationConnector
-
-> IntegrationDto UpdateIntegrationConnector(ctx, idOrKey).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	idOrKey := "idOrKey_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntegrationsAPI.UpdateIntegrationConnector(context.Background(), idOrKey).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `IntegrationsAPI.UpdateIntegrationConnector``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `UpdateIntegrationConnector`: IntegrationDto
-	fmt.Fprintf(os.Stdout, "Response from `IntegrationsAPI.UpdateIntegrationConnector`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpdateIntegrationConnectorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiIntegrationsControllerUploadConnectorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

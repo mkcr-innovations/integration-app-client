@@ -1,44 +1,37 @@
 # \ConnectionsAPI
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.integration.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ArchiveConnection**](ConnectionsAPI.md#ArchiveConnection) | **Delete** /connections/{connectionIdOrKey} | 
-[**CreateConnection**](ConnectionsAPI.md#CreateConnection) | **Post** /connections | 
-[**DataLocationMethod**](ConnectionsAPI.md#DataLocationMethod) | **Post** /connections/{connectionIdOrKey}/data/{dataLocationKey}/{methodKey} | 
-[**GetConnection**](ConnectionsAPI.md#GetConnection) | **Get** /connections/{connectionIdOrKey} | 
-[**GetDataLocationSpec**](ConnectionsAPI.md#GetDataLocationSpec) | **Get** /connections/{connectionIdOrKey}/data/{dataLocationKey} | 
-[**GetOperation**](ConnectionsAPI.md#GetOperation) | **Get** /connections/{connectionIdOrKey}/operations/{operationKey} | 
-[**ListConnections**](ConnectionsAPI.md#ListConnections) | **Get** /connections | 
-[**ListDataLocations**](ConnectionsAPI.md#ListDataLocations) | **Get** /connections/{connectionIdOrKey}/data | 
-[**ListOperations**](ConnectionsAPI.md#ListOperations) | **Get** /connections/{connectionIdOrKey}/operations | 
-[**MakeConnectionRequestDelete**](ConnectionsAPI.md#MakeConnectionRequestDelete) | **Delete** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestGet**](ConnectionsAPI.md#MakeConnectionRequestGet) | **Get** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestHead**](ConnectionsAPI.md#MakeConnectionRequestHead) | **Head** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestOptions**](ConnectionsAPI.md#MakeConnectionRequestOptions) | **Options** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestPatch**](ConnectionsAPI.md#MakeConnectionRequestPatch) | **Patch** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestPost**](ConnectionsAPI.md#MakeConnectionRequestPost) | **Post** /connections/{connectionIdOrKey}/request | 
-[**MakeConnectionRequestPut**](ConnectionsAPI.md#MakeConnectionRequestPut) | **Put** /connections/{connectionIdOrKey}/request | 
-[**PatchConnection**](ConnectionsAPI.md#PatchConnection) | **Patch** /connections/{connectionIdOrKey} | 
-[**ProxyRequestDelete**](ConnectionsAPI.md#ProxyRequestDelete) | **Delete** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestGet**](ConnectionsAPI.md#ProxyRequestGet) | **Get** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestHead**](ConnectionsAPI.md#ProxyRequestHead) | **Head** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestOptions**](ConnectionsAPI.md#ProxyRequestOptions) | **Options** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestPatch**](ConnectionsAPI.md#ProxyRequestPatch) | **Patch** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestPost**](ConnectionsAPI.md#ProxyRequestPost) | **Post** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**ProxyRequestPut**](ConnectionsAPI.md#ProxyRequestPut) | **Put** /connections/{connectionIdOrKey}/proxy/{path} | 
-[**RefreshConnectionCredentials**](ConnectionsAPI.md#RefreshConnectionCredentials) | **Post** /connections/{connectionIdOrKey}/refresh-credentials | 
-[**RunOperation**](ConnectionsAPI.md#RunOperation) | **Post** /connections/{connectionIdOrKey}/operations/{operationKey}/run | 
-[**TestConnection**](ConnectionsAPI.md#TestConnection) | **Post** /connections/{connectionIdOrKey}/test | 
+[**ConnectionsControllerArchiveConnection**](ConnectionsAPI.md#ConnectionsControllerArchiveConnection) | **Delete** /connections/{connectionIdOrKey} | Archive connection
+[**ConnectionsControllerCreateConnection**](ConnectionsAPI.md#ConnectionsControllerCreateConnection) | **Post** /connections | Create connection
+[**ConnectionsControllerDataLocationMethod**](ConnectionsAPI.md#ConnectionsControllerDataLocationMethod) | **Post** /connections/{connectionIdOrKey}/data/{dataLocationKey}/{methodKey} | Get connection data location method
+[**ConnectionsControllerGetConnection**](ConnectionsAPI.md#ConnectionsControllerGetConnection) | **Get** /connections/{connectionIdOrKey} | Get connection
+[**ConnectionsControllerGetDataLocationSpec**](ConnectionsAPI.md#ConnectionsControllerGetDataLocationSpec) | **Get** /connections/{connectionIdOrKey}/data/{dataLocationKey} | Get connection data location
+[**ConnectionsControllerGetOperation**](ConnectionsAPI.md#ConnectionsControllerGetOperation) | **Get** /connections/{connectionIdOrKey}/operations/{operationKey} | Get connection operation
+[**ConnectionsControllerListConnections**](ConnectionsAPI.md#ConnectionsControllerListConnections) | **Get** /connections | List connections
+[**ConnectionsControllerListDataLocations**](ConnectionsAPI.md#ConnectionsControllerListDataLocations) | **Get** /connections/{connectionIdOrKey}/data | List connection data locations
+[**ConnectionsControllerListOperations**](ConnectionsAPI.md#ConnectionsControllerListOperations) | **Get** /connections/{connectionIdOrKey}/operations | List connection operations
+[**ConnectionsControllerPatchConnection**](ConnectionsAPI.md#ConnectionsControllerPatchConnection) | **Patch** /connections/{connectionIdOrKey} | Update connection
+[**ConnectionsControllerProxyRequestDelete**](ConnectionsAPI.md#ConnectionsControllerProxyRequestDelete) | **Delete** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestGet**](ConnectionsAPI.md#ConnectionsControllerProxyRequestGet) | **Get** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestHead**](ConnectionsAPI.md#ConnectionsControllerProxyRequestHead) | **Head** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestOptions**](ConnectionsAPI.md#ConnectionsControllerProxyRequestOptions) | **Options** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestPatch**](ConnectionsAPI.md#ConnectionsControllerProxyRequestPatch) | **Patch** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestPost**](ConnectionsAPI.md#ConnectionsControllerProxyRequestPost) | **Post** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerProxyRequestPut**](ConnectionsAPI.md#ConnectionsControllerProxyRequestPut) | **Put** /connections/{connectionIdOrKey}/proxy/{path} | Connection proxy request
+[**ConnectionsControllerRefreshConnectionCredentials**](ConnectionsAPI.md#ConnectionsControllerRefreshConnectionCredentials) | **Post** /connections/{connectionIdOrKey}/refresh-credentials | Refresh connection credentials
+[**ConnectionsControllerRunOperation**](ConnectionsAPI.md#ConnectionsControllerRunOperation) | **Post** /connections/{connectionIdOrKey}/operations/{operationKey}/run | Run connection operation
+[**ConnectionsControllerTestConnection**](ConnectionsAPI.md#ConnectionsControllerTestConnection) | **Post** /connections/{connectionIdOrKey}/test | Test connection
 
 
 
-## ArchiveConnection
+## ConnectionsControllerArchiveConnection
 
-> ArchiveConnection(ctx, connectionIdOrKey).Execute()
+> ConnectionsControllerArchiveConnection(ctx, connectionIdOrKey).Execute()
 
-
+Archive connection
 
 ### Example
 
@@ -57,9 +50,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ArchiveConnection(context.Background(), connectionIdOrKey).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerArchiveConnection(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ArchiveConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerArchiveConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -75,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiArchiveConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerArchiveConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -100,11 +93,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateConnection
+## ConnectionsControllerCreateConnection
 
-> ConnectionDto CreateConnection(ctx).CreateConnectionDto(createConnectionDto).Execute()
+> ConnectionDto ConnectionsControllerCreateConnection(ctx).CreateConnectionDto(createConnectionDto).Execute()
 
-
+Create connection
 
 ### Example
 
@@ -123,13 +116,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.CreateConnection(context.Background()).CreateConnectionDto(createConnectionDto).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerCreateConnection(context.Background()).CreateConnectionDto(createConnectionDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.CreateConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerCreateConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateConnection`: ConnectionDto
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.CreateConnection`: %v\n", resp)
+	// response from `ConnectionsControllerCreateConnection`: ConnectionDto
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerCreateConnection`: %v\n", resp)
 }
 ```
 
@@ -139,7 +132,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerCreateConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -164,11 +157,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DataLocationMethod
+## ConnectionsControllerDataLocationMethod
 
-> map[string]interface{} DataLocationMethod(ctx, connectionIdOrKey, dataLocationKey, methodKey).Execute()
+> map[string]interface{} ConnectionsControllerDataLocationMethod(ctx, connectionIdOrKey, dataLocationKey, methodKey).Execute()
 
-
+Get connection data location method
 
 ### Example
 
@@ -189,13 +182,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.DataLocationMethod(context.Background(), connectionIdOrKey, dataLocationKey, methodKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerDataLocationMethod(context.Background(), connectionIdOrKey, dataLocationKey, methodKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.DataLocationMethod``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerDataLocationMethod``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DataLocationMethod`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.DataLocationMethod`: %v\n", resp)
+	// response from `ConnectionsControllerDataLocationMethod`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerDataLocationMethod`: %v\n", resp)
 }
 ```
 
@@ -211,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDataLocationMethodRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerDataLocationMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -238,13 +231,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetConnection
+## ConnectionsControllerGetConnection
 
-> ConnectionDto GetConnection(ctx, connectionIdOrKey).Execute()
+> ConnectionDto ConnectionsControllerGetConnection(ctx, connectionIdOrKey).Execute()
 
-
-
-
+Get connection
 
 ### Example
 
@@ -263,13 +254,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.GetConnection(context.Background(), connectionIdOrKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerGetConnection(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.GetConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerGetConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConnection`: ConnectionDto
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.GetConnection`: %v\n", resp)
+	// response from `ConnectionsControllerGetConnection`: ConnectionDto
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerGetConnection`: %v\n", resp)
 }
 ```
 
@@ -283,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerGetConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -308,11 +299,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetDataLocationSpec
+## ConnectionsControllerGetDataLocationSpec
 
-> map[string]interface{} GetDataLocationSpec(ctx, connectionIdOrKey, dataLocationKey).Execute()
+> map[string]interface{} ConnectionsControllerGetDataLocationSpec(ctx, connectionIdOrKey, dataLocationKey).Execute()
 
-
+Get connection data location
 
 ### Example
 
@@ -332,13 +323,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.GetDataLocationSpec(context.Background(), connectionIdOrKey, dataLocationKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerGetDataLocationSpec(context.Background(), connectionIdOrKey, dataLocationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.GetDataLocationSpec``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerGetDataLocationSpec``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDataLocationSpec`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.GetDataLocationSpec`: %v\n", resp)
+	// response from `ConnectionsControllerGetDataLocationSpec`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerGetDataLocationSpec`: %v\n", resp)
 }
 ```
 
@@ -353,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDataLocationSpecRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerGetDataLocationSpecRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -379,11 +370,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetOperation
+## ConnectionsControllerGetOperation
 
-> map[string]interface{} GetOperation(ctx, connectionIdOrKey, operationKey).Execute()
+> map[string]interface{} ConnectionsControllerGetOperation(ctx, connectionIdOrKey, operationKey).Execute()
 
-
+Get connection operation
 
 ### Example
 
@@ -403,13 +394,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.GetOperation(context.Background(), connectionIdOrKey, operationKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerGetOperation(context.Background(), connectionIdOrKey, operationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.GetOperation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerGetOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOperation`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.GetOperation`: %v\n", resp)
+	// response from `ConnectionsControllerGetOperation`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerGetOperation`: %v\n", resp)
 }
 ```
 
@@ -424,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetOperationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerGetOperationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -450,11 +441,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListConnections
+## ConnectionsControllerListConnections
 
-> ListConnections200Response ListConnections(ctx).Id(id).UserId(userId).Name(name).IsTest(isTest).Disconnected(disconnected).IntegrationId(integrationId).IntegrationKey(integrationKey).Execute()
+> ConnectionsControllerListConnections200Response ConnectionsControllerListConnections(ctx).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Id(id).UserId(userId).Name(name).IsTest(isTest).Disconnected(disconnected).IntegrationId(integrationId).IntegrationKey(integrationKey).Execute()
 
-
+List connections
 
 ### Example
 
@@ -469,6 +460,11 @@ import (
 )
 
 func main() {
+	limit := float32(8.14) // float32 |  (optional)
+	cursor := "cursor_example" // string |  (optional)
+	search := "search_example" // string |  (optional)
+	connectorId := "connectorId_example" // string |  (optional)
+	includeArchived := true // bool |  (optional)
 	id := "id_example" // string |  (optional)
 	userId := "userId_example" // string |  (optional)
 	name := "name_example" // string |  (optional)
@@ -479,13 +475,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.ListConnections(context.Background()).Id(id).UserId(userId).Name(name).IsTest(isTest).Disconnected(disconnected).IntegrationId(integrationId).IntegrationKey(integrationKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerListConnections(context.Background()).Limit(limit).Cursor(cursor).Search(search).ConnectorId(connectorId).IncludeArchived(includeArchived).Id(id).UserId(userId).Name(name).IsTest(isTest).Disconnected(disconnected).IntegrationId(integrationId).IntegrationKey(integrationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ListConnections``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerListConnections``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListConnections`: ListConnections200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ListConnections`: %v\n", resp)
+	// response from `ConnectionsControllerListConnections`: ConnectionsControllerListConnections200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerListConnections`: %v\n", resp)
 }
 ```
 
@@ -495,11 +491,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListConnectionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerListConnectionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **limit** | **float32** |  | 
+ **cursor** | **string** |  | 
+ **search** | **string** |  | 
+ **connectorId** | **string** |  | 
+ **includeArchived** | **bool** |  | 
  **id** | **string** |  | 
  **userId** | **string** |  | 
  **name** | **string** |  | 
@@ -510,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListConnections200Response**](ListConnections200Response.md)
+[**ConnectionsControllerListConnections200Response**](ConnectionsControllerListConnections200Response.md)
 
 ### Authorization
 
@@ -526,11 +527,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListDataLocations
+## ConnectionsControllerListDataLocations
 
-> []map[string]interface{} ListDataLocations(ctx, connectionIdOrKey).Execute()
+> []map[string]interface{} ConnectionsControllerListDataLocations(ctx, connectionIdOrKey).Execute()
 
-
+List connection data locations
 
 ### Example
 
@@ -549,13 +550,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.ListDataLocations(context.Background(), connectionIdOrKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerListDataLocations(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ListDataLocations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerListDataLocations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDataLocations`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ListDataLocations`: %v\n", resp)
+	// response from `ConnectionsControllerListDataLocations`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerListDataLocations`: %v\n", resp)
 }
 ```
 
@@ -569,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDataLocationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerListDataLocationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -594,11 +595,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListOperations
+## ConnectionsControllerListOperations
 
-> []map[string]interface{} ListOperations(ctx, connectionIdOrKey).Execute()
+> []map[string]interface{} ConnectionsControllerListOperations(ctx, connectionIdOrKey).Execute()
 
-
+List connection operations
 
 ### Example
 
@@ -617,13 +618,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.ListOperations(context.Background(), connectionIdOrKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerListOperations(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ListOperations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerListOperations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperations`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ListOperations`: %v\n", resp)
+	// response from `ConnectionsControllerListOperations`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerListOperations`: %v\n", resp)
 }
 ```
 
@@ -637,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListOperationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerListOperationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -662,501 +663,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## MakeConnectionRequestDelete
+## ConnectionsControllerPatchConnection
 
-> map[string]interface{} MakeConnectionRequestDelete(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
+> ConnectionDto ConnectionsControllerPatchConnection(ctx, connectionIdOrKey).UpdateConnectionDto(updateConnectionDto).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestDelete(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestDelete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestDelete`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestDelete`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestGet
-
-> map[string]interface{} MakeConnectionRequestGet(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestGet(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestGet`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestHead
-
-> map[string]interface{} MakeConnectionRequestHead(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestHead(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestHead``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestHead`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestHead`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestHeadRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestOptions
-
-> map[string]interface{} MakeConnectionRequestOptions(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestOptions(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestOptions``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestOptions`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestOptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestOptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestPatch
-
-> map[string]interface{} MakeConnectionRequestPatch(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestPatch(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestPatch``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestPatch`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestPatch`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestPatchRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestPost
-
-> map[string]interface{} MakeConnectionRequestPost(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestPost(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestPost`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MakeConnectionRequestPut
-
-> map[string]interface{} MakeConnectionRequestPut(ctx, connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	connectionRequestDto := *openapiclient.NewConnectionRequestDto("Path_example", "Method_example") // ConnectionRequestDto | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.MakeConnectionRequestPut(context.Background(), connectionIdOrKey).ConnectionRequestDto(connectionRequestDto).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.MakeConnectionRequestPut``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MakeConnectionRequestPut`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.MakeConnectionRequestPut`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMakeConnectionRequestPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **connectionRequestDto** | [**ConnectionRequestDto**](ConnectionRequestDto.md) |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PatchConnection
-
-> ConnectionDto PatchConnection(ctx, connectionIdOrKey).UpdateConnectionDto(updateConnectionDto).Execute()
-
-
+Update connection
 
 ### Example
 
@@ -1176,13 +687,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.PatchConnection(context.Background(), connectionIdOrKey).UpdateConnectionDto(updateConnectionDto).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerPatchConnection(context.Background(), connectionIdOrKey).UpdateConnectionDto(updateConnectionDto).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.PatchConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerPatchConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PatchConnection`: ConnectionDto
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.PatchConnection`: %v\n", resp)
+	// response from `ConnectionsControllerPatchConnection`: ConnectionDto
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerPatchConnection`: %v\n", resp)
 }
 ```
 
@@ -1196,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerPatchConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1222,80 +733,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestDelete
+## ConnectionsControllerProxyRequestDelete
 
-> ProxyRequestDelete(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestDelete(ctx, connectionIdOrKey, path).Execute()
 
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
-)
-
-func main() {
-	connectionIdOrKey := "connectionIdOrKey_example" // string | 
-	path := "path_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestDelete(context.Background(), connectionIdOrKey, path).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestDelete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionIdOrKey** | **string** |  | 
-**path** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiProxyRequestDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ProxyRequestGet
-
-> ProxyRequestGet(ctx, connectionIdOrKey, path).Execute()
-
-
+Connection proxy request
 
 ### Example
 
@@ -1315,9 +757,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestGet(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestDelete(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1334,7 +776,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1360,11 +802,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestHead
+## ConnectionsControllerProxyRequestGet
 
-> ProxyRequestHead(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestGet(ctx, connectionIdOrKey, path).Execute()
 
-
+Connection proxy request
 
 ### Example
 
@@ -1384,9 +826,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestHead(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestGet(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestHead``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1403,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestHeadRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1429,11 +871,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestOptions
+## ConnectionsControllerProxyRequestHead
 
-> ProxyRequestOptions(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestHead(ctx, connectionIdOrKey, path).Execute()
 
-
+Connection proxy request
 
 ### Example
 
@@ -1453,9 +895,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestOptions(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestHead(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestHead``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1472,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestOptionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestHeadRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1498,11 +940,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestPatch
+## ConnectionsControllerProxyRequestOptions
 
-> ProxyRequestPatch(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestOptions(ctx, connectionIdOrKey, path).Execute()
 
-
+Connection proxy request
 
 ### Example
 
@@ -1522,9 +964,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestPatch(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestOptions(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1541,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestPatchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestOptionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1567,11 +1009,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestPost
+## ConnectionsControllerProxyRequestPatch
 
-> ProxyRequestPost(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestPatch(ctx, connectionIdOrKey, path).Execute()
 
-
+Connection proxy request
 
 ### Example
 
@@ -1591,9 +1033,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestPost(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestPatch(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestPatch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1610,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestPatchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1636,11 +1078,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ProxyRequestPut
+## ConnectionsControllerProxyRequestPost
 
-> ProxyRequestPut(ctx, connectionIdOrKey, path).Execute()
+> ConnectionsControllerProxyRequestPost(ctx, connectionIdOrKey, path).Execute()
 
-
+Connection proxy request
 
 ### Example
 
@@ -1660,9 +1102,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.ProxyRequestPut(context.Background(), connectionIdOrKey, path).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestPost(context.Background(), connectionIdOrKey, path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ProxyRequestPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1679,7 +1121,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiProxyRequestPutRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1705,11 +1147,80 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## RefreshConnectionCredentials
+## ConnectionsControllerProxyRequestPut
 
-> RefreshConnectionCredentials(ctx, connectionIdOrKey).Execute()
+> ConnectionsControllerProxyRequestPut(ctx, connectionIdOrKey, path).Execute()
+
+Connection proxy request
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/mkcr-innovations/integration-app-client/client"
+)
+
+func main() {
+	connectionIdOrKey := "connectionIdOrKey_example" // string | 
+	path := "path_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerProxyRequestPut(context.Background(), connectionIdOrKey, path).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerProxyRequestPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**connectionIdOrKey** | **string** |  | 
+**path** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiConnectionsControllerProxyRequestPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ConnectionsControllerRefreshConnectionCredentials
+
+> ConnectionsControllerRefreshConnectionCredentials(ctx, connectionIdOrKey).Execute()
+
+Refresh connection credentials
 
 ### Example
 
@@ -1728,9 +1239,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.RefreshConnectionCredentials(context.Background(), connectionIdOrKey).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerRefreshConnectionCredentials(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.RefreshConnectionCredentials``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerRefreshConnectionCredentials``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1746,7 +1257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRefreshConnectionCredentialsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerRefreshConnectionCredentialsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1771,11 +1282,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## RunOperation
+## ConnectionsControllerRunOperation
 
-> OperationRunResponseDto RunOperation(ctx, connectionIdOrKey, operationKey).Execute()
+> OperationRunResponseDto ConnectionsControllerRunOperation(ctx, connectionIdOrKey, operationKey).Execute()
 
-
+Run connection operation
 
 ### Example
 
@@ -1795,13 +1306,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.RunOperation(context.Background(), connectionIdOrKey, operationKey).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.ConnectionsControllerRunOperation(context.Background(), connectionIdOrKey, operationKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.RunOperation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerRunOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RunOperation`: OperationRunResponseDto
-	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.RunOperation`: %v\n", resp)
+	// response from `ConnectionsControllerRunOperation`: OperationRunResponseDto
+	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.ConnectionsControllerRunOperation`: %v\n", resp)
 }
 ```
 
@@ -1816,7 +1327,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRunOperationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerRunOperationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1842,11 +1353,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## TestConnection
+## ConnectionsControllerTestConnection
 
-> TestConnection(ctx, connectionIdOrKey).Execute()
+> ConnectionsControllerTestConnection(ctx, connectionIdOrKey).Execute()
 
-
+Test connection
 
 ### Example
 
@@ -1865,9 +1376,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.TestConnection(context.Background(), connectionIdOrKey).Execute()
+	r, err := apiClient.ConnectionsAPI.ConnectionsControllerTestConnection(context.Background(), connectionIdOrKey).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.TestConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.ConnectionsControllerTestConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1883,7 +1394,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConnectionsControllerTestConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
