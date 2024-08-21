@@ -25,7 +25,6 @@ type ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration struct
 	Uuid *string `json:"uuid,omitempty"`
 	ConnectorId *string `json:"connectorId,omitempty"`
 	AuthType *string `json:"authType,omitempty"`
-	ParametersSchema *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema `json:"parametersSchema,omitempty"`
 	HasDefaultParameters *bool `json:"hasDefaultParameters,omitempty"`
 	HasMissingParameters *bool `json:"hasMissingParameters,omitempty"`
 	HasDocumentation *bool `json:"hasDocumentation,omitempty"`
@@ -246,38 +245,6 @@ func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) H
 // SetAuthType gets a reference to the given string and assigns it to the AuthType field.
 func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) SetAuthType(v string) {
 	o.AuthType = &v
-}
-
-// GetParametersSchema returns the ParametersSchema field value if set, zero value otherwise.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) GetParametersSchema() ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema {
-	if o == nil || IsNil(o.ParametersSchema) {
-		var ret ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema
-		return ret
-	}
-	return *o.ParametersSchema
-}
-
-// GetParametersSchemaOk returns a tuple with the ParametersSchema field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) GetParametersSchemaOk() (*ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema, bool) {
-	if o == nil || IsNil(o.ParametersSchema) {
-		return nil, false
-	}
-	return o.ParametersSchema, true
-}
-
-// HasParametersSchema returns a boolean if a field has been set.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) HasParametersSchema() bool {
-	if o != nil && !IsNil(o.ParametersSchema) {
-		return true
-	}
-
-	return false
-}
-
-// SetParametersSchema gets a reference to the given ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema and assigns it to the ParametersSchema field.
-func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) SetParametersSchema(v ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema) {
-	o.ParametersSchema = &v
 }
 
 // GetHasDefaultParameters returns the HasDefaultParameters field value if set, zero value otherwise.
@@ -659,9 +626,6 @@ func (o ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) To
 	}
 	if !IsNil(o.AuthType) {
 		toSerialize["authType"] = o.AuthType
-	}
-	if !IsNil(o.ParametersSchema) {
-		toSerialize["parametersSchema"] = o.ParametersSchema
 	}
 	if !IsNil(o.HasDefaultParameters) {
 		toSerialize["hasDefaultParameters"] = o.HasDefaultParameters

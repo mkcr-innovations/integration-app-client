@@ -17936,35 +17936,6 @@
                                   "basic_auth"
                                 ]
                               },
-                              "parametersSchema": {
-                                "type": "object",
-                                "properties": {
-                                  "type": {
-                                    "type": "string",
-                                    "enum": [
-                                      "object"
-                                    ]
-                                  },
-                                  "properties": {
-                                    "type": "object",
-                                    "properties": {
-                                      "clientId": {
-                                        "type": "string"
-                                      },
-                                      "clientSecret": {
-                                        "type": "string"
-                                      },
-                                      "scopes": {
-                                        "type": "array",
-                                        "items": {
-                                          "type": "string"
-                                        },
-                                        "default": []
-                                      }
-                                    }
-                                  }
-                                }
-                              },
                               "hasDefaultParameters": {
                                 "type": "boolean"
                               },

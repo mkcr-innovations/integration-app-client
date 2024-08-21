@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **Uuid** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
-**ParametersSchema** | Pointer to [**ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema**](ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema.md) |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
 **HasMissingParameters** | Pointer to **bool** |  | [optional] 
 **HasDocumentation** | Pointer to **bool** |  | [optional] 
@@ -191,31 +190,6 @@ SetAuthType sets AuthType field to given value.
 `func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) HasAuthType() bool`
 
 HasAuthType returns a boolean if a field has been set.
-
-### GetParametersSchema
-
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) GetParametersSchema() ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema`
-
-GetParametersSchema returns the ParametersSchema field if non-nil, zero value otherwise.
-
-### GetParametersSchemaOk
-
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) GetParametersSchemaOk() (*ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema, bool)`
-
-GetParametersSchemaOk returns a tuple with the ParametersSchema field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParametersSchema
-
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) SetParametersSchema(v ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegrationParametersSchema)`
-
-SetParametersSchema sets ParametersSchema field to given value.
-
-### HasParametersSchema
-
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerIntegration) HasParametersSchema() bool`
-
-HasParametersSchema returns a boolean if a field has been set.
 
 ### GetHasDefaultParameters
 
