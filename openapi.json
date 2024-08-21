@@ -16136,6 +16136,9 @@
           }
         },
         "required": [
+          "direction",
+          "appRecordId",
+          "externalRecordId"
         ]
       },
       "DeleteDataLinkDto": {
@@ -16157,7 +16160,9 @@
           }
         },
         "required": [
-
+          "direction",
+          "appRecordId",
+          "externalRecordId"
         ]
       },
       "FieldMappingDto": {

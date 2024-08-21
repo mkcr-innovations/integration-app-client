@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Direction** | Pointer to **string** |  | [optional] 
-**AppRecordId** | Pointer to **string** |  | [optional] 
-**ExternalRecordId** | Pointer to **string** |  | [optional] 
+**Direction** | **string** |  | 
+**AppRecordId** | **string** |  | 
+**ExternalRecordId** | **string** |  | 
 
 ## Methods
 
 ### NewDeleteDataLinkDto
 
-`func NewDeleteDataLinkDto() *DeleteDataLinkDto`
+`func NewDeleteDataLinkDto(direction string, appRecordId string, externalRecordId string, ) *DeleteDataLinkDto`
 
 NewDeleteDataLinkDto instantiates a new DeleteDataLinkDto object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetDirection sets Direction field to given value.
 
-### HasDirection
-
-`func (o *DeleteDataLinkDto) HasDirection() bool`
-
-HasDirection returns a boolean if a field has been set.
 
 ### GetAppRecordId
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetAppRecordId sets AppRecordId field to given value.
 
-### HasAppRecordId
-
-`func (o *DeleteDataLinkDto) HasAppRecordId() bool`
-
-HasAppRecordId returns a boolean if a field has been set.
 
 ### GetExternalRecordId
 
@@ -96,11 +86,6 @@ and a boolean to check if the value has been set.
 
 SetExternalRecordId sets ExternalRecordId field to given value.
 
-### HasExternalRecordId
-
-`func (o *DeleteDataLinkDto) HasExternalRecordId() bool`
-
-HasExternalRecordId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
