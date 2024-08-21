@@ -12,8 +12,6 @@ package client
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ScenarioDto type satisfies the MappedNullable interface at compile time
@@ -21,31 +19,25 @@ var _ MappedNullable = &ScenarioDto{}
 
 // ScenarioDto struct for ScenarioDto
 type ScenarioDto struct {
-	Id string `json:"id"`
-	AppId string `json:"appId"`
-	ScenarioTemplateId *string `json:"scenarioTemplateId,omitempty"`
-	Name string `json:"name"`
-	Key string `json:"key"`
-	ShortDescription *string `json:"shortDescription,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Elements []map[string]interface{} `json:"elements,omitempty"`
 	Connectors []map[string]interface{} `json:"connectors,omitempty"`
 	Todos []map[string]interface{} `json:"todos,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
+	Id *string `json:"id,omitempty"`
+	AppId *string `json:"appId,omitempty"`
+	ScenarioTemplateId *string `json:"scenarioTemplateId,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Key *string `json:"key,omitempty"`
+	ShortDescription *string `json:"shortDescription,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Elements []ScenarioDtoElementsInner `json:"elements,omitempty"`
 }
-
-type _ScenarioDto ScenarioDto
 
 // NewScenarioDto instantiates a new ScenarioDto object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScenarioDto(id string, appId string, name string, key string) *ScenarioDto {
+func NewScenarioDto() *ScenarioDto {
 	this := ScenarioDto{}
-	this.Id = id
-	this.AppId = appId
-	this.Name = name
-	this.Key = key
 	return &this
 }
 
@@ -55,230 +47,6 @@ func NewScenarioDto(id string, appId string, name string, key string) *ScenarioD
 func NewScenarioDtoWithDefaults() *ScenarioDto {
 	this := ScenarioDto{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ScenarioDto) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ScenarioDto) SetId(v string) {
-	o.Id = v
-}
-
-// GetAppId returns the AppId field value
-func (o *ScenarioDto) GetAppId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AppId
-}
-
-// GetAppIdOk returns a tuple with the AppId field value
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetAppIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AppId, true
-}
-
-// SetAppId sets field value
-func (o *ScenarioDto) SetAppId(v string) {
-	o.AppId = v
-}
-
-// GetScenarioTemplateId returns the ScenarioTemplateId field value if set, zero value otherwise.
-func (o *ScenarioDto) GetScenarioTemplateId() string {
-	if o == nil || IsNil(o.ScenarioTemplateId) {
-		var ret string
-		return ret
-	}
-	return *o.ScenarioTemplateId
-}
-
-// GetScenarioTemplateIdOk returns a tuple with the ScenarioTemplateId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetScenarioTemplateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ScenarioTemplateId) {
-		return nil, false
-	}
-	return o.ScenarioTemplateId, true
-}
-
-// HasScenarioTemplateId returns a boolean if a field has been set.
-func (o *ScenarioDto) HasScenarioTemplateId() bool {
-	if o != nil && !IsNil(o.ScenarioTemplateId) {
-		return true
-	}
-
-	return false
-}
-
-// SetScenarioTemplateId gets a reference to the given string and assigns it to the ScenarioTemplateId field.
-func (o *ScenarioDto) SetScenarioTemplateId(v string) {
-	o.ScenarioTemplateId = &v
-}
-
-// GetName returns the Name field value
-func (o *ScenarioDto) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *ScenarioDto) SetName(v string) {
-	o.Name = v
-}
-
-// GetKey returns the Key field value
-func (o *ScenarioDto) GetKey() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetKeyOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Key, true
-}
-
-// SetKey sets field value
-func (o *ScenarioDto) SetKey(v string) {
-	o.Key = v
-}
-
-// GetShortDescription returns the ShortDescription field value if set, zero value otherwise.
-func (o *ScenarioDto) GetShortDescription() string {
-	if o == nil || IsNil(o.ShortDescription) {
-		var ret string
-		return ret
-	}
-	return *o.ShortDescription
-}
-
-// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetShortDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.ShortDescription) {
-		return nil, false
-	}
-	return o.ShortDescription, true
-}
-
-// HasShortDescription returns a boolean if a field has been set.
-func (o *ScenarioDto) HasShortDescription() bool {
-	if o != nil && !IsNil(o.ShortDescription) {
-		return true
-	}
-
-	return false
-}
-
-// SetShortDescription gets a reference to the given string and assigns it to the ShortDescription field.
-func (o *ScenarioDto) SetShortDescription(v string) {
-	o.ShortDescription = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *ScenarioDto) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// HasDescription returns a boolean if a field has been set.
-func (o *ScenarioDto) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *ScenarioDto) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetElements returns the Elements field value if set, zero value otherwise.
-func (o *ScenarioDto) GetElements() []map[string]interface{} {
-	if o == nil || IsNil(o.Elements) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.Elements
-}
-
-// GetElementsOk returns a tuple with the Elements field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScenarioDto) GetElementsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Elements) {
-		return nil, false
-	}
-	return o.Elements, true
-}
-
-// HasElements returns a boolean if a field has been set.
-func (o *ScenarioDto) HasElements() bool {
-	if o != nil && !IsNil(o.Elements) {
-		return true
-	}
-
-	return false
-}
-
-// SetElements gets a reference to the given []map[string]interface{} and assigns it to the Elements field.
-func (o *ScenarioDto) SetElements(v []map[string]interface{}) {
-	o.Elements = v
 }
 
 // GetConnectors returns the Connectors field value if set, zero value otherwise.
@@ -377,6 +145,262 @@ func (o *ScenarioDto) SetArchivedAt(v string) {
 	o.ArchivedAt = &v
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ScenarioDto) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *ScenarioDto) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ScenarioDto) SetId(v string) {
+	o.Id = &v
+}
+
+// GetAppId returns the AppId field value if set, zero value otherwise.
+func (o *ScenarioDto) GetAppId() string {
+	if o == nil || IsNil(o.AppId) {
+		var ret string
+		return ret
+	}
+	return *o.AppId
+}
+
+// GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetAppIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AppId) {
+		return nil, false
+	}
+	return o.AppId, true
+}
+
+// HasAppId returns a boolean if a field has been set.
+func (o *ScenarioDto) HasAppId() bool {
+	if o != nil && !IsNil(o.AppId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppId gets a reference to the given string and assigns it to the AppId field.
+func (o *ScenarioDto) SetAppId(v string) {
+	o.AppId = &v
+}
+
+// GetScenarioTemplateId returns the ScenarioTemplateId field value if set, zero value otherwise.
+func (o *ScenarioDto) GetScenarioTemplateId() string {
+	if o == nil || IsNil(o.ScenarioTemplateId) {
+		var ret string
+		return ret
+	}
+	return *o.ScenarioTemplateId
+}
+
+// GetScenarioTemplateIdOk returns a tuple with the ScenarioTemplateId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetScenarioTemplateIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ScenarioTemplateId) {
+		return nil, false
+	}
+	return o.ScenarioTemplateId, true
+}
+
+// HasScenarioTemplateId returns a boolean if a field has been set.
+func (o *ScenarioDto) HasScenarioTemplateId() bool {
+	if o != nil && !IsNil(o.ScenarioTemplateId) {
+		return true
+	}
+
+	return false
+}
+
+// SetScenarioTemplateId gets a reference to the given string and assigns it to the ScenarioTemplateId field.
+func (o *ScenarioDto) SetScenarioTemplateId(v string) {
+	o.ScenarioTemplateId = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ScenarioDto) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ScenarioDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ScenarioDto) SetName(v string) {
+	o.Name = &v
+}
+
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *ScenarioDto) GetKey() string {
+	if o == nil || IsNil(o.Key) {
+		var ret string
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.Key) {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *ScenarioDto) HasKey() bool {
+	if o != nil && !IsNil(o.Key) {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given string and assigns it to the Key field.
+func (o *ScenarioDto) SetKey(v string) {
+	o.Key = &v
+}
+
+// GetShortDescription returns the ShortDescription field value if set, zero value otherwise.
+func (o *ScenarioDto) GetShortDescription() string {
+	if o == nil || IsNil(o.ShortDescription) {
+		var ret string
+		return ret
+	}
+	return *o.ShortDescription
+}
+
+// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetShortDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.ShortDescription) {
+		return nil, false
+	}
+	return o.ShortDescription, true
+}
+
+// HasShortDescription returns a boolean if a field has been set.
+func (o *ScenarioDto) HasShortDescription() bool {
+	if o != nil && !IsNil(o.ShortDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetShortDescription gets a reference to the given string and assigns it to the ShortDescription field.
+func (o *ScenarioDto) SetShortDescription(v string) {
+	o.ShortDescription = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *ScenarioDto) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *ScenarioDto) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *ScenarioDto) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetElements returns the Elements field value if set, zero value otherwise.
+func (o *ScenarioDto) GetElements() []ScenarioDtoElementsInner {
+	if o == nil || IsNil(o.Elements) {
+		var ret []ScenarioDtoElementsInner
+		return ret
+	}
+	return o.Elements
+}
+
+// GetElementsOk returns a tuple with the Elements field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDto) GetElementsOk() ([]ScenarioDtoElementsInner, bool) {
+	if o == nil || IsNil(o.Elements) {
+		return nil, false
+	}
+	return o.Elements, true
+}
+
+// HasElements returns a boolean if a field has been set.
+func (o *ScenarioDto) HasElements() bool {
+	if o != nil && !IsNil(o.Elements) {
+		return true
+	}
+
+	return false
+}
+
+// SetElements gets a reference to the given []ScenarioDtoElementsInner and assigns it to the Elements field.
+func (o *ScenarioDto) SetElements(v []ScenarioDtoElementsInner) {
+	o.Elements = v
+}
+
 func (o ScenarioDto) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -387,22 +411,6 @@ func (o ScenarioDto) MarshalJSON() ([]byte, error) {
 
 func (o ScenarioDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
-	toSerialize["appId"] = o.AppId
-	if !IsNil(o.ScenarioTemplateId) {
-		toSerialize["scenarioTemplateId"] = o.ScenarioTemplateId
-	}
-	toSerialize["name"] = o.Name
-	toSerialize["key"] = o.Key
-	if !IsNil(o.ShortDescription) {
-		toSerialize["shortDescription"] = o.ShortDescription
-	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !IsNil(o.Elements) {
-		toSerialize["elements"] = o.Elements
-	}
 	if !IsNil(o.Connectors) {
 		toSerialize["connectors"] = o.Connectors
 	}
@@ -412,47 +420,31 @@ func (o ScenarioDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.AppId) {
+		toSerialize["appId"] = o.AppId
+	}
+	if !IsNil(o.ScenarioTemplateId) {
+		toSerialize["scenarioTemplateId"] = o.ScenarioTemplateId
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Key) {
+		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.ShortDescription) {
+		toSerialize["shortDescription"] = o.ShortDescription
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Elements) {
+		toSerialize["elements"] = o.Elements
+	}
 	return toSerialize, nil
-}
-
-func (o *ScenarioDto) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-		"appId",
-		"name",
-		"key",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varScenarioDto := _ScenarioDto{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varScenarioDto)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ScenarioDto(varScenarioDto)
-
-	return err
 }
 
 type NullableScenarioDto struct {

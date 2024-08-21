@@ -375,7 +375,7 @@ import (
 )
 
 func main() {
-	createScenarioDto := *openapiclient.NewCreateScenarioDto("Name_example", "Key_example") // CreateScenarioDto | 
+	createScenarioDto := *openapiclient.NewCreateScenarioDto() // CreateScenarioDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

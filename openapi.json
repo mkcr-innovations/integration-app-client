@@ -14905,6 +14905,81 @@
       }
     },
     "schemas": {
+      "CreateScenarioDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "shortDescription": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "todos": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "ScenarioExportDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "elements": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "UpdateScenarioDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "shortDescription": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "todos": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
       "PaginationResponseDto": {
         "type": "object",
         "properties": {}
@@ -17718,6 +17793,21 @@
       "ScenarioDto": {
         "type": "object",
         "properties": {
+          "connectors": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "todos": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "archivedAt": {
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -17791,114 +17881,6 @@
                           "properties": {
                             "$var": {
                               "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "dependencies": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "DataSource",
-                              "FieldMapping"
-                            ]
-                          },
-                          "key": {
-                            "type": "string"
-                          },
-                          "element": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "key": {
-                                "type": "string"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "revision": {
-                                "type": "string"
-                              },
-                              "customized": {
-                                "type": "boolean"
-                              },
-                              "udm": {
-                                "type": "string"
-                              },
-                              "integrationId": {
-                                "type": [
-                                  "string",
-                                  "null"
-                                ]
-                              },
-                              "dataSourceKey": {
-                                "type": "string"
-                              },
-                              "dataSourceId": {
-                                "type": "string",
-                                "pattern": "^[a-f0-9]{24}$"
-                              },
-                              "direction": {
-                                "type": "string",
-                                "enum": [
-                                  "import",
-                                  "export"
-                                ]
-                              },
-                              "defaultImportValue": {
-                                "type": "object",
-                                "properties": {
-                                  "id": {
-                                    "type": "object",
-                                    "properties": {
-                                      "$findAppRecordId": {
-                                        "type": "object",
-                                        "properties": {
-                                          "dataLinkTable": {
-                                            "type": "object",
-                                            "properties": {
-                                              "key": {
-                                                "type": "string"
-                                              }
-                                            }
-                                          },
-                                          "recordId": {
-                                            "type": "object",
-                                            "properties": {
-                                              "$var": {
-                                                "type": "string"
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  },
-                                  "name": {
-                                    "type": "object",
-                                    "properties": {
-                                      "$var": {
-                                        "type": "string"
-                                      }
-                                    }
-                                  },
-                                  "downstream_id": {
-                                    "type": "object",
-                                    "properties": {
-                                      "$var": {
-                                        "type": "string"
-                                      }
-                                    }
-                                  }
-                                }
-                              }
                             }
                           }
                         }
@@ -18040,288 +18022,9 @@
                   }
                 }
               }
-            },
-            "properties": {
-              "id": {
-                "type": "string",
-                "pattern": "^[a-f0-9]{24}$"
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "data-link-table",
-                  "action"
-                ]
-              },
-              "element": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "pattern": "^[a-f0-9]{24}$"
-                  },
-                  "key": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "revision": {
-                    "type": [
-                      "string",
-                      "null"
-                    ]
-                  },
-                  "isCustomized": {
-                    "type": [
-                      "boolean",
-                      "null"
-                    ]
-                  },
-                  "integrationId": {
-                    "type": [
-                      "string",
-                      "null"
-                    ]
-                  },
-                  "integration": {
-                    "type": [
-                      "object",
-                      "null"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "pattern": "^[a-f0-9]{24}$"
-                      },
-                      "key": {
-                        "type": "string"
-                      },
-                      "uuid": {
-                        "type": "string",
-                        "format": "uuid"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "connectorId": {
-                        "type": "string",
-                        "pattern": "^[a-f0-9]{24}$"
-                      },
-                      "authType": {
-                        "type": "string",
-                        "enum": [
-                          "oauth2"
-                        ]
-                      },
-                      "parametersSchema": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "object"
-                            ]
-                          },
-                          "properties": {
-                            "type": "object",
-                            "properties": {
-                              "clientId": {
-                                "type": "string"
-                              },
-                              "clientSecret": {
-                                "type": "string"
-                              },
-                              "scopes": {
-                                "type": "array",
-                                "items": {
-                                  "type": "string",
-                                  "enum": [
-                                    "full_access"
-                                  ]
-                                },
-                                "default": [
-                                  "full_access"
-                                ]
-                              }
-                            }                          
-                          }
-                        }
-                      },
-                      "hasDefaultParameters": {
-                        "type": "boolean"
-                      },
-                      "hasMissingParameters": {
-                        "type": "boolean"
-                      },
-                      "hasDocumentation": {
-                        "type": "boolean"
-                      },
-                      "hasOperations": {
-                        "type": "boolean"
-                      },
-                      "hasData": {
-                        "type": "boolean"
-                      },
-                      "hasEvents": {
-                        "type": "boolean"
-                      },
-                      "hasGlobalWebhooks": {
-                        "type": "boolean"
-                      },
-                      "hasUdm": {
-                        "type": "boolean"
-                      },
-                      "areParametersCustomized": {
-                        "type": "boolean"
-                      },
-                      "baseUri": {
-                        "type": "string",
-                        "format": "uri"
-                      },
-                      "logoUri": {
-                        "type": "string",
-                        "format": "uri"
-                      }
-                    }
-                  },
-                  "config": {
-                    "type": "object",
-                    "properties": {
-                      "dataSource": {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "fieldMapping": {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "key"
-                        ]
-                      }
-                    }
-                  },
-                  "dependencies": {
-                    "type": "array",
-                    "items": {
-                      "type": "object"
-                    }
-                  },
-                  "isDeployed": {
-                    "type": "boolean"
-                  },
-                  "configurationState": {
-                    "type": "string",
-                    "enum": [
-                      "NOT_CONFIGURED"
-                    ]
-                  },
-                  "configurationStateMessage": {
-                    "type": "string"
-                  }
-                }
-              }
-            } 
-          }
-        },
-        "connectors": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "todos": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "archivedAt": {
-          "type": "string"
-        }
-      }
-    },
-    "CreateScenarioDto": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "key": {
-          "type": "string"
-        },
-        "shortDescription": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "elements": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "todos": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        }
-      },
-      "UpdateScenarioDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "key": {
-            "type": "string"
-          },
-          "shortDescription": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "elements": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "todos": {
-            "type": "array",
-            "items": {
-              "type": "object"
             }
           }
         }
-      },
-      "ScenarioExportDto": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "elements": {
-            "type": "object"
-          }
-        },
-        "required": [
-          "name"
-        ]
       }
     }
   }

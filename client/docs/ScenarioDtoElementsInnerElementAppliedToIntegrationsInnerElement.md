@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**IsCustomized** | Pointer to **bool** |  | [optional] 
+**ParentId** | Pointer to **string** |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
-**Customized** | Pointer to **bool** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**ConfigurationState** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +29,55 @@ NewScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElementWithDefaults 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetIsCustomized
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetId() string`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetIsCustomized() bool`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetIsCustomized returns the IsCustomized field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIsCustomizedOk
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetIdOk() (*string, bool)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetIsCustomizedOk() (*bool, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIsCustomizedOk returns a tuple with the IsCustomized field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetIsCustomized
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetId(v string)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetIsCustomized(v bool)`
 
-SetId sets Id field to given value.
+SetIsCustomized sets IsCustomized field to given value.
 
-### HasId
+### HasIsCustomized
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasId() bool`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasIsCustomized() bool`
 
-HasId returns a boolean if a field has been set.
+HasIsCustomized returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetIntegrationId
 
@@ -77,30 +104,55 @@ SetIntegrationId sets IntegrationId field to given value.
 
 HasIntegrationId returns a boolean if a field has been set.
 
-### GetCustomized
+### GetId
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomized() bool`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetId() string`
 
-GetCustomized returns the Customized field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetCustomizedOk
+### GetIdOk
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetCustomizedOk() (*bool, bool)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetIdOk() (*string, bool)`
 
-GetCustomizedOk returns a tuple with the Customized field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomized
+### SetId
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetCustomized(v bool)`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetId(v string)`
 
-SetCustomized sets Customized field to given value.
+SetId sets Id field to given value.
 
-### HasCustomized
+### HasId
 
-`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasCustomized() bool`
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasId() bool`
 
-HasCustomized returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
+
+### GetConfigurationState
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetConfigurationState() string`
+
+GetConfigurationState returns the ConfigurationState field if non-nil, zero value otherwise.
+
+### GetConfigurationStateOk
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) GetConfigurationStateOk() (*string, bool)`
+
+GetConfigurationStateOk returns a tuple with the ConfigurationState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationState
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) SetConfigurationState(v string)`
+
+SetConfigurationState sets ConfigurationState field to given value.
+
+### HasConfigurationState
+
+`func (o *ScenarioDtoElementsInnerElementAppliedToIntegrationsInnerElement) HasConfigurationState() bool`
+
+HasConfigurationState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
