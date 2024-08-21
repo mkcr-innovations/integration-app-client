@@ -14013,6 +14013,18 @@
             }
           }
         ],
+        "requestBody": {
+          "description": "Request body to be passed",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "201": {
             "description": ""

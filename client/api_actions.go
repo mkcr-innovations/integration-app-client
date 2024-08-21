@@ -2262,8 +2262,15 @@ type ApiConnectionLevelActionControllerRunRequest struct {
 	ApiService ActionsAPI
 	actionSelector string
 	connectionSelector string
+	requestBody *map[string]interface{}
 	instanceKey *string
 	autoCreate *bool
+}
+
+// Request body to be passed
+func (r ApiConnectionLevelActionControllerRunRequest) RequestBody(requestBody map[string]interface{}) ApiConnectionLevelActionControllerRunRequest {
+	r.requestBody = &requestBody
+	return r
 }
 
 func (r ApiConnectionLevelActionControllerRunRequest) InstanceKey(instanceKey string) ApiConnectionLevelActionControllerRunRequest {
@@ -2317,6 +2324,9 @@ func (a *ActionsAPIService) ConnectionLevelActionControllerRunExecute(r ApiConne
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.requestBody == nil {
+		return nil, reportError("requestBody is required and must be specified")
+	}
 
 	if r.instanceKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "instanceKey", r.instanceKey, "")
@@ -2325,7 +2335,7 @@ func (a *ActionsAPIService) ConnectionLevelActionControllerRunExecute(r ApiConne
 		parameterAddToHeaderOrQuery(localVarQueryParams, "autoCreate", r.autoCreate, "")
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -2341,6 +2351,8 @@ func (a *ActionsAPIService) ConnectionLevelActionControllerRunExecute(r ApiConne
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

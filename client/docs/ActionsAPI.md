@@ -1175,7 +1175,7 @@ No authorization required
 
 ## ConnectionLevelActionControllerRun
 
-> ConnectionLevelActionControllerRun(ctx, actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+> ConnectionLevelActionControllerRun(ctx, actionSelector, connectionSelector).RequestBody(requestBody).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
 
 Run action instance for connection
 
@@ -1194,12 +1194,13 @@ import (
 func main() {
 	actionSelector := "actionSelector_example" // string | Action Key or Id
 	connectionSelector := "connectionSelector_example" // string | Integration Key, Connection ID, or Integration ID
+	requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} | Request body to be passed
 	instanceKey := "instanceKey_example" // string |  (optional)
 	autoCreate := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerRun(context.Background(), actionSelector, connectionSelector).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
+	r, err := apiClient.ActionsAPI.ConnectionLevelActionControllerRun(context.Background(), actionSelector, connectionSelector).RequestBody(requestBody).InstanceKey(instanceKey).AutoCreate(autoCreate).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActionsAPI.ConnectionLevelActionControllerRun``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1225,6 +1226,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **requestBody** | **map[string]interface{}** | Request body to be passed | 
  **instanceKey** | **string** |  | 
  **autoCreate** | **bool** |  | 
 
@@ -1238,7 +1240,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
