@@ -33,9 +33,9 @@ type ConnectionDto struct {
 	IsDefunct *bool `json:"isDefunct,omitempty"`
 	Error map[string]interface{} `json:"error,omitempty"`
 	Name string `json:"name"`
-	CreatedAt string `json:"createdAt"`
-	UpdatedAt string `json:"updatedAt"`
-	LastActiveAt string `json:"lastActiveAt"`
+	CreatedAt *string `json:"createdAt,omitempty"`
+	UpdatedAt *string `json:"updatedAt,omitempty"`
+	LastActiveAt *string `json:"lastActiveAt,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 }
 
@@ -45,15 +45,12 @@ type _ConnectionDto ConnectionDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConnectionDto(id string, userId string, integrationId string, name string, createdAt string, updatedAt string, lastActiveAt string) *ConnectionDto {
+func NewConnectionDto(id string, userId string, integrationId string, name string) *ConnectionDto {
 	this := ConnectionDto{}
 	this.Id = id
 	this.UserId = userId
 	this.IntegrationId = integrationId
 	this.Name = name
-	this.CreatedAt = createdAt
-	this.UpdatedAt = updatedAt
-	this.LastActiveAt = lastActiveAt
 	return &this
 }
 
@@ -388,76 +385,100 @@ func (o *ConnectionDto) SetName(v string) {
 	o.Name = v
 }
 
-// GetCreatedAt returns the CreatedAt field value
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *ConnectionDto) GetCreatedAt() string {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedAt) {
 		var ret string
 		return ret
 	}
-
-	return o.CreatedAt
+	return *o.CreatedAt
 }
 
-// GetCreatedAtOk returns a tuple with the CreatedAt field value
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetCreatedAtOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
-	return &o.CreatedAt, true
+	return o.CreatedAt, true
 }
 
-// SetCreatedAt sets field value
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *ConnectionDto) HasCreatedAt() bool {
+	if o != nil && !IsNil(o.CreatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
 func (o *ConnectionDto) SetCreatedAt(v string) {
-	o.CreatedAt = v
+	o.CreatedAt = &v
 }
 
-// GetUpdatedAt returns the UpdatedAt field value
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ConnectionDto) GetUpdatedAt() string {
-	if o == nil {
+	if o == nil || IsNil(o.UpdatedAt) {
 		var ret string
 		return ret
 	}
-
-	return o.UpdatedAt
+	return *o.UpdatedAt
 }
 
-// GetUpdatedAtOk returns a tuple with the UpdatedAt field value
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetUpdatedAtOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
-	return &o.UpdatedAt, true
+	return o.UpdatedAt, true
 }
 
-// SetUpdatedAt sets field value
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *ConnectionDto) HasUpdatedAt() bool {
+	if o != nil && !IsNil(o.UpdatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
 func (o *ConnectionDto) SetUpdatedAt(v string) {
-	o.UpdatedAt = v
+	o.UpdatedAt = &v
 }
 
-// GetLastActiveAt returns the LastActiveAt field value
+// GetLastActiveAt returns the LastActiveAt field value if set, zero value otherwise.
 func (o *ConnectionDto) GetLastActiveAt() string {
-	if o == nil {
+	if o == nil || IsNil(o.LastActiveAt) {
 		var ret string
 		return ret
 	}
-
-	return o.LastActiveAt
+	return *o.LastActiveAt
 }
 
-// GetLastActiveAtOk returns a tuple with the LastActiveAt field value
+// GetLastActiveAtOk returns a tuple with the LastActiveAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetLastActiveAtOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LastActiveAt) {
 		return nil, false
 	}
-	return &o.LastActiveAt, true
+	return o.LastActiveAt, true
 }
 
-// SetLastActiveAt sets field value
+// HasLastActiveAt returns a boolean if a field has been set.
+func (o *ConnectionDto) HasLastActiveAt() bool {
+	if o != nil && !IsNil(o.LastActiveAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastActiveAt gets a reference to the given string and assigns it to the LastActiveAt field.
 func (o *ConnectionDto) SetLastActiveAt(v string) {
-	o.LastActiveAt = v
+	o.LastActiveAt = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -527,9 +548,15 @@ func (o ConnectionDto) ToMap() (map[string]interface{}, error) {
 		toSerialize["error"] = o.Error
 	}
 	toSerialize["name"] = o.Name
-	toSerialize["createdAt"] = o.CreatedAt
-	toSerialize["updatedAt"] = o.UpdatedAt
-	toSerialize["lastActiveAt"] = o.LastActiveAt
+	if !IsNil(o.CreatedAt) {
+		toSerialize["createdAt"] = o.CreatedAt
+	}
+	if !IsNil(o.UpdatedAt) {
+		toSerialize["updatedAt"] = o.UpdatedAt
+	}
+	if !IsNil(o.LastActiveAt) {
+		toSerialize["lastActiveAt"] = o.LastActiveAt
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
@@ -545,9 +572,6 @@ func (o *ConnectionDto) UnmarshalJSON(data []byte) (err error) {
 		"userId",
 		"integrationId",
 		"name",
-		"createdAt",
-		"updatedAt",
-		"lastActiveAt",
 	}
 
 	allProperties := make(map[string]interface{})

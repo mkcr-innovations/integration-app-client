@@ -30,7 +30,7 @@ type IntegrationDto struct {
 	ConnectorId *string `json:"connectorId,omitempty"`
 	AuthType map[string]interface{} `json:"authType,omitempty"`
 	AuthOptions []string `json:"authOptions,omitempty"`
-	OAuthCallbackUri string `json:"oAuthCallbackUri"`
+	OAuthCallbackUri *string `json:"oAuthCallbackUri,omitempty"`
 	ParametersSchema map[string]interface{} `json:"parametersSchema,omitempty"`
 	HasDefaultParameters *bool `json:"hasDefaultParameters,omitempty"`
 	HasMissingParameters *bool `json:"hasMissingParameters,omitempty"`
@@ -41,10 +41,10 @@ type IntegrationDto struct {
 	HasGlobalWebhooks *bool `json:"hasGlobalWebhooks,omitempty"`
 	HasUdm *bool `json:"hasUdm,omitempty"`
 	AreParametersCustomized *bool `json:"areParametersCustomized,omitempty"`
-	BaseUri string `json:"baseUri"`
+	BaseUri *string `json:"baseUri,omitempty"`
 	ConnectorVersion *string `json:"connectorVersion,omitempty"`
 	IsTest *bool `json:"isTest,omitempty"`
-	LogoUri string `json:"logoUri"`
+	LogoUri *string `json:"logoUri,omitempty"`
 	ArchivedAt *time.Time `json:"archivedAt,omitempty"`
 	// Deprecated
 	ConnectionMode *string `json:"connectionMode,omitempty"`
@@ -56,15 +56,12 @@ type _IntegrationDto IntegrationDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIntegrationDto(id string, key string, uuid string, name string, oAuthCallbackUri string, baseUri string, logoUri string) *IntegrationDto {
+func NewIntegrationDto(id string, key string, uuid string, name string) *IntegrationDto {
 	this := IntegrationDto{}
 	this.Id = id
 	this.Key = key
 	this.Uuid = uuid
 	this.Name = name
-	this.OAuthCallbackUri = oAuthCallbackUri
-	this.BaseUri = baseUri
-	this.LogoUri = logoUri
 	return &this
 }
 
@@ -300,28 +297,36 @@ func (o *IntegrationDto) SetAuthOptions(v []string) {
 	o.AuthOptions = v
 }
 
-// GetOAuthCallbackUri returns the OAuthCallbackUri field value
+// GetOAuthCallbackUri returns the OAuthCallbackUri field value if set, zero value otherwise.
 func (o *IntegrationDto) GetOAuthCallbackUri() string {
-	if o == nil {
+	if o == nil || IsNil(o.OAuthCallbackUri) {
 		var ret string
 		return ret
 	}
-
-	return o.OAuthCallbackUri
+	return *o.OAuthCallbackUri
 }
 
-// GetOAuthCallbackUriOk returns a tuple with the OAuthCallbackUri field value
+// GetOAuthCallbackUriOk returns a tuple with the OAuthCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetOAuthCallbackUriOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.OAuthCallbackUri) {
 		return nil, false
 	}
-	return &o.OAuthCallbackUri, true
+	return o.OAuthCallbackUri, true
 }
 
-// SetOAuthCallbackUri sets field value
+// HasOAuthCallbackUri returns a boolean if a field has been set.
+func (o *IntegrationDto) HasOAuthCallbackUri() bool {
+	if o != nil && !IsNil(o.OAuthCallbackUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetOAuthCallbackUri gets a reference to the given string and assigns it to the OAuthCallbackUri field.
 func (o *IntegrationDto) SetOAuthCallbackUri(v string) {
-	o.OAuthCallbackUri = v
+	o.OAuthCallbackUri = &v
 }
 
 // GetParametersSchema returns the ParametersSchema field value if set, zero value otherwise.
@@ -644,28 +649,36 @@ func (o *IntegrationDto) SetAreParametersCustomized(v bool) {
 	o.AreParametersCustomized = &v
 }
 
-// GetBaseUri returns the BaseUri field value
+// GetBaseUri returns the BaseUri field value if set, zero value otherwise.
 func (o *IntegrationDto) GetBaseUri() string {
-	if o == nil {
+	if o == nil || IsNil(o.BaseUri) {
 		var ret string
 		return ret
 	}
-
-	return o.BaseUri
+	return *o.BaseUri
 }
 
-// GetBaseUriOk returns a tuple with the BaseUri field value
+// GetBaseUriOk returns a tuple with the BaseUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetBaseUriOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BaseUri) {
 		return nil, false
 	}
-	return &o.BaseUri, true
+	return o.BaseUri, true
 }
 
-// SetBaseUri sets field value
+// HasBaseUri returns a boolean if a field has been set.
+func (o *IntegrationDto) HasBaseUri() bool {
+	if o != nil && !IsNil(o.BaseUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetBaseUri gets a reference to the given string and assigns it to the BaseUri field.
 func (o *IntegrationDto) SetBaseUri(v string) {
-	o.BaseUri = v
+	o.BaseUri = &v
 }
 
 // GetConnectorVersion returns the ConnectorVersion field value if set, zero value otherwise.
@@ -732,28 +745,36 @@ func (o *IntegrationDto) SetIsTest(v bool) {
 	o.IsTest = &v
 }
 
-// GetLogoUri returns the LogoUri field value
+// GetLogoUri returns the LogoUri field value if set, zero value otherwise.
 func (o *IntegrationDto) GetLogoUri() string {
-	if o == nil {
+	if o == nil || IsNil(o.LogoUri) {
 		var ret string
 		return ret
 	}
-
-	return o.LogoUri
+	return *o.LogoUri
 }
 
-// GetLogoUriOk returns a tuple with the LogoUri field value
+// GetLogoUriOk returns a tuple with the LogoUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetLogoUriOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LogoUri) {
 		return nil, false
 	}
-	return &o.LogoUri, true
+	return o.LogoUri, true
 }
 
-// SetLogoUri sets field value
+// HasLogoUri returns a boolean if a field has been set.
+func (o *IntegrationDto) HasLogoUri() bool {
+	if o != nil && !IsNil(o.LogoUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogoUri gets a reference to the given string and assigns it to the LogoUri field.
 func (o *IntegrationDto) SetLogoUri(v string) {
-	o.LogoUri = v
+	o.LogoUri = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -849,7 +870,9 @@ func (o IntegrationDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AuthOptions) {
 		toSerialize["authOptions"] = o.AuthOptions
 	}
-	toSerialize["oAuthCallbackUri"] = o.OAuthCallbackUri
+	if !IsNil(o.OAuthCallbackUri) {
+		toSerialize["oAuthCallbackUri"] = o.OAuthCallbackUri
+	}
 	if !IsNil(o.ParametersSchema) {
 		toSerialize["parametersSchema"] = o.ParametersSchema
 	}
@@ -880,14 +903,18 @@ func (o IntegrationDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AreParametersCustomized) {
 		toSerialize["areParametersCustomized"] = o.AreParametersCustomized
 	}
-	toSerialize["baseUri"] = o.BaseUri
+	if !IsNil(o.BaseUri) {
+		toSerialize["baseUri"] = o.BaseUri
+	}
 	if !IsNil(o.ConnectorVersion) {
 		toSerialize["connectorVersion"] = o.ConnectorVersion
 	}
 	if !IsNil(o.IsTest) {
 		toSerialize["isTest"] = o.IsTest
 	}
-	toSerialize["logoUri"] = o.LogoUri
+	if !IsNil(o.LogoUri) {
+		toSerialize["logoUri"] = o.LogoUri
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
@@ -906,9 +933,6 @@ func (o *IntegrationDto) UnmarshalJSON(data []byte) (err error) {
 		"key",
 		"uuid",
 		"name",
-		"oAuthCallbackUri",
-		"baseUri",
-		"logoUri",
 	}
 
 	allProperties := make(map[string]interface{})

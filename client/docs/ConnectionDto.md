@@ -15,16 +15,16 @@ Name | Type | Description | Notes
 **IsDefunct** | Pointer to **bool** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
 **Name** | **string** |  | 
-**CreatedAt** | **string** |  | 
-**UpdatedAt** | **string** |  | 
-**LastActiveAt** | **string** |  | 
+**CreatedAt** | Pointer to **string** |  | [optional] 
+**UpdatedAt** | Pointer to **string** |  | [optional] 
+**LastActiveAt** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewConnectionDto
 
-`func NewConnectionDto(id string, userId string, integrationId string, name string, createdAt string, updatedAt string, lastActiveAt string, ) *ConnectionDto`
+`func NewConnectionDto(id string, userId string, integrationId string, name string, ) *ConnectionDto`
 
 NewConnectionDto instantiates a new ConnectionDto object
 This constructor will assign default values to properties that have it defined,
@@ -313,6 +313,11 @@ and a boolean to check if the value has been set.
 
 SetCreatedAt sets CreatedAt field to given value.
 
+### HasCreatedAt
+
+`func (o *ConnectionDto) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
@@ -333,6 +338,11 @@ and a boolean to check if the value has been set.
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
+### HasUpdatedAt
+
+`func (o *ConnectionDto) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
 
 ### GetLastActiveAt
 
@@ -353,6 +363,11 @@ and a boolean to check if the value has been set.
 
 SetLastActiveAt sets LastActiveAt field to given value.
 
+### HasLastActiveAt
+
+`func (o *ConnectionDto) HasLastActiveAt() bool`
+
+HasLastActiveAt returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **UserId** | **string** |  | 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**ExternalEventId** | **string** |  | 
-**ExternalEventSubscriptionId** | **string** |  | 
-**ConnectionId** | **string** |  | 
+**ExternalEventId** | Pointer to **string** |  | [optional] 
+**ExternalEventSubscriptionId** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
-**Payload** | **map[string]interface{}** |  | 
-**LaunchedFlowRunIds** | **[]string** |  | 
+**Payload** | Pointer to **map[string]interface{}** |  | [optional] 
+**LaunchedFlowRunIds** | Pointer to **[]string** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
 **Logs** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewExternalEventLogRecordDto
 
-`func NewExternalEventLogRecordDto(id string, userId string, externalEventId string, externalEventSubscriptionId string, connectionId string, integrationId string, payload map[string]interface{}, launchedFlowRunIds []string, ) *ExternalEventLogRecordDto`
+`func NewExternalEventLogRecordDto(id string, userId string, ) *ExternalEventLogRecordDto`
 
 NewExternalEventLogRecordDto instantiates a new ExternalEventLogRecordDto object
 This constructor will assign default values to properties that have it defined,
@@ -121,6 +121,11 @@ and a boolean to check if the value has been set.
 
 SetExternalEventId sets ExternalEventId field to given value.
 
+### HasExternalEventId
+
+`func (o *ExternalEventLogRecordDto) HasExternalEventId() bool`
+
+HasExternalEventId returns a boolean if a field has been set.
 
 ### GetExternalEventSubscriptionId
 
@@ -141,6 +146,11 @@ and a boolean to check if the value has been set.
 
 SetExternalEventSubscriptionId sets ExternalEventSubscriptionId field to given value.
 
+### HasExternalEventSubscriptionId
+
+`func (o *ExternalEventLogRecordDto) HasExternalEventSubscriptionId() bool`
+
+HasExternalEventSubscriptionId returns a boolean if a field has been set.
 
 ### GetConnectionId
 
@@ -161,6 +171,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *ExternalEventLogRecordDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetConnection
 
@@ -206,6 +221,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *ExternalEventLogRecordDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 
@@ -251,6 +271,11 @@ and a boolean to check if the value has been set.
 
 SetPayload sets Payload field to given value.
 
+### HasPayload
+
+`func (o *ExternalEventLogRecordDto) HasPayload() bool`
+
+HasPayload returns a boolean if a field has been set.
 
 ### GetLaunchedFlowRunIds
 
@@ -271,6 +296,11 @@ and a boolean to check if the value has been set.
 
 SetLaunchedFlowRunIds sets LaunchedFlowRunIds field to given value.
 
+### HasLaunchedFlowRunIds
+
+`func (o *ExternalEventLogRecordDto) HasLaunchedFlowRunIds() bool`
+
+HasLaunchedFlowRunIds returns a boolean if a field has been set.
 
 ### GetError
 

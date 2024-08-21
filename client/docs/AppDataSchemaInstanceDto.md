@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **AppId** | **string** |  | 
 **UserId** | **string** |  | 
 **User** | Pointer to **map[string]interface{}** |  | [optional] 
-**AppDataSchemaId** | **string** |  | 
-**AppDataSchemaRevision** | **string** |  | 
+**AppDataSchemaId** | Pointer to **string** |  | [optional] 
+**AppDataSchemaRevision** | Pointer to **string** |  | [optional] 
 **AppDataSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
 **Schema** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAppDataSchemaInstanceDto
 
-`func NewAppDataSchemaInstanceDto(id string, appId string, userId string, appDataSchemaId string, appDataSchemaRevision string, ) *AppDataSchemaInstanceDto`
+`func NewAppDataSchemaInstanceDto(id string, appId string, userId string, ) *AppDataSchemaInstanceDto`
 
 NewAppDataSchemaInstanceDto instantiates a new AppDataSchemaInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -138,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetAppDataSchemaId sets AppDataSchemaId field to given value.
 
+### HasAppDataSchemaId
+
+`func (o *AppDataSchemaInstanceDto) HasAppDataSchemaId() bool`
+
+HasAppDataSchemaId returns a boolean if a field has been set.
 
 ### GetAppDataSchemaRevision
 
@@ -158,6 +163,11 @@ and a boolean to check if the value has been set.
 
 SetAppDataSchemaRevision sets AppDataSchemaRevision field to given value.
 
+### HasAppDataSchemaRevision
+
+`func (o *AppDataSchemaInstanceDto) HasAppDataSchemaRevision() bool`
+
+HasAppDataSchemaRevision returns a boolean if a field has been set.
 
 ### GetAppDataSchema
 

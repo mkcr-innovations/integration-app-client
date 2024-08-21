@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **UserId** | **string** |  | 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**ExternalEventSubscriptionId** | **string** |  | 
+**ExternalEventSubscriptionId** | Pointer to **string** |  | [optional] 
 **ExternalEventSubscription** | Pointer to **map[string]interface{}** |  | [optional] 
-**ConnectionId** | **string** |  | 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
-**Status** | **string** |  | 
-**StartDatetime** | **string** |  | 
-**EndDatetime** | **string** |  | 
-**IsFullScan** | **bool** |  | 
-**CollectedEventIds** | **[]string** |  | 
+**Status** | Pointer to **string** |  | [optional] 
+**StartDatetime** | Pointer to **string** |  | [optional] 
+**EndDatetime** | Pointer to **string** |  | [optional] 
+**IsFullScan** | Pointer to **bool** |  | [optional] 
+**CollectedEventIds** | Pointer to **[]string** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewExternalEventPullDto
 
-`func NewExternalEventPullDto(id string, userId string, externalEventSubscriptionId string, connectionId string, integrationId string, status string, startDatetime string, endDatetime string, isFullScan bool, collectedEventIds []string, ) *ExternalEventPullDto`
+`func NewExternalEventPullDto(id string, userId string, ) *ExternalEventPullDto`
 
 NewExternalEventPullDto instantiates a new ExternalEventPullDto object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetExternalEventSubscriptionId sets ExternalEventSubscriptionId field to given value.
 
+### HasExternalEventSubscriptionId
+
+`func (o *ExternalEventPullDto) HasExternalEventSubscriptionId() bool`
+
+HasExternalEventSubscriptionId returns a boolean if a field has been set.
 
 ### GetExternalEventSubscription
 
@@ -168,6 +173,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *ExternalEventPullDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetConnection
 
@@ -213,6 +223,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *ExternalEventPullDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 
@@ -258,6 +273,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *ExternalEventPullDto) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetStartDatetime
 
@@ -278,6 +298,11 @@ and a boolean to check if the value has been set.
 
 SetStartDatetime sets StartDatetime field to given value.
 
+### HasStartDatetime
+
+`func (o *ExternalEventPullDto) HasStartDatetime() bool`
+
+HasStartDatetime returns a boolean if a field has been set.
 
 ### GetEndDatetime
 
@@ -298,6 +323,11 @@ and a boolean to check if the value has been set.
 
 SetEndDatetime sets EndDatetime field to given value.
 
+### HasEndDatetime
+
+`func (o *ExternalEventPullDto) HasEndDatetime() bool`
+
+HasEndDatetime returns a boolean if a field has been set.
 
 ### GetIsFullScan
 
@@ -318,6 +348,11 @@ and a boolean to check if the value has been set.
 
 SetIsFullScan sets IsFullScan field to given value.
 
+### HasIsFullScan
+
+`func (o *ExternalEventPullDto) HasIsFullScan() bool`
+
+HasIsFullScan returns a boolean if a field has been set.
 
 ### GetCollectedEventIds
 
@@ -338,6 +373,11 @@ and a boolean to check if the value has been set.
 
 SetCollectedEventIds sets CollectedEventIds field to given value.
 
+### HasCollectedEventIds
+
+`func (o *ExternalEventPullDto) HasCollectedEventIds() bool`
+
+HasCollectedEventIds returns a boolean if a field has been set.
 
 ### GetError
 

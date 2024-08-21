@@ -11,28 +11,28 @@ Name | Type | Description | Notes
 **ConnectionId** | **string** |  | 
 **IntegrationId** | **string** |  | 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
-**FlowId** | **string** |  | 
+**FlowId** | Pointer to **string** |  | [optional] 
 **Flow** | Pointer to [**FlowDto**](FlowDto.md) |  | [optional] 
 **UniversalFlowId** | Pointer to **string** |  | [optional] 
-**FlowRevision** | **string** |  | 
+**FlowRevision** | Pointer to **string** |  | [optional] 
 **Outdated** | Pointer to **bool** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
 **Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
-**Enabled** | **bool** |  | 
-**CreatedAt** | **string** |  | 
-**UpdatedAt** | **string** |  | 
+**Enabled** | Pointer to **bool** |  | [optional] 
+**CreatedAt** | Pointer to **string** |  | [optional] 
+**UpdatedAt** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **time.Time** |  | [optional] 
 **Dependencies** | Pointer to [**[]IntegrationElementInstanceDependencyDto**](IntegrationElementInstanceDependencyDto.md) |  | [optional] 
-**State** | **string** |  | 
+**State** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewFlowInstanceDto
 
-`func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string, flowId string, flowRevision string, name string, enabled bool, createdAt string, updatedAt string, state string, ) *FlowInstanceDto`
+`func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string, ) *FlowInstanceDto`
 
 NewFlowInstanceDto instantiates a new FlowInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -221,6 +221,11 @@ and a boolean to check if the value has been set.
 
 SetFlowId sets FlowId field to given value.
 
+### HasFlowId
+
+`func (o *FlowInstanceDto) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
 
 ### GetFlow
 
@@ -291,6 +296,11 @@ and a boolean to check if the value has been set.
 
 SetFlowRevision sets FlowRevision field to given value.
 
+### HasFlowRevision
+
+`func (o *FlowInstanceDto) HasFlowRevision() bool`
+
+HasFlowRevision returns a boolean if a field has been set.
 
 ### GetOutdated
 
@@ -336,6 +346,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *FlowInstanceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetParametersSchema
 
@@ -431,6 +446,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *FlowInstanceDto) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -451,6 +471,11 @@ and a boolean to check if the value has been set.
 
 SetCreatedAt sets CreatedAt field to given value.
 
+### HasCreatedAt
+
+`func (o *FlowInstanceDto) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
@@ -471,6 +496,11 @@ and a boolean to check if the value has been set.
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
+### HasUpdatedAt
+
+`func (o *FlowInstanceDto) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
 
 ### GetArchivedAt
 
@@ -541,6 +571,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *FlowInstanceDto) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetConnection
 

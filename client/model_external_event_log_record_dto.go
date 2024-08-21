@@ -24,14 +24,14 @@ type ExternalEventLogRecordDto struct {
 	Id string `json:"id"`
 	UserId string `json:"userId"`
 	User *CustomerDto `json:"user,omitempty"`
-	ExternalEventId string `json:"externalEventId"`
-	ExternalEventSubscriptionId string `json:"externalEventSubscriptionId"`
-	ConnectionId string `json:"connectionId"`
+	ExternalEventId *string `json:"externalEventId,omitempty"`
+	ExternalEventSubscriptionId *string `json:"externalEventSubscriptionId,omitempty"`
+	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
-	Payload map[string]interface{} `json:"payload"`
-	LaunchedFlowRunIds []string `json:"launchedFlowRunIds"`
+	Payload map[string]interface{} `json:"payload,omitempty"`
+	LaunchedFlowRunIds []string `json:"launchedFlowRunIds,omitempty"`
 	Error map[string]interface{} `json:"error,omitempty"`
 	Logs map[string]interface{} `json:"logs,omitempty"`
 }
@@ -42,16 +42,10 @@ type _ExternalEventLogRecordDto ExternalEventLogRecordDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalEventLogRecordDto(id string, userId string, externalEventId string, externalEventSubscriptionId string, connectionId string, integrationId string, payload map[string]interface{}, launchedFlowRunIds []string) *ExternalEventLogRecordDto {
+func NewExternalEventLogRecordDto(id string, userId string) *ExternalEventLogRecordDto {
 	this := ExternalEventLogRecordDto{}
 	this.Id = id
 	this.UserId = userId
-	this.ExternalEventId = externalEventId
-	this.ExternalEventSubscriptionId = externalEventSubscriptionId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
-	this.Payload = payload
-	this.LaunchedFlowRunIds = launchedFlowRunIds
 	return &this
 }
 
@@ -143,76 +137,100 @@ func (o *ExternalEventLogRecordDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetExternalEventId returns the ExternalEventId field value
+// GetExternalEventId returns the ExternalEventId field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetExternalEventId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalEventId
+	return *o.ExternalEventId
 }
 
-// GetExternalEventIdOk returns a tuple with the ExternalEventId field value
+// GetExternalEventIdOk returns a tuple with the ExternalEventId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetExternalEventIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventId) {
 		return nil, false
 	}
-	return &o.ExternalEventId, true
+	return o.ExternalEventId, true
 }
 
-// SetExternalEventId sets field value
+// HasExternalEventId returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasExternalEventId() bool {
+	if o != nil && !IsNil(o.ExternalEventId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalEventId gets a reference to the given string and assigns it to the ExternalEventId field.
 func (o *ExternalEventLogRecordDto) SetExternalEventId(v string) {
-	o.ExternalEventId = v
+	o.ExternalEventId = &v
 }
 
-// GetExternalEventSubscriptionId returns the ExternalEventSubscriptionId field value
+// GetExternalEventSubscriptionId returns the ExternalEventSubscriptionId field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetExternalEventSubscriptionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventSubscriptionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalEventSubscriptionId
+	return *o.ExternalEventSubscriptionId
 }
 
-// GetExternalEventSubscriptionIdOk returns a tuple with the ExternalEventSubscriptionId field value
+// GetExternalEventSubscriptionIdOk returns a tuple with the ExternalEventSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetExternalEventSubscriptionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventSubscriptionId) {
 		return nil, false
 	}
-	return &o.ExternalEventSubscriptionId, true
+	return o.ExternalEventSubscriptionId, true
 }
 
-// SetExternalEventSubscriptionId sets field value
+// HasExternalEventSubscriptionId returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasExternalEventSubscriptionId() bool {
+	if o != nil && !IsNil(o.ExternalEventSubscriptionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalEventSubscriptionId gets a reference to the given string and assigns it to the ExternalEventSubscriptionId field.
 func (o *ExternalEventLogRecordDto) SetExternalEventSubscriptionId(v string) {
-	o.ExternalEventSubscriptionId = v
+	o.ExternalEventSubscriptionId = &v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *ExternalEventLogRecordDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -247,28 +265,36 @@ func (o *ExternalEventLogRecordDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *ExternalEventLogRecordDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -303,50 +329,66 @@ func (o *ExternalEventLogRecordDto) SetIntegration(v IntegrationDto) {
 	o.Integration = &v
 }
 
-// GetPayload returns the Payload field value
+// GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetPayload() map[string]interface{} {
-	if o == nil {
+	if o == nil || IsNil(o.Payload) {
 		var ret map[string]interface{}
 		return ret
 	}
-
 	return o.Payload
 }
 
-// GetPayloadOk returns a tuple with the Payload field value
+// GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetPayloadOk() (map[string]interface{}, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Payload) {
 		return map[string]interface{}{}, false
 	}
 	return o.Payload, true
 }
 
-// SetPayload sets field value
+// HasPayload returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasPayload() bool {
+	if o != nil && !IsNil(o.Payload) {
+		return true
+	}
+
+	return false
+}
+
+// SetPayload gets a reference to the given map[string]interface{} and assigns it to the Payload field.
 func (o *ExternalEventLogRecordDto) SetPayload(v map[string]interface{}) {
 	o.Payload = v
 }
 
-// GetLaunchedFlowRunIds returns the LaunchedFlowRunIds field value
+// GetLaunchedFlowRunIds returns the LaunchedFlowRunIds field value if set, zero value otherwise.
 func (o *ExternalEventLogRecordDto) GetLaunchedFlowRunIds() []string {
-	if o == nil {
+	if o == nil || IsNil(o.LaunchedFlowRunIds) {
 		var ret []string
 		return ret
 	}
-
 	return o.LaunchedFlowRunIds
 }
 
-// GetLaunchedFlowRunIdsOk returns a tuple with the LaunchedFlowRunIds field value
+// GetLaunchedFlowRunIdsOk returns a tuple with the LaunchedFlowRunIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventLogRecordDto) GetLaunchedFlowRunIdsOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LaunchedFlowRunIds) {
 		return nil, false
 	}
 	return o.LaunchedFlowRunIds, true
 }
 
-// SetLaunchedFlowRunIds sets field value
+// HasLaunchedFlowRunIds returns a boolean if a field has been set.
+func (o *ExternalEventLogRecordDto) HasLaunchedFlowRunIds() bool {
+	if o != nil && !IsNil(o.LaunchedFlowRunIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetLaunchedFlowRunIds gets a reference to the given []string and assigns it to the LaunchedFlowRunIds field.
 func (o *ExternalEventLogRecordDto) SetLaunchedFlowRunIds(v []string) {
 	o.LaunchedFlowRunIds = v
 }
@@ -430,18 +472,30 @@ func (o ExternalEventLogRecordDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["externalEventId"] = o.ExternalEventId
-	toSerialize["externalEventSubscriptionId"] = o.ExternalEventSubscriptionId
-	toSerialize["connectionId"] = o.ConnectionId
+	if !IsNil(o.ExternalEventId) {
+		toSerialize["externalEventId"] = o.ExternalEventId
+	}
+	if !IsNil(o.ExternalEventSubscriptionId) {
+		toSerialize["externalEventSubscriptionId"] = o.ExternalEventSubscriptionId
+	}
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
-	toSerialize["payload"] = o.Payload
-	toSerialize["launchedFlowRunIds"] = o.LaunchedFlowRunIds
+	if !IsNil(o.Payload) {
+		toSerialize["payload"] = o.Payload
+	}
+	if !IsNil(o.LaunchedFlowRunIds) {
+		toSerialize["launchedFlowRunIds"] = o.LaunchedFlowRunIds
+	}
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
@@ -458,12 +512,6 @@ func (o *ExternalEventLogRecordDto) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"userId",
-		"externalEventId",
-		"externalEventSubscriptionId",
-		"connectionId",
-		"integrationId",
-		"payload",
-		"launchedFlowRunIds",
 	}
 
 	allProperties := make(map[string]interface{})

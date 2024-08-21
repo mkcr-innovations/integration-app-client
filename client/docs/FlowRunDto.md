@@ -12,22 +12,22 @@ Name | Type | Description | Notes
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**StartNodeKey** | **string** |  | 
-**UserId** | **string** |  | 
+**StartNodeKey** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **Input** | Pointer to **map[string]interface{}** |  | [optional] 
-**State** | **string** |  | 
-**StartTime** | **string** |  | 
+**State** | Pointer to **string** |  | [optional] 
+**StartTime** | Pointer to **string** |  | [optional] 
 **EndTime** | Pointer to **string** |  | [optional] 
 **Errors** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Nodes** | **map[string]interface{}** |  | 
+**Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
 **LaunchedBy** | Pointer to [**FlorRunLaunchedByDto**](FlorRunLaunchedByDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewFlowRunDto
 
-`func NewFlowRunDto(id string, flowInstanceId string, startNodeKey string, userId string, state string, startTime string, nodes map[string]interface{}, ) *FlowRunDto`
+`func NewFlowRunDto(id string, flowInstanceId string, ) *FlowRunDto`
 
 NewFlowRunDto instantiates a new FlowRunDto object
 This constructor will assign default values to properties that have it defined,
@@ -251,6 +251,11 @@ and a boolean to check if the value has been set.
 
 SetStartNodeKey sets StartNodeKey field to given value.
 
+### HasStartNodeKey
+
+`func (o *FlowRunDto) HasStartNodeKey() bool`
+
+HasStartNodeKey returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -271,6 +276,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *FlowRunDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -341,6 +351,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *FlowRunDto) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetStartTime
 
@@ -361,6 +376,11 @@ and a boolean to check if the value has been set.
 
 SetStartTime sets StartTime field to given value.
 
+### HasStartTime
+
+`func (o *FlowRunDto) HasStartTime() bool`
+
+HasStartTime returns a boolean if a field has been set.
 
 ### GetEndTime
 
@@ -431,6 +451,11 @@ and a boolean to check if the value has been set.
 
 SetNodes sets Nodes field to given value.
 
+### HasNodes
+
+`func (o *FlowRunDto) HasNodes() bool`
+
+HasNodes returns a boolean if a field has been set.
 
 ### GetLaunchedBy
 

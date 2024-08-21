@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **Name** | **string** |  | 
 **Revision** | **string** |  | 
-**UserId** | **string** |  | 
-**ConnectionId** | **string** |  | 
-**IntegrationId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
@@ -31,14 +31,14 @@ Name | Type | Description | Notes
 **NextPullUpdatesTimestamp** | Pointer to **float32** |  | [optional] 
 **FullSyncIntervalSeconds** | Pointer to **float32** |  | [optional] 
 **NextFullSyncTimestamp** | Pointer to **float32** |  | [optional] 
-**Path** | **string** |  | 
-**DefaultPath** | **string** |  | 
+**Path** | Pointer to **string** |  | [optional] 
+**DefaultPath** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewDataSourceInstanceDto
 
-`func NewDataSourceInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, path string, defaultPath string, ) *DataSourceInstanceDto`
+`func NewDataSourceInstanceDto(id string, name string, revision string, ) *DataSourceInstanceDto`
 
 NewDataSourceInstanceDto instantiates a new DataSourceInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -132,6 +132,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *DataSourceInstanceDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetConnectionId
 
@@ -152,6 +157,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *DataSourceInstanceDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetIntegrationId
 
@@ -172,6 +182,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *DataSourceInstanceDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -717,6 +732,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *DataSourceInstanceDto) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetDefaultPath
 
@@ -737,6 +757,11 @@ and a boolean to check if the value has been set.
 
 SetDefaultPath sets DefaultPath field to given value.
 
+### HasDefaultPath
+
+`func (o *DataSourceInstanceDto) HasDefaultPath() bool`
+
+HasDefaultPath returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

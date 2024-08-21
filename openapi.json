@@ -15109,10 +15109,7 @@
           "id",
           "key",
           "uuid",
-          "name",
-          "oAuthCallbackUri",
-          "baseUri",
-          "logoUri"
+          "name"
         ]
       },
       "FlowDto": {
@@ -15277,10 +15274,7 @@
           "id",
           "userId",
           "integrationId",
-          "name",
-          "createdAt",
-          "updatedAt",
-          "lastActiveAt"
+          "name"
         ]
       },
       "FlowInstanceDto": {
@@ -15369,14 +15363,7 @@
           "id",
           "userId",
           "connectionId",
-          "integrationId",
-          "flowId",
-          "flowRevision",
-          "name",
-          "enabled",
-          "createdAt",
-          "updatedAt",
-          "state"
+          "integrationId"
         ]
       },
       "UpdateFlowInstanceDto": {
@@ -16003,12 +15990,7 @@
         "required": [
           "id",
           "name",
-          "revision",
-          "userId",
-          "connectionId",
-          "integrationId",
-          "path",
-          "defaultPath"
+          "revision"
         ]
       },
       "UpdateDataSourceInstanceDto": {
@@ -16767,9 +16749,7 @@
         "required": [
           "id",
           "appId",
-          "userId",
-          "appDataSchemaId",
-          "appDataSchemaRevision"
+          "userId"
         ]
       },
       "UpdateAppDataSchemaInstanceDto": {
@@ -17149,15 +17129,7 @@
         },
         "required": [
           "id",
-          "userId",
-          "externalEventSubscriptionId",
-          "connectionId",
-          "integrationId",
-          "status",
-          "startDatetime",
-          "endDatetime",
-          "isFullScan",
-          "collectedEventIds"
+          "userId"
         ]
       },
       "ExternalEventLogRecordDto": {
@@ -17208,13 +17180,7 @@
         },
         "required": [
           "id",
-          "userId",
-          "externalEventId",
-          "externalEventSubscriptionId",
-          "connectionId",
-          "integrationId",
-          "payload",
-          "launchedFlowRunIds"
+          "userId"
         ]
       },
       "ActionDto": {
@@ -17782,12 +17748,7 @@
         },
         "required": [
           "id",
-          "flowInstanceId",
-          "startNodeKey",
-          "userId",
-          "state",
-          "startTime",
-          "nodes"
+          "flowInstanceId"
         ]
       },
       "ScenarioDto": {

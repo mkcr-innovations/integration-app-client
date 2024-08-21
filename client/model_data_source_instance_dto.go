@@ -24,9 +24,9 @@ type DataSourceInstanceDto struct {
 	Id string `json:"id"`
 	Name string `json:"name"`
 	Revision string `json:"revision"`
-	UserId string `json:"userId"`
-	ConnectionId string `json:"connectionId"`
-	IntegrationId string `json:"integrationId"`
+	UserId *string `json:"userId,omitempty"`
+	ConnectionId *string `json:"connectionId,omitempty"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
@@ -49,9 +49,9 @@ type DataSourceInstanceDto struct {
 	FullSyncIntervalSeconds *float32 `json:"fullSyncIntervalSeconds,omitempty"`
 	NextFullSyncTimestamp *float32 `json:"nextFullSyncTimestamp,omitempty"`
 	// Deprecated
-	Path string `json:"path"`
+	Path *string `json:"path,omitempty"`
 	// Deprecated
-	DefaultPath string `json:"defaultPath"`
+	DefaultPath *string `json:"defaultPath,omitempty"`
 }
 
 type _DataSourceInstanceDto DataSourceInstanceDto
@@ -60,16 +60,11 @@ type _DataSourceInstanceDto DataSourceInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSourceInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, path string, defaultPath string) *DataSourceInstanceDto {
+func NewDataSourceInstanceDto(id string, name string, revision string) *DataSourceInstanceDto {
 	this := DataSourceInstanceDto{}
 	this.Id = id
 	this.Name = name
 	this.Revision = revision
-	this.UserId = userId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
-	this.Path = path
-	this.DefaultPath = defaultPath
 	return &this
 }
 
@@ -153,76 +148,100 @@ func (o *DataSourceInstanceDto) SetRevision(v string) {
 	o.Revision = v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *DataSourceInstanceDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceInstanceDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *DataSourceInstanceDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *DataSourceInstanceDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceInstanceDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *DataSourceInstanceDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *DataSourceInstanceDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceInstanceDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *DataSourceInstanceDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -897,58 +916,74 @@ func (o *DataSourceInstanceDto) SetNextFullSyncTimestamp(v float32) {
 	o.NextFullSyncTimestamp = &v
 }
 
-// GetPath returns the Path field value
+// GetPath returns the Path field value if set, zero value otherwise.
 // Deprecated
 func (o *DataSourceInstanceDto) GetPath() string {
-	if o == nil {
+	if o == nil || IsNil(o.Path) {
 		var ret string
 		return ret
 	}
-
-	return o.Path
+	return *o.Path
 }
 
-// GetPathOk returns a tuple with the Path field value
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *DataSourceInstanceDto) GetPathOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Path) {
 		return nil, false
 	}
-	return &o.Path, true
+	return o.Path, true
 }
 
-// SetPath sets field value
+// HasPath returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasPath() bool {
+	if o != nil && !IsNil(o.Path) {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
 // Deprecated
 func (o *DataSourceInstanceDto) SetPath(v string) {
-	o.Path = v
+	o.Path = &v
 }
 
-// GetDefaultPath returns the DefaultPath field value
+// GetDefaultPath returns the DefaultPath field value if set, zero value otherwise.
 // Deprecated
 func (o *DataSourceInstanceDto) GetDefaultPath() string {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultPath) {
 		var ret string
 		return ret
 	}
-
-	return o.DefaultPath
+	return *o.DefaultPath
 }
 
-// GetDefaultPathOk returns a tuple with the DefaultPath field value
+// GetDefaultPathOk returns a tuple with the DefaultPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *DataSourceInstanceDto) GetDefaultPathOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultPath) {
 		return nil, false
 	}
-	return &o.DefaultPath, true
+	return o.DefaultPath, true
 }
 
-// SetDefaultPath sets field value
+// HasDefaultPath returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasDefaultPath() bool {
+	if o != nil && !IsNil(o.DefaultPath) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultPath gets a reference to the given string and assigns it to the DefaultPath field.
 // Deprecated
 func (o *DataSourceInstanceDto) SetDefaultPath(v string) {
-	o.DefaultPath = v
+	o.DefaultPath = &v
 }
 
 func (o DataSourceInstanceDto) MarshalJSON() ([]byte, error) {
@@ -964,9 +999,15 @@ func (o DataSourceInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize["id"] = o.Id
 	toSerialize["name"] = o.Name
 	toSerialize["revision"] = o.Revision
-	toSerialize["userId"] = o.UserId
-	toSerialize["connectionId"] = o.ConnectionId
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
@@ -1030,8 +1071,12 @@ func (o DataSourceInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NextFullSyncTimestamp) {
 		toSerialize["nextFullSyncTimestamp"] = o.NextFullSyncTimestamp
 	}
-	toSerialize["path"] = o.Path
-	toSerialize["defaultPath"] = o.DefaultPath
+	if !IsNil(o.Path) {
+		toSerialize["path"] = o.Path
+	}
+	if !IsNil(o.DefaultPath) {
+		toSerialize["defaultPath"] = o.DefaultPath
+	}
 	return toSerialize, nil
 }
 
@@ -1043,11 +1088,6 @@ func (o *DataSourceInstanceDto) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"name",
 		"revision",
-		"userId",
-		"connectionId",
-		"integrationId",
-		"path",
-		"defaultPath",
 	}
 
 	allProperties := make(map[string]interface{})

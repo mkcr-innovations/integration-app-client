@@ -29,21 +29,21 @@ type FlowInstanceDto struct {
 	ConnectionId string `json:"connectionId"`
 	IntegrationId string `json:"integrationId"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
-	FlowId string `json:"flowId"`
+	FlowId *string `json:"flowId,omitempty"`
 	Flow *FlowDto `json:"flow,omitempty"`
 	UniversalFlowId *string `json:"universalFlowId,omitempty"`
-	FlowRevision string `json:"flowRevision"`
+	FlowRevision *string `json:"flowRevision,omitempty"`
 	Outdated *bool `json:"outdated,omitempty"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	ParametersSchema map[string]interface{} `json:"parametersSchema,omitempty"`
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
 	Nodes map[string]interface{} `json:"nodes,omitempty"`
-	Enabled bool `json:"enabled"`
-	CreatedAt string `json:"createdAt"`
-	UpdatedAt string `json:"updatedAt"`
+	Enabled *bool `json:"enabled,omitempty"`
+	CreatedAt *string `json:"createdAt,omitempty"`
+	UpdatedAt *string `json:"updatedAt,omitempty"`
 	ArchivedAt *time.Time `json:"archivedAt,omitempty"`
 	Dependencies []IntegrationElementInstanceDependencyDto `json:"dependencies,omitempty"`
-	State string `json:"state"`
+	State *string `json:"state,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
 }
 
@@ -53,19 +53,12 @@ type _FlowInstanceDto FlowInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string, flowId string, flowRevision string, name string, enabled bool, createdAt string, updatedAt string, state string) *FlowInstanceDto {
+func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string) *FlowInstanceDto {
 	this := FlowInstanceDto{}
 	this.Id = id
 	this.UserId = userId
 	this.ConnectionId = connectionId
 	this.IntegrationId = integrationId
-	this.FlowId = flowId
-	this.FlowRevision = flowRevision
-	this.Name = name
-	this.Enabled = enabled
-	this.CreatedAt = createdAt
-	this.UpdatedAt = updatedAt
-	this.State = state
 	return &this
 }
 
@@ -269,28 +262,36 @@ func (o *FlowInstanceDto) SetIntegration(v IntegrationDto) {
 	o.Integration = &v
 }
 
-// GetFlowId returns the FlowId field value
+// GetFlowId returns the FlowId field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetFlowId() string {
-	if o == nil {
+	if o == nil || IsNil(o.FlowId) {
 		var ret string
 		return ret
 	}
-
-	return o.FlowId
+	return *o.FlowId
 }
 
-// GetFlowIdOk returns a tuple with the FlowId field value
+// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetFlowIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FlowId) {
 		return nil, false
 	}
-	return &o.FlowId, true
+	return o.FlowId, true
 }
 
-// SetFlowId sets field value
+// HasFlowId returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasFlowId() bool {
+	if o != nil && !IsNil(o.FlowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
 func (o *FlowInstanceDto) SetFlowId(v string) {
-	o.FlowId = v
+	o.FlowId = &v
 }
 
 // GetFlow returns the Flow field value if set, zero value otherwise.
@@ -357,28 +358,36 @@ func (o *FlowInstanceDto) SetUniversalFlowId(v string) {
 	o.UniversalFlowId = &v
 }
 
-// GetFlowRevision returns the FlowRevision field value
+// GetFlowRevision returns the FlowRevision field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetFlowRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.FlowRevision) {
 		var ret string
 		return ret
 	}
-
-	return o.FlowRevision
+	return *o.FlowRevision
 }
 
-// GetFlowRevisionOk returns a tuple with the FlowRevision field value
+// GetFlowRevisionOk returns a tuple with the FlowRevision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetFlowRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FlowRevision) {
 		return nil, false
 	}
-	return &o.FlowRevision, true
+	return o.FlowRevision, true
 }
 
-// SetFlowRevision sets field value
+// HasFlowRevision returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasFlowRevision() bool {
+	if o != nil && !IsNil(o.FlowRevision) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowRevision gets a reference to the given string and assigns it to the FlowRevision field.
 func (o *FlowInstanceDto) SetFlowRevision(v string) {
-	o.FlowRevision = v
+	o.FlowRevision = &v
 }
 
 // GetOutdated returns the Outdated field value if set, zero value otherwise.
@@ -413,28 +422,36 @@ func (o *FlowInstanceDto) SetOutdated(v bool) {
 	o.Outdated = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *FlowInstanceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetParametersSchema returns the ParametersSchema field value if set, zero value otherwise.
@@ -533,76 +550,100 @@ func (o *FlowInstanceDto) SetNodes(v map[string]interface{}) {
 	o.Nodes = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *FlowInstanceDto) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
-// GetCreatedAt returns the CreatedAt field value
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetCreatedAt() string {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedAt) {
 		var ret string
 		return ret
 	}
-
-	return o.CreatedAt
+	return *o.CreatedAt
 }
 
-// GetCreatedAtOk returns a tuple with the CreatedAt field value
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetCreatedAtOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
-	return &o.CreatedAt, true
+	return o.CreatedAt, true
 }
 
-// SetCreatedAt sets field value
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasCreatedAt() bool {
+	if o != nil && !IsNil(o.CreatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
 func (o *FlowInstanceDto) SetCreatedAt(v string) {
-	o.CreatedAt = v
+	o.CreatedAt = &v
 }
 
-// GetUpdatedAt returns the UpdatedAt field value
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetUpdatedAt() string {
-	if o == nil {
+	if o == nil || IsNil(o.UpdatedAt) {
 		var ret string
 		return ret
 	}
-
-	return o.UpdatedAt
+	return *o.UpdatedAt
 }
 
-// GetUpdatedAtOk returns a tuple with the UpdatedAt field value
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetUpdatedAtOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
-	return &o.UpdatedAt, true
+	return o.UpdatedAt, true
 }
 
-// SetUpdatedAt sets field value
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasUpdatedAt() bool {
+	if o != nil && !IsNil(o.UpdatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
 func (o *FlowInstanceDto) SetUpdatedAt(v string) {
-	o.UpdatedAt = v
+	o.UpdatedAt = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -669,28 +710,36 @@ func (o *FlowInstanceDto) SetDependencies(v []IntegrationElementInstanceDependen
 	o.Dependencies = v
 }
 
-// GetState returns the State field value
+// GetState returns the State field value if set, zero value otherwise.
 func (o *FlowInstanceDto) GetState() string {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
 	}
-
-	return o.State
+	return *o.State
 }
 
-// GetStateOk returns a tuple with the State field value
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInstanceDto) GetStateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
-	return &o.State, true
+	return o.State, true
 }
 
-// SetState sets field value
+// HasState returns a boolean if a field has been set.
+func (o *FlowInstanceDto) HasState() bool {
+	if o != nil && !IsNil(o.State) {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
 func (o *FlowInstanceDto) SetState(v string) {
-	o.State = v
+	o.State = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -748,18 +797,24 @@ func (o FlowInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
-	toSerialize["flowId"] = o.FlowId
+	if !IsNil(o.FlowId) {
+		toSerialize["flowId"] = o.FlowId
+	}
 	if !IsNil(o.Flow) {
 		toSerialize["flow"] = o.Flow
 	}
 	if !IsNil(o.UniversalFlowId) {
 		toSerialize["universalFlowId"] = o.UniversalFlowId
 	}
-	toSerialize["flowRevision"] = o.FlowRevision
+	if !IsNil(o.FlowRevision) {
+		toSerialize["flowRevision"] = o.FlowRevision
+	}
 	if !IsNil(o.Outdated) {
 		toSerialize["outdated"] = o.Outdated
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ParametersSchema) {
 		toSerialize["parametersSchema"] = o.ParametersSchema
 	}
@@ -769,16 +824,24 @@ func (o FlowInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Nodes) {
 		toSerialize["nodes"] = o.Nodes
 	}
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["createdAt"] = o.CreatedAt
-	toSerialize["updatedAt"] = o.UpdatedAt
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.CreatedAt) {
+		toSerialize["createdAt"] = o.CreatedAt
+	}
+	if !IsNil(o.UpdatedAt) {
+		toSerialize["updatedAt"] = o.UpdatedAt
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
 	if !IsNil(o.Dependencies) {
 		toSerialize["dependencies"] = o.Dependencies
 	}
-	toSerialize["state"] = o.State
+	if !IsNil(o.State) {
+		toSerialize["state"] = o.State
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
@@ -794,13 +857,6 @@ func (o *FlowInstanceDto) UnmarshalJSON(data []byte) (err error) {
 		"userId",
 		"connectionId",
 		"integrationId",
-		"flowId",
-		"flowRevision",
-		"name",
-		"enabled",
-		"createdAt",
-		"updatedAt",
-		"state",
 	}
 
 	allProperties := make(map[string]interface{})

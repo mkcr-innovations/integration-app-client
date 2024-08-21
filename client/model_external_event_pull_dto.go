@@ -24,17 +24,17 @@ type ExternalEventPullDto struct {
 	Id string `json:"id"`
 	UserId string `json:"userId"`
 	User *CustomerDto `json:"user,omitempty"`
-	ExternalEventSubscriptionId string `json:"externalEventSubscriptionId"`
+	ExternalEventSubscriptionId *string `json:"externalEventSubscriptionId,omitempty"`
 	ExternalEventSubscription map[string]interface{} `json:"externalEventSubscription,omitempty"`
-	ConnectionId string `json:"connectionId"`
+	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
-	Status string `json:"status"`
-	StartDatetime string `json:"startDatetime"`
-	EndDatetime string `json:"endDatetime"`
-	IsFullScan bool `json:"isFullScan"`
-	CollectedEventIds []string `json:"collectedEventIds"`
+	Status *string `json:"status,omitempty"`
+	StartDatetime *string `json:"startDatetime,omitempty"`
+	EndDatetime *string `json:"endDatetime,omitempty"`
+	IsFullScan *bool `json:"isFullScan,omitempty"`
+	CollectedEventIds []string `json:"collectedEventIds,omitempty"`
 	Error map[string]interface{} `json:"error,omitempty"`
 }
 
@@ -44,18 +44,10 @@ type _ExternalEventPullDto ExternalEventPullDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalEventPullDto(id string, userId string, externalEventSubscriptionId string, connectionId string, integrationId string, status string, startDatetime string, endDatetime string, isFullScan bool, collectedEventIds []string) *ExternalEventPullDto {
+func NewExternalEventPullDto(id string, userId string) *ExternalEventPullDto {
 	this := ExternalEventPullDto{}
 	this.Id = id
 	this.UserId = userId
-	this.ExternalEventSubscriptionId = externalEventSubscriptionId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
-	this.Status = status
-	this.StartDatetime = startDatetime
-	this.EndDatetime = endDatetime
-	this.IsFullScan = isFullScan
-	this.CollectedEventIds = collectedEventIds
 	return &this
 }
 
@@ -147,28 +139,36 @@ func (o *ExternalEventPullDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetExternalEventSubscriptionId returns the ExternalEventSubscriptionId field value
+// GetExternalEventSubscriptionId returns the ExternalEventSubscriptionId field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetExternalEventSubscriptionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventSubscriptionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalEventSubscriptionId
+	return *o.ExternalEventSubscriptionId
 }
 
-// GetExternalEventSubscriptionIdOk returns a tuple with the ExternalEventSubscriptionId field value
+// GetExternalEventSubscriptionIdOk returns a tuple with the ExternalEventSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetExternalEventSubscriptionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalEventSubscriptionId) {
 		return nil, false
 	}
-	return &o.ExternalEventSubscriptionId, true
+	return o.ExternalEventSubscriptionId, true
 }
 
-// SetExternalEventSubscriptionId sets field value
+// HasExternalEventSubscriptionId returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasExternalEventSubscriptionId() bool {
+	if o != nil && !IsNil(o.ExternalEventSubscriptionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalEventSubscriptionId gets a reference to the given string and assigns it to the ExternalEventSubscriptionId field.
 func (o *ExternalEventPullDto) SetExternalEventSubscriptionId(v string) {
-	o.ExternalEventSubscriptionId = v
+	o.ExternalEventSubscriptionId = &v
 }
 
 // GetExternalEventSubscription returns the ExternalEventSubscription field value if set, zero value otherwise.
@@ -203,28 +203,36 @@ func (o *ExternalEventPullDto) SetExternalEventSubscription(v map[string]interfa
 	o.ExternalEventSubscription = v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *ExternalEventPullDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -259,28 +267,36 @@ func (o *ExternalEventPullDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *ExternalEventPullDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -315,122 +331,162 @@ func (o *ExternalEventPullDto) SetIntegration(v IntegrationDto) {
 	o.Integration = &v
 }
 
-// GetStatus returns the Status field value
+// GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetStatus() string {
-	if o == nil {
+	if o == nil || IsNil(o.Status) {
 		var ret string
 		return ret
 	}
-
-	return o.Status
+	return *o.Status
 }
 
-// GetStatusOk returns a tuple with the Status field value
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetStatusOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
-	return &o.Status, true
+	return o.Status, true
 }
 
-// SetStatus sets field value
+// HasStatus returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ExternalEventPullDto) SetStatus(v string) {
-	o.Status = v
+	o.Status = &v
 }
 
-// GetStartDatetime returns the StartDatetime field value
+// GetStartDatetime returns the StartDatetime field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetStartDatetime() string {
-	if o == nil {
+	if o == nil || IsNil(o.StartDatetime) {
 		var ret string
 		return ret
 	}
-
-	return o.StartDatetime
+	return *o.StartDatetime
 }
 
-// GetStartDatetimeOk returns a tuple with the StartDatetime field value
+// GetStartDatetimeOk returns a tuple with the StartDatetime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetStartDatetimeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StartDatetime) {
 		return nil, false
 	}
-	return &o.StartDatetime, true
+	return o.StartDatetime, true
 }
 
-// SetStartDatetime sets field value
+// HasStartDatetime returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasStartDatetime() bool {
+	if o != nil && !IsNil(o.StartDatetime) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartDatetime gets a reference to the given string and assigns it to the StartDatetime field.
 func (o *ExternalEventPullDto) SetStartDatetime(v string) {
-	o.StartDatetime = v
+	o.StartDatetime = &v
 }
 
-// GetEndDatetime returns the EndDatetime field value
+// GetEndDatetime returns the EndDatetime field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetEndDatetime() string {
-	if o == nil {
+	if o == nil || IsNil(o.EndDatetime) {
 		var ret string
 		return ret
 	}
-
-	return o.EndDatetime
+	return *o.EndDatetime
 }
 
-// GetEndDatetimeOk returns a tuple with the EndDatetime field value
+// GetEndDatetimeOk returns a tuple with the EndDatetime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetEndDatetimeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.EndDatetime) {
 		return nil, false
 	}
-	return &o.EndDatetime, true
+	return o.EndDatetime, true
 }
 
-// SetEndDatetime sets field value
+// HasEndDatetime returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasEndDatetime() bool {
+	if o != nil && !IsNil(o.EndDatetime) {
+		return true
+	}
+
+	return false
+}
+
+// SetEndDatetime gets a reference to the given string and assigns it to the EndDatetime field.
 func (o *ExternalEventPullDto) SetEndDatetime(v string) {
-	o.EndDatetime = v
+	o.EndDatetime = &v
 }
 
-// GetIsFullScan returns the IsFullScan field value
+// GetIsFullScan returns the IsFullScan field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetIsFullScan() bool {
-	if o == nil {
+	if o == nil || IsNil(o.IsFullScan) {
 		var ret bool
 		return ret
 	}
-
-	return o.IsFullScan
+	return *o.IsFullScan
 }
 
-// GetIsFullScanOk returns a tuple with the IsFullScan field value
+// GetIsFullScanOk returns a tuple with the IsFullScan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetIsFullScanOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IsFullScan) {
 		return nil, false
 	}
-	return &o.IsFullScan, true
+	return o.IsFullScan, true
 }
 
-// SetIsFullScan sets field value
+// HasIsFullScan returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasIsFullScan() bool {
+	if o != nil && !IsNil(o.IsFullScan) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFullScan gets a reference to the given bool and assigns it to the IsFullScan field.
 func (o *ExternalEventPullDto) SetIsFullScan(v bool) {
-	o.IsFullScan = v
+	o.IsFullScan = &v
 }
 
-// GetCollectedEventIds returns the CollectedEventIds field value
+// GetCollectedEventIds returns the CollectedEventIds field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetCollectedEventIds() []string {
-	if o == nil {
+	if o == nil || IsNil(o.CollectedEventIds) {
 		var ret []string
 		return ret
 	}
-
 	return o.CollectedEventIds
 }
 
-// GetCollectedEventIdsOk returns a tuple with the CollectedEventIds field value
+// GetCollectedEventIdsOk returns a tuple with the CollectedEventIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetCollectedEventIdsOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CollectedEventIds) {
 		return nil, false
 	}
 	return o.CollectedEventIds, true
 }
 
-// SetCollectedEventIds sets field value
+// HasCollectedEventIds returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasCollectedEventIds() bool {
+	if o != nil && !IsNil(o.CollectedEventIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetCollectedEventIds gets a reference to the given []string and assigns it to the CollectedEventIds field.
 func (o *ExternalEventPullDto) SetCollectedEventIds(v []string) {
 	o.CollectedEventIds = v
 }
@@ -482,23 +538,39 @@ func (o ExternalEventPullDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["externalEventSubscriptionId"] = o.ExternalEventSubscriptionId
+	if !IsNil(o.ExternalEventSubscriptionId) {
+		toSerialize["externalEventSubscriptionId"] = o.ExternalEventSubscriptionId
+	}
 	if !IsNil(o.ExternalEventSubscription) {
 		toSerialize["externalEventSubscription"] = o.ExternalEventSubscription
 	}
-	toSerialize["connectionId"] = o.ConnectionId
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
-	toSerialize["status"] = o.Status
-	toSerialize["startDatetime"] = o.StartDatetime
-	toSerialize["endDatetime"] = o.EndDatetime
-	toSerialize["isFullScan"] = o.IsFullScan
-	toSerialize["collectedEventIds"] = o.CollectedEventIds
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.StartDatetime) {
+		toSerialize["startDatetime"] = o.StartDatetime
+	}
+	if !IsNil(o.EndDatetime) {
+		toSerialize["endDatetime"] = o.EndDatetime
+	}
+	if !IsNil(o.IsFullScan) {
+		toSerialize["isFullScan"] = o.IsFullScan
+	}
+	if !IsNil(o.CollectedEventIds) {
+		toSerialize["collectedEventIds"] = o.CollectedEventIds
+	}
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
@@ -512,14 +584,6 @@ func (o *ExternalEventPullDto) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"userId",
-		"externalEventSubscriptionId",
-		"connectionId",
-		"integrationId",
-		"status",
-		"startDatetime",
-		"endDatetime",
-		"isFullScan",
-		"collectedEventIds",
 	}
 
 	allProperties := make(map[string]interface{})

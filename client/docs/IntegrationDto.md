@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ConnectorId** | Pointer to **string** |  | [optional] 
 **AuthType** | Pointer to **map[string]interface{}** |  | [optional] 
 **AuthOptions** | Pointer to **[]string** |  | [optional] 
-**OAuthCallbackUri** | **string** |  | 
+**OAuthCallbackUri** | Pointer to **string** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
 **HasMissingParameters** | Pointer to **bool** |  | [optional] 
@@ -23,10 +23,10 @@ Name | Type | Description | Notes
 **HasGlobalWebhooks** | Pointer to **bool** |  | [optional] 
 **HasUdm** | Pointer to **bool** |  | [optional] 
 **AreParametersCustomized** | Pointer to **bool** |  | [optional] 
-**BaseUri** | **string** |  | 
+**BaseUri** | Pointer to **string** |  | [optional] 
 **ConnectorVersion** | Pointer to **string** |  | [optional] 
 **IsTest** | Pointer to **bool** |  | [optional] 
-**LogoUri** | **string** |  | 
+**LogoUri** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **time.Time** |  | [optional] 
 **ConnectionMode** | Pointer to **string** |  | [optional] 
 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewIntegrationDto
 
-`func NewIntegrationDto(id string, key string, uuid string, name string, oAuthCallbackUri string, baseUri string, logoUri string, ) *IntegrationDto`
+`func NewIntegrationDto(id string, key string, uuid string, name string, ) *IntegrationDto`
 
 NewIntegrationDto instantiates a new IntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -248,6 +248,11 @@ and a boolean to check if the value has been set.
 
 SetOAuthCallbackUri sets OAuthCallbackUri field to given value.
 
+### HasOAuthCallbackUri
+
+`func (o *IntegrationDto) HasOAuthCallbackUri() bool`
+
+HasOAuthCallbackUri returns a boolean if a field has been set.
 
 ### GetParametersSchema
 
@@ -518,6 +523,11 @@ and a boolean to check if the value has been set.
 
 SetBaseUri sets BaseUri field to given value.
 
+### HasBaseUri
+
+`func (o *IntegrationDto) HasBaseUri() bool`
+
+HasBaseUri returns a boolean if a field has been set.
 
 ### GetConnectorVersion
 
@@ -588,6 +598,11 @@ and a boolean to check if the value has been set.
 
 SetLogoUri sets LogoUri field to given value.
 
+### HasLogoUri
+
+`func (o *IntegrationDto) HasLogoUri() bool`
+
+HasLogoUri returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

@@ -29,15 +29,15 @@ type FlowRunDto struct {
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	StartNodeKey string `json:"startNodeKey"`
-	UserId string `json:"userId"`
+	StartNodeKey *string `json:"startNodeKey,omitempty"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
 	Input map[string]interface{} `json:"input,omitempty"`
-	State string `json:"state"`
-	StartTime string `json:"startTime"`
+	State *string `json:"state,omitempty"`
+	StartTime *string `json:"startTime,omitempty"`
 	EndTime *string `json:"endTime,omitempty"`
 	Errors []map[string]interface{} `json:"errors,omitempty"`
-	Nodes map[string]interface{} `json:"nodes"`
+	Nodes map[string]interface{} `json:"nodes,omitempty"`
 	LaunchedBy *FlorRunLaunchedByDto `json:"launchedBy,omitempty"`
 }
 
@@ -47,15 +47,10 @@ type _FlowRunDto FlowRunDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFlowRunDto(id string, flowInstanceId string, startNodeKey string, userId string, state string, startTime string, nodes map[string]interface{}) *FlowRunDto {
+func NewFlowRunDto(id string, flowInstanceId string) *FlowRunDto {
 	this := FlowRunDto{}
 	this.Id = id
 	this.FlowInstanceId = flowInstanceId
-	this.StartNodeKey = startNodeKey
-	this.UserId = userId
-	this.State = state
-	this.StartTime = startTime
-	this.Nodes = nodes
 	return &this
 }
 
@@ -307,52 +302,68 @@ func (o *FlowRunDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetStartNodeKey returns the StartNodeKey field value
+// GetStartNodeKey returns the StartNodeKey field value if set, zero value otherwise.
 func (o *FlowRunDto) GetStartNodeKey() string {
-	if o == nil {
+	if o == nil || IsNil(o.StartNodeKey) {
 		var ret string
 		return ret
 	}
-
-	return o.StartNodeKey
+	return *o.StartNodeKey
 }
 
-// GetStartNodeKeyOk returns a tuple with the StartNodeKey field value
+// GetStartNodeKeyOk returns a tuple with the StartNodeKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetStartNodeKeyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StartNodeKey) {
 		return nil, false
 	}
-	return &o.StartNodeKey, true
+	return o.StartNodeKey, true
 }
 
-// SetStartNodeKey sets field value
+// HasStartNodeKey returns a boolean if a field has been set.
+func (o *FlowRunDto) HasStartNodeKey() bool {
+	if o != nil && !IsNil(o.StartNodeKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartNodeKey gets a reference to the given string and assigns it to the StartNodeKey field.
 func (o *FlowRunDto) SetStartNodeKey(v string) {
-	o.StartNodeKey = v
+	o.StartNodeKey = &v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *FlowRunDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *FlowRunDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *FlowRunDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -419,52 +430,68 @@ func (o *FlowRunDto) SetInput(v map[string]interface{}) {
 	o.Input = v
 }
 
-// GetState returns the State field value
+// GetState returns the State field value if set, zero value otherwise.
 func (o *FlowRunDto) GetState() string {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
 	}
-
-	return o.State
+	return *o.State
 }
 
-// GetStateOk returns a tuple with the State field value
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetStateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
-	return &o.State, true
+	return o.State, true
 }
 
-// SetState sets field value
+// HasState returns a boolean if a field has been set.
+func (o *FlowRunDto) HasState() bool {
+	if o != nil && !IsNil(o.State) {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
 func (o *FlowRunDto) SetState(v string) {
-	o.State = v
+	o.State = &v
 }
 
-// GetStartTime returns the StartTime field value
+// GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *FlowRunDto) GetStartTime() string {
-	if o == nil {
+	if o == nil || IsNil(o.StartTime) {
 		var ret string
 		return ret
 	}
-
-	return o.StartTime
+	return *o.StartTime
 }
 
-// GetStartTimeOk returns a tuple with the StartTime field value
+// GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetStartTimeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
-	return &o.StartTime, true
+	return o.StartTime, true
 }
 
-// SetStartTime sets field value
+// HasStartTime returns a boolean if a field has been set.
+func (o *FlowRunDto) HasStartTime() bool {
+	if o != nil && !IsNil(o.StartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartTime gets a reference to the given string and assigns it to the StartTime field.
 func (o *FlowRunDto) SetStartTime(v string) {
-	o.StartTime = v
+	o.StartTime = &v
 }
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
@@ -531,26 +558,34 @@ func (o *FlowRunDto) SetErrors(v []map[string]interface{}) {
 	o.Errors = v
 }
 
-// GetNodes returns the Nodes field value
+// GetNodes returns the Nodes field value if set, zero value otherwise.
 func (o *FlowRunDto) GetNodes() map[string]interface{} {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		var ret map[string]interface{}
 		return ret
 	}
-
 	return o.Nodes
 }
 
-// GetNodesOk returns a tuple with the Nodes field value
+// GetNodesOk returns a tuple with the Nodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetNodesOk() (map[string]interface{}, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		return map[string]interface{}{}, false
 	}
 	return o.Nodes, true
 }
 
-// SetNodes sets field value
+// HasNodes returns a boolean if a field has been set.
+func (o *FlowRunDto) HasNodes() bool {
+	if o != nil && !IsNil(o.Nodes) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodes gets a reference to the given map[string]interface{} and assigns it to the Nodes field.
 func (o *FlowRunDto) SetNodes(v map[string]interface{}) {
 	o.Nodes = v
 }
@@ -617,23 +652,33 @@ func (o FlowRunDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["startNodeKey"] = o.StartNodeKey
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.StartNodeKey) {
+		toSerialize["startNodeKey"] = o.StartNodeKey
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
 	if !IsNil(o.Input) {
 		toSerialize["input"] = o.Input
 	}
-	toSerialize["state"] = o.State
-	toSerialize["startTime"] = o.StartTime
+	if !IsNil(o.State) {
+		toSerialize["state"] = o.State
+	}
+	if !IsNil(o.StartTime) {
+		toSerialize["startTime"] = o.StartTime
+	}
 	if !IsNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
 	}
-	toSerialize["nodes"] = o.Nodes
+	if !IsNil(o.Nodes) {
+		toSerialize["nodes"] = o.Nodes
+	}
 	if !IsNil(o.LaunchedBy) {
 		toSerialize["launchedBy"] = o.LaunchedBy
 	}
@@ -647,11 +692,6 @@ func (o *FlowRunDto) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"flowInstanceId",
-		"startNodeKey",
-		"userId",
-		"state",
-		"startTime",
-		"nodes",
 	}
 
 	allProperties := make(map[string]interface{})

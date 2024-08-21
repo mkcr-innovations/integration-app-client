@@ -25,8 +25,8 @@ type AppDataSchemaInstanceDto struct {
 	AppId string `json:"appId"`
 	UserId string `json:"userId"`
 	User map[string]interface{} `json:"user,omitempty"`
-	AppDataSchemaId string `json:"appDataSchemaId"`
-	AppDataSchemaRevision string `json:"appDataSchemaRevision"`
+	AppDataSchemaId *string `json:"appDataSchemaId,omitempty"`
+	AppDataSchemaRevision *string `json:"appDataSchemaRevision,omitempty"`
 	AppDataSchema map[string]interface{} `json:"appDataSchema,omitempty"`
 	InstanceKey *string `json:"instanceKey,omitempty"`
 	Schema map[string]interface{} `json:"schema,omitempty"`
@@ -39,13 +39,11 @@ type _AppDataSchemaInstanceDto AppDataSchemaInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppDataSchemaInstanceDto(id string, appId string, userId string, appDataSchemaId string, appDataSchemaRevision string) *AppDataSchemaInstanceDto {
+func NewAppDataSchemaInstanceDto(id string, appId string, userId string) *AppDataSchemaInstanceDto {
 	this := AppDataSchemaInstanceDto{}
 	this.Id = id
 	this.AppId = appId
 	this.UserId = userId
-	this.AppDataSchemaId = appDataSchemaId
-	this.AppDataSchemaRevision = appDataSchemaRevision
 	return &this
 }
 
@@ -161,52 +159,68 @@ func (o *AppDataSchemaInstanceDto) SetUser(v map[string]interface{}) {
 	o.User = v
 }
 
-// GetAppDataSchemaId returns the AppDataSchemaId field value
+// GetAppDataSchemaId returns the AppDataSchemaId field value if set, zero value otherwise.
 func (o *AppDataSchemaInstanceDto) GetAppDataSchemaId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppDataSchemaId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppDataSchemaId
+	return *o.AppDataSchemaId
 }
 
-// GetAppDataSchemaIdOk returns a tuple with the AppDataSchemaId field value
+// GetAppDataSchemaIdOk returns a tuple with the AppDataSchemaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaInstanceDto) GetAppDataSchemaIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppDataSchemaId) {
 		return nil, false
 	}
-	return &o.AppDataSchemaId, true
+	return o.AppDataSchemaId, true
 }
 
-// SetAppDataSchemaId sets field value
+// HasAppDataSchemaId returns a boolean if a field has been set.
+func (o *AppDataSchemaInstanceDto) HasAppDataSchemaId() bool {
+	if o != nil && !IsNil(o.AppDataSchemaId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppDataSchemaId gets a reference to the given string and assigns it to the AppDataSchemaId field.
 func (o *AppDataSchemaInstanceDto) SetAppDataSchemaId(v string) {
-	o.AppDataSchemaId = v
+	o.AppDataSchemaId = &v
 }
 
-// GetAppDataSchemaRevision returns the AppDataSchemaRevision field value
+// GetAppDataSchemaRevision returns the AppDataSchemaRevision field value if set, zero value otherwise.
 func (o *AppDataSchemaInstanceDto) GetAppDataSchemaRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppDataSchemaRevision) {
 		var ret string
 		return ret
 	}
-
-	return o.AppDataSchemaRevision
+	return *o.AppDataSchemaRevision
 }
 
-// GetAppDataSchemaRevisionOk returns a tuple with the AppDataSchemaRevision field value
+// GetAppDataSchemaRevisionOk returns a tuple with the AppDataSchemaRevision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaInstanceDto) GetAppDataSchemaRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppDataSchemaRevision) {
 		return nil, false
 	}
-	return &o.AppDataSchemaRevision, true
+	return o.AppDataSchemaRevision, true
 }
 
-// SetAppDataSchemaRevision sets field value
+// HasAppDataSchemaRevision returns a boolean if a field has been set.
+func (o *AppDataSchemaInstanceDto) HasAppDataSchemaRevision() bool {
+	if o != nil && !IsNil(o.AppDataSchemaRevision) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppDataSchemaRevision gets a reference to the given string and assigns it to the AppDataSchemaRevision field.
 func (o *AppDataSchemaInstanceDto) SetAppDataSchemaRevision(v string) {
-	o.AppDataSchemaRevision = v
+	o.AppDataSchemaRevision = &v
 }
 
 // GetAppDataSchema returns the AppDataSchema field value if set, zero value otherwise.
@@ -353,8 +367,12 @@ func (o AppDataSchemaInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["appDataSchemaId"] = o.AppDataSchemaId
-	toSerialize["appDataSchemaRevision"] = o.AppDataSchemaRevision
+	if !IsNil(o.AppDataSchemaId) {
+		toSerialize["appDataSchemaId"] = o.AppDataSchemaId
+	}
+	if !IsNil(o.AppDataSchemaRevision) {
+		toSerialize["appDataSchemaRevision"] = o.AppDataSchemaRevision
+	}
 	if !IsNil(o.AppDataSchema) {
 		toSerialize["appDataSchema"] = o.AppDataSchema
 	}
@@ -378,8 +396,6 @@ func (o *AppDataSchemaInstanceDto) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"appId",
 		"userId",
-		"appDataSchemaId",
-		"appDataSchemaRevision",
 	}
 
 	allProperties := make(map[string]interface{})
