@@ -15043,7 +15043,7 @@
             "type": "string"
           },
           "authType": {
-            "type": "object"
+            "type": "string"
           },
           "authOptions": {
             "type": "array",
@@ -15055,7 +15055,7 @@
             "type": "string"
           },
           "parametersSchema": {
-            "type": "object"
+            "type": "string"
           },
           "hasDefaultParameters": {
             "type": "boolean"

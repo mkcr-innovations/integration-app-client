@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **ConnectorStoreKey** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
-**AuthType** | Pointer to **map[string]interface{}** |  | [optional] 
+**AuthType** | Pointer to **string** |  | [optional] 
 **AuthOptions** | Pointer to **[]string** |  | [optional] 
 **OAuthCallbackUri** | Pointer to **string** |  | [optional] 
-**ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**ParametersSchema** | Pointer to **string** |  | [optional] 
 **HasDefaultParameters** | Pointer to **bool** |  | [optional] 
 **HasMissingParameters** | Pointer to **bool** |  | [optional] 
 **HasDocumentation** | Pointer to **bool** |  | [optional] 
@@ -181,20 +181,20 @@ HasConnectorId returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *IntegrationDto) GetAuthType() map[string]interface{}`
+`func (o *IntegrationDto) GetAuthType() string`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *IntegrationDto) GetAuthTypeOk() (*map[string]interface{}, bool)`
+`func (o *IntegrationDto) GetAuthTypeOk() (*string, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *IntegrationDto) SetAuthType(v map[string]interface{})`
+`func (o *IntegrationDto) SetAuthType(v string)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -256,20 +256,20 @@ HasOAuthCallbackUri returns a boolean if a field has been set.
 
 ### GetParametersSchema
 
-`func (o *IntegrationDto) GetParametersSchema() map[string]interface{}`
+`func (o *IntegrationDto) GetParametersSchema() string`
 
 GetParametersSchema returns the ParametersSchema field if non-nil, zero value otherwise.
 
 ### GetParametersSchemaOk
 
-`func (o *IntegrationDto) GetParametersSchemaOk() (*map[string]interface{}, bool)`
+`func (o *IntegrationDto) GetParametersSchemaOk() (*string, bool)`
 
 GetParametersSchemaOk returns a tuple with the ParametersSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParametersSchema
 
-`func (o *IntegrationDto) SetParametersSchema(v map[string]interface{})`
+`func (o *IntegrationDto) SetParametersSchema(v string)`
 
 SetParametersSchema sets ParametersSchema field to given value.
 
