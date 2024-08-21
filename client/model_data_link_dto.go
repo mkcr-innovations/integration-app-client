@@ -22,10 +22,10 @@ var _ MappedNullable = &DataLinkDto{}
 // DataLinkDto struct for DataLinkDto
 type DataLinkDto struct {
 	Id string `json:"id"`
-	DataLinkTableInstanceId string `json:"dataLinkTableInstanceId"`
-	Direction string `json:"direction"`
-	AppRecordId string `json:"appRecordId"`
-	ExternalRecordId string `json:"externalRecordId"`
+	DataLinkTableInstanceId *string `json:"dataLinkTableInstanceId,omitempty"`
+	Direction *string `json:"direction,omitempty"`
+	AppRecordId *string `json:"appRecordId,omitempty"`
+	ExternalRecordId *string `json:"externalRecordId,omitempty"`
 }
 
 type _DataLinkDto DataLinkDto
@@ -34,13 +34,9 @@ type _DataLinkDto DataLinkDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataLinkDto(id string, dataLinkTableInstanceId string, direction string, appRecordId string, externalRecordId string) *DataLinkDto {
+func NewDataLinkDto(id string) *DataLinkDto {
 	this := DataLinkDto{}
 	this.Id = id
-	this.DataLinkTableInstanceId = dataLinkTableInstanceId
-	this.Direction = direction
-	this.AppRecordId = appRecordId
-	this.ExternalRecordId = externalRecordId
 	return &this
 }
 
@@ -76,100 +72,132 @@ func (o *DataLinkDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetDataLinkTableInstanceId returns the DataLinkTableInstanceId field value
+// GetDataLinkTableInstanceId returns the DataLinkTableInstanceId field value if set, zero value otherwise.
 func (o *DataLinkDto) GetDataLinkTableInstanceId() string {
-	if o == nil {
+	if o == nil || IsNil(o.DataLinkTableInstanceId) {
 		var ret string
 		return ret
 	}
-
-	return o.DataLinkTableInstanceId
+	return *o.DataLinkTableInstanceId
 }
 
-// GetDataLinkTableInstanceIdOk returns a tuple with the DataLinkTableInstanceId field value
+// GetDataLinkTableInstanceIdOk returns a tuple with the DataLinkTableInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkDto) GetDataLinkTableInstanceIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DataLinkTableInstanceId) {
 		return nil, false
 	}
-	return &o.DataLinkTableInstanceId, true
+	return o.DataLinkTableInstanceId, true
 }
 
-// SetDataLinkTableInstanceId sets field value
+// HasDataLinkTableInstanceId returns a boolean if a field has been set.
+func (o *DataLinkDto) HasDataLinkTableInstanceId() bool {
+	if o != nil && !IsNil(o.DataLinkTableInstanceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDataLinkTableInstanceId gets a reference to the given string and assigns it to the DataLinkTableInstanceId field.
 func (o *DataLinkDto) SetDataLinkTableInstanceId(v string) {
-	o.DataLinkTableInstanceId = v
+	o.DataLinkTableInstanceId = &v
 }
 
-// GetDirection returns the Direction field value
+// GetDirection returns the Direction field value if set, zero value otherwise.
 func (o *DataLinkDto) GetDirection() string {
-	if o == nil {
+	if o == nil || IsNil(o.Direction) {
 		var ret string
 		return ret
 	}
-
-	return o.Direction
+	return *o.Direction
 }
 
-// GetDirectionOk returns a tuple with the Direction field value
+// GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkDto) GetDirectionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Direction) {
 		return nil, false
 	}
-	return &o.Direction, true
+	return o.Direction, true
 }
 
-// SetDirection sets field value
+// HasDirection returns a boolean if a field has been set.
+func (o *DataLinkDto) HasDirection() bool {
+	if o != nil && !IsNil(o.Direction) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirection gets a reference to the given string and assigns it to the Direction field.
 func (o *DataLinkDto) SetDirection(v string) {
-	o.Direction = v
+	o.Direction = &v
 }
 
-// GetAppRecordId returns the AppRecordId field value
+// GetAppRecordId returns the AppRecordId field value if set, zero value otherwise.
 func (o *DataLinkDto) GetAppRecordId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppRecordId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppRecordId
+	return *o.AppRecordId
 }
 
-// GetAppRecordIdOk returns a tuple with the AppRecordId field value
+// GetAppRecordIdOk returns a tuple with the AppRecordId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkDto) GetAppRecordIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppRecordId) {
 		return nil, false
 	}
-	return &o.AppRecordId, true
+	return o.AppRecordId, true
 }
 
-// SetAppRecordId sets field value
+// HasAppRecordId returns a boolean if a field has been set.
+func (o *DataLinkDto) HasAppRecordId() bool {
+	if o != nil && !IsNil(o.AppRecordId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppRecordId gets a reference to the given string and assigns it to the AppRecordId field.
 func (o *DataLinkDto) SetAppRecordId(v string) {
-	o.AppRecordId = v
+	o.AppRecordId = &v
 }
 
-// GetExternalRecordId returns the ExternalRecordId field value
+// GetExternalRecordId returns the ExternalRecordId field value if set, zero value otherwise.
 func (o *DataLinkDto) GetExternalRecordId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalRecordId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalRecordId
+	return *o.ExternalRecordId
 }
 
-// GetExternalRecordIdOk returns a tuple with the ExternalRecordId field value
+// GetExternalRecordIdOk returns a tuple with the ExternalRecordId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkDto) GetExternalRecordIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalRecordId) {
 		return nil, false
 	}
-	return &o.ExternalRecordId, true
+	return o.ExternalRecordId, true
 }
 
-// SetExternalRecordId sets field value
+// HasExternalRecordId returns a boolean if a field has been set.
+func (o *DataLinkDto) HasExternalRecordId() bool {
+	if o != nil && !IsNil(o.ExternalRecordId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalRecordId gets a reference to the given string and assigns it to the ExternalRecordId field.
 func (o *DataLinkDto) SetExternalRecordId(v string) {
-	o.ExternalRecordId = v
+	o.ExternalRecordId = &v
 }
 
 func (o DataLinkDto) MarshalJSON() ([]byte, error) {
@@ -183,10 +211,18 @@ func (o DataLinkDto) MarshalJSON() ([]byte, error) {
 func (o DataLinkDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["dataLinkTableInstanceId"] = o.DataLinkTableInstanceId
-	toSerialize["direction"] = o.Direction
-	toSerialize["appRecordId"] = o.AppRecordId
-	toSerialize["externalRecordId"] = o.ExternalRecordId
+	if !IsNil(o.DataLinkTableInstanceId) {
+		toSerialize["dataLinkTableInstanceId"] = o.DataLinkTableInstanceId
+	}
+	if !IsNil(o.Direction) {
+		toSerialize["direction"] = o.Direction
+	}
+	if !IsNil(o.AppRecordId) {
+		toSerialize["appRecordId"] = o.AppRecordId
+	}
+	if !IsNil(o.ExternalRecordId) {
+		toSerialize["externalRecordId"] = o.ExternalRecordId
+	}
 	return toSerialize, nil
 }
 
@@ -196,10 +232,6 @@ func (o *DataLinkDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"dataLinkTableInstanceId",
-		"direction",
-		"appRecordId",
-		"externalRecordId",
 	}
 
 	allProperties := make(map[string]interface{})

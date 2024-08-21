@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Key** | **string** |  | 
-**Name** | **string** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
-**Revision** | **string** |  | 
+**Revision** | Pointer to **string** |  | [optional] 
 **PublishedRevision** | Pointer to **string** |  | [optional] 
-**GlobalWebhookUri** | **string** |  | 
+**GlobalWebhookUri** | Pointer to **string** |  | [optional] 
 **Example** | Pointer to **map[string]interface{}** |  | [optional] 
 **Schema** | Pointer to **map[string]interface{}** |  | [optional] 
 **SubscribeRequest** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAppEventTypeDto
 
-`func NewAppEventTypeDto(id string, key string, name string, revision string, globalWebhookUri string, ) *AppEventTypeDto`
+`func NewAppEventTypeDto(id string, ) *AppEventTypeDto`
 
 NewAppEventTypeDto instantiates a new AppEventTypeDto object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *AppEventTypeDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetName
 
@@ -94,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *AppEventTypeDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *AppEventTypeDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetPublishedRevision
 
@@ -184,6 +199,11 @@ and a boolean to check if the value has been set.
 
 SetGlobalWebhookUri sets GlobalWebhookUri field to given value.
 
+### HasGlobalWebhookUri
+
+`func (o *AppEventTypeDto) HasGlobalWebhookUri() bool`
+
+HasGlobalWebhookUri returns a boolean if a field has been set.
 
 ### GetExample
 

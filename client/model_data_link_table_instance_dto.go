@@ -22,14 +22,14 @@ var _ MappedNullable = &DataLinkTableInstanceDto{}
 // DataLinkTableInstanceDto struct for DataLinkTableInstanceDto
 type DataLinkTableInstanceDto struct {
 	Id string `json:"id"`
-	Name string `json:"name"`
-	DataLinkTableId string `json:"dataLinkTableId"`
+	Name *string `json:"name,omitempty"`
+	DataLinkTableId *string `json:"dataLinkTableId,omitempty"`
 	DataLinkTable *DataLinkTableDto `json:"dataLinkTable,omitempty"`
-	UserId string `json:"userId"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
-	ConnectionId string `json:"connectionId"`
+	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	InstanceKey *string `json:"instanceKey,omitempty"`
 }
@@ -40,14 +40,9 @@ type _DataLinkTableInstanceDto DataLinkTableInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataLinkTableInstanceDto(id string, name string, dataLinkTableId string, userId string, connectionId string, integrationId string) *DataLinkTableInstanceDto {
+func NewDataLinkTableInstanceDto(id string) *DataLinkTableInstanceDto {
 	this := DataLinkTableInstanceDto{}
 	this.Id = id
-	this.Name = name
-	this.DataLinkTableId = dataLinkTableId
-	this.UserId = userId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
 	return &this
 }
 
@@ -83,52 +78,68 @@ func (o *DataLinkTableInstanceDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *DataLinkTableInstanceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkTableInstanceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *DataLinkTableInstanceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *DataLinkTableInstanceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetDataLinkTableId returns the DataLinkTableId field value
+// GetDataLinkTableId returns the DataLinkTableId field value if set, zero value otherwise.
 func (o *DataLinkTableInstanceDto) GetDataLinkTableId() string {
-	if o == nil {
+	if o == nil || IsNil(o.DataLinkTableId) {
 		var ret string
 		return ret
 	}
-
-	return o.DataLinkTableId
+	return *o.DataLinkTableId
 }
 
-// GetDataLinkTableIdOk returns a tuple with the DataLinkTableId field value
+// GetDataLinkTableIdOk returns a tuple with the DataLinkTableId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkTableInstanceDto) GetDataLinkTableIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DataLinkTableId) {
 		return nil, false
 	}
-	return &o.DataLinkTableId, true
+	return o.DataLinkTableId, true
 }
 
-// SetDataLinkTableId sets field value
+// HasDataLinkTableId returns a boolean if a field has been set.
+func (o *DataLinkTableInstanceDto) HasDataLinkTableId() bool {
+	if o != nil && !IsNil(o.DataLinkTableId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDataLinkTableId gets a reference to the given string and assigns it to the DataLinkTableId field.
 func (o *DataLinkTableInstanceDto) SetDataLinkTableId(v string) {
-	o.DataLinkTableId = v
+	o.DataLinkTableId = &v
 }
 
 // GetDataLinkTable returns the DataLinkTable field value if set, zero value otherwise.
@@ -163,28 +174,36 @@ func (o *DataLinkTableInstanceDto) SetDataLinkTable(v DataLinkTableDto) {
 	o.DataLinkTable = &v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *DataLinkTableInstanceDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkTableInstanceDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *DataLinkTableInstanceDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *DataLinkTableInstanceDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -219,28 +238,36 @@ func (o *DataLinkTableInstanceDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *DataLinkTableInstanceDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkTableInstanceDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *DataLinkTableInstanceDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *DataLinkTableInstanceDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -275,28 +302,36 @@ func (o *DataLinkTableInstanceDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *DataLinkTableInstanceDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataLinkTableInstanceDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *DataLinkTableInstanceDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *DataLinkTableInstanceDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -374,20 +409,30 @@ func (o DataLinkTableInstanceDto) MarshalJSON() ([]byte, error) {
 func (o DataLinkTableInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-	toSerialize["dataLinkTableId"] = o.DataLinkTableId
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.DataLinkTableId) {
+		toSerialize["dataLinkTableId"] = o.DataLinkTableId
+	}
 	if !IsNil(o.DataLinkTable) {
 		toSerialize["dataLinkTable"] = o.DataLinkTable
 	}
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["connectionId"] = o.ConnectionId
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
@@ -403,11 +448,6 @@ func (o *DataLinkTableInstanceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"name",
-		"dataLinkTableId",
-		"userId",
-		"connectionId",
-		"integrationId",
 	}
 
 	allProperties := make(map[string]interface{})

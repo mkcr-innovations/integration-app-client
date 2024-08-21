@@ -2634,7 +2634,7 @@ import (
 )
 
 func main() {
-	createFlowDto := *openapiclient.NewCreateFlowDto("Key_example", "Name_example") // CreateFlowDto | 
+	createFlowDto := *openapiclient.NewCreateFlowDto("Key_example") // CreateFlowDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3134,7 +3134,7 @@ import (
 
 func main() {
 	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
-	createIntegrationLevelFlowDto := *openapiclient.NewCreateIntegrationLevelFlowDto("Key_example", "Name_example") // CreateIntegrationLevelFlowDto | 
+	createIntegrationLevelFlowDto := *openapiclient.NewCreateIntegrationLevelFlowDto("Key_example") // CreateIntegrationLevelFlowDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

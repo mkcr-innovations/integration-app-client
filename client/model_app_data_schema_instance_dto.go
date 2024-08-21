@@ -22,8 +22,8 @@ var _ MappedNullable = &AppDataSchemaInstanceDto{}
 // AppDataSchemaInstanceDto struct for AppDataSchemaInstanceDto
 type AppDataSchemaInstanceDto struct {
 	Id string `json:"id"`
-	AppId string `json:"appId"`
-	UserId string `json:"userId"`
+	AppId *string `json:"appId,omitempty"`
+	UserId *string `json:"userId,omitempty"`
 	User map[string]interface{} `json:"user,omitempty"`
 	AppDataSchemaId *string `json:"appDataSchemaId,omitempty"`
 	AppDataSchemaRevision *string `json:"appDataSchemaRevision,omitempty"`
@@ -39,11 +39,9 @@ type _AppDataSchemaInstanceDto AppDataSchemaInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppDataSchemaInstanceDto(id string, appId string, userId string) *AppDataSchemaInstanceDto {
+func NewAppDataSchemaInstanceDto(id string) *AppDataSchemaInstanceDto {
 	this := AppDataSchemaInstanceDto{}
 	this.Id = id
-	this.AppId = appId
-	this.UserId = userId
 	return &this
 }
 
@@ -79,52 +77,68 @@ func (o *AppDataSchemaInstanceDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetAppId returns the AppId field value
+// GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *AppDataSchemaInstanceDto) GetAppId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppId
+	return *o.AppId
 }
 
-// GetAppIdOk returns a tuple with the AppId field value
+// GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaInstanceDto) GetAppIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
-	return &o.AppId, true
+	return o.AppId, true
 }
 
-// SetAppId sets field value
+// HasAppId returns a boolean if a field has been set.
+func (o *AppDataSchemaInstanceDto) HasAppId() bool {
+	if o != nil && !IsNil(o.AppId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppId gets a reference to the given string and assigns it to the AppId field.
 func (o *AppDataSchemaInstanceDto) SetAppId(v string) {
-	o.AppId = v
+	o.AppId = &v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *AppDataSchemaInstanceDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaInstanceDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *AppDataSchemaInstanceDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *AppDataSchemaInstanceDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -362,8 +376,12 @@ func (o AppDataSchemaInstanceDto) MarshalJSON() ([]byte, error) {
 func (o AppDataSchemaInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["appId"] = o.AppId
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.AppId) {
+		toSerialize["appId"] = o.AppId
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
@@ -394,8 +412,6 @@ func (o *AppDataSchemaInstanceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"appId",
-		"userId",
 	}
 
 	allProperties := make(map[string]interface{})

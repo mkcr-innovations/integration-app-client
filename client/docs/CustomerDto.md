@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**InternalId** | **string** |  | 
-**Name** | **string** |  | 
+**InternalId** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **IsTest** | Pointer to **bool** |  | [optional] 
 **Fields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Credentials** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCustomerDto
 
-`func NewCustomerDto(id string, internalId string, name string, ) *CustomerDto`
+`func NewCustomerDto(id string, ) *CustomerDto`
 
 NewCustomerDto instantiates a new CustomerDto object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetInternalId sets InternalId field to given value.
 
+### HasInternalId
+
+`func (o *CustomerDto) HasInternalId() bool`
+
+HasInternalId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CustomerDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetIsTest
 

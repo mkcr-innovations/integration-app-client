@@ -22,17 +22,17 @@ var _ MappedNullable = &ConnectionDto{}
 // ConnectionDto struct for ConnectionDto
 type ConnectionDto struct {
 	Id string `json:"id"`
-	UserId string `json:"userId"`
+	UserId *string `json:"userId,omitempty"`
 	IsTest *bool `json:"isTest,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	Disconnected *bool `json:"disconnected,omitempty"`
 	Credentials *string `json:"credentials,omitempty"`
 	// Deprecated
 	IsDefunct *bool `json:"isDefunct,omitempty"`
 	Error map[string]interface{} `json:"error,omitempty"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 	LastActiveAt *string `json:"lastActiveAt,omitempty"`
@@ -45,12 +45,9 @@ type _ConnectionDto ConnectionDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConnectionDto(id string, userId string, integrationId string, name string) *ConnectionDto {
+func NewConnectionDto(id string) *ConnectionDto {
 	this := ConnectionDto{}
 	this.Id = id
-	this.UserId = userId
-	this.IntegrationId = integrationId
-	this.Name = name
 	return &this
 }
 
@@ -86,28 +83,36 @@ func (o *ConnectionDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *ConnectionDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *ConnectionDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *ConnectionDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetIsTest returns the IsTest field value if set, zero value otherwise.
@@ -174,28 +179,36 @@ func (o *ConnectionDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *ConnectionDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ConnectionDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *ConnectionDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -361,28 +374,36 @@ func (o *ConnectionDto) SetError(v map[string]interface{}) {
 	o.Error = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ConnectionDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ConnectionDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ConnectionDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -524,14 +545,18 @@ func (o ConnectionDto) MarshalJSON() ([]byte, error) {
 func (o ConnectionDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.IsTest) {
 		toSerialize["isTest"] = o.IsTest
 	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
@@ -547,7 +572,9 @@ func (o ConnectionDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt
 	}
@@ -569,9 +596,6 @@ func (o *ConnectionDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"userId",
-		"integrationId",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

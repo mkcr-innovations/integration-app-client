@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateDataSourceDto{}
 // CreateDataSourceDto struct for CreateDataSourceDto
 type CreateDataSourceDto struct {
 	Key string `json:"key"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 	Udm *string `json:"udm,omitempty"`
 	PullUpdatesIntervalSeconds *float32 `json:"pullUpdatesIntervalSeconds,omitempty"`
@@ -39,10 +39,9 @@ type _CreateDataSourceDto CreateDataSourceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateDataSourceDto(key string, name string) *CreateDataSourceDto {
+func NewCreateDataSourceDto(key string) *CreateDataSourceDto {
 	this := CreateDataSourceDto{}
 	this.Key = key
-	this.Name = name
 	return &this
 }
 
@@ -78,28 +77,36 @@ func (o *CreateDataSourceDto) SetKey(v string) {
 	o.Key = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *CreateDataSourceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateDataSourceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *CreateDataSourceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateDataSourceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -369,7 +376,9 @@ func (o CreateDataSourceDto) MarshalJSON() ([]byte, error) {
 func (o CreateDataSourceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["key"] = o.Key
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
@@ -403,7 +412,6 @@ func (o *CreateDataSourceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"key",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -22,7 +22,7 @@ var _ MappedNullable = &ActionInstanceDto{}
 // ActionInstanceDto struct for ActionInstanceDto
 type ActionInstanceDto struct {
 	Id string `json:"id"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	InstanceKey *string `json:"instanceKey,omitempty"`
 	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
@@ -32,18 +32,18 @@ type ActionInstanceDto struct {
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	ParentId *string `json:"parentId,omitempty"`
 	ParentRevision *string `json:"parentRevision,omitempty"`
-	Revision string `json:"revision"`
+	Revision *string `json:"revision,omitempty"`
 	IsCustomized *bool `json:"isCustomized,omitempty"`
 	IsOutdated *bool `json:"isOutdated,omitempty"`
 	Error map[string]interface{} `json:"error,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 	Parent *ActionDto `json:"parent,omitempty"`
-	Type string `json:"type"`
+	Type *string `json:"type,omitempty"`
 	InputSchema map[string]interface{} `json:"inputSchema,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	DefaultOutputSchema map[string]interface{} `json:"defaultOutputSchema,omitempty"`
 	OutputSchema map[string]interface{} `json:"outputSchema,omitempty"`
-	State string `json:"state"`
+	State *string `json:"state,omitempty"`
 	Dependencies []IntegrationElementInstanceDependencyDto `json:"dependencies,omitempty"`
 	Errors []map[string]interface{} `json:"errors,omitempty"`
 }
@@ -54,13 +54,9 @@ type _ActionInstanceDto ActionInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewActionInstanceDto(id string, name string, revision string, type_ string, state string) *ActionInstanceDto {
+func NewActionInstanceDto(id string) *ActionInstanceDto {
 	this := ActionInstanceDto{}
 	this.Id = id
-	this.Name = name
-	this.Revision = revision
-	this.Type = type_
-	this.State = state
 	return &this
 }
 
@@ -96,28 +92,36 @@ func (o *ActionInstanceDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ActionInstanceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionInstanceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ActionInstanceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ActionInstanceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetInstanceKey returns the InstanceKey field value if set, zero value otherwise.
@@ -408,28 +412,36 @@ func (o *ActionInstanceDto) SetParentRevision(v string) {
 	o.ParentRevision = &v
 }
 
-// GetRevision returns the Revision field value
+// GetRevision returns the Revision field value if set, zero value otherwise.
 func (o *ActionInstanceDto) GetRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		var ret string
 		return ret
 	}
-
-	return o.Revision
+	return *o.Revision
 }
 
-// GetRevisionOk returns a tuple with the Revision field value
+// GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionInstanceDto) GetRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		return nil, false
 	}
-	return &o.Revision, true
+	return o.Revision, true
 }
 
-// SetRevision sets field value
+// HasRevision returns a boolean if a field has been set.
+func (o *ActionInstanceDto) HasRevision() bool {
+	if o != nil && !IsNil(o.Revision) {
+		return true
+	}
+
+	return false
+}
+
+// SetRevision gets a reference to the given string and assigns it to the Revision field.
 func (o *ActionInstanceDto) SetRevision(v string) {
-	o.Revision = v
+	o.Revision = &v
 }
 
 // GetIsCustomized returns the IsCustomized field value if set, zero value otherwise.
@@ -592,28 +604,36 @@ func (o *ActionInstanceDto) SetParent(v ActionDto) {
 	o.Parent = &v
 }
 
-// GetType returns the Type field value
+// GetType returns the Type field value if set, zero value otherwise.
 func (o *ActionInstanceDto) GetType() string {
-	if o == nil {
+	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
 	}
-
-	return o.Type
+	return *o.Type
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionInstanceDto) GetTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return &o.Type, true
+	return o.Type, true
 }
 
-// SetType sets field value
+// HasType returns a boolean if a field has been set.
+func (o *ActionInstanceDto) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ActionInstanceDto) SetType(v string) {
-	o.Type = v
+	o.Type = &v
 }
 
 // GetInputSchema returns the InputSchema field value if set, zero value otherwise.
@@ -744,28 +764,36 @@ func (o *ActionInstanceDto) SetOutputSchema(v map[string]interface{}) {
 	o.OutputSchema = v
 }
 
-// GetState returns the State field value
+// GetState returns the State field value if set, zero value otherwise.
 func (o *ActionInstanceDto) GetState() string {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
 	}
-
-	return o.State
+	return *o.State
 }
 
-// GetStateOk returns a tuple with the State field value
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionInstanceDto) GetStateOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
-	return &o.State, true
+	return o.State, true
 }
 
-// SetState sets field value
+// HasState returns a boolean if a field has been set.
+func (o *ActionInstanceDto) HasState() bool {
+	if o != nil && !IsNil(o.State) {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
 func (o *ActionInstanceDto) SetState(v string) {
-	o.State = v
+	o.State = &v
 }
 
 // GetDependencies returns the Dependencies field value if set, zero value otherwise.
@@ -843,7 +871,9 @@ func (o ActionInstanceDto) MarshalJSON() ([]byte, error) {
 func (o ActionInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.InstanceKey) {
 		toSerialize["instanceKey"] = o.InstanceKey
 	}
@@ -871,7 +901,9 @@ func (o ActionInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ParentRevision) {
 		toSerialize["parentRevision"] = o.ParentRevision
 	}
-	toSerialize["revision"] = o.Revision
+	if !IsNil(o.Revision) {
+		toSerialize["revision"] = o.Revision
+	}
 	if !IsNil(o.IsCustomized) {
 		toSerialize["isCustomized"] = o.IsCustomized
 	}
@@ -887,7 +919,9 @@ func (o ActionInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Parent) {
 		toSerialize["parent"] = o.Parent
 	}
-	toSerialize["type"] = o.Type
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
 	if !IsNil(o.InputSchema) {
 		toSerialize["inputSchema"] = o.InputSchema
 	}
@@ -900,7 +934,9 @@ func (o ActionInstanceDto) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OutputSchema) {
 		toSerialize["outputSchema"] = o.OutputSchema
 	}
-	toSerialize["state"] = o.State
+	if !IsNil(o.State) {
+		toSerialize["state"] = o.State
+	}
 	if !IsNil(o.Dependencies) {
 		toSerialize["dependencies"] = o.Dependencies
 	}
@@ -916,10 +952,6 @@ func (o *ActionInstanceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"name",
-		"revision",
-		"type",
-		"state",
 	}
 
 	allProperties := make(map[string]interface{})

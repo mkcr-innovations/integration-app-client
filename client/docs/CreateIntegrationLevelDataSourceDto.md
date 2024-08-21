@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **Udm** | Pointer to **string** |  | [optional] 
 **PullUpdatesIntervalSeconds** | Pointer to **float32** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCreateIntegrationLevelDataSourceDto
 
-`func NewCreateIntegrationLevelDataSourceDto(key string, name string, ) *CreateIntegrationLevelDataSourceDto`
+`func NewCreateIntegrationLevelDataSourceDto(key string, ) *CreateIntegrationLevelDataSourceDto`
 
 NewCreateIntegrationLevelDataSourceDto instantiates a new CreateIntegrationLevelDataSourceDto object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CreateIntegrationLevelDataSourceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

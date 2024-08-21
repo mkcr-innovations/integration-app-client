@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
@@ -15,18 +15,18 @@ Name | Type | Description | Notes
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ParentRevision** | Pointer to **string** |  | [optional] 
-**Revision** | **string** |  | 
+**Revision** | Pointer to **string** |  | [optional] 
 **IsCustomized** | Pointer to **bool** |  | [optional] 
 **IsOutdated** | Pointer to **bool** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **Parent** | Pointer to [**ActionDto**](ActionDto.md) |  | [optional] 
-**Type** | **string** |  | 
+**Type** | Pointer to **string** |  | [optional] 
 **InputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DefaultOutputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
 **OutputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
-**State** | **string** |  | 
+**State** | Pointer to **string** |  | [optional] 
 **Dependencies** | Pointer to [**[]IntegrationElementInstanceDependencyDto**](IntegrationElementInstanceDependencyDto.md) |  | [optional] 
 **Errors** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewActionInstanceDto
 
-`func NewActionInstanceDto(id string, name string, revision string, type_ string, state string, ) *ActionInstanceDto`
+`func NewActionInstanceDto(id string, ) *ActionInstanceDto`
 
 NewActionInstanceDto instantiates a new ActionInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ActionInstanceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetInstanceKey
 
@@ -333,6 +338,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *ActionInstanceDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetIsCustomized
 
@@ -478,6 +488,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *ActionInstanceDto) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetInputSchema
 
@@ -598,6 +613,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *ActionInstanceDto) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetDependencies
 

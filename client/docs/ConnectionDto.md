@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **IsTest** | Pointer to **bool** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **Disconnected** | Pointer to **bool** |  | [optional] 
 **Credentials** | Pointer to **string** |  | [optional] 
 **IsDefunct** | Pointer to **bool** |  | [optional] 
 **Error** | Pointer to **map[string]interface{}** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 **LastActiveAt** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewConnectionDto
 
-`func NewConnectionDto(id string, userId string, integrationId string, name string, ) *ConnectionDto`
+`func NewConnectionDto(id string, ) *ConnectionDto`
 
 NewConnectionDto instantiates a new ConnectionDto object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *ConnectionDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetIsTest
 
@@ -148,6 +153,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *ConnectionDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 
@@ -293,6 +303,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ConnectionDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

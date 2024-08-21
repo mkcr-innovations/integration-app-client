@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**AppId** | **string** |  | 
-**UserId** | **string** |  | 
+**AppId** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **map[string]interface{}** |  | [optional] 
 **AppDataSchemaId** | Pointer to **string** |  | [optional] 
 **AppDataSchemaRevision** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAppDataSchemaInstanceDto
 
-`func NewAppDataSchemaInstanceDto(id string, appId string, userId string, ) *AppDataSchemaInstanceDto`
+`func NewAppDataSchemaInstanceDto(id string, ) *AppDataSchemaInstanceDto`
 
 NewAppDataSchemaInstanceDto instantiates a new AppDataSchemaInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetAppId sets AppId field to given value.
 
+### HasAppId
+
+`func (o *AppDataSchemaInstanceDto) HasAppId() bool`
+
+HasAppId returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -93,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *AppDataSchemaInstanceDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 

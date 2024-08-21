@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **ExternalEventSubscriptionId** | Pointer to **string** |  | [optional] 
 **ExternalEventSubscription** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewExternalEventPullDto
 
-`func NewExternalEventPullDto(id string, userId string, ) *ExternalEventPullDto`
+`func NewExternalEventPullDto(id string, ) *ExternalEventPullDto`
 
 NewExternalEventPullDto instantiates a new ExternalEventPullDto object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *ExternalEventPullDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 

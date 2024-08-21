@@ -12,8 +12,6 @@ package client
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ApplyToIntegrationsDto type satisfies the MappedNullable interface at compile time
@@ -21,18 +19,15 @@ var _ MappedNullable = &ApplyToIntegrationsDto{}
 
 // ApplyToIntegrationsDto struct for ApplyToIntegrationsDto
 type ApplyToIntegrationsDto struct {
-	IntegrationKeys []string `json:"integrationKeys"`
+	IntegrationKeys []string `json:"integrationKeys,omitempty"`
 }
-
-type _ApplyToIntegrationsDto ApplyToIntegrationsDto
 
 // NewApplyToIntegrationsDto instantiates a new ApplyToIntegrationsDto object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApplyToIntegrationsDto(integrationKeys []string) *ApplyToIntegrationsDto {
+func NewApplyToIntegrationsDto() *ApplyToIntegrationsDto {
 	this := ApplyToIntegrationsDto{}
-	this.IntegrationKeys = integrationKeys
 	return &this
 }
 
@@ -44,26 +39,34 @@ func NewApplyToIntegrationsDtoWithDefaults() *ApplyToIntegrationsDto {
 	return &this
 }
 
-// GetIntegrationKeys returns the IntegrationKeys field value
+// GetIntegrationKeys returns the IntegrationKeys field value if set, zero value otherwise.
 func (o *ApplyToIntegrationsDto) GetIntegrationKeys() []string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationKeys) {
 		var ret []string
 		return ret
 	}
-
 	return o.IntegrationKeys
 }
 
-// GetIntegrationKeysOk returns a tuple with the IntegrationKeys field value
+// GetIntegrationKeysOk returns a tuple with the IntegrationKeys field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplyToIntegrationsDto) GetIntegrationKeysOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationKeys) {
 		return nil, false
 	}
 	return o.IntegrationKeys, true
 }
 
-// SetIntegrationKeys sets field value
+// HasIntegrationKeys returns a boolean if a field has been set.
+func (o *ApplyToIntegrationsDto) HasIntegrationKeys() bool {
+	if o != nil && !IsNil(o.IntegrationKeys) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationKeys gets a reference to the given []string and assigns it to the IntegrationKeys field.
 func (o *ApplyToIntegrationsDto) SetIntegrationKeys(v []string) {
 	o.IntegrationKeys = v
 }
@@ -78,45 +81,10 @@ func (o ApplyToIntegrationsDto) MarshalJSON() ([]byte, error) {
 
 func (o ApplyToIntegrationsDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["integrationKeys"] = o.IntegrationKeys
+	if !IsNil(o.IntegrationKeys) {
+		toSerialize["integrationKeys"] = o.IntegrationKeys
+	}
 	return toSerialize, nil
-}
-
-func (o *ApplyToIntegrationsDto) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"integrationKeys",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varApplyToIntegrationsDto := _ApplyToIntegrationsDto{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varApplyToIntegrationsDto)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApplyToIntegrationsDto(varApplyToIntegrationsDto)
-
-	return err
 }
 
 type NullableApplyToIntegrationsDto struct {

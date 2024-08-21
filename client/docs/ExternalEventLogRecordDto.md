@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **ExternalEventId** | Pointer to **string** |  | [optional] 
 **ExternalEventSubscriptionId** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewExternalEventLogRecordDto
 
-`func NewExternalEventLogRecordDto(id string, userId string, ) *ExternalEventLogRecordDto`
+`func NewExternalEventLogRecordDto(id string, ) *ExternalEventLogRecordDto`
 
 NewExternalEventLogRecordDto instantiates a new ExternalEventLogRecordDto object
 This constructor will assign default values to properties that have it defined,
@@ -76,6 +76,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *ExternalEventLogRecordDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 

@@ -245,7 +245,7 @@ import (
 
 func main() {
 	id := "id_example" // string | ID
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
+	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example") // AppDataSchemaCreateDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -315,7 +315,7 @@ import (
 
 func main() {
 	id := "id_example" // string | ID
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
+	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example") // AppDataSchemaCreateDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -898,7 +898,7 @@ import (
 )
 
 func main() {
-	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example", "Name_example") // AppDataSchemaCreateDto | 
+	appDataSchemaCreateDto := *openapiclient.NewAppDataSchemaCreateDto("Key_example") // AppDataSchemaCreateDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

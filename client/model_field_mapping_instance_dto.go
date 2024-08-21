@@ -22,13 +22,13 @@ var _ MappedNullable = &FieldMappingInstanceDto{}
 // FieldMappingInstanceDto struct for FieldMappingInstanceDto
 type FieldMappingInstanceDto struct {
 	Id string `json:"id"`
-	Name string `json:"name"`
-	Revision string `json:"revision"`
-	UserId string `json:"userId"`
+	Name *string `json:"name,omitempty"`
+	Revision *string `json:"revision,omitempty"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
-	ConnectionId string `json:"connectionId"`
+	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	InstanceKey *string `json:"instanceKey,omitempty"`
 	FieldMappingId *string `json:"fieldMappingId,omitempty"`
@@ -57,14 +57,9 @@ type _FieldMappingInstanceDto FieldMappingInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFieldMappingInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string) *FieldMappingInstanceDto {
+func NewFieldMappingInstanceDto(id string) *FieldMappingInstanceDto {
 	this := FieldMappingInstanceDto{}
 	this.Id = id
-	this.Name = name
-	this.Revision = revision
-	this.UserId = userId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
 	return &this
 }
 
@@ -100,76 +95,100 @@ func (o *FieldMappingInstanceDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *FieldMappingInstanceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FieldMappingInstanceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *FieldMappingInstanceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *FieldMappingInstanceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetRevision returns the Revision field value
+// GetRevision returns the Revision field value if set, zero value otherwise.
 func (o *FieldMappingInstanceDto) GetRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		var ret string
 		return ret
 	}
-
-	return o.Revision
+	return *o.Revision
 }
 
-// GetRevisionOk returns a tuple with the Revision field value
+// GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FieldMappingInstanceDto) GetRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		return nil, false
 	}
-	return &o.Revision, true
+	return o.Revision, true
 }
 
-// SetRevision sets field value
+// HasRevision returns a boolean if a field has been set.
+func (o *FieldMappingInstanceDto) HasRevision() bool {
+	if o != nil && !IsNil(o.Revision) {
+		return true
+	}
+
+	return false
+}
+
+// SetRevision gets a reference to the given string and assigns it to the Revision field.
 func (o *FieldMappingInstanceDto) SetRevision(v string) {
-	o.Revision = v
+	o.Revision = &v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *FieldMappingInstanceDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FieldMappingInstanceDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *FieldMappingInstanceDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *FieldMappingInstanceDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -204,28 +223,36 @@ func (o *FieldMappingInstanceDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *FieldMappingInstanceDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FieldMappingInstanceDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *FieldMappingInstanceDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *FieldMappingInstanceDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -260,28 +287,36 @@ func (o *FieldMappingInstanceDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *FieldMappingInstanceDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FieldMappingInstanceDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *FieldMappingInstanceDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *FieldMappingInstanceDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -906,17 +941,27 @@ func (o FieldMappingInstanceDto) MarshalJSON() ([]byte, error) {
 func (o FieldMappingInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-	toSerialize["revision"] = o.Revision
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Revision) {
+		toSerialize["revision"] = o.Revision
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["connectionId"] = o.ConnectionId
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
@@ -983,11 +1028,6 @@ func (o *FieldMappingInstanceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"name",
-		"revision",
-		"userId",
-		"connectionId",
-		"integrationId",
 	}
 
 	allProperties := make(map[string]interface{})

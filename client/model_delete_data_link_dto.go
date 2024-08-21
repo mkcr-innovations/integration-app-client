@@ -12,8 +12,6 @@ package client
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the DeleteDataLinkDto type satisfies the MappedNullable interface at compile time
@@ -21,22 +19,17 @@ var _ MappedNullable = &DeleteDataLinkDto{}
 
 // DeleteDataLinkDto struct for DeleteDataLinkDto
 type DeleteDataLinkDto struct {
-	Direction string `json:"direction"`
-	AppRecordId string `json:"appRecordId"`
-	ExternalRecordId string `json:"externalRecordId"`
+	Direction *string `json:"direction,omitempty"`
+	AppRecordId *string `json:"appRecordId,omitempty"`
+	ExternalRecordId *string `json:"externalRecordId,omitempty"`
 }
-
-type _DeleteDataLinkDto DeleteDataLinkDto
 
 // NewDeleteDataLinkDto instantiates a new DeleteDataLinkDto object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeleteDataLinkDto(direction string, appRecordId string, externalRecordId string) *DeleteDataLinkDto {
+func NewDeleteDataLinkDto() *DeleteDataLinkDto {
 	this := DeleteDataLinkDto{}
-	this.Direction = direction
-	this.AppRecordId = appRecordId
-	this.ExternalRecordId = externalRecordId
 	return &this
 }
 
@@ -48,76 +41,100 @@ func NewDeleteDataLinkDtoWithDefaults() *DeleteDataLinkDto {
 	return &this
 }
 
-// GetDirection returns the Direction field value
+// GetDirection returns the Direction field value if set, zero value otherwise.
 func (o *DeleteDataLinkDto) GetDirection() string {
-	if o == nil {
+	if o == nil || IsNil(o.Direction) {
 		var ret string
 		return ret
 	}
-
-	return o.Direction
+	return *o.Direction
 }
 
-// GetDirectionOk returns a tuple with the Direction field value
+// GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeleteDataLinkDto) GetDirectionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Direction) {
 		return nil, false
 	}
-	return &o.Direction, true
+	return o.Direction, true
 }
 
-// SetDirection sets field value
+// HasDirection returns a boolean if a field has been set.
+func (o *DeleteDataLinkDto) HasDirection() bool {
+	if o != nil && !IsNil(o.Direction) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirection gets a reference to the given string and assigns it to the Direction field.
 func (o *DeleteDataLinkDto) SetDirection(v string) {
-	o.Direction = v
+	o.Direction = &v
 }
 
-// GetAppRecordId returns the AppRecordId field value
+// GetAppRecordId returns the AppRecordId field value if set, zero value otherwise.
 func (o *DeleteDataLinkDto) GetAppRecordId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppRecordId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppRecordId
+	return *o.AppRecordId
 }
 
-// GetAppRecordIdOk returns a tuple with the AppRecordId field value
+// GetAppRecordIdOk returns a tuple with the AppRecordId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeleteDataLinkDto) GetAppRecordIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppRecordId) {
 		return nil, false
 	}
-	return &o.AppRecordId, true
+	return o.AppRecordId, true
 }
 
-// SetAppRecordId sets field value
+// HasAppRecordId returns a boolean if a field has been set.
+func (o *DeleteDataLinkDto) HasAppRecordId() bool {
+	if o != nil && !IsNil(o.AppRecordId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppRecordId gets a reference to the given string and assigns it to the AppRecordId field.
 func (o *DeleteDataLinkDto) SetAppRecordId(v string) {
-	o.AppRecordId = v
+	o.AppRecordId = &v
 }
 
-// GetExternalRecordId returns the ExternalRecordId field value
+// GetExternalRecordId returns the ExternalRecordId field value if set, zero value otherwise.
 func (o *DeleteDataLinkDto) GetExternalRecordId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalRecordId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalRecordId
+	return *o.ExternalRecordId
 }
 
-// GetExternalRecordIdOk returns a tuple with the ExternalRecordId field value
+// GetExternalRecordIdOk returns a tuple with the ExternalRecordId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeleteDataLinkDto) GetExternalRecordIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalRecordId) {
 		return nil, false
 	}
-	return &o.ExternalRecordId, true
+	return o.ExternalRecordId, true
 }
 
-// SetExternalRecordId sets field value
+// HasExternalRecordId returns a boolean if a field has been set.
+func (o *DeleteDataLinkDto) HasExternalRecordId() bool {
+	if o != nil && !IsNil(o.ExternalRecordId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalRecordId gets a reference to the given string and assigns it to the ExternalRecordId field.
 func (o *DeleteDataLinkDto) SetExternalRecordId(v string) {
-	o.ExternalRecordId = v
+	o.ExternalRecordId = &v
 }
 
 func (o DeleteDataLinkDto) MarshalJSON() ([]byte, error) {
@@ -130,49 +147,16 @@ func (o DeleteDataLinkDto) MarshalJSON() ([]byte, error) {
 
 func (o DeleteDataLinkDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["direction"] = o.Direction
-	toSerialize["appRecordId"] = o.AppRecordId
-	toSerialize["externalRecordId"] = o.ExternalRecordId
+	if !IsNil(o.Direction) {
+		toSerialize["direction"] = o.Direction
+	}
+	if !IsNil(o.AppRecordId) {
+		toSerialize["appRecordId"] = o.AppRecordId
+	}
+	if !IsNil(o.ExternalRecordId) {
+		toSerialize["externalRecordId"] = o.ExternalRecordId
+	}
 	return toSerialize, nil
-}
-
-func (o *DeleteDataLinkDto) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"direction",
-		"appRecordId",
-		"externalRecordId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varDeleteDataLinkDto := _DeleteDataLinkDto{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDeleteDataLinkDto)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DeleteDataLinkDto(varDeleteDataLinkDto)
-
-	return err
 }
 
 type NullableDeleteDataLinkDto struct {

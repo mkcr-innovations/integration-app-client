@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | **string** |  | 
-**Revision** | **string** |  | 
-**UserId** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Revision** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**ConnectionId** | **string** |  | 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
 **FieldMappingId** | Pointer to **string** |  | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewFieldMappingInstanceDto
 
-`func NewFieldMappingInstanceDto(id string, name string, revision string, userId string, connectionId string, integrationId string, ) *FieldMappingInstanceDto`
+`func NewFieldMappingInstanceDto(id string, ) *FieldMappingInstanceDto`
 
 NewFieldMappingInstanceDto instantiates a new FieldMappingInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *FieldMappingInstanceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRevision
 
@@ -110,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *FieldMappingInstanceDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -130,6 +140,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *FieldMappingInstanceDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -175,6 +190,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *FieldMappingInstanceDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetConnection
 
@@ -220,6 +240,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *FieldMappingInstanceDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 

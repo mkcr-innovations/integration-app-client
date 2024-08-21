@@ -22,8 +22,8 @@ var _ MappedNullable = &CustomerDto{}
 // CustomerDto struct for CustomerDto
 type CustomerDto struct {
 	Id string `json:"id"`
-	InternalId string `json:"internalId"`
-	Name string `json:"name"`
+	InternalId *string `json:"internalId,omitempty"`
+	Name *string `json:"name,omitempty"`
 	IsTest *bool `json:"isTest,omitempty"`
 	Fields map[string]interface{} `json:"fields,omitempty"`
 	Credentials map[string]interface{} `json:"credentials,omitempty"`
@@ -38,11 +38,9 @@ type _CustomerDto CustomerDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerDto(id string, internalId string, name string) *CustomerDto {
+func NewCustomerDto(id string) *CustomerDto {
 	this := CustomerDto{}
 	this.Id = id
-	this.InternalId = internalId
-	this.Name = name
 	return &this
 }
 
@@ -78,52 +76,68 @@ func (o *CustomerDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetInternalId returns the InternalId field value
+// GetInternalId returns the InternalId field value if set, zero value otherwise.
 func (o *CustomerDto) GetInternalId() string {
-	if o == nil {
+	if o == nil || IsNil(o.InternalId) {
 		var ret string
 		return ret
 	}
-
-	return o.InternalId
+	return *o.InternalId
 }
 
-// GetInternalIdOk returns a tuple with the InternalId field value
+// GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerDto) GetInternalIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InternalId) {
 		return nil, false
 	}
-	return &o.InternalId, true
+	return o.InternalId, true
 }
 
-// SetInternalId sets field value
+// HasInternalId returns a boolean if a field has been set.
+func (o *CustomerDto) HasInternalId() bool {
+	if o != nil && !IsNil(o.InternalId) {
+		return true
+	}
+
+	return false
+}
+
+// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
 func (o *CustomerDto) SetInternalId(v string) {
-	o.InternalId = v
+	o.InternalId = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *CustomerDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *CustomerDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CustomerDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetIsTest returns the IsTest field value if set, zero value otherwise.
@@ -329,8 +343,12 @@ func (o CustomerDto) MarshalJSON() ([]byte, error) {
 func (o CustomerDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["internalId"] = o.InternalId
-	toSerialize["name"] = o.Name
+	if !IsNil(o.InternalId) {
+		toSerialize["internalId"] = o.InternalId
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.IsTest) {
 		toSerialize["isTest"] = o.IsTest
 	}
@@ -358,8 +376,6 @@ func (o *CustomerDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"internalId",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

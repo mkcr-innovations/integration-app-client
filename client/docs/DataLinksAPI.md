@@ -119,7 +119,7 @@ import (
 )
 
 func main() {
-	createDataLinkDto := *openapiclient.NewCreateDataLinkDto("Direction_example", "AppRecordId_example", "ExternalRecordId_example") // CreateDataLinkDto | 
+	createDataLinkDto := *openapiclient.NewCreateDataLinkDto() // CreateDataLinkDto | 
 	id := "id_example" // string |  (optional)
 	instanceKey := "instanceKey_example" // string |  (optional)
 	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
@@ -197,7 +197,7 @@ import (
 )
 
 func main() {
-	deleteDataLinkDto := *openapiclient.NewDeleteDataLinkDto("Direction_example", "AppRecordId_example", "ExternalRecordId_example") // DeleteDataLinkDto | 
+	deleteDataLinkDto := *openapiclient.NewDeleteDataLinkDto() // DeleteDataLinkDto | 
 	id := "id_example" // string |  (optional)
 	instanceKey := "instanceKey_example" // string |  (optional)
 	dataLinkTableId := "dataLinkTableId_example" // string |  (optional)
@@ -755,7 +755,7 @@ import (
 )
 
 func main() {
-	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example", "Name_example") // CreateDataLinkTableDto | 
+	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example") // CreateDataLinkTableDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1094,7 +1094,7 @@ import (
 
 func main() {
 	idOrKey := "idOrKey_example" // string | 
-	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example", "Name_example") // CreateDataLinkTableDto | 
+	createDataLinkTableDto := *openapiclient.NewCreateDataLinkTableDto("Key_example") // CreateDataLinkTableDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

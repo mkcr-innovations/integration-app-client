@@ -2052,7 +2052,7 @@ import (
 )
 
 func main() {
-	createFieldMappingDto := *openapiclient.NewCreateFieldMappingDto("Key_example", "Name_example") // CreateFieldMappingDto | 
+	createFieldMappingDto := *openapiclient.NewCreateFieldMappingDto("Key_example") // CreateFieldMappingDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2621,7 +2621,7 @@ import (
 
 func main() {
 	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
-	createIntegrationLevelFieldMappingDto := *openapiclient.NewCreateIntegrationLevelFieldMappingDto("Key_example", "Name_example") // CreateIntegrationLevelFieldMappingDto | 
+	createIntegrationLevelFieldMappingDto := *openapiclient.NewCreateIntegrationLevelFieldMappingDto("Key_example") // CreateIntegrationLevelFieldMappingDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

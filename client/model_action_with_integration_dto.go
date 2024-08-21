@@ -12,8 +12,6 @@ package client
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ActionWithIntegrationDto type satisfies the MappedNullable interface at compile time
@@ -21,20 +19,16 @@ var _ MappedNullable = &ActionWithIntegrationDto{}
 
 // ActionWithIntegrationDto struct for ActionWithIntegrationDto
 type ActionWithIntegrationDto struct {
-	Element ActionDto `json:"element"`
-	Integration IntegrationDto `json:"integration"`
+	Element *ActionDto `json:"element,omitempty"`
+	Integration *IntegrationDto `json:"integration,omitempty"`
 }
-
-type _ActionWithIntegrationDto ActionWithIntegrationDto
 
 // NewActionWithIntegrationDto instantiates a new ActionWithIntegrationDto object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewActionWithIntegrationDto(element ActionDto, integration IntegrationDto) *ActionWithIntegrationDto {
+func NewActionWithIntegrationDto() *ActionWithIntegrationDto {
 	this := ActionWithIntegrationDto{}
-	this.Element = element
-	this.Integration = integration
 	return &this
 }
 
@@ -46,52 +40,68 @@ func NewActionWithIntegrationDtoWithDefaults() *ActionWithIntegrationDto {
 	return &this
 }
 
-// GetElement returns the Element field value
+// GetElement returns the Element field value if set, zero value otherwise.
 func (o *ActionWithIntegrationDto) GetElement() ActionDto {
-	if o == nil {
+	if o == nil || IsNil(o.Element) {
 		var ret ActionDto
 		return ret
 	}
-
-	return o.Element
+	return *o.Element
 }
 
-// GetElementOk returns a tuple with the Element field value
+// GetElementOk returns a tuple with the Element field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionWithIntegrationDto) GetElementOk() (*ActionDto, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Element) {
 		return nil, false
 	}
-	return &o.Element, true
+	return o.Element, true
 }
 
-// SetElement sets field value
+// HasElement returns a boolean if a field has been set.
+func (o *ActionWithIntegrationDto) HasElement() bool {
+	if o != nil && !IsNil(o.Element) {
+		return true
+	}
+
+	return false
+}
+
+// SetElement gets a reference to the given ActionDto and assigns it to the Element field.
 func (o *ActionWithIntegrationDto) SetElement(v ActionDto) {
-	o.Element = v
+	o.Element = &v
 }
 
-// GetIntegration returns the Integration field value
+// GetIntegration returns the Integration field value if set, zero value otherwise.
 func (o *ActionWithIntegrationDto) GetIntegration() IntegrationDto {
-	if o == nil {
+	if o == nil || IsNil(o.Integration) {
 		var ret IntegrationDto
 		return ret
 	}
-
-	return o.Integration
+	return *o.Integration
 }
 
-// GetIntegrationOk returns a tuple with the Integration field value
+// GetIntegrationOk returns a tuple with the Integration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActionWithIntegrationDto) GetIntegrationOk() (*IntegrationDto, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Integration) {
 		return nil, false
 	}
-	return &o.Integration, true
+	return o.Integration, true
 }
 
-// SetIntegration sets field value
+// HasIntegration returns a boolean if a field has been set.
+func (o *ActionWithIntegrationDto) HasIntegration() bool {
+	if o != nil && !IsNil(o.Integration) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegration gets a reference to the given IntegrationDto and assigns it to the Integration field.
 func (o *ActionWithIntegrationDto) SetIntegration(v IntegrationDto) {
-	o.Integration = v
+	o.Integration = &v
 }
 
 func (o ActionWithIntegrationDto) MarshalJSON() ([]byte, error) {
@@ -104,47 +114,13 @@ func (o ActionWithIntegrationDto) MarshalJSON() ([]byte, error) {
 
 func (o ActionWithIntegrationDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["element"] = o.Element
-	toSerialize["integration"] = o.Integration
+	if !IsNil(o.Element) {
+		toSerialize["element"] = o.Element
+	}
+	if !IsNil(o.Integration) {
+		toSerialize["integration"] = o.Integration
+	}
 	return toSerialize, nil
-}
-
-func (o *ActionWithIntegrationDto) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"element",
-		"integration",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varActionWithIntegrationDto := _ActionWithIntegrationDto{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varActionWithIntegrationDto)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ActionWithIntegrationDto(varActionWithIntegrationDto)
-
-	return err
 }
 
 type NullableActionWithIntegrationDto struct {

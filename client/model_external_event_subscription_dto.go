@@ -22,11 +22,11 @@ var _ MappedNullable = &ExternalEventSubscriptionDto{}
 // ExternalEventSubscriptionDto struct for ExternalEventSubscriptionDto
 type ExternalEventSubscriptionDto struct {
 	Id string `json:"id"`
-	UserId string `json:"userId"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
-	ConnectionId string `json:"connectionId"`
+	ConnectionId *string `json:"connectionId,omitempty"`
 	Connection *ConnectionDto `json:"connection,omitempty"`
-	IntegrationId string `json:"integrationId"`
+	IntegrationId *string `json:"integrationId,omitempty"`
 	Integration *IntegrationDto `json:"integration,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	Status *string `json:"status,omitempty"`
@@ -51,12 +51,9 @@ type _ExternalEventSubscriptionDto ExternalEventSubscriptionDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalEventSubscriptionDto(id string, userId string, connectionId string, integrationId string) *ExternalEventSubscriptionDto {
+func NewExternalEventSubscriptionDto(id string) *ExternalEventSubscriptionDto {
 	this := ExternalEventSubscriptionDto{}
 	this.Id = id
-	this.UserId = userId
-	this.ConnectionId = connectionId
-	this.IntegrationId = integrationId
 	return &this
 }
 
@@ -92,28 +89,36 @@ func (o *ExternalEventSubscriptionDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *ExternalEventSubscriptionDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventSubscriptionDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *ExternalEventSubscriptionDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *ExternalEventSubscriptionDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -148,28 +153,36 @@ func (o *ExternalEventSubscriptionDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetConnectionId returns the ConnectionId field value
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
 func (o *ExternalEventSubscriptionDto) GetConnectionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectionId
+	return *o.ConnectionId
 }
 
-// GetConnectionIdOk returns a tuple with the ConnectionId field value
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventSubscriptionDto) GetConnectionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConnectionId) {
 		return nil, false
 	}
-	return &o.ConnectionId, true
+	return o.ConnectionId, true
 }
 
-// SetConnectionId sets field value
+// HasConnectionId returns a boolean if a field has been set.
+func (o *ExternalEventSubscriptionDto) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *ExternalEventSubscriptionDto) SetConnectionId(v string) {
-	o.ConnectionId = v
+	o.ConnectionId = &v
 }
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
@@ -204,28 +217,36 @@ func (o *ExternalEventSubscriptionDto) SetConnection(v ConnectionDto) {
 	o.Connection = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
 func (o *ExternalEventSubscriptionDto) GetIntegrationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		var ret string
 		return ret
 	}
-
-	return o.IntegrationId
+	return *o.IntegrationId
 }
 
-// GetIntegrationIdOk returns a tuple with the IntegrationId field value
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventSubscriptionDto) GetIntegrationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntegrationId) {
 		return nil, false
 	}
-	return &o.IntegrationId, true
+	return o.IntegrationId, true
 }
 
-// SetIntegrationId sets field value
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ExternalEventSubscriptionDto) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
 func (o *ExternalEventSubscriptionDto) SetIntegrationId(v string) {
-	o.IntegrationId = v
+	o.IntegrationId = &v
 }
 
 // GetIntegration returns the Integration field value if set, zero value otherwise.
@@ -751,15 +772,21 @@ func (o ExternalEventSubscriptionDto) MarshalJSON() ([]byte, error) {
 func (o ExternalEventSubscriptionDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["connectionId"] = o.ConnectionId
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	toSerialize["integrationId"] = o.IntegrationId
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
@@ -817,9 +844,6 @@ func (o *ExternalEventSubscriptionDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"userId",
-		"connectionId",
-		"integrationId",
 	}
 
 	allProperties := make(map[string]interface{})

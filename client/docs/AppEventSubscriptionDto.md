@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | **string** |  | 
-**Revision** | **string** |  | 
-**UserId** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Revision** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
-**AppEventTypeId** | **string** |  | 
+**AppEventTypeId** | Pointer to **string** |  | [optional] 
 **AppEventType** | Pointer to [**AppEventTypeDto**](AppEventTypeDto.md) |  | [optional] 
 **Schema** | Pointer to **map[string]interface{}** |  | [optional] 
-**IsSubscribed** | **bool** |  | 
-**WebhookUri** | **string** |  | 
-**SubscriptionRequest** | **map[string]interface{}** |  | 
+**IsSubscribed** | Pointer to **bool** |  | [optional] 
+**WebhookUri** | Pointer to **string** |  | [optional] 
+**SubscriptionRequest** | Pointer to **map[string]interface{}** |  | [optional] 
 **SubscriptionResponse** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewAppEventSubscriptionDto
 
-`func NewAppEventSubscriptionDto(id string, name string, revision string, userId string, appEventTypeId string, isSubscribed bool, webhookUri string, subscriptionRequest map[string]interface{}, ) *AppEventSubscriptionDto`
+`func NewAppEventSubscriptionDto(id string, ) *AppEventSubscriptionDto`
 
 NewAppEventSubscriptionDto instantiates a new AppEventSubscriptionDto object
 This constructor will assign default values to properties that have it defined,
@@ -76,6 +76,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *AppEventSubscriptionDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRevision
 
@@ -96,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *AppEventSubscriptionDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -116,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *AppEventSubscriptionDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -186,6 +201,11 @@ and a boolean to check if the value has been set.
 
 SetAppEventTypeId sets AppEventTypeId field to given value.
 
+### HasAppEventTypeId
+
+`func (o *AppEventSubscriptionDto) HasAppEventTypeId() bool`
+
+HasAppEventTypeId returns a boolean if a field has been set.
 
 ### GetAppEventType
 
@@ -256,6 +276,11 @@ and a boolean to check if the value has been set.
 
 SetIsSubscribed sets IsSubscribed field to given value.
 
+### HasIsSubscribed
+
+`func (o *AppEventSubscriptionDto) HasIsSubscribed() bool`
+
+HasIsSubscribed returns a boolean if a field has been set.
 
 ### GetWebhookUri
 
@@ -276,6 +301,11 @@ and a boolean to check if the value has been set.
 
 SetWebhookUri sets WebhookUri field to given value.
 
+### HasWebhookUri
+
+`func (o *AppEventSubscriptionDto) HasWebhookUri() bool`
+
+HasWebhookUri returns a boolean if a field has been set.
 
 ### GetSubscriptionRequest
 
@@ -296,6 +326,11 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionRequest sets SubscriptionRequest field to given value.
 
+### HasSubscriptionRequest
+
+`func (o *AppEventSubscriptionDto) HasSubscriptionRequest() bool`
+
+HasSubscriptionRequest returns a boolean if a field has been set.
 
 ### GetSubscriptionResponse
 

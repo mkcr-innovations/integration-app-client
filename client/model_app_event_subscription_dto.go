@@ -22,17 +22,17 @@ var _ MappedNullable = &AppEventSubscriptionDto{}
 // AppEventSubscriptionDto struct for AppEventSubscriptionDto
 type AppEventSubscriptionDto struct {
 	Id string `json:"id"`
-	Name string `json:"name"`
-	Revision string `json:"revision"`
-	UserId string `json:"userId"`
+	Name *string `json:"name,omitempty"`
+	Revision *string `json:"revision,omitempty"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
 	InstanceKey *string `json:"instanceKey,omitempty"`
-	AppEventTypeId string `json:"appEventTypeId"`
+	AppEventTypeId *string `json:"appEventTypeId,omitempty"`
 	AppEventType *AppEventTypeDto `json:"appEventType,omitempty"`
 	Schema map[string]interface{} `json:"schema,omitempty"`
-	IsSubscribed bool `json:"isSubscribed"`
-	WebhookUri string `json:"webhookUri"`
-	SubscriptionRequest map[string]interface{} `json:"subscriptionRequest"`
+	IsSubscribed *bool `json:"isSubscribed,omitempty"`
+	WebhookUri *string `json:"webhookUri,omitempty"`
+	SubscriptionRequest map[string]interface{} `json:"subscriptionRequest,omitempty"`
 	SubscriptionResponse map[string]interface{} `json:"subscriptionResponse,omitempty"`
 }
 
@@ -42,16 +42,9 @@ type _AppEventSubscriptionDto AppEventSubscriptionDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppEventSubscriptionDto(id string, name string, revision string, userId string, appEventTypeId string, isSubscribed bool, webhookUri string, subscriptionRequest map[string]interface{}) *AppEventSubscriptionDto {
+func NewAppEventSubscriptionDto(id string) *AppEventSubscriptionDto {
 	this := AppEventSubscriptionDto{}
 	this.Id = id
-	this.Name = name
-	this.Revision = revision
-	this.UserId = userId
-	this.AppEventTypeId = appEventTypeId
-	this.IsSubscribed = isSubscribed
-	this.WebhookUri = webhookUri
-	this.SubscriptionRequest = subscriptionRequest
 	return &this
 }
 
@@ -87,76 +80,100 @@ func (o *AppEventSubscriptionDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AppEventSubscriptionDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetRevision returns the Revision field value
+// GetRevision returns the Revision field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		var ret string
 		return ret
 	}
-
-	return o.Revision
+	return *o.Revision
 }
 
-// GetRevisionOk returns a tuple with the Revision field value
+// GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		return nil, false
 	}
-	return &o.Revision, true
+	return o.Revision, true
 }
 
-// SetRevision sets field value
+// HasRevision returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasRevision() bool {
+	if o != nil && !IsNil(o.Revision) {
+		return true
+	}
+
+	return false
+}
+
+// SetRevision gets a reference to the given string and assigns it to the Revision field.
 func (o *AppEventSubscriptionDto) SetRevision(v string) {
-	o.Revision = v
+	o.Revision = &v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *AppEventSubscriptionDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -223,28 +240,36 @@ func (o *AppEventSubscriptionDto) SetInstanceKey(v string) {
 	o.InstanceKey = &v
 }
 
-// GetAppEventTypeId returns the AppEventTypeId field value
+// GetAppEventTypeId returns the AppEventTypeId field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetAppEventTypeId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventTypeId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppEventTypeId
+	return *o.AppEventTypeId
 }
 
-// GetAppEventTypeIdOk returns a tuple with the AppEventTypeId field value
+// GetAppEventTypeIdOk returns a tuple with the AppEventTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetAppEventTypeIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventTypeId) {
 		return nil, false
 	}
-	return &o.AppEventTypeId, true
+	return o.AppEventTypeId, true
 }
 
-// SetAppEventTypeId sets field value
+// HasAppEventTypeId returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasAppEventTypeId() bool {
+	if o != nil && !IsNil(o.AppEventTypeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppEventTypeId gets a reference to the given string and assigns it to the AppEventTypeId field.
 func (o *AppEventSubscriptionDto) SetAppEventTypeId(v string) {
-	o.AppEventTypeId = v
+	o.AppEventTypeId = &v
 }
 
 // GetAppEventType returns the AppEventType field value if set, zero value otherwise.
@@ -311,74 +336,98 @@ func (o *AppEventSubscriptionDto) SetSchema(v map[string]interface{}) {
 	o.Schema = v
 }
 
-// GetIsSubscribed returns the IsSubscribed field value
+// GetIsSubscribed returns the IsSubscribed field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetIsSubscribed() bool {
-	if o == nil {
+	if o == nil || IsNil(o.IsSubscribed) {
 		var ret bool
 		return ret
 	}
-
-	return o.IsSubscribed
+	return *o.IsSubscribed
 }
 
-// GetIsSubscribedOk returns a tuple with the IsSubscribed field value
+// GetIsSubscribedOk returns a tuple with the IsSubscribed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetIsSubscribedOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IsSubscribed) {
 		return nil, false
 	}
-	return &o.IsSubscribed, true
+	return o.IsSubscribed, true
 }
 
-// SetIsSubscribed sets field value
+// HasIsSubscribed returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasIsSubscribed() bool {
+	if o != nil && !IsNil(o.IsSubscribed) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSubscribed gets a reference to the given bool and assigns it to the IsSubscribed field.
 func (o *AppEventSubscriptionDto) SetIsSubscribed(v bool) {
-	o.IsSubscribed = v
+	o.IsSubscribed = &v
 }
 
-// GetWebhookUri returns the WebhookUri field value
+// GetWebhookUri returns the WebhookUri field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetWebhookUri() string {
-	if o == nil {
+	if o == nil || IsNil(o.WebhookUri) {
 		var ret string
 		return ret
 	}
-
-	return o.WebhookUri
+	return *o.WebhookUri
 }
 
-// GetWebhookUriOk returns a tuple with the WebhookUri field value
+// GetWebhookUriOk returns a tuple with the WebhookUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetWebhookUriOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.WebhookUri) {
 		return nil, false
 	}
-	return &o.WebhookUri, true
+	return o.WebhookUri, true
 }
 
-// SetWebhookUri sets field value
+// HasWebhookUri returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasWebhookUri() bool {
+	if o != nil && !IsNil(o.WebhookUri) {
+		return true
+	}
+
+	return false
+}
+
+// SetWebhookUri gets a reference to the given string and assigns it to the WebhookUri field.
 func (o *AppEventSubscriptionDto) SetWebhookUri(v string) {
-	o.WebhookUri = v
+	o.WebhookUri = &v
 }
 
-// GetSubscriptionRequest returns the SubscriptionRequest field value
+// GetSubscriptionRequest returns the SubscriptionRequest field value if set, zero value otherwise.
 func (o *AppEventSubscriptionDto) GetSubscriptionRequest() map[string]interface{} {
-	if o == nil {
+	if o == nil || IsNil(o.SubscriptionRequest) {
 		var ret map[string]interface{}
 		return ret
 	}
-
 	return o.SubscriptionRequest
 }
 
-// GetSubscriptionRequestOk returns a tuple with the SubscriptionRequest field value
+// GetSubscriptionRequestOk returns a tuple with the SubscriptionRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventSubscriptionDto) GetSubscriptionRequestOk() (map[string]interface{}, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SubscriptionRequest) {
 		return map[string]interface{}{}, false
 	}
 	return o.SubscriptionRequest, true
 }
 
-// SetSubscriptionRequest sets field value
+// HasSubscriptionRequest returns a boolean if a field has been set.
+func (o *AppEventSubscriptionDto) HasSubscriptionRequest() bool {
+	if o != nil && !IsNil(o.SubscriptionRequest) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionRequest gets a reference to the given map[string]interface{} and assigns it to the SubscriptionRequest field.
 func (o *AppEventSubscriptionDto) SetSubscriptionRequest(v map[string]interface{}) {
 	o.SubscriptionRequest = v
 }
@@ -426,25 +475,39 @@ func (o AppEventSubscriptionDto) MarshalJSON() ([]byte, error) {
 func (o AppEventSubscriptionDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-	toSerialize["revision"] = o.Revision
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Revision) {
+		toSerialize["revision"] = o.Revision
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
 	if !IsNil(o.InstanceKey) {
 		toSerialize["instanceKey"] = o.InstanceKey
 	}
-	toSerialize["appEventTypeId"] = o.AppEventTypeId
+	if !IsNil(o.AppEventTypeId) {
+		toSerialize["appEventTypeId"] = o.AppEventTypeId
+	}
 	if !IsNil(o.AppEventType) {
 		toSerialize["appEventType"] = o.AppEventType
 	}
 	if !IsNil(o.Schema) {
 		toSerialize["schema"] = o.Schema
 	}
-	toSerialize["isSubscribed"] = o.IsSubscribed
-	toSerialize["webhookUri"] = o.WebhookUri
-	toSerialize["subscriptionRequest"] = o.SubscriptionRequest
+	if !IsNil(o.IsSubscribed) {
+		toSerialize["isSubscribed"] = o.IsSubscribed
+	}
+	if !IsNil(o.WebhookUri) {
+		toSerialize["webhookUri"] = o.WebhookUri
+	}
+	if !IsNil(o.SubscriptionRequest) {
+		toSerialize["subscriptionRequest"] = o.SubscriptionRequest
+	}
 	if !IsNil(o.SubscriptionResponse) {
 		toSerialize["subscriptionResponse"] = o.SubscriptionResponse
 	}
@@ -457,13 +520,6 @@ func (o *AppEventSubscriptionDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"name",
-		"revision",
-		"userId",
-		"appEventTypeId",
-		"isSubscribed",
-		"webhookUri",
-		"subscriptionRequest",
 	}
 
 	allProperties := make(map[string]interface{})

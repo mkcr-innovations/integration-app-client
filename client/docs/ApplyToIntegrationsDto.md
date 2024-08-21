@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKeys** | **[]string** |  | 
+**IntegrationKeys** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewApplyToIntegrationsDto
 
-`func NewApplyToIntegrationsDto(integrationKeys []string, ) *ApplyToIntegrationsDto`
+`func NewApplyToIntegrationsDto() *ApplyToIntegrationsDto`
 
 NewApplyToIntegrationsDto instantiates a new ApplyToIntegrationsDto object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationKeys sets IntegrationKeys field to given value.
 
+### HasIntegrationKeys
+
+`func (o *ApplyToIntegrationsDto) HasIntegrationKeys() bool`
+
+HasIntegrationKeys returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

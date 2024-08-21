@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Element** | [**DataSourceDto**](DataSourceDto.md) |  | 
-**Integration** | [**IntegrationDto**](IntegrationDto.md) |  | 
+**Element** | Pointer to [**DataSourceDto**](DataSourceDto.md) |  | [optional] 
+**Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewDataSourceWithIntegrationDto
 
-`func NewDataSourceWithIntegrationDto(element DataSourceDto, integration IntegrationDto, ) *DataSourceWithIntegrationDto`
+`func NewDataSourceWithIntegrationDto() *DataSourceWithIntegrationDto`
 
 NewDataSourceWithIntegrationDto instantiates a new DataSourceWithIntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetElement sets Element field to given value.
 
+### HasElement
+
+`func (o *DataSourceWithIntegrationDto) HasElement() bool`
+
+HasElement returns a boolean if a field has been set.
 
 ### GetIntegration
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetIntegration sets Integration field to given value.
 
+### HasIntegration
+
+`func (o *DataSourceWithIntegrationDto) HasIntegration() bool`
+
+HasIntegration returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **DataSourceKey** | Pointer to **string** |  | [optional] 
 **DataSourceId** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewCreateFieldMappingDto
 
-`func NewCreateFieldMappingDto(key string, name string, ) *CreateFieldMappingDto`
+`func NewCreateFieldMappingDto(key string, ) *CreateFieldMappingDto`
 
 NewCreateFieldMappingDto instantiates a new CreateFieldMappingDto object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CreateFieldMappingDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

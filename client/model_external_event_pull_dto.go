@@ -22,7 +22,7 @@ var _ MappedNullable = &ExternalEventPullDto{}
 // ExternalEventPullDto struct for ExternalEventPullDto
 type ExternalEventPullDto struct {
 	Id string `json:"id"`
-	UserId string `json:"userId"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
 	ExternalEventSubscriptionId *string `json:"externalEventSubscriptionId,omitempty"`
 	ExternalEventSubscription map[string]interface{} `json:"externalEventSubscription,omitempty"`
@@ -44,10 +44,9 @@ type _ExternalEventPullDto ExternalEventPullDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalEventPullDto(id string, userId string) *ExternalEventPullDto {
+func NewExternalEventPullDto(id string) *ExternalEventPullDto {
 	this := ExternalEventPullDto{}
 	this.Id = id
-	this.UserId = userId
 	return &this
 }
 
@@ -83,28 +82,36 @@ func (o *ExternalEventPullDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *ExternalEventPullDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalEventPullDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *ExternalEventPullDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *ExternalEventPullDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -534,7 +541,9 @@ func (o ExternalEventPullDto) MarshalJSON() ([]byte, error) {
 func (o ExternalEventPullDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
@@ -583,7 +592,6 @@ func (o *ExternalEventPullDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"userId",
 	}
 
 	allProperties := make(map[string]interface{})

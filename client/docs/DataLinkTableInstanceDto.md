@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | **string** |  | 
-**DataLinkTableId** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**DataLinkTableId** | Pointer to **string** |  | [optional] 
 **DataLinkTable** | Pointer to [**DataLinkTableDto**](DataLinkTableDto.md) |  | [optional] 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**ConnectionId** | **string** |  | 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewDataLinkTableInstanceDto
 
-`func NewDataLinkTableInstanceDto(id string, name string, dataLinkTableId string, userId string, connectionId string, integrationId string, ) *DataLinkTableInstanceDto`
+`func NewDataLinkTableInstanceDto(id string, ) *DataLinkTableInstanceDto`
 
 NewDataLinkTableInstanceDto instantiates a new DataLinkTableInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DataLinkTableInstanceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDataLinkTableId
 
@@ -94,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetDataLinkTableId sets DataLinkTableId field to given value.
 
+### HasDataLinkTableId
+
+`func (o *DataLinkTableInstanceDto) HasDataLinkTableId() bool`
+
+HasDataLinkTableId returns a boolean if a field has been set.
 
 ### GetDataLinkTable
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *DataLinkTableInstanceDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -184,6 +199,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *DataLinkTableInstanceDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetConnection
 
@@ -229,6 +249,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *DataLinkTableInstanceDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 

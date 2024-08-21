@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**ConnectionId** | **string** |  | 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Connection** | Pointer to [**ConnectionDto**](ConnectionDto.md) |  | [optional] 
-**IntegrationId** | **string** |  | 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewExternalEventSubscriptionDto
 
-`func NewExternalEventSubscriptionDto(id string, userId string, connectionId string, integrationId string, ) *ExternalEventSubscriptionDto`
+`func NewExternalEventSubscriptionDto(id string, ) *ExternalEventSubscriptionDto`
 
 NewExternalEventSubscriptionDto instantiates a new ExternalEventSubscriptionDto object
 This constructor will assign default values to properties that have it defined,
@@ -85,6 +85,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *ExternalEventSubscriptionDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -130,6 +135,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *ExternalEventSubscriptionDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetConnection
 
@@ -175,6 +185,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *ExternalEventSubscriptionDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Key** | **string** |  | 
-**Name** | **string** |  | 
-**Schema** | **map[string]interface{}** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Schema** | Pointer to **map[string]interface{}** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAppDataSchemaDto
 
-`func NewAppDataSchemaDto(id string, key string, name string, schema map[string]interface{}, ) *AppDataSchemaDto`
+`func NewAppDataSchemaDto(id string, ) *AppDataSchemaDto`
 
 NewAppDataSchemaDto instantiates a new AppDataSchemaDto object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *AppDataSchemaDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetName
 
@@ -90,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *AppDataSchemaDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -110,6 +120,11 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
+### HasSchema
+
+`func (o *AppDataSchemaDto) HasSchema() bool`
+
+HasSchema returns a boolean if a field has been set.
 
 ### GetCode
 

@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateIntegrationLevelFieldMappingDto{}
 // CreateIntegrationLevelFieldMappingDto struct for CreateIntegrationLevelFieldMappingDto
 type CreateIntegrationLevelFieldMappingDto struct {
 	Key string `json:"key"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 	DataSourceKey *string `json:"dataSourceKey,omitempty"`
 	DataSourceId *string `json:"dataSourceId,omitempty"`
@@ -43,10 +43,9 @@ type _CreateIntegrationLevelFieldMappingDto CreateIntegrationLevelFieldMappingDt
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateIntegrationLevelFieldMappingDto(key string, name string) *CreateIntegrationLevelFieldMappingDto {
+func NewCreateIntegrationLevelFieldMappingDto(key string) *CreateIntegrationLevelFieldMappingDto {
 	this := CreateIntegrationLevelFieldMappingDto{}
 	this.Key = key
-	this.Name = name
 	return &this
 }
 
@@ -82,28 +81,36 @@ func (o *CreateIntegrationLevelFieldMappingDto) SetKey(v string) {
 	o.Key = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *CreateIntegrationLevelFieldMappingDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateIntegrationLevelFieldMappingDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *CreateIntegrationLevelFieldMappingDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateIntegrationLevelFieldMappingDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -501,7 +508,9 @@ func (o CreateIntegrationLevelFieldMappingDto) MarshalJSON() ([]byte, error) {
 func (o CreateIntegrationLevelFieldMappingDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["key"] = o.Key
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
@@ -547,7 +556,6 @@ func (o *CreateIntegrationLevelFieldMappingDto) UnmarshalJSON(data []byte) (err 
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"key",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

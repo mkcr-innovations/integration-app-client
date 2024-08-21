@@ -23,9 +23,9 @@ var _ MappedNullable = &IntegrationDto{}
 // IntegrationDto struct for IntegrationDto
 type IntegrationDto struct {
 	Id string `json:"id"`
-	Key string `json:"key"`
-	Uuid string `json:"uuid"`
-	Name string `json:"name"`
+	Key *string `json:"key,omitempty"`
+	Uuid *string `json:"uuid,omitempty"`
+	Name *string `json:"name,omitempty"`
 	ConnectorStoreKey *string `json:"connectorStoreKey,omitempty"`
 	ConnectorId *string `json:"connectorId,omitempty"`
 	AuthType *string `json:"authType,omitempty"`
@@ -56,12 +56,9 @@ type _IntegrationDto IntegrationDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIntegrationDto(id string, key string, uuid string, name string) *IntegrationDto {
+func NewIntegrationDto(id string) *IntegrationDto {
 	this := IntegrationDto{}
 	this.Id = id
-	this.Key = key
-	this.Uuid = uuid
-	this.Name = name
 	return &this
 }
 
@@ -97,76 +94,100 @@ func (o *IntegrationDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetKey returns the Key field value
+// GetKey returns the Key field value if set, zero value otherwise.
 func (o *IntegrationDto) GetKey() string {
-	if o == nil {
+	if o == nil || IsNil(o.Key) {
 		var ret string
 		return ret
 	}
-
-	return o.Key
+	return *o.Key
 }
 
-// GetKeyOk returns a tuple with the Key field value
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetKeyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Key) {
 		return nil, false
 	}
-	return &o.Key, true
+	return o.Key, true
 }
 
-// SetKey sets field value
+// HasKey returns a boolean if a field has been set.
+func (o *IntegrationDto) HasKey() bool {
+	if o != nil && !IsNil(o.Key) {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given string and assigns it to the Key field.
 func (o *IntegrationDto) SetKey(v string) {
-	o.Key = v
+	o.Key = &v
 }
 
-// GetUuid returns the Uuid field value
+// GetUuid returns the Uuid field value if set, zero value otherwise.
 func (o *IntegrationDto) GetUuid() string {
-	if o == nil {
+	if o == nil || IsNil(o.Uuid) {
 		var ret string
 		return ret
 	}
-
-	return o.Uuid
+	return *o.Uuid
 }
 
-// GetUuidOk returns a tuple with the Uuid field value
+// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetUuidOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Uuid) {
 		return nil, false
 	}
-	return &o.Uuid, true
+	return o.Uuid, true
 }
 
-// SetUuid sets field value
+// HasUuid returns a boolean if a field has been set.
+func (o *IntegrationDto) HasUuid() bool {
+	if o != nil && !IsNil(o.Uuid) {
+		return true
+	}
+
+	return false
+}
+
+// SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *IntegrationDto) SetUuid(v string) {
-	o.Uuid = v
+	o.Uuid = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *IntegrationDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntegrationDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *IntegrationDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *IntegrationDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetConnectorStoreKey returns the ConnectorStoreKey field value if set, zero value otherwise.
@@ -855,9 +876,15 @@ func (o IntegrationDto) MarshalJSON() ([]byte, error) {
 func (o IntegrationDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["key"] = o.Key
-	toSerialize["uuid"] = o.Uuid
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Key) {
+		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.Uuid) {
+		toSerialize["uuid"] = o.Uuid
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ConnectorStoreKey) {
 		toSerialize["connectorStoreKey"] = o.ConnectorStoreKey
 	}
@@ -930,9 +957,6 @@ func (o *IntegrationDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"key",
-		"uuid",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

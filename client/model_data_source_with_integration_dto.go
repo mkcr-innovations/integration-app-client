@@ -12,8 +12,6 @@ package client
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the DataSourceWithIntegrationDto type satisfies the MappedNullable interface at compile time
@@ -21,20 +19,16 @@ var _ MappedNullable = &DataSourceWithIntegrationDto{}
 
 // DataSourceWithIntegrationDto struct for DataSourceWithIntegrationDto
 type DataSourceWithIntegrationDto struct {
-	Element DataSourceDto `json:"element"`
-	Integration IntegrationDto `json:"integration"`
+	Element *DataSourceDto `json:"element,omitempty"`
+	Integration *IntegrationDto `json:"integration,omitempty"`
 }
-
-type _DataSourceWithIntegrationDto DataSourceWithIntegrationDto
 
 // NewDataSourceWithIntegrationDto instantiates a new DataSourceWithIntegrationDto object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSourceWithIntegrationDto(element DataSourceDto, integration IntegrationDto) *DataSourceWithIntegrationDto {
+func NewDataSourceWithIntegrationDto() *DataSourceWithIntegrationDto {
 	this := DataSourceWithIntegrationDto{}
-	this.Element = element
-	this.Integration = integration
 	return &this
 }
 
@@ -46,52 +40,68 @@ func NewDataSourceWithIntegrationDtoWithDefaults() *DataSourceWithIntegrationDto
 	return &this
 }
 
-// GetElement returns the Element field value
+// GetElement returns the Element field value if set, zero value otherwise.
 func (o *DataSourceWithIntegrationDto) GetElement() DataSourceDto {
-	if o == nil {
+	if o == nil || IsNil(o.Element) {
 		var ret DataSourceDto
 		return ret
 	}
-
-	return o.Element
+	return *o.Element
 }
 
-// GetElementOk returns a tuple with the Element field value
+// GetElementOk returns a tuple with the Element field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceWithIntegrationDto) GetElementOk() (*DataSourceDto, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Element) {
 		return nil, false
 	}
-	return &o.Element, true
+	return o.Element, true
 }
 
-// SetElement sets field value
+// HasElement returns a boolean if a field has been set.
+func (o *DataSourceWithIntegrationDto) HasElement() bool {
+	if o != nil && !IsNil(o.Element) {
+		return true
+	}
+
+	return false
+}
+
+// SetElement gets a reference to the given DataSourceDto and assigns it to the Element field.
 func (o *DataSourceWithIntegrationDto) SetElement(v DataSourceDto) {
-	o.Element = v
+	o.Element = &v
 }
 
-// GetIntegration returns the Integration field value
+// GetIntegration returns the Integration field value if set, zero value otherwise.
 func (o *DataSourceWithIntegrationDto) GetIntegration() IntegrationDto {
-	if o == nil {
+	if o == nil || IsNil(o.Integration) {
 		var ret IntegrationDto
 		return ret
 	}
-
-	return o.Integration
+	return *o.Integration
 }
 
-// GetIntegrationOk returns a tuple with the Integration field value
+// GetIntegrationOk returns a tuple with the Integration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceWithIntegrationDto) GetIntegrationOk() (*IntegrationDto, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Integration) {
 		return nil, false
 	}
-	return &o.Integration, true
+	return o.Integration, true
 }
 
-// SetIntegration sets field value
+// HasIntegration returns a boolean if a field has been set.
+func (o *DataSourceWithIntegrationDto) HasIntegration() bool {
+	if o != nil && !IsNil(o.Integration) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegration gets a reference to the given IntegrationDto and assigns it to the Integration field.
 func (o *DataSourceWithIntegrationDto) SetIntegration(v IntegrationDto) {
-	o.Integration = v
+	o.Integration = &v
 }
 
 func (o DataSourceWithIntegrationDto) MarshalJSON() ([]byte, error) {
@@ -104,47 +114,13 @@ func (o DataSourceWithIntegrationDto) MarshalJSON() ([]byte, error) {
 
 func (o DataSourceWithIntegrationDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["element"] = o.Element
-	toSerialize["integration"] = o.Integration
+	if !IsNil(o.Element) {
+		toSerialize["element"] = o.Element
+	}
+	if !IsNil(o.Integration) {
+		toSerialize["integration"] = o.Integration
+	}
 	return toSerialize, nil
-}
-
-func (o *DataSourceWithIntegrationDto) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"element",
-		"integration",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varDataSourceWithIntegrationDto := _DataSourceWithIntegrationDto{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDataSourceWithIntegrationDto)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DataSourceWithIntegrationDto(varDataSourceWithIntegrationDto)
-
-	return err
 }
 
 type NullableDataSourceWithIntegrationDto struct {

@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateFlowDto{}
 // CreateFlowDto struct for CreateFlowDto
 type CreateFlowDto struct {
 	Key string `json:"key"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 	Nodes map[string]interface{} `json:"nodes,omitempty"`
 	ParametersSchema map[string]interface{} `json:"parametersSchema,omitempty"`
@@ -36,10 +36,9 @@ type _CreateFlowDto CreateFlowDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateFlowDto(key string, name string) *CreateFlowDto {
+func NewCreateFlowDto(key string) *CreateFlowDto {
 	this := CreateFlowDto{}
 	this.Key = key
-	this.Name = name
 	return &this
 }
 
@@ -75,28 +74,36 @@ func (o *CreateFlowDto) SetKey(v string) {
 	o.Key = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *CreateFlowDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateFlowDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *CreateFlowDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateFlowDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise.
@@ -270,7 +277,9 @@ func (o CreateFlowDto) MarshalJSON() ([]byte, error) {
 func (o CreateFlowDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["key"] = o.Key
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ArchivedAt) {
 		toSerialize["archivedAt"] = o.ArchivedAt
 	}
@@ -295,7 +304,6 @@ func (o *CreateFlowDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"key",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

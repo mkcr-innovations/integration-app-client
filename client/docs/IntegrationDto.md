@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Key** | **string** |  | 
-**Uuid** | **string** |  | 
-**Name** | **string** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **ConnectorStoreKey** | Pointer to **string** |  | [optional] 
 **ConnectorId** | Pointer to **string** |  | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewIntegrationDto
 
-`func NewIntegrationDto(id string, key string, uuid string, name string, ) *IntegrationDto`
+`func NewIntegrationDto(id string, ) *IntegrationDto`
 
 NewIntegrationDto instantiates a new IntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *IntegrationDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetUuid
 
@@ -108,6 +113,11 @@ and a boolean to check if the value has been set.
 
 SetUuid sets Uuid field to given value.
 
+### HasUuid
+
+`func (o *IntegrationDto) HasUuid() bool`
+
+HasUuid returns a boolean if a field has been set.
 
 ### GetName
 
@@ -128,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *IntegrationDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetConnectorStoreKey
 

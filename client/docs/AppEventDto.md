@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
-**AppEventTypeId** | **string** |  | 
+**AppEventTypeId** | Pointer to **string** |  | [optional] 
 **AppEventType** | Pointer to [**AppEventTypeDto**](AppEventTypeDto.md) |  | [optional] 
-**AppEventSubscriptionId** | **string** |  | 
+**AppEventSubscriptionId** | Pointer to **string** |  | [optional] 
 **AppEventSubscription** | Pointer to [**AppEventSubscriptionDto**](AppEventSubscriptionDto.md) |  | [optional] 
-**Event** | **map[string]interface{}** |  | 
-**Datetime** | **string** |  | 
-**LaunchedFlowRunIds** | **[]string** |  | 
+**Event** | Pointer to **map[string]interface{}** |  | [optional] 
+**Datetime** | Pointer to **string** |  | [optional] 
+**LaunchedFlowRunIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewAppEventDto
 
-`func NewAppEventDto(id string, userId string, appEventTypeId string, appEventSubscriptionId string, event map[string]interface{}, datetime string, launchedFlowRunIds []string, ) *AppEventDto`
+`func NewAppEventDto(id string, ) *AppEventDto`
 
 NewAppEventDto instantiates a new AppEventDto object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *AppEventDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -118,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetAppEventTypeId sets AppEventTypeId field to given value.
 
+### HasAppEventTypeId
+
+`func (o *AppEventDto) HasAppEventTypeId() bool`
+
+HasAppEventTypeId returns a boolean if a field has been set.
 
 ### GetAppEventType
 
@@ -163,6 +173,11 @@ and a boolean to check if the value has been set.
 
 SetAppEventSubscriptionId sets AppEventSubscriptionId field to given value.
 
+### HasAppEventSubscriptionId
+
+`func (o *AppEventDto) HasAppEventSubscriptionId() bool`
+
+HasAppEventSubscriptionId returns a boolean if a field has been set.
 
 ### GetAppEventSubscription
 
@@ -208,6 +223,11 @@ and a boolean to check if the value has been set.
 
 SetEvent sets Event field to given value.
 
+### HasEvent
+
+`func (o *AppEventDto) HasEvent() bool`
+
+HasEvent returns a boolean if a field has been set.
 
 ### GetDatetime
 
@@ -228,6 +248,11 @@ and a boolean to check if the value has been set.
 
 SetDatetime sets Datetime field to given value.
 
+### HasDatetime
+
+`func (o *AppEventDto) HasDatetime() bool`
+
+HasDatetime returns a boolean if a field has been set.
 
 ### GetLaunchedFlowRunIds
 
@@ -248,6 +273,11 @@ and a boolean to check if the value has been set.
 
 SetLaunchedFlowRunIds sets LaunchedFlowRunIds field to given value.
 
+### HasLaunchedFlowRunIds
+
+`func (o *AppEventDto) HasLaunchedFlowRunIds() bool`
+
+HasLaunchedFlowRunIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

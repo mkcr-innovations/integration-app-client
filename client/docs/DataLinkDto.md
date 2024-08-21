@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**DataLinkTableInstanceId** | **string** |  | 
-**Direction** | **string** |  | 
-**AppRecordId** | **string** |  | 
-**ExternalRecordId** | **string** |  | 
+**DataLinkTableInstanceId** | Pointer to **string** |  | [optional] 
+**Direction** | Pointer to **string** |  | [optional] 
+**AppRecordId** | Pointer to **string** |  | [optional] 
+**ExternalRecordId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewDataLinkDto
 
-`func NewDataLinkDto(id string, dataLinkTableInstanceId string, direction string, appRecordId string, externalRecordId string, ) *DataLinkDto`
+`func NewDataLinkDto(id string, ) *DataLinkDto`
 
 NewDataLinkDto instantiates a new DataLinkDto object
 This constructor will assign default values to properties that have it defined,
@@ -68,6 +68,11 @@ and a boolean to check if the value has been set.
 
 SetDataLinkTableInstanceId sets DataLinkTableInstanceId field to given value.
 
+### HasDataLinkTableInstanceId
+
+`func (o *DataLinkDto) HasDataLinkTableInstanceId() bool`
+
+HasDataLinkTableInstanceId returns a boolean if a field has been set.
 
 ### GetDirection
 
@@ -88,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDirection sets Direction field to given value.
 
+### HasDirection
+
+`func (o *DataLinkDto) HasDirection() bool`
+
+HasDirection returns a boolean if a field has been set.
 
 ### GetAppRecordId
 
@@ -108,6 +118,11 @@ and a boolean to check if the value has been set.
 
 SetAppRecordId sets AppRecordId field to given value.
 
+### HasAppRecordId
+
+`func (o *DataLinkDto) HasAppRecordId() bool`
+
+HasAppRecordId returns a boolean if a field has been set.
 
 ### GetExternalRecordId
 
@@ -128,6 +143,11 @@ and a boolean to check if the value has been set.
 
 SetExternalRecordId sets ExternalRecordId field to given value.
 
+### HasExternalRecordId
+
+`func (o *DataLinkDto) HasExternalRecordId() bool`
+
+HasExternalRecordId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

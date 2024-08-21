@@ -22,8 +22,8 @@ var _ MappedNullable = &DataSourceInstanceDto{}
 // DataSourceInstanceDto struct for DataSourceInstanceDto
 type DataSourceInstanceDto struct {
 	Id string `json:"id"`
-	Name string `json:"name"`
-	Revision string `json:"revision"`
+	Name *string `json:"name,omitempty"`
+	Revision *string `json:"revision,omitempty"`
 	UserId *string `json:"userId,omitempty"`
 	ConnectionId *string `json:"connectionId,omitempty"`
 	IntegrationId *string `json:"integrationId,omitempty"`
@@ -60,11 +60,9 @@ type _DataSourceInstanceDto DataSourceInstanceDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSourceInstanceDto(id string, name string, revision string) *DataSourceInstanceDto {
+func NewDataSourceInstanceDto(id string) *DataSourceInstanceDto {
 	this := DataSourceInstanceDto{}
 	this.Id = id
-	this.Name = name
-	this.Revision = revision
 	return &this
 }
 
@@ -100,52 +98,68 @@ func (o *DataSourceInstanceDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *DataSourceInstanceDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceInstanceDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *DataSourceInstanceDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetRevision returns the Revision field value
+// GetRevision returns the Revision field value if set, zero value otherwise.
 func (o *DataSourceInstanceDto) GetRevision() string {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		var ret string
 		return ret
 	}
-
-	return o.Revision
+	return *o.Revision
 }
 
-// GetRevisionOk returns a tuple with the Revision field value
+// GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSourceInstanceDto) GetRevisionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Revision) {
 		return nil, false
 	}
-	return &o.Revision, true
+	return o.Revision, true
 }
 
-// SetRevision sets field value
+// HasRevision returns a boolean if a field has been set.
+func (o *DataSourceInstanceDto) HasRevision() bool {
+	if o != nil && !IsNil(o.Revision) {
+		return true
+	}
+
+	return false
+}
+
+// SetRevision gets a reference to the given string and assigns it to the Revision field.
 func (o *DataSourceInstanceDto) SetRevision(v string) {
-	o.Revision = v
+	o.Revision = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
@@ -997,8 +1011,12 @@ func (o DataSourceInstanceDto) MarshalJSON() ([]byte, error) {
 func (o DataSourceInstanceDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-	toSerialize["revision"] = o.Revision
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Revision) {
+		toSerialize["revision"] = o.Revision
+	}
 	if !IsNil(o.UserId) {
 		toSerialize["userId"] = o.UserId
 	}
@@ -1086,8 +1104,6 @@ func (o *DataSourceInstanceDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"name",
-		"revision",
 	}
 
 	allProperties := make(map[string]interface{})

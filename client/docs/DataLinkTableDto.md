@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Key** | **string** |  | 
-**Name** | **string** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewDataLinkTableDto
 
-`func NewDataLinkTableDto(id string, key string, name string, ) *DataLinkTableDto`
+`func NewDataLinkTableDto(id string, ) *DataLinkTableDto`
 
 NewDataLinkTableDto instantiates a new DataLinkTableDto object
 This constructor will assign default values to properties that have it defined,
@@ -67,6 +67,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *DataLinkTableDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetName
 
@@ -87,6 +92,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DataLinkTableDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

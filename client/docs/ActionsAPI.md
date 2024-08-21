@@ -54,7 +54,7 @@ import (
 
 func main() {
 	id := "id_example" // string | ID
-	applyToIntegrationsDto := *openapiclient.NewApplyToIntegrationsDto([]string{"IntegrationKeys_example"}) // ApplyToIntegrationsDto | 
+	applyToIntegrationsDto := *openapiclient.NewApplyToIntegrationsDto() // ApplyToIntegrationsDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -673,7 +673,7 @@ import (
 )
 
 func main() {
-	createActionDto := *openapiclient.NewCreateActionDto("Key_example", "Name_example") // CreateActionDto | 
+	createActionDto := *openapiclient.NewCreateActionDto("Key_example") // CreateActionDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1849,7 +1849,7 @@ import (
 
 func main() {
 	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
-	createIntegrationLevelActionDto := *openapiclient.NewCreateIntegrationLevelActionDto("Key_example", "Name_example") // CreateIntegrationLevelActionDto | 
+	createIntegrationLevelActionDto := *openapiclient.NewCreateIntegrationLevelActionDto("Key_example") // CreateIntegrationLevelActionDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

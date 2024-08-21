@@ -22,15 +22,15 @@ var _ MappedNullable = &AppEventDto{}
 // AppEventDto struct for AppEventDto
 type AppEventDto struct {
 	Id string `json:"id"`
-	UserId string `json:"userId"`
+	UserId *string `json:"userId,omitempty"`
 	User *CustomerDto `json:"user,omitempty"`
-	AppEventTypeId string `json:"appEventTypeId"`
+	AppEventTypeId *string `json:"appEventTypeId,omitempty"`
 	AppEventType *AppEventTypeDto `json:"appEventType,omitempty"`
-	AppEventSubscriptionId string `json:"appEventSubscriptionId"`
+	AppEventSubscriptionId *string `json:"appEventSubscriptionId,omitempty"`
 	AppEventSubscription *AppEventSubscriptionDto `json:"appEventSubscription,omitempty"`
-	Event map[string]interface{} `json:"event"`
-	Datetime string `json:"datetime"`
-	LaunchedFlowRunIds []string `json:"launchedFlowRunIds"`
+	Event map[string]interface{} `json:"event,omitempty"`
+	Datetime *string `json:"datetime,omitempty"`
+	LaunchedFlowRunIds []string `json:"launchedFlowRunIds,omitempty"`
 }
 
 type _AppEventDto AppEventDto
@@ -39,15 +39,9 @@ type _AppEventDto AppEventDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppEventDto(id string, userId string, appEventTypeId string, appEventSubscriptionId string, event map[string]interface{}, datetime string, launchedFlowRunIds []string) *AppEventDto {
+func NewAppEventDto(id string) *AppEventDto {
 	this := AppEventDto{}
 	this.Id = id
-	this.UserId = userId
-	this.AppEventTypeId = appEventTypeId
-	this.AppEventSubscriptionId = appEventSubscriptionId
-	this.Event = event
-	this.Datetime = datetime
-	this.LaunchedFlowRunIds = launchedFlowRunIds
 	return &this
 }
 
@@ -83,28 +77,36 @@ func (o *AppEventDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetUserId returns the UserId field value
+// GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *AppEventDto) GetUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
 	}
-
-	return o.UserId
+	return *o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
-	return &o.UserId, true
+	return o.UserId, true
 }
 
-// SetUserId sets field value
+// HasUserId returns a boolean if a field has been set.
+func (o *AppEventDto) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
 func (o *AppEventDto) SetUserId(v string) {
-	o.UserId = v
+	o.UserId = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -139,28 +141,36 @@ func (o *AppEventDto) SetUser(v CustomerDto) {
 	o.User = &v
 }
 
-// GetAppEventTypeId returns the AppEventTypeId field value
+// GetAppEventTypeId returns the AppEventTypeId field value if set, zero value otherwise.
 func (o *AppEventDto) GetAppEventTypeId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventTypeId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppEventTypeId
+	return *o.AppEventTypeId
 }
 
-// GetAppEventTypeIdOk returns a tuple with the AppEventTypeId field value
+// GetAppEventTypeIdOk returns a tuple with the AppEventTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetAppEventTypeIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventTypeId) {
 		return nil, false
 	}
-	return &o.AppEventTypeId, true
+	return o.AppEventTypeId, true
 }
 
-// SetAppEventTypeId sets field value
+// HasAppEventTypeId returns a boolean if a field has been set.
+func (o *AppEventDto) HasAppEventTypeId() bool {
+	if o != nil && !IsNil(o.AppEventTypeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppEventTypeId gets a reference to the given string and assigns it to the AppEventTypeId field.
 func (o *AppEventDto) SetAppEventTypeId(v string) {
-	o.AppEventTypeId = v
+	o.AppEventTypeId = &v
 }
 
 // GetAppEventType returns the AppEventType field value if set, zero value otherwise.
@@ -195,28 +205,36 @@ func (o *AppEventDto) SetAppEventType(v AppEventTypeDto) {
 	o.AppEventType = &v
 }
 
-// GetAppEventSubscriptionId returns the AppEventSubscriptionId field value
+// GetAppEventSubscriptionId returns the AppEventSubscriptionId field value if set, zero value otherwise.
 func (o *AppEventDto) GetAppEventSubscriptionId() string {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventSubscriptionId) {
 		var ret string
 		return ret
 	}
-
-	return o.AppEventSubscriptionId
+	return *o.AppEventSubscriptionId
 }
 
-// GetAppEventSubscriptionIdOk returns a tuple with the AppEventSubscriptionId field value
+// GetAppEventSubscriptionIdOk returns a tuple with the AppEventSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetAppEventSubscriptionIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AppEventSubscriptionId) {
 		return nil, false
 	}
-	return &o.AppEventSubscriptionId, true
+	return o.AppEventSubscriptionId, true
 }
 
-// SetAppEventSubscriptionId sets field value
+// HasAppEventSubscriptionId returns a boolean if a field has been set.
+func (o *AppEventDto) HasAppEventSubscriptionId() bool {
+	if o != nil && !IsNil(o.AppEventSubscriptionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppEventSubscriptionId gets a reference to the given string and assigns it to the AppEventSubscriptionId field.
 func (o *AppEventDto) SetAppEventSubscriptionId(v string) {
-	o.AppEventSubscriptionId = v
+	o.AppEventSubscriptionId = &v
 }
 
 // GetAppEventSubscription returns the AppEventSubscription field value if set, zero value otherwise.
@@ -251,74 +269,98 @@ func (o *AppEventDto) SetAppEventSubscription(v AppEventSubscriptionDto) {
 	o.AppEventSubscription = &v
 }
 
-// GetEvent returns the Event field value
+// GetEvent returns the Event field value if set, zero value otherwise.
 func (o *AppEventDto) GetEvent() map[string]interface{} {
-	if o == nil {
+	if o == nil || IsNil(o.Event) {
 		var ret map[string]interface{}
 		return ret
 	}
-
 	return o.Event
 }
 
-// GetEventOk returns a tuple with the Event field value
+// GetEventOk returns a tuple with the Event field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetEventOk() (map[string]interface{}, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Event) {
 		return map[string]interface{}{}, false
 	}
 	return o.Event, true
 }
 
-// SetEvent sets field value
+// HasEvent returns a boolean if a field has been set.
+func (o *AppEventDto) HasEvent() bool {
+	if o != nil && !IsNil(o.Event) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvent gets a reference to the given map[string]interface{} and assigns it to the Event field.
 func (o *AppEventDto) SetEvent(v map[string]interface{}) {
 	o.Event = v
 }
 
-// GetDatetime returns the Datetime field value
+// GetDatetime returns the Datetime field value if set, zero value otherwise.
 func (o *AppEventDto) GetDatetime() string {
-	if o == nil {
+	if o == nil || IsNil(o.Datetime) {
 		var ret string
 		return ret
 	}
-
-	return o.Datetime
+	return *o.Datetime
 }
 
-// GetDatetimeOk returns a tuple with the Datetime field value
+// GetDatetimeOk returns a tuple with the Datetime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetDatetimeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Datetime) {
 		return nil, false
 	}
-	return &o.Datetime, true
+	return o.Datetime, true
 }
 
-// SetDatetime sets field value
+// HasDatetime returns a boolean if a field has been set.
+func (o *AppEventDto) HasDatetime() bool {
+	if o != nil && !IsNil(o.Datetime) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatetime gets a reference to the given string and assigns it to the Datetime field.
 func (o *AppEventDto) SetDatetime(v string) {
-	o.Datetime = v
+	o.Datetime = &v
 }
 
-// GetLaunchedFlowRunIds returns the LaunchedFlowRunIds field value
+// GetLaunchedFlowRunIds returns the LaunchedFlowRunIds field value if set, zero value otherwise.
 func (o *AppEventDto) GetLaunchedFlowRunIds() []string {
-	if o == nil {
+	if o == nil || IsNil(o.LaunchedFlowRunIds) {
 		var ret []string
 		return ret
 	}
-
 	return o.LaunchedFlowRunIds
 }
 
-// GetLaunchedFlowRunIdsOk returns a tuple with the LaunchedFlowRunIds field value
+// GetLaunchedFlowRunIdsOk returns a tuple with the LaunchedFlowRunIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppEventDto) GetLaunchedFlowRunIdsOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LaunchedFlowRunIds) {
 		return nil, false
 	}
 	return o.LaunchedFlowRunIds, true
 }
 
-// SetLaunchedFlowRunIds sets field value
+// HasLaunchedFlowRunIds returns a boolean if a field has been set.
+func (o *AppEventDto) HasLaunchedFlowRunIds() bool {
+	if o != nil && !IsNil(o.LaunchedFlowRunIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetLaunchedFlowRunIds gets a reference to the given []string and assigns it to the LaunchedFlowRunIds field.
 func (o *AppEventDto) SetLaunchedFlowRunIds(v []string) {
 	o.LaunchedFlowRunIds = v
 }
@@ -334,21 +376,33 @@ func (o AppEventDto) MarshalJSON() ([]byte, error) {
 func (o AppEventDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["userId"] = o.UserId
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	toSerialize["appEventTypeId"] = o.AppEventTypeId
+	if !IsNil(o.AppEventTypeId) {
+		toSerialize["appEventTypeId"] = o.AppEventTypeId
+	}
 	if !IsNil(o.AppEventType) {
 		toSerialize["appEventType"] = o.AppEventType
 	}
-	toSerialize["appEventSubscriptionId"] = o.AppEventSubscriptionId
+	if !IsNil(o.AppEventSubscriptionId) {
+		toSerialize["appEventSubscriptionId"] = o.AppEventSubscriptionId
+	}
 	if !IsNil(o.AppEventSubscription) {
 		toSerialize["appEventSubscription"] = o.AppEventSubscription
 	}
-	toSerialize["event"] = o.Event
-	toSerialize["datetime"] = o.Datetime
-	toSerialize["launchedFlowRunIds"] = o.LaunchedFlowRunIds
+	if !IsNil(o.Event) {
+		toSerialize["event"] = o.Event
+	}
+	if !IsNil(o.Datetime) {
+		toSerialize["datetime"] = o.Datetime
+	}
+	if !IsNil(o.LaunchedFlowRunIds) {
+		toSerialize["launchedFlowRunIds"] = o.LaunchedFlowRunIds
+	}
 	return toSerialize, nil
 }
 
@@ -358,12 +412,6 @@ func (o *AppEventDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"userId",
-		"appEventTypeId",
-		"appEventSubscriptionId",
-		"event",
-		"datetime",
-		"launchedFlowRunIds",
 	}
 
 	allProperties := make(map[string]interface{})

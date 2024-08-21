@@ -15016,9 +15016,7 @@
           }
         },
         "required": [
-          "id",
-          "internalId",
-          "name"
+          "id"
         ]
       },
       "IntegrationDto": {
@@ -15106,10 +15104,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "uuid",
-          "name"
+          "id"
         ]
       },
       "FlowDto": {
@@ -15181,10 +15176,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "revision"
+          "id"
         ]
       },
       "IntegrationElementInstanceDependencyDto": {
@@ -15271,10 +15263,7 @@
           }
         },
         "required": [
-          "id",
-          "userId",
-          "integrationId",
-          "name"
+          "id"
         ]
       },
       "FlowInstanceDto": {
@@ -15360,10 +15349,7 @@
           }
         },
         "required": [
-          "id",
-          "userId",
-          "connectionId",
-          "integrationId"
+          "id"
         ]
       },
       "UpdateFlowInstanceDto": {
@@ -15506,8 +15492,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateFlowDto": {
@@ -15585,8 +15570,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "CreateConnectionDto": {
@@ -15654,7 +15638,6 @@
           }
         },
         "required": [
-          "internalId"
         ]
       },
       "UpdateCustomerAsAdminDto": {
@@ -15731,10 +15714,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "revision"
+          "id"
         ]
       },
       "DataSourceWithIntegrationDto": {
@@ -15748,8 +15728,7 @@
           }
         },
         "required": [
-          "element",
-          "integration"
+
         ]
       },
       "CreateDataSourceDto": {
@@ -15787,8 +15766,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateDataSourceDto": {
@@ -15890,8 +15868,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "DataSourceInstanceDto": {
@@ -15988,9 +15965,7 @@
           }
         },
         "required": [
-          "id",
-          "name",
-          "revision"
+          "id"
         ]
       },
       "UpdateDataSourceInstanceDto": {
@@ -16031,9 +16006,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name"
+          "id"
         ]
       },
       "CreateDataLinkTableDto": {
@@ -16050,8 +16023,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateDataLinkTableDto": {
@@ -16093,11 +16065,7 @@
           }
         },
         "required": [
-          "id",
-          "dataLinkTableInstanceId",
-          "direction",
-          "appRecordId",
-          "externalRecordId"
+          "id"
         ]
       },
       "DataLinkTableInstanceDto": {
@@ -16138,12 +16106,7 @@
           }
         },
         "required": [
-          "id",
-          "name",
-          "dataLinkTableId",
-          "userId",
-          "connectionId",
-          "integrationId"
+          "id"
         ]
       },
       "CreateDataLinkTableInstanceDto": {
@@ -16173,9 +16136,6 @@
           }
         },
         "required": [
-          "direction",
-          "appRecordId",
-          "externalRecordId"
         ]
       },
       "DeleteDataLinkDto": {
@@ -16197,9 +16157,7 @@
           }
         },
         "required": [
-          "direction",
-          "appRecordId",
-          "externalRecordId"
+
         ]
       },
       "FieldMappingDto": {
@@ -16278,10 +16236,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "revision"
+          "id"
         ]
       },
       "FiledMappingWithIntegrationDto": {
@@ -16295,8 +16250,6 @@
           }
         },
         "required": [
-          "element",
-          "integration"
         ]
       },
       "CreateFieldMappingDto": {
@@ -16354,8 +16307,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateFieldMappingDto": {
@@ -16517,8 +16469,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "FieldMappingInstanceDto": {
@@ -16613,12 +16564,7 @@
           }
         },
         "required": [
-          "id",
-          "name",
-          "revision",
-          "userId",
-          "connectionId",
-          "integrationId"
+          "id"
         ]
       },
       "UpdateFieldMappingInstanceDto": {
@@ -16662,10 +16608,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "schema"
+          "id"
         ]
       },
       "AppDataSchemaCreateDto": {
@@ -16688,8 +16631,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "AppDataSchemaExportDto": {
@@ -16747,9 +16689,7 @@
           }
         },
         "required": [
-          "id",
-          "appId",
-          "userId"
+          "id"
         ]
       },
       "UpdateAppDataSchemaInstanceDto": {
@@ -16794,11 +16734,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "revision",
-          "globalWebhookUri"
+          "id"
         ]
       },
       "CreateAppEventTypeDto": {
@@ -16927,14 +16863,7 @@
           }
         },
         "required": [
-          "id",
-          "name",
-          "revision",
-          "userId",
-          "appEventTypeId",
-          "isSubscribed",
-          "webhookUri",
-          "subscriptionRequest"
+          "id"
         ]
       },
       "AppEventDto": {
@@ -16975,13 +16904,7 @@
           }
         },
         "required": [
-          "id",
-          "userId",
-          "appEventTypeId",
-          "appEventSubscriptionId",
-          "event",
-          "datetime",
-          "launchedFlowRunIds"
+          "id"
         ]
       },
       "AppEventSubscriptionUpdateDto": {
@@ -17064,10 +16987,7 @@
           }
         },
         "required": [
-          "id",
-          "userId",
-          "connectionId",
-          "integrationId"
+          "id"
         ]
       },
       "ExternalEventPullDto": {
@@ -17128,8 +17048,7 @@
           }
         },
         "required": [
-          "id",
-          "userId"
+          "id"
         ]
       },
       "ExternalEventLogRecordDto": {
@@ -17179,8 +17098,7 @@
           }
         },
         "required": [
-          "id",
-          "userId"
+          "id"
         ]
       },
       "ActionDto": {
@@ -17284,10 +17202,7 @@
           }
         },
         "required": [
-          "id",
-          "key",
-          "name",
-          "revision"
+          "id"
         ]
       },
       "ActionWithIntegrationDto": {
@@ -17301,8 +17216,7 @@
           }
         },
         "required": [
-          "element",
-          "integration"
+
         ]
       },
       "CreateActionDto": {
@@ -17353,8 +17267,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateActionDto": {
@@ -17413,7 +17326,6 @@
           }
         },
         "required": [
-          "integrationKeys"
         ]
       },
       "ActionExportDto": {
@@ -17571,11 +17483,7 @@
           }
         },
         "required": [
-          "id",
-          "name",
-          "revision",
-          "type",
-          "state"
+          "id"
         ]
       },
       "CreateIntegrationLevelActionDto": {
@@ -17623,8 +17531,7 @@
           }
         },
         "required": [
-          "key",
-          "name"
+          "key"
         ]
       },
       "UpdateActionInstanceDto": {
@@ -17747,8 +17654,7 @@
           }
         },
         "required": [
-          "id",
-          "flowInstanceId"
+          "id"
         ]
       },
       "ScenarioDto": {

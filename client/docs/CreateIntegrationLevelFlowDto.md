@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to **map[string]interface{}** |  | [optional] 
 **ParametersSchema** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewCreateIntegrationLevelFlowDto
 
-`func NewCreateIntegrationLevelFlowDto(key string, name string, ) *CreateIntegrationLevelFlowDto`
+`func NewCreateIntegrationLevelFlowDto(key string, ) *CreateIntegrationLevelFlowDto`
 
 NewCreateIntegrationLevelFlowDto instantiates a new CreateIntegrationLevelFlowDto object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +69,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CreateIntegrationLevelFlowDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

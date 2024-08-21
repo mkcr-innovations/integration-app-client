@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**UserId** | **string** |  | 
+**UserId** | Pointer to **string** |  | [optional] 
 **User** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **InstanceKey** | Pointer to **string** |  | [optional] 
-**ConnectionId** | **string** |  | 
-**IntegrationId** | **string** |  | 
+**ConnectionId** | Pointer to **string** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 **FlowId** | Pointer to **string** |  | [optional] 
 **Flow** | Pointer to [**FlowDto**](FlowDto.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewFlowInstanceDto
 
-`func NewFlowInstanceDto(id string, userId string, connectionId string, integrationId string, ) *FlowInstanceDto`
+`func NewFlowInstanceDto(id string, ) *FlowInstanceDto`
 
 NewFlowInstanceDto instantiates a new FlowInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *FlowInstanceDto) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -156,6 +161,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionId sets ConnectionId field to given value.
 
+### HasConnectionId
+
+`func (o *FlowInstanceDto) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetIntegrationId
 
@@ -176,6 +186,11 @@ and a boolean to check if the value has been set.
 
 SetIntegrationId sets IntegrationId field to given value.
 
+### HasIntegrationId
+
+`func (o *FlowInstanceDto) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
 
 ### GetIntegration
 

@@ -22,9 +22,9 @@ var _ MappedNullable = &AppDataSchemaDto{}
 // AppDataSchemaDto struct for AppDataSchemaDto
 type AppDataSchemaDto struct {
 	Id string `json:"id"`
-	Key string `json:"key"`
-	Name string `json:"name"`
-	Schema map[string]interface{} `json:"schema"`
+	Key *string `json:"key,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Schema map[string]interface{} `json:"schema,omitempty"`
 	Code *string `json:"code,omitempty"`
 	ArchivedAt *string `json:"archivedAt,omitempty"`
 	Revision *string `json:"revision,omitempty"`
@@ -36,12 +36,9 @@ type _AppDataSchemaDto AppDataSchemaDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppDataSchemaDto(id string, key string, name string, schema map[string]interface{}) *AppDataSchemaDto {
+func NewAppDataSchemaDto(id string) *AppDataSchemaDto {
 	this := AppDataSchemaDto{}
 	this.Id = id
-	this.Key = key
-	this.Name = name
-	this.Schema = schema
 	return &this
 }
 
@@ -77,74 +74,98 @@ func (o *AppDataSchemaDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetKey returns the Key field value
+// GetKey returns the Key field value if set, zero value otherwise.
 func (o *AppDataSchemaDto) GetKey() string {
-	if o == nil {
+	if o == nil || IsNil(o.Key) {
 		var ret string
 		return ret
 	}
-
-	return o.Key
+	return *o.Key
 }
 
-// GetKeyOk returns a tuple with the Key field value
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaDto) GetKeyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Key) {
 		return nil, false
 	}
-	return &o.Key, true
+	return o.Key, true
 }
 
-// SetKey sets field value
+// HasKey returns a boolean if a field has been set.
+func (o *AppDataSchemaDto) HasKey() bool {
+	if o != nil && !IsNil(o.Key) {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given string and assigns it to the Key field.
 func (o *AppDataSchemaDto) SetKey(v string) {
-	o.Key = v
+	o.Key = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *AppDataSchemaDto) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaDto) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *AppDataSchemaDto) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AppDataSchemaDto) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSchema returns the Schema field value
+// GetSchema returns the Schema field value if set, zero value otherwise.
 func (o *AppDataSchemaDto) GetSchema() map[string]interface{} {
-	if o == nil {
+	if o == nil || IsNil(o.Schema) {
 		var ret map[string]interface{}
 		return ret
 	}
-
 	return o.Schema
 }
 
-// GetSchemaOk returns a tuple with the Schema field value
+// GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDataSchemaDto) GetSchemaOk() (map[string]interface{}, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Schema) {
 		return map[string]interface{}{}, false
 	}
 	return o.Schema, true
 }
 
-// SetSchema sets field value
+// HasSchema returns a boolean if a field has been set.
+func (o *AppDataSchemaDto) HasSchema() bool {
+	if o != nil && !IsNil(o.Schema) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchema gets a reference to the given map[string]interface{} and assigns it to the Schema field.
 func (o *AppDataSchemaDto) SetSchema(v map[string]interface{}) {
 	o.Schema = v
 }
@@ -256,9 +277,15 @@ func (o AppDataSchemaDto) MarshalJSON() ([]byte, error) {
 func (o AppDataSchemaDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["key"] = o.Key
-	toSerialize["name"] = o.Name
-	toSerialize["schema"] = o.Schema
+	if !IsNil(o.Key) {
+		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Schema) {
+		toSerialize["schema"] = o.Schema
+	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
@@ -277,9 +304,6 @@ func (o *AppDataSchemaDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"key",
-		"name",
-		"schema",
 	}
 
 	allProperties := make(map[string]interface{})

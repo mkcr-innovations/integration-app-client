@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**FlowInstanceId** | **string** |  | 
+**FlowInstanceId** | Pointer to **string** |  | [optional] 
 **UniversalFlowId** | Pointer to **string** |  | [optional] 
 **FlowInstance** | Pointer to [**FlowInstanceDto**](FlowInstanceDto.md) |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewFlowRunDto
 
-`func NewFlowRunDto(id string, flowInstanceId string, ) *FlowRunDto`
+`func NewFlowRunDto(id string, ) *FlowRunDto`
 
 NewFlowRunDto instantiates a new FlowRunDto object
 This constructor will assign default values to properties that have it defined,
@@ -81,6 +81,11 @@ and a boolean to check if the value has been set.
 
 SetFlowInstanceId sets FlowInstanceId field to given value.
 
+### HasFlowInstanceId
+
+`func (o *FlowRunDto) HasFlowInstanceId() bool`
+
+HasFlowInstanceId returns a boolean if a field has been set.
 
 ### GetUniversalFlowId
 

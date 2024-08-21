@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InternalId** | **string** |  | 
+**InternalId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Fields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Credentials** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewCreateCustomerDto
 
-`func NewCreateCustomerDto(internalId string, ) *CreateCustomerDto`
+`func NewCreateCustomerDto() *CreateCustomerDto`
 
 NewCreateCustomerDto instantiates a new CreateCustomerDto object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetInternalId sets InternalId field to given value.
 
+### HasInternalId
+
+`func (o *CreateCustomerDto) HasInternalId() bool`
+
+HasInternalId returns a boolean if a field has been set.
 
 ### GetName
 

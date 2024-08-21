@@ -22,7 +22,7 @@ var _ MappedNullable = &FlowRunDto{}
 // FlowRunDto struct for FlowRunDto
 type FlowRunDto struct {
 	Id string `json:"id"`
-	FlowInstanceId string `json:"flowInstanceId"`
+	FlowInstanceId *string `json:"flowInstanceId,omitempty"`
 	UniversalFlowId *string `json:"universalFlowId,omitempty"`
 	FlowInstance *FlowInstanceDto `json:"flowInstance,omitempty"`
 	IntegrationId *string `json:"integrationId,omitempty"`
@@ -47,10 +47,9 @@ type _FlowRunDto FlowRunDto
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFlowRunDto(id string, flowInstanceId string) *FlowRunDto {
+func NewFlowRunDto(id string) *FlowRunDto {
 	this := FlowRunDto{}
 	this.Id = id
-	this.FlowInstanceId = flowInstanceId
 	return &this
 }
 
@@ -86,28 +85,36 @@ func (o *FlowRunDto) SetId(v string) {
 	o.Id = v
 }
 
-// GetFlowInstanceId returns the FlowInstanceId field value
+// GetFlowInstanceId returns the FlowInstanceId field value if set, zero value otherwise.
 func (o *FlowRunDto) GetFlowInstanceId() string {
-	if o == nil {
+	if o == nil || IsNil(o.FlowInstanceId) {
 		var ret string
 		return ret
 	}
-
-	return o.FlowInstanceId
+	return *o.FlowInstanceId
 }
 
-// GetFlowInstanceIdOk returns a tuple with the FlowInstanceId field value
+// GetFlowInstanceIdOk returns a tuple with the FlowInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowRunDto) GetFlowInstanceIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FlowInstanceId) {
 		return nil, false
 	}
-	return &o.FlowInstanceId, true
+	return o.FlowInstanceId, true
 }
 
-// SetFlowInstanceId sets field value
+// HasFlowInstanceId returns a boolean if a field has been set.
+func (o *FlowRunDto) HasFlowInstanceId() bool {
+	if o != nil && !IsNil(o.FlowInstanceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowInstanceId gets a reference to the given string and assigns it to the FlowInstanceId field.
 func (o *FlowRunDto) SetFlowInstanceId(v string) {
-	o.FlowInstanceId = v
+	o.FlowInstanceId = &v
 }
 
 // GetUniversalFlowId returns the UniversalFlowId field value if set, zero value otherwise.
@@ -633,7 +640,9 @@ func (o FlowRunDto) MarshalJSON() ([]byte, error) {
 func (o FlowRunDto) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	toSerialize["flowInstanceId"] = o.FlowInstanceId
+	if !IsNil(o.FlowInstanceId) {
+		toSerialize["flowInstanceId"] = o.FlowInstanceId
+	}
 	if !IsNil(o.UniversalFlowId) {
 		toSerialize["universalFlowId"] = o.UniversalFlowId
 	}
@@ -691,7 +700,6 @@ func (o *FlowRunDto) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
-		"flowInstanceId",
 	}
 
 	allProperties := make(map[string]interface{})

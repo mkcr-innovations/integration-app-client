@@ -1980,7 +1980,7 @@ import (
 )
 
 func main() {
-	createDataSourceDto := *openapiclient.NewCreateDataSourceDto("Key_example", "Name_example") // CreateDataSourceDto | 
+	createDataSourceDto := *openapiclient.NewCreateDataSourceDto("Key_example") // CreateDataSourceDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2478,7 +2478,7 @@ import (
 
 func main() {
 	integrationSelector := "integrationSelector_example" // string | Integration ID or Key
-	createIntegrationLevelDataSourceDto := *openapiclient.NewCreateIntegrationLevelDataSourceDto("Key_example", "Name_example") // CreateIntegrationLevelDataSourceDto | 
+	createIntegrationLevelDataSourceDto := *openapiclient.NewCreateIntegrationLevelDataSourceDto("Key_example") // CreateIntegrationLevelDataSourceDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

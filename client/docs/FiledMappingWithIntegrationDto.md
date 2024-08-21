@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Element** | [**FieldMappingDto**](FieldMappingDto.md) |  | 
-**Integration** | [**IntegrationDto**](IntegrationDto.md) |  | 
+**Element** | Pointer to [**FieldMappingDto**](FieldMappingDto.md) |  | [optional] 
+**Integration** | Pointer to [**IntegrationDto**](IntegrationDto.md) |  | [optional] 
 
 ## Methods
 
 ### NewFiledMappingWithIntegrationDto
 
-`func NewFiledMappingWithIntegrationDto(element FieldMappingDto, integration IntegrationDto, ) *FiledMappingWithIntegrationDto`
+`func NewFiledMappingWithIntegrationDto() *FiledMappingWithIntegrationDto`
 
 NewFiledMappingWithIntegrationDto instantiates a new FiledMappingWithIntegrationDto object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetElement sets Element field to given value.
 
+### HasElement
+
+`func (o *FiledMappingWithIntegrationDto) HasElement() bool`
+
+HasElement returns a boolean if a field has been set.
 
 ### GetIntegration
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetIntegration sets Integration field to given value.
 
+### HasIntegration
+
+`func (o *FiledMappingWithIntegrationDto) HasIntegration() bool`
+
+HasIntegration returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

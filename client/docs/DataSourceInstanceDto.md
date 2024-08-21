@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | **string** |  | 
-**Revision** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Revision** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **IntegrationId** | Pointer to **string** |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewDataSourceInstanceDto
 
-`func NewDataSourceInstanceDto(id string, name string, revision string, ) *DataSourceInstanceDto`
+`func NewDataSourceInstanceDto(id string, ) *DataSourceInstanceDto`
 
 NewDataSourceInstanceDto instantiates a new DataSourceInstanceDto object
 This constructor will assign default values to properties that have it defined,
@@ -92,6 +92,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DataSourceInstanceDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRevision
 
@@ -112,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *DataSourceInstanceDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetUserId
 

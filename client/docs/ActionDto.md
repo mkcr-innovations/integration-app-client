@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Key** | **string** |  | 
-**Name** | **string** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
-**Revision** | **string** |  | 
+**Revision** | Pointer to **string** |  | [optional] 
 **IsCustomized** | Pointer to **bool** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ParentRevision** | Pointer to **string** |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewActionDto
 
-`func NewActionDto(id string, key string, name string, revision string, ) *ActionDto`
+`func NewActionDto(id string, ) *ActionDto`
 
 NewActionDto instantiates a new ActionDto object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetKey sets Key field to given value.
 
+### HasKey
+
+`func (o *ActionDto) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
 
 ### GetName
 
@@ -106,6 +111,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ActionDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 
@@ -151,6 +161,11 @@ and a boolean to check if the value has been set.
 
 SetRevision sets Revision field to given value.
 
+### HasRevision
+
+`func (o *ActionDto) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetIsCustomized
 

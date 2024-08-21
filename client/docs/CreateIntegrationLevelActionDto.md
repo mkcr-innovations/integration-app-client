@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | **string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ArchivedAt** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **InputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewCreateIntegrationLevelActionDto
 
-`func NewCreateIntegrationLevelActionDto(key string, name string, ) *CreateIntegrationLevelActionDto`
+`func NewCreateIntegrationLevelActionDto(key string, ) *CreateIntegrationLevelActionDto`
 
 NewCreateIntegrationLevelActionDto instantiates a new CreateIntegrationLevelActionDto object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CreateIntegrationLevelActionDto) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetArchivedAt
 

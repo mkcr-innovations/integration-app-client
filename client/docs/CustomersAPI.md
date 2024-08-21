@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-	createCustomerDto := *openapiclient.NewCreateCustomerDto("InternalId_example") // CreateCustomerDto | 
+	createCustomerDto := *openapiclient.NewCreateCustomerDto() // CreateCustomerDto | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
