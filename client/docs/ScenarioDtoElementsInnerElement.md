@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**ScenarioDtoElementsInnerElementConfig**](ScenarioDtoElementsInnerElementConfig.md) |  | [optional] 
 **IsDeployed** | Pointer to **bool** |  | [optional] 
+**IntegrationId** | Pointer to **string** |  | [optional] 
+**Integration** | Pointer to [**ScenarioDtoElementsInnerElementIntegration**](ScenarioDtoElementsInnerElementIntegration.md) |  | [optional] 
 **AppliedToIntegrations** | Pointer to [**[]ScenarioDtoElementsInnerElementAppliedToIntegrationsInner**](ScenarioDtoElementsInnerElementAppliedToIntegrationsInner.md) |  | [optional] 
 
 ## Methods
@@ -232,6 +234,56 @@ SetIsDeployed sets IsDeployed field to given value.
 `func (o *ScenarioDtoElementsInnerElement) HasIsDeployed() bool`
 
 HasIsDeployed returns a boolean if a field has been set.
+
+### GetIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegrationId() string`
+
+GetIntegrationId returns the IntegrationId field if non-nil, zero value otherwise.
+
+### GetIntegrationIdOk
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegrationIdOk() (*string, bool)`
+
+GetIntegrationIdOk returns a tuple with the IntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) SetIntegrationId(v string)`
+
+SetIntegrationId sets IntegrationId field to given value.
+
+### HasIntegrationId
+
+`func (o *ScenarioDtoElementsInnerElement) HasIntegrationId() bool`
+
+HasIntegrationId returns a boolean if a field has been set.
+
+### GetIntegration
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegration() ScenarioDtoElementsInnerElementIntegration`
+
+GetIntegration returns the Integration field if non-nil, zero value otherwise.
+
+### GetIntegrationOk
+
+`func (o *ScenarioDtoElementsInnerElement) GetIntegrationOk() (*ScenarioDtoElementsInnerElementIntegration, bool)`
+
+GetIntegrationOk returns a tuple with the Integration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegration
+
+`func (o *ScenarioDtoElementsInnerElement) SetIntegration(v ScenarioDtoElementsInnerElementIntegration)`
+
+SetIntegration sets Integration field to given value.
+
+### HasIntegration
+
+`func (o *ScenarioDtoElementsInnerElement) HasIntegration() bool`
+
+HasIntegration returns a boolean if a field has been set.
 
 ### GetAppliedToIntegrations
 

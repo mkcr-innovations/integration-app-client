@@ -17850,6 +17850,31 @@
                     "isDeployed": {
                       "type": "boolean"
                     },
+                    "integrationId": {
+                      "type": "string"
+                    },
+                    "integration": {
+                      "type": "object",
+                      "properties": {
+                        "id": { "type": "string" },
+                        "key": { "type": "string" },
+                        "name": { "type": "string" },
+                        "connectorId": { "type": "string" },
+                        "authType": { "type": "string" },
+                        "parametersSchema": { "type": "string" },
+                        "hasDefaultParameters": { "type": "boolean" },
+                        "hasMissingParameters": { "type": "boolean" },
+                        "hasDocumentation": { "type": "boolean" },
+                        "hasOperations": { "type": "boolean" },
+                        "hasData": { "type": "boolean" },
+                        "hasEvents": { "type": "boolean" },
+                        "hasGlobalWebhooks": { "type": "boolean" },
+                        "hasUdm": { "type": "boolean" },
+                        "areParametersCustomized": { "type": "boolean" },
+                        "baseUri": { "type": "string" },
+                        "logoUri": { "type": "string" }
+                      }
+                    },
                     "appliedToIntegrations": {
                       "type": "array",
                       "items": {

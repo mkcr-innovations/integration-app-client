@@ -27,6 +27,8 @@ type ScenarioDtoElementsInnerElement struct {
 	Type *string `json:"type,omitempty"`
 	Config *ScenarioDtoElementsInnerElementConfig `json:"config,omitempty"`
 	IsDeployed *bool `json:"isDeployed,omitempty"`
+	IntegrationId *string `json:"integrationId,omitempty"`
+	Integration *ScenarioDtoElementsInnerElementIntegration `json:"integration,omitempty"`
 	AppliedToIntegrations []ScenarioDtoElementsInnerElementAppliedToIntegrationsInner `json:"appliedToIntegrations,omitempty"`
 }
 
@@ -303,6 +305,70 @@ func (o *ScenarioDtoElementsInnerElement) SetIsDeployed(v bool) {
 	o.IsDeployed = &v
 }
 
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
+func (o *ScenarioDtoElementsInnerElement) GetIntegrationId() string {
+	if o == nil || IsNil(o.IntegrationId) {
+		var ret string
+		return ret
+	}
+	return *o.IntegrationId
+}
+
+// GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDtoElementsInnerElement) GetIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.IntegrationId) {
+		return nil, false
+	}
+	return o.IntegrationId, true
+}
+
+// HasIntegrationId returns a boolean if a field has been set.
+func (o *ScenarioDtoElementsInnerElement) HasIntegrationId() bool {
+	if o != nil && !IsNil(o.IntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
+func (o *ScenarioDtoElementsInnerElement) SetIntegrationId(v string) {
+	o.IntegrationId = &v
+}
+
+// GetIntegration returns the Integration field value if set, zero value otherwise.
+func (o *ScenarioDtoElementsInnerElement) GetIntegration() ScenarioDtoElementsInnerElementIntegration {
+	if o == nil || IsNil(o.Integration) {
+		var ret ScenarioDtoElementsInnerElementIntegration
+		return ret
+	}
+	return *o.Integration
+}
+
+// GetIntegrationOk returns a tuple with the Integration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScenarioDtoElementsInnerElement) GetIntegrationOk() (*ScenarioDtoElementsInnerElementIntegration, bool) {
+	if o == nil || IsNil(o.Integration) {
+		return nil, false
+	}
+	return o.Integration, true
+}
+
+// HasIntegration returns a boolean if a field has been set.
+func (o *ScenarioDtoElementsInnerElement) HasIntegration() bool {
+	if o != nil && !IsNil(o.Integration) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntegration gets a reference to the given ScenarioDtoElementsInnerElementIntegration and assigns it to the Integration field.
+func (o *ScenarioDtoElementsInnerElement) SetIntegration(v ScenarioDtoElementsInnerElementIntegration) {
+	o.Integration = &v
+}
+
 // GetAppliedToIntegrations returns the AppliedToIntegrations field value if set, zero value otherwise.
 func (o *ScenarioDtoElementsInnerElement) GetAppliedToIntegrations() []ScenarioDtoElementsInnerElementAppliedToIntegrationsInner {
 	if o == nil || IsNil(o.AppliedToIntegrations) {
@@ -368,6 +434,12 @@ func (o ScenarioDtoElementsInnerElement) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.IsDeployed) {
 		toSerialize["isDeployed"] = o.IsDeployed
+	}
+	if !IsNil(o.IntegrationId) {
+		toSerialize["integrationId"] = o.IntegrationId
+	}
+	if !IsNil(o.Integration) {
+		toSerialize["integration"] = o.Integration
 	}
 	if !IsNil(o.AppliedToIntegrations) {
 		toSerialize["appliedToIntegrations"] = o.AppliedToIntegrations

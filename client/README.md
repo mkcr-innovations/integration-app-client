@@ -422,6 +422,7 @@ Class | Method | HTTP request | Description
  - [ScenarioDtoElementsInnerElementConfig](docs/ScenarioDtoElementsInnerElementConfig.md)
  - [ScenarioDtoElementsInnerElementConfigCursor](docs/ScenarioDtoElementsInnerElementConfigCursor.md)
  - [ScenarioDtoElementsInnerElementConfigDataSource](docs/ScenarioDtoElementsInnerElementConfigDataSource.md)
+ - [ScenarioDtoElementsInnerElementIntegration](docs/ScenarioDtoElementsInnerElementIntegration.md)
  - [ScenarioExportDto](docs/ScenarioExportDto.md)
  - [ScenariosControllerList200Response](docs/ScenariosControllerList200Response.md)
  - [UpdateActionDto](docs/UpdateActionDto.md)
